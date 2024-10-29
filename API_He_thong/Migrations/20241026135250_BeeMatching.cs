@@ -9,7 +9,7 @@ namespace API_He_thong.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-           /* migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "DanhMucKyNang",
                 columns: table => new
                 {
@@ -21,7 +21,7 @@ namespace API_He_thong.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DanhMucKyNang", x => x.danh_muc_ky_nang_id);
-                });*/
+                });
 
             migrationBuilder.CreateTable(
                 name: "districts",
@@ -41,7 +41,7 @@ namespace API_He_thong.Migrations
                     table.PrimaryKey("PK_districts", x => x.code);
                 });
 
-         /*   migrationBuilder.CreateTable(
+          migrationBuilder.CreateTable(
                 name: "NguoiDung",
                 columns: table => new
                 {
@@ -62,7 +62,7 @@ namespace API_He_thong.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NguoiDung", x => x.nguoi_dung_id);
-                });*/
+                });
 
             migrationBuilder.CreateTable(
                 name: "provinces",
@@ -82,7 +82,7 @@ namespace API_He_thong.Migrations
                     table.PrimaryKey("PK_provinces", x => x.code);
                 });
 
-           /* migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "TaiKhoanNguoiDung",
                 columns: table => new
                 {
@@ -95,7 +95,7 @@ namespace API_He_thong.Migrations
                 {
                     table.PrimaryKey("PK_TaiKhoanNguoiDung", x => x.tai_khoan_id);
                 });
-*/
+
             migrationBuilder.CreateTable(
                 name: "wards",
                 columns: table => new
@@ -114,7 +114,7 @@ namespace API_He_thong.Migrations
                     table.PrimaryKey("PK_wards", x => x.code);
                 });
 
-          /*  migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "DoanhNghiep",
                 columns: table => new
                 {
@@ -333,7 +333,7 @@ namespace API_He_thong.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_UngTuyen_nguoi_tim_viec_id",
                 table: "UngTuyen",
-                column: "nguoi_tim_viec_id");*/
+                column: "nguoi_tim_viec_id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
