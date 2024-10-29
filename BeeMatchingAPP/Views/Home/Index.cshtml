@@ -1,0 +1,89 @@
+﻿@model IEnumerable<BeeMatchingAPP.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nguoi_dung_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ten_dang_nhap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mat_khau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ho_ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gioi_tinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.so_dien_thoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dia_chi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.loai_nguoi_dung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trang_thai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nguoi_dung_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ten_dang_nhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mat_khau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ho_ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gioi_tinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.so_dien_thoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dia_chi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loai_nguoi_dung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trang_thai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.nguoi_dung_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.nguoi_dung_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.nguoi_dung_id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
