@@ -10,7 +10,7 @@ namespace API_He_thong.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "DanhMucKyNang",
+                name: "danhMucKyNang",
                 columns: table => new
                 {
                     danh_muc_ky_nang_id = table.Column<int>(type: "int", nullable: false)
@@ -20,7 +20,7 @@ namespace API_He_thong.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DanhMucKyNang", x => x.danh_muc_ky_nang_id);
+                    table.PrimaryKey("PK_danhMucKyNang", x => x.danh_muc_ky_nang_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -41,7 +41,7 @@ namespace API_He_thong.Migrations
                     table.PrimaryKey("PK_districts", x => x.code);
                 });
 
-          migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "NguoiDung",
                 columns: table => new
                 {
@@ -89,7 +89,8 @@ namespace API_He_thong.Migrations
                     tai_khoan_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ten_dang_nhap = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    mat_khau = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    mat_khau = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Roles = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -225,9 +226,9 @@ namespace API_He_thong.Migrations
                 {
                     table.PrimaryKey("PK_KyNang", x => x.ky_nang_id);
                     table.ForeignKey(
-                        name: "FK_KyNang_DanhMucKyNang_danh_muc_ky_nang_id",
+                        name: "FK_KyNang_danhMucKyNang_danh_muc_ky_nang_id",
                         column: x => x.danh_muc_ky_nang_id,
-                        principalTable: "DanhMucKyNang",
+                        principalTable: "danhMucKyNang",
                         principalColumn: "danh_muc_ky_nang_id");
                     table.ForeignKey(
                         name: "FK_KyNang_NguoiTimViec_nguoi_tim_viec_id",
@@ -363,7 +364,7 @@ namespace API_He_thong.Migrations
                 name: "UngTuyen");
 
             migrationBuilder.DropTable(
-                name: "DanhMucKyNang");
+                name: "danhMucKyNang");
 
             migrationBuilder.DropTable(
                 name: "CongViec");

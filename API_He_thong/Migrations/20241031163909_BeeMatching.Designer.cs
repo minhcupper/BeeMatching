@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_He_thong.Migrations
 {
     [DbContext(typeof(API_Context))]
-    [Migration("20241026135250_BeeMatching")]
+    [Migration("20241031163909_BeeMatching")]
     partial class BeeMatching
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -128,7 +128,7 @@ namespace API_He_thong.Migrations
 
                     b.HasKey("danh_muc_ky_nang_id");
 
-                    b.ToTable("DanhMucKyNang");
+                    b.ToTable("danhMucKyNang");
                 });
 
             modelBuilder.Entity("API_He_thong.Models.districts", b =>
@@ -393,6 +393,11 @@ namespace API_He_thong.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("tai_khoan_id"), 1L, 1);
+
+                    b.Property<string>("Roles")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("mat_khau")
                         .IsRequired()
