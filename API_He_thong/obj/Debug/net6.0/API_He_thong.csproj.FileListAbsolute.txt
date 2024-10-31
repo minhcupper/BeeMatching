@@ -67,3 +67,4 @@ D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\refint\API_He_tho
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.pdb
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.genruntimeconfig.cache
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\ref\API_He_thong.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.sourcelink.json
