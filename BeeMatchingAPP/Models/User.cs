@@ -6,6 +6,7 @@ namespace BeeMatchingAPP.Models
     {
         //Tuan cong
         //Cong tuan
+        //cong tuan nguyen
         [Key]
         public int nguoi_dung_id { get; set; }
         [MaxLength(20)]
