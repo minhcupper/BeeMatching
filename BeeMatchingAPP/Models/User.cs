@@ -5,6 +5,7 @@ namespace BeeMatchingAPP.Models
     public class User
     {
         //Tuan cong
+        //Cong tuan
         [Key]
         public int nguoi_dung_id { get; set; }
         [MaxLength(20)]
