@@ -7,5 +7,6 @@
         public string Description { get; set; }
         public string tuan { get; set; }
         public string tung { get; set; }
+        public string tuan1 { get; set; }
 	}
 }
