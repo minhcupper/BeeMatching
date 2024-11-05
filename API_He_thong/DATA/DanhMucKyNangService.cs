@@ -14,11 +14,11 @@ namespace API_He_thong.DATA
 
         public async Task<bool> DeleteDanhMuc(int id)
         {
-            var dl = await context.danhMucKyNang.FindAsync(id);
+            var dl = await context.DanhMucKyNang.FindAsync(id);
             if (dl != null)
             {
                 // Xóa người dùng
-                context.danhMucKyNang.Remove(dl);
+                context.DanhMucKyNang.Remove(dl);
                 await context.SaveChangesAsync();
                 return true;
             }
@@ -27,7 +27,7 @@ namespace API_He_thong.DATA
 
         public async Task<DanhMucKyNang> GetIdDanhMuc(int id)
         {
-            var dl = await context.danhMucKyNang.FindAsync(id);
+            var dl = await context.DanhMucKyNang.FindAsync(id);
             if (dl != null)
             {
                 return dl;
@@ -37,24 +37,25 @@ namespace API_He_thong.DATA
 
         public async Task<List<DanhMucKyNang>> GetDanhMuc()
         {
-            return await context.danhMucKyNang.ToListAsync();
+            return await context.DanhMucKyNang.ToListAsync();
         }
 
         public async Task<bool> PostDanhMuc(DanhMucKyNang user)
         {
-            await context.danhMucKyNang.AddAsync(user);
+            await context.DanhMucKyNang.AddAsync(user);
             var result = await context.SaveChangesAsync();
             return result > 0; // True if at least one record was added
         }
 
         public async Task<bool> PutDanhMuc(int id, DanhMucKyNang user)
         {
-            var existingUser = await context.danhMucKyNang.FirstOrDefaultAsync(x => x.danh_muc_ky_nang_id== id);
+            var existingUser = await context.DanhMucKyNang.FirstOrDefaultAsync(x => x.DanhMucKyNangId== id);
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.ten_danh_muc = user.ten_danh_muc;
-                existingUser.mo_ta = user.mo_ta;
+                existingUser.TenDanhMuc = user.TenDanhMuc;
+                existingUser.MoTa = user.MoTa;
+             
 
                 await context.SaveChangesAsync();
                 return true;

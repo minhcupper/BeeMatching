@@ -6,10 +6,13 @@ namespace API_He_thong.Models
 {
     public class NguoiDung
     {
-
+        // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int nguoi_dung_id { get; set; }
+
+        // Hình ảnh của người dùng (có thể nullable)
+        public string? hinh_anh { get; set; }
 
         // Tên đăng nhập, bắt buộc, tối đa 50 ký tự, không được trống
         [MaxLength(50)]
@@ -28,27 +31,38 @@ namespace API_He_thong.Models
 
         // Họ tên, không bắt buộc, tối đa 100 ký tự
         [MaxLength(100)]
-        public string ho_ten { get; set; }
+        public string? ho_ten { get; set; }
 
         // Ngày sinh, có thể null
         public DateTime? ngay_sinh { get; set; }
 
         // Giới tính, tối đa 10 ký tự
         [MaxLength(10)]
-        public string gioi_tinh { get; set; }
+        public string? gioi_tinh { get; set; }
 
         // Số điện thoại, tối đa 15 ký tự
         [MaxLength(15)]
-        public string so_dien_thoai { get; set; }
+        public string? so_dien_thoai { get; set; }
 
         // Địa chỉ, tối đa 30 ký tự
         [MaxLength(30)]
-        public string dia_chi { get; set; }
+        public string? dia_chi_nha { get; set; }
 
-        // Loại người dùng, tối đa 15 ký tự (ví dụ: "NguoiTimViec", "DoanhNghiep")
-        [MaxLength(15)]
-        public string loai_nguoi_dung { get; set; }
+        public string? DistrictId { get; set; } // Foreign key for districts
+        public string? WardId { get; set; } // Foreign key for wards
+        public string? ProvinceId { get; set; } // Foreign key for provinces
 
+        // Navigation properties cho địa chỉ
+        [ForeignKey("DistrictId")]
+        public virtual districts Districts { get; set; }
+
+        [ForeignKey("WardId")]
+        public virtual wards Wards { get; set; }
+
+        [ForeignKey("ProvinceId")]
+        public virtual provinces Provinces { get; set; }
+
+        // Loại người dùng, tối đa 15 ký tự
         // Trạng thái tài khoản, tối đa 15 ký tự, mặc định là "Hoạt động"
         [MaxLength(15)]
         public string trang_thai { get; set; } = "Hoạt động";
@@ -57,14 +71,16 @@ namespace API_He_thong.Models
         public DateTime ngay_tao { get; set; } = DateTime.Now;
 
         // Navigation properties
+        public virtual PhanQuyen PhanQuyen { get; set; }
 
-        // Quan hệ 1-1 với NguoiTimViec
+        // Navigation properties for relationships with job seekers and businesses
         public virtual NguoiTimViec NguoiTimViec { get; set; }
-
-        // Quan hệ 1-1 với DoanhNghiep
         public virtual DoanhNghiep DoanhNghiep { get; set; }
 
-        // Quan hệ 1-nhiều với ThongBao (1 người dùng có nhiều thông báo)
-        public virtual ICollection<ThongBao> ThongBaos { get; set; }
+        // Collection of notifications
+        public virtual ICollection<ThongBao> ThongBaos { get; set; } = new List<ThongBao>();
+
+        // Navigation properties for address relationships
+   
     }
 }

@@ -73,7 +73,7 @@ namespace API_He_thong.Controllers
         [HttpPut("Edit/{id}")]
         public async Task<IActionResult> EditUserById(int id, CongViec user)
         {
-            if (user == null || id != user.cong_viec_id)
+            if (user == null || id != user.CongViecId)
             {
                 return BadRequest("Invalid user data.");
             }

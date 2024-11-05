@@ -6,6 +6,8 @@ namespace BeeMatchingAPP.Models
     {
         [Key]
         public int nguoi_dung_id { get; set; }
+
+      
         [MaxLength(20)]
         public string ten_dang_nhap { get; set; }
         [MaxLength(20)]
@@ -24,5 +26,6 @@ namespace BeeMatchingAPP.Models
         [MaxLength(20)]
         public string trang_thai { get; set; }
         DateTime ngay_tao { get; set; }
+        public string HinhAnh { get; set; }
     }
 }

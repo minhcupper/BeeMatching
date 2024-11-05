@@ -6,27 +6,30 @@ namespace API_He_thong.Models
 {
     public class DanhGia
     {
+        // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int danh_gia_id { get; set; }
+        public int DanhGiaId { get; set; }
 
         // Khóa ngoại liên kết đến bảng UngTuyen
-        public int ung_tuyen_id { get; set; }
+        [Required]
+        public int UngTuyenId { get; set; }
 
         // Navigation property để liên kết đến UngTuyen
-        [ForeignKey("ung_tuyen_id")]
+        [ForeignKey("UngTuyenId")]
         public virtual UngTuyen UngTuyen { get; set; }
 
         // Nội dung đánh giá
-        [MaxLength(500)]
+        [MaxLength(500, ErrorMessage = "Nội dung đánh giá không được vượt quá 500 ký tự.")]
         [Required(ErrorMessage = "Nội dung đánh giá không được để trống.")]
-        public string noi_dung_danh_gia { get; set; }
+        public string NoiDungDanhGia { get; set; }
 
         // Điểm đánh giá (giả sử điểm từ 1 đến 5)
         [Range(1, 5, ErrorMessage = "Điểm đánh giá phải nằm trong khoảng từ 1 đến 5.")]
-        public int diem_danh_gia { get; set; }
+        public int DiemDanhGia { get; set; }
 
         // Ngày đánh giá
-        public DateTime ngay_danh_gia { get; set; } = DateTime.Now;
+        public DateTime NgayDanhGia { get; set; } = DateTime.Now;
     }
+
 }

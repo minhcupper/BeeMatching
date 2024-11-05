@@ -6,31 +6,34 @@ namespace API_He_thong.Models
 {
     public class ThongBao
     {
+        // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int thong_bao_id { get; set; }
+        public int ThongBaoId { get; set; }
 
-        public int nguoi_dung_id { get; set; }
+        // Foreign key for NguoiDung
+        [Required] // Assuming each notification must be associated with a user
+        public int NguoiDungId { get; set; }
 
-        // Khóa ngoại liên kết với bảng NguoiDung
-        [ForeignKey("nguoi_dung_id")]
+        // Navigation property to NguoiDung
+        [ForeignKey("NguoiDungId")]
         public virtual NguoiDung NguoiDung { get; set; }
 
         // Tiêu đề thông báo
         [MaxLength(100, ErrorMessage = "Tiêu đề không được vượt quá 100 ký tự.")]
         [Required(ErrorMessage = "Tiêu đề không được để trống.")]
-        public string tieu_de { get; set; }
+        public string TieuDe { get; set; }
 
         // Nội dung thông báo
         [MaxLength(500, ErrorMessage = "Nội dung không được vượt quá 500 ký tự.")]
         [Required(ErrorMessage = "Nội dung không được để trống.")]
-        public string noi_dung { get; set; }
+        public string NoiDung { get; set; }
 
         // Trạng thái thông báo (vd: đã đọc, chưa đọc)
         [MaxLength(15)]
-        public string trang_thai { get; set; } = "Chưa đọc";
+        public string TrangThai { get; set; } = "Chưa đọc";
 
         // Ngày gửi thông báo
-        public DateTime ngay_gui { get; set; } = DateTime.Now;
+        public DateTime NgayGui { get; set; } = DateTime.Now;
     }
 }

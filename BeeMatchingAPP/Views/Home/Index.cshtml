@@ -42,6 +42,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.trang_thai)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinhAnh)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -79,9 +82,12 @@
                 @Html.DisplayFor(modelItem => item.trang_thai)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.nguoi_dung_id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.nguoi_dung_id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.nguoi_dung_id })
+                @Html.DisplayFor(modelItem => item.HinhAnh)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }

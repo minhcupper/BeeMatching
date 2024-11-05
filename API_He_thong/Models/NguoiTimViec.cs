@@ -5,41 +5,44 @@ namespace API_He_thong.Models
 {
     public class NguoiTimViec
     {
-
+        // Primary Key
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int nguoi_tim_viec_id { get; set; }
+        public int NguoiTimViecId { get; set; }
 
-        // Khóa ngoại trỏ đến bảng NguoiDung
-        [Required]
-        public int nguoi_dung_id { get; set; }
+        // Profile image (optional)
+        public string? HinhAnh { get; set; }
 
-        // Navigation property trỏ tới NguoiDung
-        [ForeignKey("nguoi_dung_id")]
+        // Foreign key to NguoiDung table
+        [Required] // Assuming each job seeker must have an associated user
+        public int NguoiDungId { get; set; }
+
+        // Navigation property to NguoiDung
+        [ForeignKey("NguoiDungId")]
         public virtual NguoiDung NguoiDung { get; set; }
 
-        // Mô tả người tìm việc, bắt buộc, giới hạn tối đa 500 ký tự
+        // Navigation property linking to KyNangNguoiXinViec
+        public virtual ICollection<KyNangNguoiXinViec> KyNangNguoiXinViecs { get; set; } = new List<KyNangNguoiXinViec>();
+
+        // Job seeker description
         [Required(ErrorMessage = "Mô tả không được để trống.")]
         [MaxLength(500, ErrorMessage = "Mô tả không được vượt quá 500 ký tự.")]
-        public string mo_ta { get; set; }
+        public string MoTa { get; set; }
 
-        // Ngôn ngữ, bắt buộc, giới hạn tối đa 200 ký tự
+        // Language skills
         [Required(ErrorMessage = "Ngôn ngữ không được để trống.")]
         [MaxLength(200, ErrorMessage = "Ngôn ngữ không được vượt quá 200 ký tự.")]
-        public string ngon_ngu { get; set; }
+        public string NgonNgu { get; set; }
 
-        // Kinh nghiệm, không bắt buộc nhưng giới hạn tối đa 300 ký tự
+        // Experience (optional)
         [MaxLength(300, ErrorMessage = "Kinh nghiệm không được vượt quá 300 ký tự.")]
-        public string kinh_nghiem { get; set; }
+        public string? KinhNghiem { get; set; }
 
-        // Hoạt động ngoại khóa, không bắt buộc, giới hạn tối đa 300 ký tự
+        // Extracurricular activities (optional)
         [MaxLength(300, ErrorMessage = "Hoạt động ngoại khóa không được vượt quá 300 ký tự.")]
-        public string hoat_dong_ngoai_khoa { get; set; }
+        public string? HoatDongNgoaiKhoa { get; set; }
 
-        // Navigation property trỏ tới bảng KyNang (quan hệ một-nhiều)
-        public virtual ICollection<KyNang> KyNangs { get; set; }
-
-        // Navigation property trỏ tới bảng UngTuyen (quan hệ một-nhiều)
-        public virtual ICollection<UngTuyen> UngTuyens { get; set; }
+        // Navigation property to UngTuyen (one-to-many relationship)
+        public virtual ICollection<UngTuyen> UngTuyens { get; set; } = new List<UngTuyen>();
     }
 }

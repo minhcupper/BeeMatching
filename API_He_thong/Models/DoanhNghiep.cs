@@ -3,32 +3,53 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_He_thong.Models
 {
+
     public class DoanhNghiep
     {
+        // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int doanh_nghiep_id { get; set; }
+        public int DoanhNghiepId { get; set; }
+
+        // Hình ảnh của doanh nghiệp (nullable)
+        public string? HinhAnh { get; set; }
 
         // Khóa ngoại liên kết đến NguoiDung
-        public int nguoi_dung_id { get; set; }
+        [Required] // Assuming each business must have an associated user
+        public int NguoiDungId { get; set; }
 
         // Navigation property để liên kết đến NguoiDung
-        [ForeignKey("nguoi_dung_id")]
+        [ForeignKey("NguoiDungId")]
         public virtual NguoiDung NguoiDung { get; set; }
 
         // Tên công ty
         [MaxLength(100)]
         [Required(ErrorMessage = "Tên công ty không được để trống.")]
-        public string ten_cong_ty { get; set; }
+        public string TenCongTy { get; set; }
 
-        // Mô tả công ty
-        public string mo_ta { get; set; }
+        // Mô tả công ty (có thể nullable)
+        public string? MoTa { get; set; }
 
-        // Địa chỉ công ty
+        // Địa chỉ công ty (có thể nullable)
         [MaxLength(200)]
-        public string dia_chi { get; set; }
+        public string? DiaChi { get; set; }
 
         // Navigation property cho các công việc của doanh nghiệp
         public virtual ICollection<CongViec> CongViecs { get; set; } = new List<CongViec>();
+
+        // Khóa ngoại cho địa chỉ
+        public string? DistrictId { get; set; } // Foreign key for districts
+        public string? WardId { get; set; } // Foreign key for wards
+        public string? ProvinceId { get; set; } // Foreign key for provinces
+
+        // Navigation properties cho địa chỉ
+        [ForeignKey("DistrictId")]
+        public virtual districts Districts { get; set; }
+
+        [ForeignKey("WardId")]
+        public virtual wards Wards { get; set; }
+
+        [ForeignKey("ProvinceId")]
+        public virtual provinces Provinces { get; set; }
     }
 }

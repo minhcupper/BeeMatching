@@ -6,33 +6,42 @@ namespace API_He_thong.Models
 {
     public class UngTuyen
     {
+        // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ung_tuyen_id { get; set; }
+        public int UngTuyenId { get; set; }
 
         // Khóa ngoại kiểu int trỏ tới CongViec
-        public int cong_viec_id { get; set; }
+        [Required(ErrorMessage = "CongViecId không được để trống.")]
+        public int CongViecId { get; set; }
 
         // Navigation property cho CongViec
-        [ForeignKey("cong_viec_id")]
+        [ForeignKey("CongViecId")]
         public virtual CongViec CongViec { get; set; }
 
         // Khóa ngoại kiểu int trỏ tới NguoiTimViec
-        public int nguoi_tim_viec_id { get; set; }
+        [Required(ErrorMessage = "NguoiTimViecId không được để trống.")]
+        public int NguoiTimViecId { get; set; }
 
         // Navigation property cho NguoiTimViec
-        [ForeignKey("nguoi_tim_viec_id")]
+        [ForeignKey("NguoiTimViecId")]
         public virtual NguoiTimViec NguoiTimViec { get; set; }
 
-        public DateTime ngay_ung_tuyen { get; set; } = DateTime.Now;
+        // Ngày ứng tuyển
+        public DateTime NgayUngTuyen { get; set; } = DateTime.Now;
 
-        public string de_xuat { get; set; }
+        // Đề xuất của người ứng tuyển (có thể nullable)
+        [MaxLength(500, ErrorMessage = "Đề xuất không được vượt quá 500 ký tự.")]
+        public string? DeXuat { get; set; }
 
-        public string trang_thai { get; set; } = "Đang xem xét";
+        // Trạng thái ứng tuyển (vd: đang xem xét, đã chấp nhận, từ chối)
+        [MaxLength(20)]
+        public string TrangThai { get; set; } = "Đang xem xét";
 
-        public bool chap_nhan_cong_viec { get; set; } = false;
+        // Chấp nhận công việc hay không
+        public bool ChapNhanCongViec { get; set; } = false;
 
         // Navigation property cho DanhGia (quan hệ một-nhiều)
-        public virtual ICollection<DanhGia> DanhGias { get; set; }
+        public virtual ICollection<DanhGia> DanhGias { get; set; } = new List<DanhGia>();
     }
 }

@@ -256,3 +256,4 @@ D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Exten
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.sourcelink.json

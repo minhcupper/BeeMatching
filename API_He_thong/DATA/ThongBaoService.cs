@@ -50,14 +50,14 @@ namespace API_He_thong.DATA
 
         public async Task<bool> PutUser(int id, ThongBao user)
         {
-            var existingUser = await context.ThongBao.FirstOrDefaultAsync(x => x.thong_bao_id == id);
+            var existingUser = await context.ThongBao.FirstOrDefaultAsync(x => x.ThongBaoId == id);
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.ngay_gui = user.ngay_gui;
-                existingUser.noi_dung = user.noi_dung;
-                existingUser.tieu_de=user.tieu_de;
-                existingUser.trang_thai = user.trang_thai;
+                existingUser.NgayGui = user.NgayGui;
+                existingUser.NoiDung = user.NoiDung;
+                existingUser.TieuDe=user.TieuDe;
+                existingUser.TrangThai = user.TrangThai;
 
                 await context.SaveChangesAsync();
                 return true;
