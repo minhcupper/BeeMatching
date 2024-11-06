@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_He_thong.Migrations
 {
     [DbContext(typeof(API_Context))]
-    [Migration("20241105140535_BeeMatching")]
+    [Migration("20241106074508_BeeMatching")]
     partial class BeeMatching
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -324,10 +324,6 @@ namespace API_He_thong.Migrations
                     b.Property<string>("ho_ten")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("loai_nguoi_dung")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("mat_khau")
                         .IsRequired()

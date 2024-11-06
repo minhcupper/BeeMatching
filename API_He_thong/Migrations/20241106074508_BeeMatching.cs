@@ -22,8 +22,8 @@ namespace API_He_thong.Migrations
                 {
                     table.PrimaryKey("PK_DanhMucKyNang", x => x.DanhMucKyNangId);
                 });
-
-          /*  migrationBuilder.CreateTable(
+/*
+            migrationBuilder.CreateTable(
                 name: "districts",
                 columns: table => new
                 {

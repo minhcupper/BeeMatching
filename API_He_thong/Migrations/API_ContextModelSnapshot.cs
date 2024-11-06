@@ -323,10 +323,6 @@ namespace API_He_thong.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("loai_nguoi_dung")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
                     b.Property<string>("mat_khau")
                         .IsRequired()
                         .HasMaxLength(10)
