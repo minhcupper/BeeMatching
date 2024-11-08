@@ -28,7 +28,7 @@ namespace API_He_thong.Controllers
             return Ok(users);
         }
 
-        // GET: api/User/GetById/5
+        // GET: api/User/GetById/05
         [HttpGet("GetById/{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {
