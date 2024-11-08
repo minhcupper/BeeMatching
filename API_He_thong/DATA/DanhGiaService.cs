@@ -49,14 +49,14 @@ namespace API_He_thong.DATA
 
         public async Task<bool> Putdanhgia(int id, DanhGia user)
         {
-            var existingUser = await context.DanhGia.FirstOrDefaultAsync(x => x.danh_gia_id == id);
+            var existingUser = await context.DanhGia.FirstOrDefaultAsync(x => x.DanhGiaId == id);
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.ngay_danh_gia = user.ngay_danh_gia;
-                existingUser.diem_danh_gia = user.diem_danh_gia;
-                existingUser.noi_dung_danh_gia = user.noi_dung_danh_gia;
-            
+                existingUser.NoiDungDanhGia = user.NoiDungDanhGia;
+                existingUser.DiemDanhGia = user.DiemDanhGia;
+                existingUser.NgayDanhGia = user.NgayDanhGia;
+
                 await context.SaveChangesAsync();
                 return true;
             }

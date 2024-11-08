@@ -7,20 +7,20 @@ namespace API_He_thong.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ThongBaoController : ControllerBase
+    public class SkillController : ControllerBase
     {
-        private readonly IThongBao uS;
+        private readonly ISkillNguoiXinViec uS;
 
-        public ThongBaoController(IThongBao us)
+        public SkillController(ISkillNguoiXinViec us)
         {
             this.uS = us;
         }
 
         // GET: api/User/GetAll
         [HttpGet("GetAll")]
-        public async Task<IActionResult> GetAllUsers()
+        public async Task<IActionResult> GetAllCompanys()
         {
-            var users = await uS.GetUser();
+            var users = await uS.GetSkill();
             if (users == null || users.Count == 0)
             {
                 return NotFound("No users found.");
@@ -30,9 +30,9 @@ namespace API_He_thong.Controllers
 
         // GET: api/User/GetById/5
         [HttpGet("GetById/{id}")]
-        public async Task<IActionResult> GetUserById(int id)
+        public async Task<IActionResult> GetCompanyById(int id)
         {
-            var user = await uS.GetIdUser(id);
+            var user = await uS.GetIdSkill(id);
             if (user == null)
             {
                 return NotFound($"User with ID {id} not found.");
@@ -42,14 +42,14 @@ namespace API_He_thong.Controllers
 
         // POST: api/User/Create
         [HttpPost("Create")]
-        public async Task<IActionResult> PostUser(ThongBao user)
+        public async Task<IActionResult> PostUser(KyNangNguoiXinViec user)
         {
             if (user == null)
             {
                 return BadRequest("Invalid user data.");
             }
 
-            var result = await uS.PostUser(user);
+            var result = await uS.PostSkill(user);
             if (result)
             {
                 return Ok("User created successfully.");
@@ -61,24 +61,24 @@ namespace API_He_thong.Controllers
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteUserById(int id)
         {
-            var result = await uS.DeleteUser(id);
+            var result = await uS.DeleteSkill(id);
             if (result)
             {
-                return Ok($"User with ID {id} deleted successfully.");
+                return Ok($"Company with ID {id} deleted successfully.");
             }
-            return NotFound($"User with ID {id} not found.");
+            return NotFound($"Company with ID {id} not found.");
         }
 
         // PUT: api/User/Edit/5
         [HttpPut("Edit/{id}")]
-        public async Task<IActionResult> EditUserById(int id, ThongBao user)
+        public async Task<IActionResult> EditUserById(int id, KyNangNguoiXinViec user)
         {
-            if (user == null || id != user.ThongBaoId)
+            if (user == null || id != user.KyNangId)
             {
                 return BadRequest("Invalid user data.");
             }
 
-            var result = await uS.PutUser(id, user);
+            var result = await uS.PutSkill(id, user);
             if (result)
             {
                 return Ok("User updated successfully.");

@@ -4,6 +4,7 @@ using API_He_thong.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_He_thong.Migrations
 {
     [DbContext(typeof(API_Context))]
-    partial class API_ContextModelSnapshot : ModelSnapshot
+    [Migration("20241106074508_BeeMatching")]
+    partial class BeeMatching
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,7 +131,7 @@ namespace API_He_thong.Migrations
 
                     b.HasKey("DanhMucKyNangId");
 
-                    b.ToTable("danhMucKyNang");
+                    b.ToTable("DanhMucKyNang");
                 });
 
             modelBuilder.Entity("API_He_thong.Models.districts", b =>
@@ -460,36 +462,6 @@ namespace API_He_thong.Migrations
 
                     b.ToTable("provinces");
                 });
-
-
-            modelBuilder.Entity("API_He_thong.Models.TaiKhoanNguoiDung", b =>
-                {
-                    b.Property<int>("tai_khoan_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("tai_khoan_id"), 1L, 1);
-
-                    b.Property<string>("Roles")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("mat_khau")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("ten_dang_nhap")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("tai_khoan_id");
-
-                    b.ToTable("TaiKhoanNguoiDung");
-                });
-
 
             modelBuilder.Entity("API_He_thong.Models.ThongBao", b =>
                 {

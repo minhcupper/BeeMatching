@@ -1,11 +1,11 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_He_thong.Models
+namespace BeeMatchingAPP.Models
 {
     public class NguoiDung
     {
+
         // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -54,13 +54,13 @@ namespace API_He_thong.Models
 
         // Navigation properties cho địa chỉ
         [ForeignKey("DistrictId")]
-        public virtual districts? Districts { get; set; }
+        public virtual districts Districts { get; set; }
 
         [ForeignKey("WardId")]
-        public virtual wards? Wards { get; set; }
+        public virtual wards Wards { get; set; }
 
         [ForeignKey("ProvinceId")]
-        public virtual provinces? Provinces { get; set; }
+        public virtual provinces Provinces { get; set; }
 
         // Loại người dùng, tối đa 15 ký tự
         // Trạng thái tài khoản, tối đa 15 ký tự, mặc định là "Hoạt động"
@@ -73,16 +73,18 @@ namespace API_He_thong.Models
         // Navigation properties
         public int? PhanQuyenId { get; set; }
         [ForeignKey("PhanQuyenId")]
-        public virtual PhanQuyen? PhanQuyen { get; set; }
+        public virtual PhanQuyen PhanQuyen { get; set; }
+
 
         // Navigation properties for relationships with job seekers and businesses
-        public virtual NguoiTimViec? NguoiTimViec { get; set; }
-        public virtual DoanhNghiep? DoanhNghiep { get; set; }
+        public virtual NguoiTimViec NguoiTimViec { get; set; }
+        public virtual DoanhNghiep DoanhNghiep { get; set; }
 
         // Collection of notifications
         public virtual ICollection<ThongBao> ThongBaos { get; set; } = new List<ThongBao>();
 
         // Navigation properties for address relationships
-   
+
+
     }
 }

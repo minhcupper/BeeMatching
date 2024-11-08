@@ -1,24 +1,24 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace API_He_thong.Models
+namespace BeeMatchingAPP.Models
 {
-    public class districts 
+    public class wards
     {
-        // Mã quận/huyện (Primary Key)
+        // Mã phường/xã (Primary Key)
         [Key]
-        [MaxLength(20)] // Giới hạn độ dài cho mã quận/huyện
+        [MaxLength(20)] // Giới hạn độ dài cho mã phường/xã
         public string code { get; set; }
 
-        // Tên quận/huyện
+        // Tên phường/xã
         [Required] // Trường bắt buộc, tương đương với NOT NULL
-        [MaxLength(255)] // Giới hạn độ dài của tên
+        [MaxLength(255)] // Giới hạn độ dài của tên phường/xã
         public string name { get; set; }
 
-        // Tên tiếng Anh của quận/huyện (có thể để trống)
+        // Tên tiếng Anh của phường/xã (có thể để trống)
         [MaxLength(255)] // Giới hạn độ dài của tên tiếng Anh
         public string name_en { get; set; }
 
-        // Tên đầy đủ của quận/huyện (có thể để trống)
+        // Tên đầy đủ của phường/xã
         [MaxLength(255)] // Giới hạn độ dài của tên đầy đủ
         public string full_name { get; set; }
 
@@ -27,15 +27,15 @@ namespace API_He_thong.Models
         public string full_name_en { get; set; }
 
         // Tên mã (có thể để trống)
-        [MaxLength(255)] // Giới hạn độ dài của mã code name
+        [MaxLength(255)] // Giới hạn độ dài của code name
         public string code_name { get; set; }
 
-        // Mã tỉnh/thành phố (có thể để trống)
-        [MaxLength(20)] // Giới hạn độ dài của mã tỉnh/thành phố
-        public string province_code { get; set; }
+        // Mã quận/huyện (có thể để trống)
+        [MaxLength(20)] // Giới hạn độ dài của mã quận/huyện
+        public string district_code { get; set; }
 
         // ID đơn vị hành chính (có thể để trống)
-        public int? administrative_unit_Id { get; set; }
+        public int? administrative_unit_id { get; set; }
         // Navigation property to relate districts with NguoiDung
         public virtual ICollection<NguoiDung> NguoiDungs { get; set; } = new List<NguoiDung>();
         public virtual ICollection<CongViec> CongViecs { get; set; } = new List<CongViec>();

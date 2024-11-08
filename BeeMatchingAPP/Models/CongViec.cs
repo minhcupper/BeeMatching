@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_He_thong.Models
+namespace BeeMatchingAPP.Models
 {
     public class CongViec
     {

@@ -7,11 +7,11 @@ namespace API_He_thong.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SkillController : ControllerBase
+    public class SkillCongViecController : ControllerBase
     {
-        private readonly ISkill uS;
+        private readonly ISkillCongViec uS;
 
-        public SkillController(ISkill us)
+        public SkillCongViecController(ISkillCongViec us)
         {
             this.uS = us;
         }
@@ -42,7 +42,7 @@ namespace API_He_thong.Controllers
 
         // POST: api/User/Create
         [HttpPost("Create")]
-        public async Task<IActionResult> PostUser(KyNang user)
+        public async Task<IActionResult> PostUser(KyNangCongViec user)
         {
             if (user == null)
             {
@@ -71,9 +71,9 @@ namespace API_He_thong.Controllers
 
         // PUT: api/User/Edit/5
         [HttpPut("Edit/{id}")]
-        public async Task<IActionResult> EditUserById(int id, KyNang user)
+        public async Task<IActionResult> EditUserById(int id, KyNangCongViec user)
         {
-            if (user == null || id != user.ky_nang_id)
+            if (user == null || id != user.KyNangId)
             {
                 return BadRequest("Invalid user data.");
             }

@@ -36,5 +36,9 @@ namespace API_He_thong.Models
 
         // ID vùng hành chính (có thể để trống)
         public int? administrative_region_Id { get; set; }
+        // Navigation property to relate districts with NguoiDung
+        public virtual ICollection<NguoiDung> NguoiDungs { get; set; } = new List<NguoiDung>();
+        public virtual ICollection<CongViec> CongViecs { get; set; } = new List<CongViec>();
+        public virtual ICollection<DoanhNghiep> doanhNghieps { get; set; } = new List<DoanhNghiep>();
     }
 }

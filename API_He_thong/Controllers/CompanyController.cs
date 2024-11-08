@@ -9,7 +9,9 @@ namespace API_He_thong.Controllers
     [ApiController]
     public class CompanyController : ControllerBase
     {
-        // conects
+
+        // conecting
+
         private readonly ICompany uS;
 
         public CompanyController(ICompany us)
@@ -74,7 +76,7 @@ namespace API_He_thong.Controllers
         [HttpPut("Edit/{id}")]
         public async Task<IActionResult> EditUserById(int id, DoanhNghiep user)
         {
-            if (user == null || id != user.doanh_nghiep_id)
+            if (user == null || id != user.DoanhNghiepId)
             {
                 return BadRequest("Invalid user data.");
             }

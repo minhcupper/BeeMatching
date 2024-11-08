@@ -57,9 +57,9 @@ namespace API_He_thong.DATA
                 existingUser.ten_dang_nhap = user.ten_dang_nhap;
                 existingUser.mat_khau = user.mat_khau;
                 existingUser.ho_ten = user.ho_ten;
-                existingUser.dia_chi = user.dia_chi;
+                existingUser.dia_chi_nha = user.dia_chi_nha;
                 existingUser.gioi_tinh = user.gioi_tinh;
-                existingUser.loai_nguoi_dung = user.loai_nguoi_dung;
+                existingUser.hinh_anh = user.hinh_anh;
                 existingUser.trang_thai = user.trang_thai;
 
                 await context.SaveChangesAsync();

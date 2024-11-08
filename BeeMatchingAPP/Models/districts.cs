@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace API_He_thong.Models
+namespace BeeMatchingAPP.Models
 {
-    public class districts 
+    public class districts
     {
         // Mã quận/huyện (Primary Key)
         [Key]

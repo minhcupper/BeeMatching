@@ -49,15 +49,17 @@ namespace API_He_thong.DATA
 
         public async Task<bool> PutCompany(int id, DoanhNghiep user)
         {
-            var existingUser = await context.DoanhNghiep.FirstOrDefaultAsync(x => x.doanh_nghiep_id == id);
+            var existingUser = await context.DoanhNghiep.FirstOrDefaultAsync(x => x.DoanhNghiepId == id);
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.ten_cong_ty = user.ten_cong_ty;
-                existingUser.mo_ta = user.mo_ta;
-                existingUser.dia_chi = user.dia_chi;
-
-
+                existingUser.Wards = user.Wards;
+                existingUser.MoTa = user.MoTa;
+                existingUser.DiaChi = user.DiaChi;
+                existingUser.Districts = user.Districts;
+                existingUser.Provinces = user.Provinces;
+                existingUser.HinhAnh = user.HinhAnh;
+                existingUser.TenCongTy = user.TenCongTy;
                 await context.SaveChangesAsync();
                 return true;
             }

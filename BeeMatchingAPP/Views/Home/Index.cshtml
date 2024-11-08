@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BeeMatchingAPP.Models.User>
+﻿@model IEnumerable<BeeMatchingAPP.Models.NguoiDung>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,16 +16,22 @@
                 @Html.DisplayNameFor(model => model.nguoi_dung_id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ten_dang_nhap)
+                @Html.DisplayNameFor(model => model.hinh_anh)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.mat_khau)
+                @Html.DisplayNameFor(model => model.ten_dang_nhap)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.email)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.mat_khau)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ho_ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngay_sinh)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.gioi_tinh)
@@ -34,13 +40,25 @@
                 @Html.DisplayNameFor(model => model.so_dien_thoai)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dia_chi)
+                @Html.DisplayNameFor(model => model.dia_chi_nha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.loai_nguoi_dung)
+                @Html.DisplayNameFor(model => model.DistrictId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WardId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProvinceId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.trang_thai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngay_tao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhanQuyenId)
             </th>
             <th></th>
         </tr>
@@ -52,16 +70,22 @@
                 @Html.DisplayFor(modelItem => item.nguoi_dung_id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ten_dang_nhap)
+                @Html.DisplayFor(modelItem => item.hinh_anh)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.mat_khau)
+                @Html.DisplayFor(modelItem => item.ten_dang_nhap)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.email)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.mat_khau)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.ho_ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngay_sinh)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.gioi_tinh)
@@ -70,18 +94,30 @@
                 @Html.DisplayFor(modelItem => item.so_dien_thoai)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.dia_chi)
+                @Html.DisplayFor(modelItem => item.dia_chi_nha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.loai_nguoi_dung)
+                @Html.DisplayFor(modelItem => item.DistrictId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WardId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProvinceId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.trang_thai)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.nguoi_dung_id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.nguoi_dung_id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.nguoi_dung_id })
+                @Html.DisplayFor(modelItem => item.ngay_tao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhanQuyenId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }

@@ -3,31 +3,31 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API_He_thong.DATA
 {
-    public class SkillService:ISkill
+    public class SkillNguoiXinViecService:ISkillNguoiXinViec
     {
         private readonly API_Context context;
 
-        public SkillService(API_Context context)
+        public SkillNguoiXinViecService(API_Context context)
         {
             this.context = context;
         }
 
         public async Task<bool> DeleteSkill(int id)
         {
-            var dl = await context.KyNang.FindAsync(id);
+            var dl = await context.KyNangNguoiXinViec.FindAsync(id);
             if (dl != null)
             {
                 // Xóa người dùng
-                context.KyNang.Remove(dl);
+                context.KyNangNguoiXinViec.Remove(dl);
                 await context.SaveChangesAsync();
                 return true;
             }
             return false;
         }
 
-        public async Task<KyNang> GetIdSkill(int id)
+        public async Task<KyNangNguoiXinViec> GetIdSkill(int id)
         {
-            var dl = await context.KyNang.FindAsync(id);
+            var dl = await context.KyNangNguoiXinViec.FindAsync(id);
             if (dl != null)
             {
                 return dl;
@@ -35,27 +35,30 @@ namespace API_He_thong.DATA
             return null; // Or throw an exception, depending on your error handling preference
         }
 
-        public async Task<List<KyNang>> GetSkill()
+        public async Task<List<KyNangNguoiXinViec>> GetSkill()
         {
-            return await context.KyNang.ToListAsync();
+            return await context.KyNangNguoiXinViec.ToListAsync();
         }
 
-        public async Task<bool> PostSkill(KyNang user)
+        public async Task<bool> PostSkill(KyNangNguoiXinViec user)
         {
-            await context.KyNang.AddAsync(user);
+            await context.KyNangNguoiXinViec.AddAsync(user);
             var result = await context.SaveChangesAsync();
             return result > 0; // True if at least one record was added
         }
 
-        public async Task<bool> PutSkill(int id, KyNang user)
+        public async Task<bool> PutSkill(int id, KyNangNguoiXinViec user)
         {
-            var existingUser = await context.KyNang.FirstOrDefaultAsync(x => x.ky_nang_id == id);
+            var existingUser = await context.KyNangNguoiXinViec.FirstOrDefaultAsync(x => x.KyNangId == id);
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.ten_ky_nang = user.ten_ky_nang;
-                existingUser.mo_ta = user.mo_ta;
-         
+                existingUser.MoTa = user.MoTa;
+                existingUser.DanhMucKyNang = user.DanhMucKyNang;
+                existingUser.KyNangId = user.KyNangId;
+                existingUser.TenKyNang = user.TenKyNang;
+     
+
                 await context.SaveChangesAsync();
                 return true;
             }

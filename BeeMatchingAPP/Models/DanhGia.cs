@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace API_He_thong.Models
+namespace BeeMatchingAPP.Models
 {
     public class DanhGia
     {
@@ -31,5 +30,4 @@ namespace API_He_thong.Models
         // Ngày đánh giá
         public DateTime NgayDanhGia { get; set; } = DateTime.Now;
     }
-
 }

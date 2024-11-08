@@ -49,19 +49,24 @@ namespace API_He_thong.DATA
 
         public async Task<bool> PutJob(int id, CongViec user)
         {
-            var existingUser = await context.CongViec.FirstOrDefaultAsync(x => x.cong_viec_id == id);
+            var existingUser = await context.CongViec.FirstOrDefaultAsync(x => x.CongViecId == id);
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.dia_diem_lam_viec = user.dia_diem_lam_viec;
-                existingUser.mo_ta = user.mo_ta;
-                existingUser.tieu_de = user.tieu_de;
-                existingUser.vi_tri = user.vi_tri;
-                existingUser.ky_nang_yeu_cau = user.ky_nang_yeu_cau;
-                existingUser.han_nop_ho_so=user.han_nop_ho_so;
-                existingUser.luong_hang_thang=user.luong_hang_thang;
-                existingUser.ngay_dang = user.ngay_dang;
-                existingUser.trang_thai=user.trang_thai;
+                existingUser.KyNangCongViecs = user.KyNangCongViecs;
+                existingUser.NgayDang = user.NgayDang;
+                existingUser.UngTuyens = user.UngTuyens;
+                existingUser.MoTa = user.MoTa;
+                existingUser.DoanhNghiep = user.DoanhNghiep;
+                existingUser.TrangThai=user.TrangThai;
+                existingUser.ViTri=user.ViTri;
+                existingUser.WardId = user.WardId;
+                existingUser.LuongHangThang = user.LuongHangThang;
+                existingUser.HanNopHoSo = user.HanNopHoSo;
+                existingUser.TieuDe = user.TieuDe;
+                existingUser.ViTri = user.ViTri;
+                existingUser.ProvinceId = user.ProvinceId   ;
+                existingUser.DistrictId = user.DistrictId;
                 await context.SaveChangesAsync();
                 return true;
             }

@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace API_He_thong.Models
+namespace BeeMatchingAPP.Models
 {
     public class ThongBao
     {
+
         // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
