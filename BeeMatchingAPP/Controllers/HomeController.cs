@@ -37,6 +37,7 @@ namespace BeeMatchingAPP.Controllers
 
             return View(users);
         }
+
         public async Task<ActionResult> Details(int id)
         {
 
@@ -98,6 +99,19 @@ namespace BeeMatchingAPP.Controllers
 
             return View(users);
         }
+        public async Task<ActionResult> CongViec()
+        {
+
+            List<CongViec> users = new List<CongViec>();
+            var response = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
+            if (response.IsSuccessStatusCode)
+            {
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                users = JsonConvert.DeserializeObject<List<CongViec>>(apiResponse);
+            }
+
+            return View(users);
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -108,5 +122,6 @@ namespace BeeMatchingAPP.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

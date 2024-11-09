@@ -21,6 +21,7 @@ IServiceCollection serviceCollection7 = builder.Services.AddScoped<IThongBao, Th
 IServiceCollection serviceCollection8 = builder.Services.AddScoped<IUngtuyen, UngTuyenService>();
 IServiceCollection serviceCollection9 = builder.Services.AddScoped<ISkillNguoiXinViec, SkillNguoiXinViecService>();
 IServiceCollection serviceCollection10 = builder.Services.AddScoped<ISkillCongViec, KyNangCongViecSerVice>();
+IServiceCollection serviceCollection11 = builder.Services.AddScoped<ICongViec, CongViecService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

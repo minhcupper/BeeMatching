@@ -570,10 +570,9 @@
         defaultPrevented = jQueryEvent.isDefaultPrevented();
       }
 
-      if (isNative) {
-        evt = document.createEvent('HTMLEvents');
-        evt.initEvent(typeEvent, bubbles, true);
-      } else {
+        if (isNative) {
+            evt = new Event(typeEvent, { bubbles: bubbles, cancelable: true });
+        } else {
         evt = new CustomEvent(event, {
           bubbles,
           cancelable: true
@@ -972,20 +971,20 @@
       return normalizeData(element.getAttribute(`data-bs-${normalizeDataKey(key)}`));
     },
 
-    offset(element) {
-      const rect = element.getBoundingClientRect();
-      return {
-        top: rect.top + window.pageYOffset,
-        left: rect.left + window.pageXOffset
-      };
-    },
+      offset(element) {
+          const rect = element.getBoundingClientRect();
+          return {
+              top: rect.top + window.scrollY,
+              left: rect.left + window.scrollX
+          };
+      }
 
     position(element) {
-      return {
-        top: element.offsetTop,
-        left: element.offsetLeft
-      };
-    }
+          return {
+              top: element.offsetTop,  // Distance from the top of the offset parent
+              left: element.offsetLeft  // Distance from the left of the offset parent
+          };
+      }
 
   };
 

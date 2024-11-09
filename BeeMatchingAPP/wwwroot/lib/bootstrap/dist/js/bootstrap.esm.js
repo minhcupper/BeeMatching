@@ -566,10 +566,9 @@ const EventHandler = {
       defaultPrevented = jQueryEvent.isDefaultPrevented();
     }
 
-    if (isNative) {
-      evt = document.createEvent('HTMLEvents');
-      evt.initEvent(typeEvent, bubbles, true);
-    } else {
+      if (isNative) {
+          evt = new Event(typeEvent, { bubbles: bubbles, cancelable: true });
+      } else {
       evt = new CustomEvent(event, {
         bubbles,
         cancelable: true
@@ -968,20 +967,28 @@ const Manipulator = {
     return normalizeData(element.getAttribute(`data-bs-${normalizeDataKey(key)}`));
   },
 
-  offset(element) {
-    const rect = element.getBoundingClientRect();
-    return {
-      top: rect.top + window.pageYOffset,
-      left: rect.left + window.pageXOffset
-    };
-  },
+    offset(element) {
+        const rect = element.getBoundingClientRect();
+        return {
+            top: rect.top + window.scrollY,
+            left: rect.left + window.scrollX
+        };
+    }
+ position(element) {
+        if (!element) {
+    return { top: 0, left: 0 };
+}
 
-  position(element) {
-    return {
-      top: element.offsetTop,
-      left: element.offsetLeft
-    };
-  }
+var rect = element.getBoundingClientRect();
+var docEl = document.documentElement;
+var body = document.body;
+
+// Tính toán v? trí v?i s? c?ng thêm offset c?a trang
+return {
+    top: rect.top + window.scrollY - docEl.clientTop,
+    left: rect.left + window.scrollX - docEl.clientLeft
+};
+}
 
 };
 

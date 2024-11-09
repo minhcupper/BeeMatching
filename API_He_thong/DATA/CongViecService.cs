@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API_He_thong.DATA
 {
-    public class CongViecService
+    public class CongViecService :ICongViec
     {
         private readonly API_Context context;
 
@@ -32,15 +32,15 @@ namespace API_He_thong.DATA
             {
                 return dl;
             }
-            return null; // Or throw an exception, depending on your error handling preference
+            return dl; // Or throw an exception, depending on your error handling preference
         }
 
-        public async Task<List<CongViec>> GetJob()
+        public async Task<List<CongViec>> Getjob()
         {
             return await context.CongViec.ToListAsync();
         }
 
-        public async Task<bool> PostUser(CongViec user)
+        public async Task<bool> PostJob(CongViec user)
         {
             await context.CongViec.AddAsync(user);
             var result = await context.SaveChangesAsync();
