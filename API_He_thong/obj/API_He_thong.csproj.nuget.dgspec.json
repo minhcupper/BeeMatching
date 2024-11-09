@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {}
+    "E:\\sourceCode\\C#\\Doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {}
   },
   "projects": {
-    "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {
+    "E:\\sourceCode\\C#\\Doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
+        "projectUniqueName": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
         "projectName": "API_He_thong",
-        "projectPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
+        "projectPath": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
         "packagesPath": "C:\\Users\\bidep\\.nuget\\packages\\",
-        "outputPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\obj\\",
+        "outputPath": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\API_He_thong\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bidep\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "56raE9XuQVU=",
+  "dgSpecHash": "VRc6ZfTgKoE=",
   "success": true,
-  "projectFilePath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
+  "projectFilePath": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bidep\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bidep\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

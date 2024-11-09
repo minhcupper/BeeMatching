@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fWbd3wkhNy4=",
+  "dgSpecHash": "y+41+esEbpU=",
   "success": true,
-  "projectFilePath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
+  "projectFilePath": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bidep\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\bidep\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

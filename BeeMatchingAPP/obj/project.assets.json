@@ -10709,11 +10709,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\sourceCode\\C#\\duan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
+      "projectUniqueName": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
       "projectName": "BeeMatchingAPP",
-      "projectPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
+      "projectPath": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
       "packagesPath": "C:\\Users\\bidep\\.nuget\\packages\\",
-      "outputPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\BeeMatchingAPP\\obj\\",
+      "outputPath": "E:\\sourceCode\\C#\\Doan\\BeeMatching\\BeeMatchingAPP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bidep\\AppData\\Roaming\\NuGet\\NuGet.Config",
