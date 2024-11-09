@@ -10704,19 +10704,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
+    "C:\\Users\\bidep\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\doan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
+      "projectUniqueName": "E:\\sourceCode\\C#\\duan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
       "projectName": "BeeMatchingAPP",
-      "projectPath": "D:\\doan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\doan\\BeeMatching\\BeeMatchingAPP\\obj\\",
+      "projectPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\BeeMatchingAPP\\BeeMatchingAPP.csproj",
+      "packagesPath": "C:\\Users\\bidep\\.nuget\\packages\\",
+      "outputPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\BeeMatchingAPP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bidep\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10724,6 +10724,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10796,19 +10797,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
+            "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.31, 6.0.31]"
+            "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
+            "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
+            "version": "[6.0.33, 6.0.33]"
           }
         ],
         "frameworkReferences": {
@@ -10819,7 +10820,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

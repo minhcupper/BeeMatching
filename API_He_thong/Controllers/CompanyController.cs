@@ -10,7 +10,7 @@ namespace API_He_thong.Controllers
     public class CompanyController : ControllerBase
     {
 
-        // conecting
+        // conected
 
         private readonly ICompany uS;
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {}
+    "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {}
   },
   "projects": {
-    "D:\\doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {
+    "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
+        "projectUniqueName": "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
         "projectName": "API_He_thong",
-        "projectPath": "D:\\doan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\doan\\BeeMatching\\API_He_thong\\obj\\",
+        "projectPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\API_He_thong.csproj",
+        "packagesPath": "C:\\Users\\bidep\\.nuget\\packages\\",
+        "outputPath": "E:\\sourceCode\\C#\\duan\\BeeMatching\\API_He_thong\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bidep\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,19 +79,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.33, 6.0.33]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.33, 6.0.33]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.33, 6.0.33]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.33, 6.0.33]"
             }
           ],
           "frameworkReferences": {
@@ -101,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
