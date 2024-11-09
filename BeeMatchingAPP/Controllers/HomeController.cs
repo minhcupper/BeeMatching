@@ -20,6 +20,10 @@ namespace BeeMatchingAPP.Controllers
             _httpClient = httpClient;
         }
         //demo1
+        public IActionResult Login()
+        {
+            return View("Login");
+        }
       public async Task<ActionResult> Index()
         {
 
