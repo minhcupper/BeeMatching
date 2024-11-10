@@ -129,7 +129,7 @@ namespace API_He_thong.Migrations
 
                     b.HasKey("DanhMucKyNangId");
 
-                    b.ToTable("DanhMucKyNang");
+                    b.ToTable("danhMucKyNang");
                 });
 
             modelBuilder.Entity("API_He_thong.Models.districts", b =>
@@ -460,6 +460,36 @@ namespace API_He_thong.Migrations
 
                     b.ToTable("provinces");
                 });
+
+
+            modelBuilder.Entity("API_He_thong.Models.TaiKhoanNguoiDung", b =>
+                {
+                    b.Property<int>("tai_khoan_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("tai_khoan_id"), 1L, 1);
+
+                    b.Property<string>("Roles")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("mat_khau")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ten_dang_nhap")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("tai_khoan_id");
+
+                    b.ToTable("TaiKhoanNguoiDung");
+                });
+
 
             modelBuilder.Entity("API_He_thong.Models.ThongBao", b =>
                 {

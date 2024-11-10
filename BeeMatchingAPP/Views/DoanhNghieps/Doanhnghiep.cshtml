@@ -1,0 +1,116 @@
+﻿@model IEnumerable<BeeMatchingAPP.Models.DoanhNghiep>
+
+@{
+    ViewData["Title"] = "DoanhNghiep";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DoanhNghiepId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinhAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NguoiDungId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NguoiDung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenCongTy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CongViecs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DistrictId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WardId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProvinceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Districts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wards)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Provinces)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoanhNghiepId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HinhAnh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NguoiDungId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NguoiDung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenCongTy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CongViecs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistrictId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WardId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProvinceId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Districts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Provinces)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wards)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

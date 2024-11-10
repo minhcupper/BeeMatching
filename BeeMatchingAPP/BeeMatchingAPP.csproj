@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\CongViec\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 

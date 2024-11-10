@@ -20,6 +20,10 @@ namespace BeeMatchingAPP.Controllers
             _httpClient = httpClient;
         }
         //demo1
+        public IActionResult Login()
+        {
+            return View("Login");
+        }
       public async Task<ActionResult> Index()
         {
 
@@ -82,19 +86,6 @@ namespace BeeMatchingAPP.Controllers
             return View(user);
         }
 
-        public async Task<ActionResult> Company()
-        {
-
-            List<DoanhNghiep> users = new List<DoanhNghiep>();
-            var response = await _httpClient.GetAsync("https://localhost:7287/api/Company/GetAll");
-            if (response.IsSuccessStatusCode)
-            {
-                var apiResponse = await response.Content.ReadAsStringAsync();
-                users = JsonConvert.DeserializeObject<List<DoanhNghiep>>(apiResponse);
-            }
-
-            return View(users);
-        }
         public async Task<ActionResult> CongViec()
         {
 
@@ -108,6 +99,7 @@ namespace BeeMatchingAPP.Controllers
 
             return View(users);
         }
+
         public IActionResult Privacy()
         {
             return View();
