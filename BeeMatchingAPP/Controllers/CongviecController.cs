@@ -31,6 +31,18 @@ namespace BeeMatchingAPP.Controllers
 
             return View(users);
         }
+        public async Task<ActionResult> Details(int id)
+        {
+
+            CongViec reservation = new CongViec();
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var apiresponse = await response.Content.ReadAsStringAsync();
+                reservation = JsonConvert.DeserializeObject<CongViec>(apiresponse);
+            }
+            return View(reservation);
+        }
 
     }
 }
