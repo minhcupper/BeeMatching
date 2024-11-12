@@ -50,9 +50,12 @@ namespace BeeMatchingAPP.Models
 
         // Navigation properties cho các địa điểm
         // Navigation properties for address relationships
-        public string? DistrictId { get; set; } // Foreign key for districts
+         public string? DistrictId { get; set; } // Foreign key for districts
+        public string? DistrictName { get; set; }
         public string? WardId { get; set; } // Foreign key for wards
+        public string? WardName { get; set; }
         public string? ProvinceId { get; set; } // Foreign key for provinces
+        public string? ProvinceName { get; set; }
 
         // Navigation properties cho địa chỉ
         [ForeignKey("DistrictId")]
