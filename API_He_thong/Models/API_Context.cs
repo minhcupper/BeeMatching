@@ -66,6 +66,7 @@ namespace API_He_thong.Models
                     .HasForeignKey(kn => kn.DanhMucKyNangId)
                     .OnDelete(DeleteBehavior.NoAction);
             }
+
         private void ConfigureKyNangCongViec(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<KyNangCongViec>()

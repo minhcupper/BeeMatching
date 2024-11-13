@@ -5,19 +5,25 @@ using System.Diagnostics;
 using System.Net.Http;
 using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
 using System.Text;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.IO;
 namespace BeeMatchingAPP.Controllers
 {
     //tuan day
     //tuan cong
     public class HomeController : Controller
     {
+        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly ILogger<HomeController> _logger;
         HttpClient _httpClient;
-        public HomeController(ILogger<HomeController> logger, HttpClient httpClient)
+        public HomeController(ILogger<HomeController> logger, HttpClient httpClient , IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
             _httpClient = httpClient;
+            _hostingEnvironment = hostingEnvironment;   
         }
         //demo1
         public IActionResult Login()
@@ -55,37 +61,73 @@ namespace BeeMatchingAPP.Controllers
         {
             return View();
         }
-
-        // POST: MvcReservationcontroller/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(NguoiDung user)
+        public async Task<ActionResult> Create(NguoiDung user, IFormFile hinh_anh)
         {
-            if (!ModelState.IsValid)
+            // Kiểm tra nếu hinh_anh không phải null
+            if (hinh_anh == null || hinh_anh.Length == 0)
             {
-                // Ghi log các lỗi ModelState để gỡ lỗi
-                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    Debug.WriteLine(error.ErrorMessage);
-                }
-
+                ModelState.AddModelError("hinh_anh", "Vui lòng chọn hình ảnh.");
                 return View(user);
             }
+
+            // Kiểm tra phần mở rộng của tệp
+            string fileExtension = Path.GetExtension(hinh_anh.FileName).ToLower();
+            string[] allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+
+            if (!allowedExtensions.Contains(fileExtension))
+            {
+                ModelState.AddModelError(string.Empty, "Chỉ chấp nhận tệp hình ảnh (.jpg, .jpeg, .png, .gif).");
+                return View(user);
+            }
+
+            // Kiểm tra dung lượng tệp (giới hạn 5MB)
+            if (hinh_anh.Length > 5 * 1024 * 1024) // 5MB
+            {
+                ModelState.AddModelError(string.Empty, "Dung lượng tệp không được vượt quá 5MB.");
+                return View(user);
+            }
+
+            // Tạo tên tệp (ví dụ: nv123.jpg)
+            string fileName = "nv" + user.nguoi_dung_id.ToString() + fileExtension;
+
+            // Đường dẫn đến thư mục lưu tệp
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Upload", "images", fileName);
+
+            // Kiểm tra và tạo thư mục nếu chưa tồn tại
+            var directory = Path.GetDirectoryName(filePath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            // Lưu tệp vào thư mục
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await hinh_anh.CopyToAsync(stream);
+            }
+
+            // Cập nhật tên tệp vào trường hinh_anh trong model
+            user.hinh_anh = fileName;
+
+            // Tiến hành lưu dữ liệu vào cơ sở dữ liệu, hoặc thực hiện các bước tiếp theo
+            // Bạn có thể gọi API hoặc lưu thông tin vào cơ sở dữ liệu ở đây
+
+            // Example API Call (Có thể sửa theo nhu cầu của bạn)
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync($"https://localhost:7287/api/User/Create", content);
+            var response = await _httpClient.PostAsync("https://localhost:7287/api/User/Create", content);
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));  // Chuyển hướng khi thành công
             }
 
-            // Ghi log lỗi nếu gọi API thất bại
+            // Nếu có lỗi với API
             var responseContent = await response.Content.ReadAsStringAsync();
-            Debug.WriteLine($"Error occurred while creating combo: {responseContent}");
-            ModelState.AddModelError(string.Empty, $"Error occurred while creating combo: {responseContent}");
-            return View(user);
+            ModelState.AddModelError(string.Empty, $"Error occurred while creating user: {responseContent}");
+            return View(user);  // Trả về view với thông báo lỗi
         }
-
         public async Task<ActionResult> CongViec()
         {
 

@@ -10,6 +10,7 @@ namespace BeeMatchingAPP.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int KyNangId { get; set; }
         // Property to store the name of the skill
+        [Key]
         public int CongViecId { get; set; }
         [Required]
         [MaxLength(100)]
@@ -23,7 +24,8 @@ namespace BeeMatchingAPP.Models
         [ForeignKey("CongViecId")]
         public virtual CongViec CongViec { get; set; }
 
-
+        [Required] // Assuming each skill must belong to a skill category
+        public int DanhMucKyNangId { get; set; }
         // Navigation property for DanhMucKyNang
         [ForeignKey("DanhMucKyNangId")]
         public virtual DanhMucKyNang DanhMucKyNang { get; set; }

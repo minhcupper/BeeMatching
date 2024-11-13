@@ -78,8 +78,55 @@ namespace BeeMatchingAPP.Controllers
                 var apiresponse = await response.Content.ReadAsStringAsync();
                 reservation = JsonConvert.DeserializeObject<CongViec>(apiresponse);
             }
+            List<provinces> provinces = new List<provinces>();
+            var provinceResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAllprovinces");
+            if (provinceResponse.IsSuccessStatusCode)
+            {
+                var provinceApiResponse = await provinceResponse.Content.ReadAsStringAsync();
+                provinces = JsonConvert.DeserializeObject<List<provinces>>(provinceApiResponse);
+            }
 
-            return View(reservation);
+            List<districts> districts = new List<districts>();
+            var districtResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAlldictricts");
+            if (districtResponse.IsSuccessStatusCode)
+            {
+                var districtApiResponse = await districtResponse.Content.ReadAsStringAsync();
+                districts = JsonConvert.DeserializeObject<List<districts>>(districtApiResponse);
+            }
+
+            List<wards> wards = new List<wards>();
+            var wardResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAllwards");
+            if (wardResponse.IsSuccessStatusCode)
+            {
+                var wardApiResponse = await wardResponse.Content.ReadAsStringAsync();
+                wards = JsonConvert.DeserializeObject<List<wards>>(wardApiResponse);
+            }
+             // Map Province name based on ProvinceId
+                reservation.ProvinceName = provinces.FirstOrDefault(p => p.code == reservation.ProvinceId)?.full_name ?? "Unknown Province";
+
+                // Map District name based on DistrictId
+                reservation.DistrictName = districts.FirstOrDefault(d => d.code == reservation.DistrictId)?.name ?? "Unknown District";
+
+                // Map Ward name based on WardId
+                reservation.WardName = wards.FirstOrDefault(w => w.code == reservation.WardId)?.name ?? "Unknown Ward";
+
+            List<KyNangCongViec> kyNangCongViec = new List<KyNangCongViec>();
+            var kyNang = await _httpClient.GetAsync("https://localhost:7287/api/SkillCongviec/GetAll");
+            if (kyNang.IsSuccessStatusCode)
+            {
+                var kyNangCongViecrespon = await wardResponse.Content.ReadAsStringAsync();
+                kyNangCongViec = JsonConvert.DeserializeObject<List<KyNangCongViec>>(kyNangCongViecrespon);
+            }
+            // Map Province name based on 
+            reservation.MoTaKyNang = kyNangCongViec.FirstOrDefault(p => p.CongViecId == reservation.CongViecId)?.MoTa ?? "Unknown Province";
+
+            // Map District name based on 
+            reservation.TenKyNang = kyNangCongViec.FirstOrDefault(p => p.CongViecId == reservation.CongViecId)?.TenKyNang ?? "Unknown District";
+
+        
+
+            ViewData["reservation"] = reservation;
+            return View();
         }
 
     }

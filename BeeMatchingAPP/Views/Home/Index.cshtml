@@ -87,7 +87,8 @@
 
                                             </li>
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="job_listing.html">Find a Jobs </a></li>
+                                            <li> <a asp-action="Create">Back to List</a></li>
+                                            
                                             <li><a href="about.html">About</a></li>
                                             <li>
                                                 <a href="#">Page</a>
@@ -312,7 +313,7 @@
                             <div class="single-job-items mb-30">
                                 <div class="job-items">
                                     <div class="company-img">
-                                        <img style="width:200px;height:180px" src="~/Images/minh.jpg.png" alt="@item.ten_dang_nhap" class="img-fluid rounded-4" />
+                                        <img style="width:200px;height:180px" src="~/Upload/images/@item.hinh_anh" alt="@item.ten_dang_nhap" class="img-fluid rounded-4" />
                                     </div>
                                     <div class="job-tittle">
                                         <a asp-action="Details"><h4>@item.ten_dang_nhap</h4></a>
@@ -327,7 +328,7 @@
                                             <li>Phân quyền: @item.PhanQuyen</li>
                                             <li>Email: @item.email</li>
                                             <li>Ngày sinh: @item.ngay_sinh?.ToString("dd/MM/yyyy")</li>
-                                            <li>Ngày tạo tài khoản: @item.ngay_tao.ToString("dd/MM/yyyy")</li>
+                                            <li>Ngày tạo tài khoản: @item.ngay_tao</li>
                                         </ul>
                                     </div>
                                 </div>

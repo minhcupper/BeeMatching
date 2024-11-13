@@ -43,7 +43,7 @@ namespace BeeMatchingAPP.Models
         public DateTime NgayDang { get; set; } = DateTime.Now;
 
         // Hạn nộp hồ sơ
-        public DateTime? HanNopHoSo { get; set; }
+        public DateTime HanNopHoSo { get; set; }= DateTime.Now;
 
         // Navigation property cho các ứng tuyển
         public virtual ICollection<UngTuyen>? UngTuyens { get; set; } = new List<UngTuyen>();
@@ -68,9 +68,7 @@ namespace BeeMatchingAPP.Models
         public virtual provinces? Provinces { get; set; }
         // Collection for skills related to the job
         public virtual ICollection<KyNangCongViec>? KyNangCongViecs { get; set; } = new List<KyNangCongViec>();
-        public int? KyNangId { get; set; }
-        // Property to store the name of the skill
-      
+       
         [MaxLength(100)]
         public string? TenKyNang { get; set; }
 
