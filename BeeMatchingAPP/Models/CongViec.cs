@@ -68,5 +68,13 @@ namespace BeeMatchingAPP.Models
         public virtual provinces? Provinces { get; set; }
         // Collection for skills related to the job
         public virtual ICollection<KyNangCongViec>? KyNangCongViecs { get; set; } = new List<KyNangCongViec>();
+        public int? KyNangId { get; set; }
+        // Property to store the name of the skill
+      
+        [MaxLength(100)]
+        public string? TenKyNang { get; set; }
+
+        // Optional description of the skill
+        public string? MoTaKyNang { get; set; }
     }
 }

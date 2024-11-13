@@ -129,7 +129,7 @@ namespace API_He_thong.Migrations
 
                     b.HasKey("DanhMucKyNangId");
 
-                    b.ToTable("danhMucKyNang");
+                    b.ToTable("DanhMucKyNang");
                 });
 
             modelBuilder.Entity("API_He_thong.Models.districts", b =>
@@ -231,6 +231,8 @@ namespace API_He_thong.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KyNangId"), 1L, 1);
+
                     b.Property<int>("CongViecId")
                         .HasColumnType("int");
 
@@ -248,6 +250,8 @@ namespace API_He_thong.Migrations
                     b.HasKey("KyNangId");
 
                     b.HasIndex("CongViecId");
+
+                    b.HasIndex("DanhMucKyNangId");
 
                     b.ToTable("KyNangCongViec");
                 });
@@ -294,7 +298,7 @@ namespace API_He_thong.Migrations
                     b.Property<string>("DistrictId")
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("PhanQuyenId")
+                    b.Property<int?>("PhanQuyenId")
                         .HasColumnType("int");
 
                     b.Property<string>("ProvinceId")
@@ -460,36 +464,6 @@ namespace API_He_thong.Migrations
 
                     b.ToTable("provinces");
                 });
-
-
-            modelBuilder.Entity("API_He_thong.Models.TaiKhoanNguoiDung", b =>
-                {
-                    b.Property<int>("tai_khoan_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("tai_khoan_id"), 1L, 1);
-
-                    b.Property<string>("Roles")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("mat_khau")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("ten_dang_nhap")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("tai_khoan_id");
-
-                    b.ToTable("TaiKhoanNguoiDung");
-                });
-
 
             modelBuilder.Entity("API_He_thong.Models.ThongBao", b =>
                 {
@@ -688,7 +662,7 @@ namespace API_He_thong.Migrations
 
                     b.HasOne("API_He_thong.Models.DanhMucKyNang", "DanhMucKyNang")
                         .WithMany("KyNangCongViecs")
-                        .HasForeignKey("KyNangId")
+                        .HasForeignKey("DanhMucKyNangId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -724,9 +698,7 @@ namespace API_He_thong.Migrations
 
                     b.HasOne("API_He_thong.Models.PhanQuyen", "PhanQuyen")
                         .WithMany("NguoiDungs")
-                        .HasForeignKey("PhanQuyenId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PhanQuyenId");
 
                     b.HasOne("API_He_thong.Models.provinces", "Provinces")
                         .WithMany("NguoiDungs")
@@ -816,11 +788,9 @@ namespace API_He_thong.Migrations
 
             modelBuilder.Entity("API_He_thong.Models.NguoiDung", b =>
                 {
-                    b.Navigation("DoanhNghiep")
-                        .IsRequired();
+                    b.Navigation("DoanhNghiep");
 
-                    b.Navigation("NguoiTimViec")
-                        .IsRequired();
+                    b.Navigation("NguoiTimViec");
 
                     b.Navigation("ThongBaos");
                 });

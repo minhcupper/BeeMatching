@@ -22,6 +22,8 @@ namespace API_He_thong.Models
         // Navigation property for CongViec
         [ForeignKey("CongViecId")]
         public virtual CongViec CongViec { get; set; }
+        [Required] // Assuming each skill must belong to a skill category
+        public int DanhMucKyNangId { get; set; }
 
 
         // Navigation property for DanhMucKyNang

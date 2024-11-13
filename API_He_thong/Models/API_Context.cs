@@ -66,8 +66,21 @@ namespace API_He_thong.Models
                     .HasForeignKey(kn => kn.DanhMucKyNangId)
                     .OnDelete(DeleteBehavior.NoAction);
             }
+        private void ConfigureKyNangCongViec(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<KyNangCongViec>()
+                .HasOne(ckv => ckv.CongViec)
+                .WithMany(cv => cv.KyNangCongViecs)
+                .HasForeignKey(ckv => ckv.CongViecId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            private void ConfigureCongViec(ModelBuilder modelBuilder)
+            modelBuilder.Entity<KyNangCongViec>()
+                .HasOne(ckv => ckv.DanhMucKyNang)
+                .WithMany(dmkn => dmkn.KyNangCongViecs)
+                .HasForeignKey(ckv => ckv.DanhMucKyNangId)
+                .OnDelete(DeleteBehavior.NoAction);
+        }
+        private void ConfigureCongViec(ModelBuilder modelBuilder)
             {
                 modelBuilder.Entity<CongViec>()
                     .HasOne(cv => cv.DoanhNghiep)
@@ -109,19 +122,6 @@ namespace API_He_thong.Models
                     .OnDelete(DeleteBehavior.Cascade);
             }
 
-            private void ConfigureKyNangCongViec(ModelBuilder modelBuilder)
-            {
-                modelBuilder.Entity<KyNangCongViec>()
-                    .HasOne(ckv => ckv.CongViec)
-                    .WithMany(cv => cv.KyNangCongViecs)
-                    .HasForeignKey(ckv => ckv.CongViecId)
-                    .OnDelete(DeleteBehavior.Cascade);
-
-                modelBuilder.Entity<KyNangCongViec>()
-                    .HasOne(ckv => ckv.DanhMucKyNang)
-                    .WithMany(dmkn => dmkn.KyNangCongViecs)
-                    .HasForeignKey(ckv => ckv.KyNangId)
-                    .OnDelete(DeleteBehavior.NoAction);
-            }
+           
         }
     }
