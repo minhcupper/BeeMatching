@@ -65,8 +65,8 @@ namespace BeeMatchingAPP.Controllers
                 // Map Ward name based on WardId
                 j.WardName = wards.FirstOrDefault(w => w.code == j.WardId)?.name ?? "Unknown Ward";
             }
-
-            return View(job); // Pass jobs with province, district, and ward names to the view
+            ViewData["job"] = job;
+            return View(); // Pass jobs with province, district, and ward names to the view
         }
         public async Task<ActionResult> Details(int id)
         {
@@ -86,47 +86,47 @@ namespace BeeMatchingAPP.Controllers
                 provinces = JsonConvert.DeserializeObject<List<provinces>>(provinceApiResponse);
             }
 
-            List<districts> districts = new List<districts>();
-            var districtResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAlldictricts");
-            if (districtResponse.IsSuccessStatusCode)
-            {
-                var districtApiResponse = await districtResponse.Content.ReadAsStringAsync();
-                districts = JsonConvert.DeserializeObject<List<districts>>(districtApiResponse);
-            }
+            DoanhNghiep doanhnghiep = new DoanhNghiep();
+            doanhnghiep = await CallDoanhNghiep(reservation.DoanhNghiepId);
 
-            List<wards> wards = new List<wards>();
-            var wardResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAllwards");
-            if (wardResponse.IsSuccessStatusCode)
-            {
-                var wardApiResponse = await wardResponse.Content.ReadAsStringAsync();
-                wards = JsonConvert.DeserializeObject<List<wards>>(wardApiResponse);
-            }
-             // Map Province name based on ProvinceId
-                reservation.ProvinceName = provinces.FirstOrDefault(p => p.code == reservation.ProvinceId)?.full_name ?? "Unknown Province";
-
-                // Map District name based on DistrictId
-                reservation.DistrictName = districts.FirstOrDefault(d => d.code == reservation.DistrictId)?.name ?? "Unknown District";
-
-                // Map Ward name based on WardId
-                reservation.WardName = wards.FirstOrDefault(w => w.code == reservation.WardId)?.name ?? "Unknown Ward";
-
-            List<KyNangCongViec> kyNangCongViec = new List<KyNangCongViec>();
-            var kyNang = await _httpClient.GetAsync("https://localhost:7287/api/SkillCongviec/GetAll");
-            if (kyNang.IsSuccessStatusCode)
-            {
-                var kyNangCongViecrespon = await wardResponse.Content.ReadAsStringAsync();
-                kyNangCongViec = JsonConvert.DeserializeObject<List<KyNangCongViec>>(kyNangCongViecrespon);
-            }
-            // Map Province name based on 
-            reservation.MoTaKyNang = kyNangCongViec.FirstOrDefault(p => p.CongViecId == reservation.CongViecId)?.MoTa ?? "Unknown Province";
-
-            // Map District name based on 
-            reservation.TenKyNang = kyNangCongViec.FirstOrDefault(p => p.CongViecId == reservation.CongViecId)?.TenKyNang ?? "Unknown District";
-
-        
-
+            ViewData["doanhnghiep"] = doanhnghiep;
             ViewData["reservation"] = reservation;
             return View();
+        }
+
+        public async Task<DoanhNghiep> CallDoanhNghiep(int id)
+        {
+            DoanhNghiep doanhnghiep = new DoanhNghiep();
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/Company/GetById/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var apiresponse = await response.Content.ReadAsStringAsync();
+                doanhnghiep = JsonConvert.DeserializeObject<DoanhNghiep>(apiresponse);
+            }
+            return doanhnghiep;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> TimKiemTheoTen(string search)
+        {
+            List<CongViec> job = new List<CongViec>();
+            List<CongViec> hassearch = new List<CongViec>();
+            var response = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
+            if (response.IsSuccessStatusCode)
+            {
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                job = JsonConvert.DeserializeObject<List<CongViec>>(apiResponse);
+            }
+            foreach (CongViec congviec in job)
+            {
+                if (congviec.TieuDe.ToLower().Contains(search.ToLower()))
+                {
+                    hassearch.Add(congviec);
+                }
+            }
+            ViewData["job"] = hassearch;
+            return View("CongViec");
+
         }
 
     }
