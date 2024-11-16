@@ -53,14 +53,11 @@ namespace API_He_thong.DATA
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.email = user.email;
+               
                 existingUser.ten_dang_nhap = user.ten_dang_nhap;
                 existingUser.mat_khau = user.mat_khau;
-                existingUser.ho_ten = user.ho_ten;
-                existingUser.dia_chi_nha = user.dia_chi_nha;
-                existingUser.gioi_tinh = user.gioi_tinh;
-                existingUser.hinh_anh = user.hinh_anh;
-                existingUser.trang_thai = user.trang_thai;
+                existingUser.Roles = user.Roles;
+                existingUser.TrangThai = user.TrangThai;
 
                 await context.SaveChangesAsync();
                 return true;

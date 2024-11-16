@@ -38,6 +38,9 @@ namespace BeeMatchingAPP.Models
         [MaxLength(50)]
         [DefaultValue("Đang tuyển dụng")]
         public string TrangThai { get; set; } = "Đang tuyển dụng";
+       
+        [Required(ErrorMessage = "số lượng không được để trống.")]
+        public int SoLuong { get; set; }
 
         // Ngày đăng tin
         public DateTime NgayDang { get; set; } = DateTime.Now;
@@ -74,5 +77,6 @@ namespace BeeMatchingAPP.Models
 
         // Optional description of the skill
         public string? MoTaKyNang { get; set; }
+        public virtual ICollection<KinhNghiemCongViec>? KinhNghiemCongViecs { get; set; } = new List<KinhNghiemCongViec>();
     }
 }

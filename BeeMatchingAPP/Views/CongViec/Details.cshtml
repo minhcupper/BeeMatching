@@ -2,8 +2,10 @@
 
 @{
     CongViec congViec = ViewData["reservation"] as CongViec;
-}
-
+    List<KyNangCongViec> kyNang = ViewData["kynang"] as List<KyNangCongViec>;
+    DoanhNghiep doanhNghiep = ViewData["doanhnghiep"] as DoanhNghiep;
+    List<KinhNghiemCongViec> kinhNghiem = ViewData["kinhnghiem"] as List<KinhNghiemCongViec>;
+    }
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -130,9 +132,8 @@
                                         <h4>@congViec.TieuDe</h4>
                                     </a>
                                     <ul>
-                                        <li>Creative Agency</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                        <li>$3500 - $4000</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>@congViec.DistrictName, @congViec.WardName, @congViec.ProvinceName</li>
+                                        <li>@congViec.LuongHangThang.ToString("C0") </li>
                                     </ul>
                                 </div>
                             </div>
@@ -143,9 +144,15 @@
                             <div class="post-details1 mb-50">
                                 <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
-                                    <h4>@congViec.TenKyNang</h4>
+                                    @foreach (var item in kyNang)
+                                    {
+                                    <h4>@item.TenKyNang</h4>
+                                    }
                                 </div>
-                                <p>@congViec.MoTaKyNang</p>
+                                 @foreach (var item in kyNang)
+                                    {
+                                <p>@item.MoTa</p>
+                                    }
                             </div>
                             <div class="post-details2  mb-50">
                                 <!-- Small Section Tittle -->
@@ -166,8 +173,14 @@
                                     <h4>Education + Experience</h4>
                                 </div>
                                 <ul>
-                                    <li>3 or more years of professional design experience</li>
-                                    <li>Direct response email experience</li>
+                                    @foreach (var item in kinhNghiem)
+                                    {
+                                    <li>@item.TenKinhNghiem</li>
+                                    }
+                                    @foreach (var item in kinhNghiem)
+                                    {
+                                        <li>@item.MoTa</li>
+                                    }
                                     <li>Ecommerce website design experience</li>
                                     <li>Familiarity with mobile and web apps preferred</li>
                                     <li>Experience using Invision a plus</li>
@@ -184,28 +197,33 @@
                                 <h4>Job Overview</h4>
                             </div>
                             <ul>
-                                <li>Posted date : <span>12 Aug 2019</span></li>
-                                <li>Location : <span>New York</span></li>
+                                <li>Posted date : <span>@congViec.NgayDang.ToString("dd/MM/yyyy")</span></li>
+                                <li>Location : <span>@congViec.ProvinceName</span></li>
                                 <li>Vacancy : <span>02</span></li>
                                 <li>Job nature : <span>Full time</span></li>
-                                <li>Salary :  <span>$7,800 yearly</span></li>
-                                <li>Application date : <span>12 Sep 2020</span></li>
+                                <li>Salary :  <span> @congViec.LuongHangThang.ToString("C0") </span></li>
+                                <li>Application date : <span>@congViec.HanNopHoSo.ToString("dd/MM/yyyy")</span></li>
                             </ul>
                             <div class="apply-btn2">
-                                <a href="#" class="btn">Apply Now</a>
+                                <button type="submit" name="submid" asp-action="" >
+                                    <a href="#" class="btn">Apply Now</a>
+                                </button>
+                               
                             </div>
                         </div>
                         <div class="post-details4  mb-50">
                             <!-- Small Section Tittle -->
                             <div class="small-section-tittle">
-                                <h4>Company Information</h4>
+                                <h4>@doanhNghiep.TenCongTy</h4>
                             </div>
+                            <img style="width:200px;height:180px" src="~/Images/minh.jpg.png" alt="@doanhNghiep.DoanhNghiepId" class="img-fluid rounded-4" />
                             <span>Colorlib</span>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <p>@doanhNghiep.MoTa</p>
                             <ul>
-                                <li>Name: <span>Colorlib </span></li>
+                                <li>Name: <span>@doanhNghiep.TenCongTy </span></li>
+                                <li>Location: <span>@doanhNghiep.DiaChi </span></li>
                                 <li>Web : <span> colorlib.com</span></li>
-                                <li>Email: <span>carrier.colorlib@gmail.com</span></li>
+                                <li>Email: <span>@doanhNghiep.HinhAnh</span></li>
                             </ul>
                         </div>
                     </div>

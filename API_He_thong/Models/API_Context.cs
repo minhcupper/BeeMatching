@@ -12,6 +12,8 @@ namespace API_He_thong.Models
             public DbSet<DoanhNghiep> DoanhNghiep { get; set; }
             public DbSet<KyNangNguoiXinViec> KyNangNguoiXinViec { get; set; }
             public DbSet<KyNangCongViec> KyNangCongViec { get; set; }
+           public DbSet<KinhNghiemCongViec> KinhNghiemCongViec { get; set; }
+           public DbSet<KinhnghiemNguoiTimViec> KinhnghiemNguoiTimViec { get; set; }
             public DbSet<DanhMucKyNang> DanhMucKyNang { get; set; }
             public DbSet<CongViec> CongViec { get; set; }
             public DbSet<UngTuyen> UngTuyen { get; set; }
@@ -66,7 +68,22 @@ namespace API_He_thong.Models
                     .HasForeignKey(kn => kn.DanhMucKyNangId)
                     .OnDelete(DeleteBehavior.NoAction);
             }
-
+        private void ConfigureKinhnghiemNguoiXinViec(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<KinhnghiemNguoiTimViec>()
+                .HasOne(kn => kn.NguoiTimViec)
+                .WithMany(ntv => ntv.KinhnghiemNguoiTimViecs)
+                .HasForeignKey(kn => kn.NguoiTimViecId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
+        private void ConfigureKinhnghiemcongviec(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<KinhNghiemCongViec>()
+                .HasOne(kn => kn.CongViec)
+                .WithMany(ntv => ntv.KinhNghiemCongViecs)
+                .HasForeignKey(kn => kn.CongViecId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
         private void ConfigureKyNangCongViec(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<KyNangCongViec>()

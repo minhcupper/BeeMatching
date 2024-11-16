@@ -29,6 +29,10 @@ namespace API_He_thong.Models
 
         // Mô tả công ty (có thể nullable)
         public string? MoTa { get; set; }
+        // Email, bắt buộc, tối đa 100 ký tự, không được trống
+        [MaxLength(100)]
+        [Required(ErrorMessage = "Email không được để trống.")]
+        public string email { get; set; }
 
         // Địa chỉ công ty (có thể nullable)
         [MaxLength(200)]
@@ -51,5 +55,6 @@ namespace API_He_thong.Models
 
         [ForeignKey("ProvinceId")]
         public virtual provinces Provinces { get; set; }
+       
     }
 }

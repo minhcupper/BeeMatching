@@ -65,5 +65,6 @@ namespace API_He_thong.Models
         public virtual provinces Provinces { get; set; }
         // Collection for skills related to the job
         public virtual ICollection<KyNangCongViec> KyNangCongViecs { get; set; } = new List<KyNangCongViec>();
+        public virtual ICollection<KinhNghiemCongViec> KinhNghiemCongViecs { get; set; } = new List<KinhNghiemCongViec>();
     }
 }
