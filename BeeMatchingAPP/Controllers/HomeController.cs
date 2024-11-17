@@ -61,6 +61,8 @@ namespace BeeMatchingAPP.Controllers
         {
             return View();
         }
+        //post to create
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(NguoiDung user, IFormFile hinh_anh)
