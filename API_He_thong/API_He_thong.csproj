@@ -24,10 +24,4 @@
     <None Include="D:\học tập\DATN\API_He_thong\API_He_thong\DATA\.editorconfig" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Models\KinhNghiemCongViec.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-
 </Project>
