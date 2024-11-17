@@ -65,7 +65,7 @@ namespace BeeMatchingAPP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(NguoiDung user, IFormFile hinh_anh)
         {
-            // Kiểm tra nếu hinh_anh không phải null
+           /* // Kiểm tra nếu hinh_anh không phải null
             if (hinh_anh == null || hinh_anh.Length == 0)
             {
                 ModelState.AddModelError("hinh_anh", "Vui lòng chọn hình ảnh.");
@@ -109,7 +109,7 @@ namespace BeeMatchingAPP.Controllers
             }
 
             // Cập nhật tên tệp vào trường hinh_anh trong model
-            user.hinh_anh = fileName;
+            user.hinh_anh = fileName;*/
 
             // Tiến hành lưu dữ liệu vào cơ sở dữ liệu, hoặc thực hiện các bước tiếp theo
             // Bạn có thể gọi API hoặc lưu thông tin vào cơ sở dữ liệu ở đây

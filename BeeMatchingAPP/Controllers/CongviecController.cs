@@ -154,7 +154,7 @@ namespace BeeMatchingAPP.Controllers
                 kinhnghiem = await CallkinhnghiemCongViec(matchingKinhNghiem.KinhNghiemId);
             }
             // Nếu tìm thấy kỹ năng phù hợp, gọi CallkynangCongViec với id của kỹ năng đó
-            ViewData["kinhnghiem"] = kinhNghiemCongViec;
+            ViewData["kinhnghiem"] = kinhnghiem;
             ViewData["kynang"] = kynang;
             ViewData["doanhnghiep"] = doanhnghiep;
             ViewData["reservation"] = reservation;
