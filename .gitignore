@@ -1,0 +1,10 @@
+
+/.vs
+
+/API_He_thong/bin/Debug
+/BeeMatchingAPP/bin/Debug
+/API_He_thong/obj/Debug/net6.0
+/BeeMatchingAPP/obj/Debug
+
+/API_He_thong/obj
+/API_He_thong
