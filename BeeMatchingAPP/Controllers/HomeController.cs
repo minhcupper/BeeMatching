@@ -65,7 +65,7 @@ namespace BeeMatchingAPP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(NguoiDung user, IFormFile hinh_anh)
         {
-            // Kiểm tra nếu hinh_anh không phải null
+          /*  // Kiểm tra nếu hinh_anh không phải null
             if (hinh_anh == null || hinh_anh.Length == 0)
             {
                 ModelState.AddModelError("hinh_anh", "Vui lòng chọn hình ảnh.");
@@ -114,7 +114,7 @@ namespace BeeMatchingAPP.Controllers
             // Tiến hành lưu dữ liệu vào cơ sở dữ liệu, hoặc thực hiện các bước tiếp theo
             // Bạn có thể gọi API hoặc lưu thông tin vào cơ sở dữ liệu ở đây
 
-            // Example API Call (Có thể sửa theo nhu cầu của bạn)
+            // Example API Call (Có thể sửa theo nhu cầu của bạn)*/
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("https://localhost:7287/api/User/Create", content);
 
@@ -128,19 +128,7 @@ namespace BeeMatchingAPP.Controllers
             ModelState.AddModelError(string.Empty, $"Error occurred while creating user: {responseContent}");
             return View(user);  // Trả về view với thông báo lỗi
         }
-        public async Task<ActionResult> CongViec()
-        {
-
-            List<CongViec> users = new List<CongViec>();
-            var response = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
-            if (response.IsSuccessStatusCode)
-            {
-                var apiResponse = await response.Content.ReadAsStringAsync();
-                users = JsonConvert.DeserializeObject<List<CongViec>>(apiResponse);
-            }
-
-            return View(users);
-        }
+     
 
         public IActionResult Privacy()
         {
