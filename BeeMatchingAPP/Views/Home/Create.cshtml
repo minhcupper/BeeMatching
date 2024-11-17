@@ -16,82 +16,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="hinh_anh" class="control-label"></label>
-                <!-- Xóa name="uploadanh" để tránh xung đột -->
-                <input type="file" id="uploadanh" asp-for="hinh_anh" accept=".jpg,.jpeg,.png,.gif" class="form-control" />
-                <span asp-validation-for="hinh_anh" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
                 <label asp-for="ten_dang_nhap" class="control-label"></label>
                 <input asp-for="ten_dang_nhap" class="form-control" />
                 <span asp-validation-for="ten_dang_nhap" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
+          
             <div class="form-group">
                 <label asp-for="mat_khau" class="control-label"></label>
                 <input asp-for="mat_khau" class="form-control" />
                 <span asp-validation-for="mat_khau" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ho_ten" class="control-label"></label>
-                <input asp-for="ho_ten" class="form-control" />
-                <span asp-validation-for="ho_ten" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ngay_sinh" class="control-label"></label>
-                <input asp-for="ngay_sinh" class="form-control" />
-                <span asp-validation-for="ngay_sinh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="gioi_tinh" class="control-label"></label>
-                <input asp-for="gioi_tinh" class="form-control" />
-                <span asp-validation-for="gioi_tinh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="so_dien_thoai" class="control-label"></label>
-                <input asp-for="so_dien_thoai" class="form-control" />
-                <span asp-validation-for="so_dien_thoai" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="dia_chi_nha" class="control-label"></label>
-                <input asp-for="dia_chi_nha" class="form-control" />
-                <span asp-validation-for="dia_chi_nha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DistrictId" class="control-label"></label>
-                <input asp-for="DistrictId" class="form-control" />
-                <span asp-validation-for="DistrictId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WardId" class="control-label"></label>
-                <input asp-for="WardId" class="form-control" />
-                <span asp-validation-for="WardId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProvinceId" class="control-label"></label>
-                <input asp-for="ProvinceId" class="form-control" />
-                <span asp-validation-for="ProvinceId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="trang_thai" class="control-label"></label>
-                <input asp-for="trang_thai" class="form-control" />
-                <span asp-validation-for="trang_thai" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ngay_tao" class="control-label"></label>
-                <input asp-for="ngay_tao" class="form-control" />
-                <span asp-validation-for="ngay_tao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhanQuyenId" class="control-label"></label>
-                <input asp-for="PhanQuyenId" class="form-control" />
-                <span asp-validation-for="PhanQuyenId" class="text-danger"></span>
-            </div>
+            
 
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
