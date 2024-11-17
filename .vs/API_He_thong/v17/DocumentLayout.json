@@ -1,6 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\",
+<<<<<<< HEAD
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\beematchingapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,6 +28,9 @@
       "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\congviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "Documents": [],
+>>>>>>> master
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,6 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -63,6 +68,11 @@
               "EditorCaption": ""
             },
             {
+=======
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+>>>>>>> master
               "$type": "Bookmark",
               "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
             },
@@ -89,6 +99,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+<<<<<<< HEAD
             },
             {
               "$type": "Bookmark",
@@ -142,6 +153,8 @@
               "ViewState": "AgIAAAQAAAAAAAAAAAAxwBwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T16:51:03.647Z"
+=======
+>>>>>>> master
             }
           ]
         }

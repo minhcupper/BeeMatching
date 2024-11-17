@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,6 +22,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\congviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\congviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\controllers\\kinhnghiemcongvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\controllers\\kinhnghiemcongvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> master
     }
   ],
   "DocumentGroupContainers": [
@@ -30,6 +35,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 9,
           "Children": [
             {
@@ -46,6 +52,11 @@
               "IsPinned": true
             },
             {
+=======
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+>>>>>>> master
               "$type": "Bookmark",
               "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
             },
@@ -74,6 +85,7 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+<<<<<<< HEAD
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
@@ -125,6 +137,19 @@
               "ViewState": "AgIAAAQAAAAAAAAAAAAxwBwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T16:51:03.647Z"
+=======
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "KinhNghiemCongViecController.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\KinhNghiemCongViecController.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Controllers\\KinhNghiemCongViecController.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\KinhNghiemCongViecController.cs",
+              "RelativeToolTip": "API_He_thong\\Controllers\\KinhNghiemCongViecController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:07:54.078Z",
+              "EditorCaption": ""
+>>>>>>> master
             }
           ]
         }
