@@ -48,13 +48,13 @@ namespace API_He_thong.Models
 
         // Navigation properties cho địa chỉ
         [ForeignKey("DistrictId")]
-        public virtual districts Districts { get; set; }
+        public virtual districts? Districts { get; set; }
 
         [ForeignKey("WardId")]
-        public virtual wards Wards { get; set; }
+        public virtual wards? Wards { get; set; }
 
         [ForeignKey("ProvinceId")]
-        public virtual provinces Provinces { get; set; }
+        public virtual provinces? Provinces { get; set; }
        
     }
 }

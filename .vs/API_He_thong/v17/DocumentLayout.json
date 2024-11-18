@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Migrations\\20241118092139_BeeMatching.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:API_He_thong\\Migrations\\20241118092139_BeeMatching.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\beematchingapp\\models\\nguoitimviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|solutionrelative:beematchingapp\\models\\nguoitimviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\beematchingapp\\models\\kinhnghiemnguoitimviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|solutionrelative:beematchingapp\\models\\kinhnghiemnguoitimviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\kinhnghiemnguoitimviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\kinhnghiemnguoitimviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\beematchingapp\\models\\kinhnghiemcongviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|solutionrelative:beematchingapp\\models\\kinhnghiemcongviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\kinhnghiemcongviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\kinhnghiemcongviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\doanhnghiep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\doanhnghiep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,8 +42,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NguoiTimViec.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\NguoiTimViec.cs",
+              "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\NguoiTimViec.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\NguoiTimViec.cs",
+              "RelativeToolTip": "BeeMatchingAPP\\Models\\NguoiTimViec.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAiwD0AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:08:28.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KinhNghiemNguoiTimViec.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\KinhNghiemNguoiTimViec.cs",
+              "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\KinhNghiemNguoiTimViec.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\KinhNghiemNguoiTimViec.cs",
+              "RelativeToolTip": "BeeMatchingAPP\\Models\\KinhNghiemNguoiTimViec.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA1wBgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:08:09.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KinhNghiemCongViec.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\KinhNghiemCongViec.cs",
+              "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\KinhNghiemCongViec.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\KinhNghiemCongViec.cs",
+              "RelativeToolTip": "BeeMatchingAPP\\Models\\KinhNghiemCongViec.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:07:49.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "KinhNghiemCongViec.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\KinhNghiemCongViec.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Models\\KinhNghiemCongViec.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\KinhNghiemCongViec.cs",
+              "RelativeToolTip": "API_He_thong\\Models\\KinhNghiemCongViec.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T14:46:00.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KinhnghiemNguoiTimViec.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\KinhnghiemNguoiTimViec.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Models\\KinhnghiemNguoiTimViec.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\KinhnghiemNguoiTimViec.cs",
+              "RelativeToolTip": "API_He_thong\\Models\\KinhnghiemNguoiTimViec.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwCYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T14:41:38.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DoanhNghiep.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\DoanhNghiep.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Models\\DoanhNghiep.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\DoanhNghiep.cs",
+              "RelativeToolTip": "API_He_thong\\Models\\DoanhNghiep.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwDoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T14:16:02.005Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
@@ -58,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "NguoiDung.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\NguoiDung.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Models\\NguoiDung.cs",
@@ -71,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "NguoiTimViec.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\NguoiTimViec.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Models\\NguoiTimViec.cs",
@@ -79,31 +177,7 @@
               "RelativeToolTip": "API_He_thong\\Models\\NguoiTimViec.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAA1wEgAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T08:29:40.413Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 193,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20241118092139_BeeMatching.cs",
-              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Migrations\\20241118092139_BeeMatching.cs",
-              "RelativeDocumentMoniker": "API_He_thong\\Migrations\\20241118092139_BeeMatching.cs",
-              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Migrations\\20241118092139_BeeMatching.cs",
-              "RelativeToolTip": "API_He_thong\\Migrations\\20241118092139_BeeMatching.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T09:21:39.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T08:29:40.413Z"
             }
           ]
         }

@@ -240,8 +240,11 @@ namespace API_He_thong.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("MoTa")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("SoNamKinhNghiem")
+                        .HasColumnType("int");
 
                     b.Property<string>("TenKinhNghiem")
                         .IsRequired()
@@ -263,8 +266,18 @@ namespace API_He_thong.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KinhNghiemId"), 1L, 1);
 
+                    b.Property<string>("CongTy")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
                     b.Property<string>("MoTa")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("NgayBatDau")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("NgayKetThuc")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("NguoiTimViecId")
                         .HasColumnType("int");

@@ -23,7 +23,7 @@ namespace BeeMatchingAPP.Models
 
         // Navigation property linking to KyNangNguoiXinViec
         public virtual ICollection<KyNangNguoiXinViec> KyNangNguoiXinViecs { get; set; } = new List<KyNangNguoiXinViec>();
-        public virtual ICollection<KinhNghiemNguoiTimViec> KinhnghiemNguoiTimViecs { get; set; } = new List<KinhNghiemNguoiTimViec>();
+        public virtual ICollection<KinhnghiemNguoiTimViec> KinhnghiemNguoiTimViecs { get; set; } = new List<KinhnghiemNguoiTimViec>();
         // Job seeker description
         [Required(ErrorMessage = "Mô tả không được để trống.")]
         [MaxLength(500, ErrorMessage = "Mô tả không được vượt quá 500 ký tự.")]

@@ -9,7 +9,7 @@ namespace API_He_thong.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
+          /*  migrationBuilder.CreateTable(
                 name: "DanhMucKyNang",
                 columns: table => new
                 {
@@ -21,8 +21,8 @@ namespace API_He_thong.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DanhMucKyNang", x => x.DanhMucKyNangId);
-                });
-
+                });*/
+/*
             migrationBuilder.CreateTable(
                 name: "districts",
                 columns: table => new
@@ -40,8 +40,8 @@ namespace API_He_thong.Migrations
                 {
                     table.PrimaryKey("PK_districts", x => x.code);
                 });
-
-            migrationBuilder.CreateTable(
+*/
+          /*  migrationBuilder.CreateTable(
                 name: "NguoiDung",
                 columns: table => new
                 {
@@ -251,7 +251,7 @@ namespace API_He_thong.Migrations
                         principalTable: "wards",
                         principalColumn: "code");
                 });
-
+*/
             migrationBuilder.CreateTable(
                 name: "KinhnghiemNguoiTimViec",
                 columns: table => new
@@ -260,7 +260,10 @@ namespace API_He_thong.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NguoiTimViecId = table.Column<int>(type: "int", nullable: false),
                     TenKinhNghiem = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NgayBatDau = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    NgayKetThuc = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CongTy = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -272,7 +275,7 @@ namespace API_He_thong.Migrations
                         principalColumn: "NguoiTimViecId",
                         onDelete: ReferentialAction.Cascade);
                 });
-
+/*
             migrationBuilder.CreateTable(
                 name: "KyNangNguoiXinViec",
                 columns: table => new
@@ -299,7 +302,7 @@ namespace API_He_thong.Migrations
                         principalColumn: "NguoiTimViecId",
                         onDelete: ReferentialAction.Restrict);
                 });
-
+*/
             migrationBuilder.CreateTable(
                 name: "KinhNghiemCongViec",
                 columns: table => new
@@ -308,7 +311,8 @@ namespace API_He_thong.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CongViecId = table.Column<int>(type: "int", nullable: false),
                     TenKinhNghiem = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    MoTa = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    SoNamKinhNghiem = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -320,7 +324,7 @@ namespace API_He_thong.Migrations
                         principalColumn: "CongViecId",
                         onDelete: ReferentialAction.Cascade);
                 });
-
+/*
             migrationBuilder.CreateTable(
                 name: "KyNangCongViec",
                 columns: table => new
@@ -398,8 +402,8 @@ namespace API_He_thong.Migrations
                         principalColumn: "UngTuyenId",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
+*/
+        /*    migrationBuilder.CreateIndex(
                 name: "IX_CongViec_DistrictId",
                 table: "CongViec",
                 column: "DistrictId");
@@ -509,7 +513,7 @@ namespace API_He_thong.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_UngTuyen_NguoiTimViecId",
                 table: "UngTuyen",
-                column: "NguoiTimViecId");
+                column: "NguoiTimViecId");*/
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
