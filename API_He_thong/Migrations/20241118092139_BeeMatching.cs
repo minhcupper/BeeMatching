@@ -23,7 +23,7 @@ namespace API_He_thong.Migrations
                     table.PrimaryKey("PK_DanhMucKyNang", x => x.DanhMucKyNangId);
                 });
 
-            /*migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "districts",
                 columns: table => new
                 {
@@ -39,7 +39,7 @@ namespace API_He_thong.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_districts", x => x.code);
-                });*/
+                });
 
             migrationBuilder.CreateTable(
                 name: "NguoiDung",
@@ -48,15 +48,15 @@ namespace API_He_thong.Migrations
                     nguoi_dung_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ten_dang_nhap = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    mat_khau = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Roles = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                    mat_khau = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Roles = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NguoiDung", x => x.nguoi_dung_id);
                 });
-/*
+
             migrationBuilder.CreateTable(
                 name: "provinces",
                 columns: table => new
@@ -91,7 +91,7 @@ namespace API_He_thong.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_wards", x => x.code);
-                });*/
+                });
 
             migrationBuilder.CreateTable(
                 name: "ThongBao",

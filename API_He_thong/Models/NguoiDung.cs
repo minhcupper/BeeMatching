@@ -29,7 +29,7 @@ namespace API_He_thong.Models
         public string Roles { get; set; }
         [MaxLength(20)]
         [Required(ErrorMessage = "Trang thai không được để trống.")]
-        public string TrangThai { get; set; } = "Đang hoạt động ";
+        public string? TrangThai { get; set; } = "Đang hoạt động ";
 
         // Navigation properties
         // Navigation properties for relationships with job seekers and businesses

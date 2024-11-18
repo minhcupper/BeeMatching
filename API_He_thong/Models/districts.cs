@@ -2,8 +2,8 @@
 
 namespace API_He_thong.Models
 {
-    public class districts 
-    {
+    public class districts
+    {  // Mã tỉnh/thành phố (Primary Key)
         [Key]
         [MaxLength(20)] // Giới hạn độ dài cho mã tỉnh/thành phố
         public string code { get; set; }
@@ -36,7 +36,7 @@ namespace API_He_thong.Models
         // ID vùng hành chính (có thể để trống)
         public int? administrative_region_Id { get; set; }
         // Navigation property to relate districts with NguoiDung
-        public virtual ICollection<NguoiTimViec> NguoiTimViecs { get; set; } = new List<NguoiTimViec>();
+        public virtual ICollection<NguoiTimViec> NguoiTimViec { get; set; } = new List<NguoiTimViec>();
         public virtual ICollection<CongViec> CongViecs { get; set; } = new List<CongViec>();
         public virtual ICollection<DoanhNghiep> doanhNghieps { get; set; } = new List<DoanhNghiep>();
     }

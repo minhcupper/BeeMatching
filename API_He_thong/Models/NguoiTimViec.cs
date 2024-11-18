@@ -67,7 +67,7 @@ namespace API_He_thong.Models
         public virtual districts? Districts { get; set; }
 
         [ForeignKey("WardId")]
-        public virtual wards? Wards { get; set; }
+        public virtual wards?  Wards { get; set; }
 
         [ForeignKey("ProvinceId")]
         public virtual provinces? Provinces { get; set; }

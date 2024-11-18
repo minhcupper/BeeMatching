@@ -353,18 +353,18 @@ namespace API_He_thong.Migrations
 
                     b.Property<string>("Roles")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("TrangThai")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("mat_khau")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ten_dang_nhap")
                         .IsRequired()
@@ -753,7 +753,7 @@ namespace API_He_thong.Migrations
             modelBuilder.Entity("API_He_thong.Models.NguoiTimViec", b =>
                 {
                     b.HasOne("API_He_thong.Models.districts", "Districts")
-                        .WithMany("NguoiTimViecs")
+                        .WithMany("NguoiTimViec")
                         .HasForeignKey("DistrictId");
 
                     b.HasOne("API_He_thong.Models.NguoiDung", "NguoiDung")
@@ -763,11 +763,11 @@ namespace API_He_thong.Migrations
                         .IsRequired();
 
                     b.HasOne("API_He_thong.Models.provinces", "Provinces")
-                        .WithMany("NguoiTimViecs")
+                        .WithMany("NguoiTimViec")
                         .HasForeignKey("ProvinceId");
 
                     b.HasOne("API_He_thong.Models.wards", "Wards")
-                        .WithMany("NguoiTimViecs")
+                        .WithMany("NguoiTimViec")
                         .HasForeignKey("WardId");
 
                     b.Navigation("Districts");
@@ -829,7 +829,7 @@ namespace API_He_thong.Migrations
                 {
                     b.Navigation("CongViecs");
 
-                    b.Navigation("NguoiTimViecs");
+                    b.Navigation("NguoiTimViec");
 
                     b.Navigation("doanhNghieps");
                 });
@@ -861,7 +861,7 @@ namespace API_He_thong.Migrations
                 {
                     b.Navigation("CongViecs");
 
-                    b.Navigation("NguoiTimViecs");
+                    b.Navigation("NguoiTimViec");
 
                     b.Navigation("doanhNghieps");
                 });
@@ -875,7 +875,7 @@ namespace API_He_thong.Migrations
                 {
                     b.Navigation("CongViecs");
 
-                    b.Navigation("NguoiTimViecs");
+                    b.Navigation("NguoiTimViec");
 
                     b.Navigation("doanhNghieps");
                 });

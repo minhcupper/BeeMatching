@@ -1,10 +1,32 @@
 using API_He_thong.DATA;
 using API_He_thong.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using API_He_thong.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Add JWT authentication
+var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ClockSkew = TimeSpan.Zero
+    };
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -24,6 +46,8 @@ IServiceCollection serviceCollection10 = builder.Services.AddScoped<ISkillCongVi
 IServiceCollection serviceCollection11 = builder.Services.AddScoped<ICongViec, CongViecService>();
 IServiceCollection serviceCollection12 = builder.Services.AddScoped<IKinhNghiemNguoiXinViec,KinhNghiemNguoiXinViecService>();
 IServiceCollection serviceCollection13 = builder.Services.AddScoped<Ikinhnghiemcongviec, KinhNghiemCongViecService>();
+IServiceCollection serviceCollection14 = builder.Services.AddScoped<ILoginService, LoginService>();
+IServiceCollection serviceCollection15 = builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,7 +58,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
