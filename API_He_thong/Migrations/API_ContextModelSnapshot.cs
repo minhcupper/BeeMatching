@@ -138,7 +138,10 @@ namespace API_He_thong.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("administrative_unit_Id")
+                    b.Property<int?>("administrative_region_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("administrative_unit_id")
                         .HasColumnType("int");
 
                     b.Property<string>("code_name")
@@ -165,11 +168,6 @@ namespace API_He_thong.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("province_code")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("code");
 
@@ -242,6 +240,7 @@ namespace API_He_thong.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("MoTa")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenKinhNghiem")
@@ -362,32 +361,17 @@ namespace API_He_thong.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("districtscode")
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("mat_khau")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("provincescode")
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("ten_dang_nhap")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("wardscode")
-                        .HasColumnType("nvarchar(20)");
-
                     b.HasKey("nguoi_dung_id");
-
-                    b.HasIndex("districtscode");
-
-                    b.HasIndex("provincescode");
-
-                    b.HasIndex("wardscode");
 
                     b.ToTable("NguoiDung");
                 });
@@ -601,6 +585,9 @@ namespace API_He_thong.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<int?>("administrative_region_Id")
+                        .HasColumnType("int");
+
                     b.Property<int?>("administrative_unit_id")
                         .HasColumnType("int");
 
@@ -608,11 +595,6 @@ namespace API_He_thong.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("district_code")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("full_name")
                         .IsRequired()
@@ -768,25 +750,10 @@ namespace API_He_thong.Migrations
                     b.Navigation("NguoiTimViec");
                 });
 
-            modelBuilder.Entity("API_He_thong.Models.NguoiDung", b =>
-                {
-                    b.HasOne("API_He_thong.Models.districts", null)
-                        .WithMany("NguoiDungs")
-                        .HasForeignKey("districtscode");
-
-                    b.HasOne("API_He_thong.Models.provinces", null)
-                        .WithMany("NguoiDungs")
-                        .HasForeignKey("provincescode");
-
-                    b.HasOne("API_He_thong.Models.wards", null)
-                        .WithMany("NguoiDungs")
-                        .HasForeignKey("wardscode");
-                });
-
             modelBuilder.Entity("API_He_thong.Models.NguoiTimViec", b =>
                 {
                     b.HasOne("API_He_thong.Models.districts", "Districts")
-                        .WithMany()
+                        .WithMany("NguoiTimViecs")
                         .HasForeignKey("DistrictId");
 
                     b.HasOne("API_He_thong.Models.NguoiDung", "NguoiDung")
@@ -796,11 +763,11 @@ namespace API_He_thong.Migrations
                         .IsRequired();
 
                     b.HasOne("API_He_thong.Models.provinces", "Provinces")
-                        .WithMany()
+                        .WithMany("NguoiTimViecs")
                         .HasForeignKey("ProvinceId");
 
                     b.HasOne("API_He_thong.Models.wards", "Wards")
-                        .WithMany()
+                        .WithMany("NguoiTimViecs")
                         .HasForeignKey("WardId");
 
                     b.Navigation("Districts");
@@ -862,7 +829,7 @@ namespace API_He_thong.Migrations
                 {
                     b.Navigation("CongViecs");
 
-                    b.Navigation("NguoiDungs");
+                    b.Navigation("NguoiTimViecs");
 
                     b.Navigation("doanhNghieps");
                 });
@@ -894,7 +861,7 @@ namespace API_He_thong.Migrations
                 {
                     b.Navigation("CongViecs");
 
-                    b.Navigation("NguoiDungs");
+                    b.Navigation("NguoiTimViecs");
 
                     b.Navigation("doanhNghieps");
                 });
@@ -908,7 +875,7 @@ namespace API_He_thong.Migrations
                 {
                     b.Navigation("CongViecs");
 
-                    b.Navigation("NguoiDungs");
+                    b.Navigation("NguoiTimViecs");
 
                     b.Navigation("doanhNghieps");
                 });

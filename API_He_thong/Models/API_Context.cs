@@ -45,7 +45,8 @@ namespace API_He_thong.Models
                     .OnDelete(DeleteBehavior.Cascade);
             }
 
-            private void ConfigureDoanhNghiep(ModelBuilder modelBuilder)
+    
+        private void ConfigureDoanhNghiep(ModelBuilder modelBuilder)
             {
                 modelBuilder.Entity<DoanhNghiep>()
                     .HasOne(dn => dn.NguoiDung)

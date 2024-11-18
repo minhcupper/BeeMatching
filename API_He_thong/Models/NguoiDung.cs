@@ -21,14 +21,14 @@ namespace API_He_thong.Models
     
 
         // Mật khẩu, bắt buộc, tối đa 10 ký tự, không được trống
-        [MaxLength(10)]
+        [MaxLength(50)]
         [Required(ErrorMessage = "Mật khẩu không được để trống.")]
         public string mat_khau { get; set; }
-        [MaxLength(10)]
+        [MaxLength(20)]
         [Required(ErrorMessage = "Roles không được để trống.")]
         public string Roles { get; set; }
-        [MaxLength(10)]
-        [Required(ErrorMessage = "Roles không được để trống.")]
+        [MaxLength(20)]
+        [Required(ErrorMessage = "Trang thai không được để trống.")]
         public string TrangThai { get; set; } = "Đang hoạt động ";
 
         // Navigation properties

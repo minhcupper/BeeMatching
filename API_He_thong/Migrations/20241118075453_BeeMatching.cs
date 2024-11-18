@@ -22,8 +22,8 @@ namespace API_He_thong.Migrations
                 {
                     table.PrimaryKey("PK_DanhMucKyNang", x => x.DanhMucKyNangId);
                 });
-/*
-            migrationBuilder.CreateTable(
+
+            /*migrationBuilder.CreateTable(
                 name: "districts",
                 columns: table => new
                 {
@@ -33,14 +33,30 @@ namespace API_He_thong.Migrations
                     full_name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     full_name_en = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     code_name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    province_code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    administrative_unit_Id = table.Column<int>(type: "int", nullable: true)
+                    administrative_unit_id = table.Column<int>(type: "int", nullable: true),
+                    administrative_region_Id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_districts", x => x.code);
-                });
+                });*/
 
+            migrationBuilder.CreateTable(
+                name: "NguoiDung",
+                columns: table => new
+                {
+                    nguoi_dung_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ten_dang_nhap = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    mat_khau = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Roles = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NguoiDung", x => x.nguoi_dung_id);
+                });
+/*
             migrationBuilder.CreateTable(
                 name: "provinces",
                 columns: table => new
@@ -69,8 +85,8 @@ namespace API_He_thong.Migrations
                     full_name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     full_name_en = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     code_name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    district_code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    administrative_unit_id = table.Column<int>(type: "int", nullable: true)
+                    administrative_unit_id = table.Column<int>(type: "int", nullable: true),
+                    administrative_region_Id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,37 +94,26 @@ namespace API_He_thong.Migrations
                 });*/
 
             migrationBuilder.CreateTable(
-                name: "NguoiDung",
+                name: "ThongBao",
                 columns: table => new
                 {
-                    nguoi_dung_id = table.Column<int>(type: "int", nullable: false)
+                    ThongBaoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ten_dang_nhap = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    mat_khau = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Roles = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    districtscode = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    provincescode = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    wardscode = table.Column<string>(type: "nvarchar(20)", nullable: true)
+                    NguoiDungId = table.Column<int>(type: "int", nullable: false),
+                    TieuDe = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    NoiDung = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    NgayGui = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NguoiDung", x => x.nguoi_dung_id);
+                    table.PrimaryKey("PK_ThongBao", x => x.ThongBaoId);
                     table.ForeignKey(
-                        name: "FK_NguoiDung_districts_districtscode",
-                        column: x => x.districtscode,
-                        principalTable: "districts",
-                        principalColumn: "code");
-                    table.ForeignKey(
-                        name: "FK_NguoiDung_provinces_provincescode",
-                        column: x => x.provincescode,
-                        principalTable: "provinces",
-                        principalColumn: "code");
-                    table.ForeignKey(
-                        name: "FK_NguoiDung_wards_wardscode",
-                        column: x => x.wardscode,
-                        principalTable: "wards",
-                        principalColumn: "code");
+                        name: "FK_ThongBao_NguoiDung_NguoiDungId",
+                        column: x => x.NguoiDungId,
+                        principalTable: "NguoiDung",
+                        principalColumn: "nguoi_dung_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -201,29 +206,6 @@ namespace API_He_thong.Migrations
                         column: x => x.WardId,
                         principalTable: "wards",
                         principalColumn: "code");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ThongBao",
-                columns: table => new
-                {
-                    ThongBaoId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    NguoiDungId = table.Column<int>(type: "int", nullable: false),
-                    TieuDe = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    NoiDung = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    NgayGui = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ThongBao", x => x.ThongBaoId);
-                    table.ForeignKey(
-                        name: "FK_ThongBao_NguoiDung_NguoiDungId",
-                        column: x => x.NguoiDungId,
-                        principalTable: "NguoiDung",
-                        principalColumn: "nguoi_dung_id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -326,7 +308,7 @@ namespace API_He_thong.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CongViecId = table.Column<int>(type: "int", nullable: false),
                     TenKinhNghiem = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -494,21 +476,6 @@ namespace API_He_thong.Migrations
                 column: "NguoiTimViecId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_NguoiDung_districtscode",
-                table: "NguoiDung",
-                column: "districtscode");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_NguoiDung_provincescode",
-                table: "NguoiDung",
-                column: "provincescode");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_NguoiDung_wardscode",
-                table: "NguoiDung",
-                column: "wardscode");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_NguoiTimViec_DistrictId",
                 table: "NguoiTimViec",
                 column: "DistrictId");
@@ -581,10 +548,10 @@ namespace API_He_thong.Migrations
                 name: "DoanhNghiep");
 
             migrationBuilder.DropTable(
-                name: "NguoiDung");
+                name: "districts");
 
             migrationBuilder.DropTable(
-                name: "districts");
+                name: "NguoiDung");
 
             migrationBuilder.DropTable(
                 name: "provinces");
