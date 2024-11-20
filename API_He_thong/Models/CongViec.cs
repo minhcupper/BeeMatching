@@ -33,12 +33,14 @@ namespace API_He_thong.Models
         // Vị trí
         [MaxLength(100)]
         public string? ViTri { get; set; }
-
+        [MaxLength(100)]
+        public string? DangCongViec { get; set; }
         // Trạng thái công việc
         [MaxLength(50)]
         [DefaultValue("Đang tuyển dụng")]
         public string TrangThai { get; set; } = "Đang tuyển dụng";
-
+        [Required(ErrorMessage = "số lượng không được để trống.")]
+        public int SoLuong { get; set; }
         // Ngày đăng tin
         public DateTime NgayDang { get; set; } = DateTime.Now;
 

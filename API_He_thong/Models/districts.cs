@@ -3,22 +3,22 @@
 namespace API_He_thong.Models
 {
     public class districts
-    {  // Mã tỉnh/thành phố (Primary Key)
+    {    // Mã tỉnh/thành phố (Primary Key)
+        // Mã quận/huyện (Primary Key)
         [Key]
-        [MaxLength(20)] // Giới hạn độ dài cho mã tỉnh/thành phố
+        [MaxLength(20)] // Giới hạn độ dài cho mã quận/huyện
         public string code { get; set; }
 
-        // Tên tỉnh/thành phố
+        // Tên quận/huyện
         [Required] // Trường bắt buộc, tương đương với NOT NULL
         [MaxLength(255)] // Giới hạn độ dài của tên
         public string name { get; set; }
 
-        // Tên tiếng Anh của tỉnh/thành phố (có thể để trống)
+        // Tên tiếng Anh của quận/huyện (có thể để trống)
         [MaxLength(255)] // Giới hạn độ dài của tên tiếng Anh
         public string name_en { get; set; }
 
-        // Tên đầy đủ của tỉnh/thành phố
-        [Required] // Trường bắt buộc
+        // Tên đầy đủ của quận/huyện (có thể để trống)
         [MaxLength(255)] // Giới hạn độ dài của tên đầy đủ
         public string full_name { get; set; }
 
@@ -30,11 +30,13 @@ namespace API_He_thong.Models
         [MaxLength(255)] // Giới hạn độ dài của mã code name
         public string code_name { get; set; }
 
-        // ID đơn vị hành chính (có thể để trống)
-        public int? administrative_unit_id { get; set; }
+        // Mã tỉnh/thành phố (có thể để trống)
+        [MaxLength(20)] // Giới hạn độ dài của mã tỉnh/thành phố
+        public string province_code { get; set; }
 
-        // ID vùng hành chính (có thể để trống)
-        public int? administrative_region_Id { get; set; }
+        // ID đơn vị hành chính (có thể để trống)
+        public int? administrative_unit_Id { get; set; }
+        // Navigation property to relate districts with NguoiDung
         // Navigation property to relate districts with NguoiDung
         public virtual ICollection<NguoiTimViec> NguoiTimViec { get; set; } = new List<NguoiTimViec>();
         public virtual ICollection<CongViec> CongViecs { get; set; } = new List<CongViec>();

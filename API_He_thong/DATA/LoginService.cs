@@ -31,7 +31,7 @@ namespace API_He_thong.DATA
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new Claim(JwtRegisteredClaimNames.Iat, ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds().ToString()),
             new Claim("Id", nguoiDung.nguoi_dung_id.ToString() ?? string.Empty),
-            new Claim("Username", nguoiDung.ten_dang_nhap ?? string.Empty)
+            new Claim("Username", nguoiDung.ten_dang_nhap ?? string.Empty),
         };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

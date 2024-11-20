@@ -33,7 +33,8 @@ namespace BeeMatchingAPP.Models
         // Vị trí
         [MaxLength(100)]
         public string? ViTri { get; set; }
-
+        [MaxLength(100)]
+        public string? DangCongViec { get; set; }
         // Trạng thái công việc
         [MaxLength(50)]
         [DefaultValue("Đang tuyển dụng")]
@@ -72,11 +73,6 @@ namespace BeeMatchingAPP.Models
         // Collection for skills related to the job
         public virtual ICollection<KyNangCongViec>? KyNangCongViecs { get; set; } = new List<KyNangCongViec>();
        
-        [MaxLength(100)]
-        public string? TenKyNang { get; set; }
-
-        // Optional description of the skill
-        public string? MoTaKyNang { get; set; }
         public virtual ICollection<KinhNghiemCongViec>? KinhNghiemCongViecs { get; set; } = new List<KinhNghiemCongViec>();
     }
 }
