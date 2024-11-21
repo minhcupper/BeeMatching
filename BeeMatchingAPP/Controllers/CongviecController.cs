@@ -12,13 +12,14 @@ namespace BeeMatchingAPP.Controllers
 {
     public class CongviecController : Controller
     {
-        private readonly ILogger<DoanhNghiepsController> _logger;
+        private readonly ILogger<CongviecController> _logger;
         HttpClient _httpClient;
-        public CongviecController(ILogger<DoanhNghiepsController> logger, HttpClient httpClient)
+        public CongviecController(ILogger<CongviecController> logger, HttpClient httpClient)
         {
             _logger = logger;
             _httpClient = httpClient;
         }
+      
         public async Task<ActionResult> CongViec()
         {
             List<CongViec> job = new List<CongViec>();

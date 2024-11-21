@@ -26,9 +26,27 @@ namespace BeeMatchingAPP.Controllers
             _hostingEnvironment = hostingEnvironment;   
         }
         //demo1
-        public IActionResult Login()
+
+        public async Task<ActionResult> Login()
         {
-            return View("Login");
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(NguoiDung user)
+        {
+            var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync("https://localhost:7287/api/Token", content);
+            if (response.IsSuccessStatusCode)
+            {
+                if (user.ten_dang_nhap == "User1" || user.ten_dang_nhap == "user1")
+                {
+                    return RedirectToAction("Index", "ADMINController1");
+                }
+                return RedirectToAction();
+            }
+            ModelState.AddModelError(string.Empty, $"Invalid account (erro: token.)");
+            return View(user);
         }
         public async Task<ActionResult> Index()
         {

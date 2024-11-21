@@ -16,7 +16,7 @@ namespace API_He_thong.Models
 
         // Navigation property để liên kết đến DoanhNghiep
         [ForeignKey("DoanhNghiepId")]
-        public virtual DoanhNghiep DoanhNghiep { get; set; }
+        public virtual DoanhNghiep? DoanhNghiep { get; set; }
 
         // Tiêu đề công việc
         [MaxLength(200)]
@@ -48,7 +48,7 @@ namespace API_He_thong.Models
         public DateTime? HanNopHoSo { get; set; }
 
         // Navigation property cho các ứng tuyển
-        public virtual ICollection<UngTuyen> UngTuyens { get; set; } = new List<UngTuyen>();
+        public virtual ICollection<UngTuyen>? UngTuyens { get; set; } = new List<UngTuyen>();
 
         // Navigation properties cho các địa điểm
         // Navigation properties for address relationships
@@ -58,15 +58,15 @@ namespace API_He_thong.Models
 
         // Navigation properties cho địa chỉ
         [ForeignKey("DistrictId")]
-        public virtual districts Districts { get; set; }
+        public virtual districts? Districts { get; set; }
 
         [ForeignKey("WardId")]
-        public virtual wards Wards { get; set; }
+        public virtual wards? Wards { get; set; }
 
         [ForeignKey("ProvinceId")]
-        public virtual provinces Provinces { get; set; }
+        public virtual provinces? Provinces { get; set; }
         // Collection for skills related to the job
-        public virtual ICollection<KyNangCongViec> KyNangCongViecs { get; set; } = new List<KyNangCongViec>();
-        public virtual ICollection<KinhNghiemCongViec> KinhNghiemCongViecs { get; set; } = new List<KinhNghiemCongViec>();
+        public virtual ICollection<KyNangCongViec>? KyNangCongViecs { get; set; } = new List<KyNangCongViec>();
+        public virtual ICollection<KinhNghiemCongViec>? KinhNghiemCongViecs { get; set; } = new List<KinhNghiemCongViec>();
     }
 }

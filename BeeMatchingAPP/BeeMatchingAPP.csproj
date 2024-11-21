@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Upload\images\" />
+    <Folder Include="wwwroot\DoanhNghiepUpload\" />
     <Folder Include="Views\CongViec\" />
   </ItemGroup>
 

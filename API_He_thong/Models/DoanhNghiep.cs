@@ -20,7 +20,7 @@ namespace API_He_thong.Models
 
         // Navigation property để liên kết đến NguoiDung
         [ForeignKey("NguoiDungId")]
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual NguoiDung? NguoiDung { get; set; }
 
         // Tên công ty
         [MaxLength(100)]
@@ -39,7 +39,7 @@ namespace API_He_thong.Models
         public string? DiaChi { get; set; }
 
         // Navigation property cho các công việc của doanh nghiệp
-        public virtual ICollection<CongViec> CongViecs { get; set; } = new List<CongViec>();
+        public virtual ICollection<CongViec>? CongViecs { get; set; } = new List<CongViec>();
 
         // Khóa ngoại cho địa chỉ
         public string? DistrictId { get; set; } // Foreign key for districts
@@ -55,6 +55,10 @@ namespace API_He_thong.Models
 
         [ForeignKey("ProvinceId")]
         public virtual provinces? Provinces { get; set; }
-       
+        [MaxLength(20)]
+        [Required(ErrorMessage = "Trang thai không được để trống.")]
+        public string? TrangThai { get; set; } = "Đang hoạt động ";
+
+
     }
 }

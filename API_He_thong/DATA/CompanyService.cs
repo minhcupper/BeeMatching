@@ -53,13 +53,16 @@ namespace API_He_thong.DATA
             if (existingUser != null)
             {
                 // Update fields
-                existingUser.Wards = user.Wards;
+                existingUser.WardId = user.WardId;
                 existingUser.MoTa = user.MoTa;
                 existingUser.DiaChi = user.DiaChi;
-                existingUser.Districts = user.Districts;
-                existingUser.Provinces = user.Provinces;
+                existingUser.DistrictId = user.DistrictId;
+                existingUser.ProvinceId = user.ProvinceId;
                 existingUser.HinhAnh = user.HinhAnh;
                 existingUser.TenCongTy = user.TenCongTy;
+                existingUser.email = user.email;
+                existingUser.TrangThai = user.TrangThai;
+                
                 await context.SaveChangesAsync();
                 return true;
             }

@@ -5,7 +5,6 @@ namespace BeeMatchingAPP.Models
 {
     public class DoanhNghiep
     {
-
         // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,7 +19,7 @@ namespace BeeMatchingAPP.Models
 
         // Navigation property để liên kết đến NguoiDung
         [ForeignKey("NguoiDungId")]
-        public virtual NguoiDung NguoiDung { get; set; }
+        public virtual NguoiDung? NguoiDung { get; set; }
 
         // Tên công ty
         [MaxLength(100)]
@@ -29,27 +28,36 @@ namespace BeeMatchingAPP.Models
 
         // Mô tả công ty (có thể nullable)
         public string? MoTa { get; set; }
+        // Email, bắt buộc, tối đa 100 ký tự, không được trống
+        [MaxLength(100)]
+        [Required(ErrorMessage = "Email không được để trống.")]
+        public string email { get; set; }
 
         // Địa chỉ công ty (có thể nullable)
         [MaxLength(200)]
         public string? DiaChi { get; set; }
 
         // Navigation property cho các công việc của doanh nghiệp
-        public virtual ICollection<CongViec> CongViecs { get; set; } = new List<CongViec>();
+        public virtual ICollection<CongViec>? CongViecs { get; set; } = new List<CongViec>();
 
-        // Khóa ngoại cho địa chỉ
         public string? DistrictId { get; set; } // Foreign key for districts
+        public string? DistrictName { get; set; }
         public string? WardId { get; set; } // Foreign key for wards
+        public string? WardName { get; set; }
         public string? ProvinceId { get; set; } // Foreign key for provinces
+        public string? ProvinceName { get; set; }
 
         // Navigation properties cho địa chỉ
         [ForeignKey("DistrictId")]
-        public virtual districts Districts { get; set; }
+        public virtual districts? Districts { get; set; }
 
         [ForeignKey("WardId")]
-        public virtual wards Wards { get; set; }
+        public virtual wards? Wards { get; set; }
 
         [ForeignKey("ProvinceId")]
-        public virtual provinces Provinces { get; set; }
+        public virtual provinces? Provinces { get; set; }
+        public string? TrangThai { get; set; } = "Đang hoạt động ";
+
+
     }
 }
