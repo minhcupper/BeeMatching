@@ -12,6 +12,20 @@ namespace API_He_thong.DATA
             this.context = context;
         }
 
+      /*  public async Task<List<CongViec>> GetJobByDangCongViec(string dangCongViec)
+        {
+            var ListCongViec = await context.CongViec.ToListAsync();
+            var dangCongViecHasSelectedList = new List<CongViec>();
+            foreach(var item in  ListCongViec)
+            {
+                if(item.DangCongViec.ToLower() == dangCongViec.ToLower())
+                {
+                    dangCongViecHasSelectedList.Add(item);
+                }
+            }
+            return dangCongViecHasSelectedList;
+        }*/
+
         public async Task<bool> DeleteJob(int id)
         {
             var dl = await context.CongViec.FindAsync(id);

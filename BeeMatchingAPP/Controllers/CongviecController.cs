@@ -6,6 +6,7 @@ using System.Net.Http;
 using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 
 namespace BeeMatchingAPP.Controllers
@@ -216,6 +217,28 @@ namespace BeeMatchingAPP.Controllers
             ViewData["job"] = hassearch;
             return View("CongViec");
 
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> CheckBoxDangCongViec(string dangCongViec)
+        {
+            List<CongViec> jobList = new List<CongViec>();
+            List<CongViec> jobListHasChecked = new List<CongViec>();
+            var response = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
+            if(response.IsSuccessStatusCode)
+            {
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                jobList = JsonConvert.DeserializeObject<List<CongViec>>(apiResponse);
+            }
+            foreach(var item in jobList)
+            {
+                if(item.DangCongViec.ToLower() == dangCongViec.ToLower())
+                {
+                    jobListHasChecked.Add(item);
+                }
+            }
+            ViewData["job"] = jobListHasChecked;
+            return View("CongViec");
         }
 
     }
