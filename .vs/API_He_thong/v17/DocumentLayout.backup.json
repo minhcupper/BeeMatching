@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\congviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\congviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\controllers\\thongbaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\controllers\\thongbaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\controllers\\skillnguoixinvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\controllers\\skillnguoixinvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\controllers\\skillcongvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\controllers\\skillcongvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\controllers\\nguoitimvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\controllers\\nguoitimvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\beematchingapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|solutionrelative:beematchingapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\beematchingapp\\controllers\\congvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BF64409-050B-46C5-81B1-DFD5D59F577E}|BeeMatchingAPP\\BeeMatchingAPP.csproj|solutionrelative:beematchingapp\\controllers\\congvieccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\data\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -147,10 +167,6 @@
       "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\doanhnghiep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\models\\congviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\models\\congviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|d:\\h\u1ECDc t\u1EADp\\datn\\api_he_thong\\api_he_thong\\data\\congviecservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5176008-B5DD-4394-A77C-C5A530217169}|API_He_thong\\API_He_thong.csproj|solutionrelative:api_he_thong\\data\\congviecservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -162,7 +178,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 30,
+          "SelectedChildIndex": 39,
           "Children": [
             {
               "$type": "Bookmark",
@@ -198,7 +214,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "ThongBaoController.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\ThongBaoController.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Controllers\\ThongBaoController.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\ThongBaoController.cs",
+              "RelativeToolTip": "API_He_thong\\Controllers\\ThongBaoController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T04:36:28.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SkillNguoiXinViecController.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\SkillNguoiXinViecController.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Controllers\\SkillNguoiXinViecController.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\SkillNguoiXinViecController.cs",
+              "RelativeToolTip": "API_He_thong\\Controllers\\SkillNguoiXinViecController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T04:36:14.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SkillCongViecController.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\SkillCongViecController.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Controllers\\SkillCongViecController.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\SkillCongViecController.cs",
+              "RelativeToolTip": "API_He_thong\\Controllers\\SkillCongViecController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T04:36:08.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NguoiTimViecController.cs",
+              "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\NguoiTimViecController.cs",
+              "RelativeDocumentMoniker": "API_He_thong\\Controllers\\NguoiTimViecController.cs",
+              "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\NguoiTimViecController.cs",
+              "RelativeToolTip": "API_He_thong\\Controllers\\NguoiTimViecController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T04:35:51.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "TrangThongTinNguoiTimViec.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\Home\\TrangThongTinNguoiTimViec.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\Home\\TrangThongTinNguoiTimViec.cshtml",
@@ -210,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "NguoiDung.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\NguoiDung.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\NguoiDung.cs",
@@ -222,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "KinhNghiemNguoiXinViecController.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\KinhNghiemNguoiXinViecController.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Controllers\\KinhNghiemNguoiXinViecController.cs",
@@ -234,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\appsettings.json",
               "RelativeDocumentMoniker": "API_He_thong\\appsettings.json",
@@ -246,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Program.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Program.cs",
@@ -258,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "NguoiDung.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\NguoiDung.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Models\\NguoiDung.cs",
@@ -270,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "ILoginRepository.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Repositories\\ILoginRepository.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Repositories\\ILoginRepository.cs",
@@ -282,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "ILoginService.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\DATA\\ILoginService.cs",
               "RelativeDocumentMoniker": "API_He_thong\\DATA\\ILoginService.cs",
@@ -294,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "LoginRepository.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Repositories\\LoginRepository.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Repositories\\LoginRepository.cs",
@@ -306,19 +370,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "LoginController.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Controllers\\LoginController.cs",
               "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Controllers\\LoginController.cs",
               "RelativeToolTip": "API_He_thong\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAowDEAAABcAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowDEAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T10:07:01.577Z"
+              "WhenOpened": "2024-11-22T10:07:01.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "LoginService.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\DATA\\LoginService.cs",
               "RelativeDocumentMoniker": "API_He_thong\\DATA\\LoginService.cs",
@@ -330,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "TokenResponse.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\TokenResponse.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\TokenResponse.cs",
@@ -342,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\Home\\Login.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\Home\\Login.cshtml",
@@ -354,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "CongViec.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\CongViec\\CongViec.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\CongViec\\CongViec.cshtml",
@@ -366,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\Home\\Details.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\Home\\Details.cshtml",
@@ -378,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "NguoiTimViec.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\NguoiTimViec.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Models\\NguoiTimViec.cs",
@@ -390,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "NguoiXinViecService.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\DATA\\NguoiXinViecService.cs",
               "RelativeDocumentMoniker": "API_He_thong\\DATA\\NguoiXinViecService.cs",
@@ -402,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "INguoiXinViec.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\DATA\\INguoiXinViec.cs",
               "RelativeDocumentMoniker": "API_He_thong\\DATA\\INguoiXinViec.cs",
@@ -414,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "extensionhelper.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\helper\\extensionhelper.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\helper\\extensionhelper.cs",
@@ -426,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "HoSoDoanhNghiep.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\HoSoDoanhNghiep.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\HoSoDoanhNghiep.cs",
@@ -438,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "HoSoNguoiTimViec.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\HoSoNguoiTimViec.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\HoSoNguoiTimViec.cs",
@@ -450,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Program.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Program.cs",
@@ -462,20 +527,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Controllers\\HomeController.cs",
               "RelativeToolTip": "BeeMatchingAPP\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAAAF8AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAwJgAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T07:59:27.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T07:59:27.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "CompanyService.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\DATA\\CompanyService.cs",
               "RelativeDocumentMoniker": "API_He_thong\\DATA\\CompanyService.cs",
@@ -487,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "DeleteDoanhNghiep.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\ADMINController1\\DeleteDoanhNghiep.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\ADMINController1\\DeleteDoanhNghiep.cshtml",
@@ -499,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "EditDoanhNghiep.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\ADMINController1\\EditDoanhNghiep.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\ADMINController1\\EditDoanhNghiep.cshtml",
@@ -511,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "DeleteCongViec.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\ADMINController1\\DeleteCongViec.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\ADMINController1\\DeleteCongViec.cshtml",
@@ -523,19 +587,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 0,
               "Title": "CongViec.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\CongViec.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Models\\CongViec.cs",
               "ToolTip": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\CongViec.cs",
               "RelativeToolTip": "API_He_thong\\Models\\CongViec.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T12:04:07.375Z"
+              "WhenOpened": "2024-11-21T12:04:07.375Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "CongViecService.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\DATA\\CongViecService.cs",
               "RelativeDocumentMoniker": "API_He_thong\\DATA\\CongViecService.cs",
@@ -547,7 +612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "EditCongViec.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\ADMINController1\\EditCongViec.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\ADMINController1\\EditCongViec.cshtml",
@@ -559,7 +624,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\Home\\Index.cshtml",
@@ -571,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "DoanhNghiep.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\API_He_thong\\Models\\DoanhNghiep.cs",
               "RelativeDocumentMoniker": "API_He_thong\\Models\\DoanhNghiep.cs",
@@ -583,7 +648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "DoanhNghiep.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\ADMINController1\\DoanhNghiep.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\ADMINController1\\DoanhNghiep.cshtml",
@@ -595,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "ADMINController1.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Controllers\\ADMINController1.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Controllers\\ADMINController1.cs",
@@ -607,7 +672,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "CongviecController.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Controllers\\CongviecController.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Controllers\\CongviecController.cs",
@@ -619,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "DoanhNghiep.cs",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Models\\DoanhNghiep.cs",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Models\\DoanhNghiep.cs",
@@ -631,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "CongViec.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\ADMINController1\\CongViec.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\ADMINController1\\CongViec.cshtml",
@@ -643,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\h\u1ECDc t\u1EADp\\DATN\\API_He_thong\\BeeMatchingAPP\\Views\\ADMINController1\\Index.cshtml",
               "RelativeDocumentMoniker": "BeeMatchingAPP\\Views\\ADMINController1\\Index.cshtml",
