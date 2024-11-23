@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace API_He_thong.Models
+namespace BeeMatchingAPP.Models
 {
-    public class NguoiTimViec
+    public class HoSoNguoiTimViec
     {
         // Primary Key
         [Key]
@@ -19,11 +19,11 @@ namespace API_He_thong.Models
 
         // Navigation property to NguoiDung
         [ForeignKey("NguoiDungId")]
-        public virtual NguoiDung? NguoiDung { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
 
         // Navigation property linking to KyNangNguoiXinViec
-        public virtual ICollection<KyNangNguoiXinViec>? KyNangNguoiXinViecs { get; set; } = new List<KyNangNguoiXinViec>();
-        public virtual ICollection<KinhnghiemNguoiTimViec>? KinhnghiemNguoiTimViecs { get; set; } = new List<KinhnghiemNguoiTimViec>();
+        public virtual ICollection<KyNangNguoiXinViec> KyNangNguoiXinViecs { get; set; } = new List<KyNangNguoiXinViec>();
+        public virtual ICollection<KinhnghiemNguoiTimViec> KinhnghiemNguoiTimViecs { get; set; } = new List<KinhnghiemNguoiTimViec>();
         // Job seeker description
         [Required(ErrorMessage = "Mô tả không được để trống.")]
         [MaxLength(500, ErrorMessage = "Mô tả không được vượt quá 500 ký tự.")]
@@ -67,7 +67,7 @@ namespace API_He_thong.Models
         public virtual districts? Districts { get; set; }
 
         [ForeignKey("WardId")]
-        public virtual wards?  Wards { get; set; }
+        public virtual wards? Wards { get; set; }
 
         [ForeignKey("ProvinceId")]
         public virtual provinces? Provinces { get; set; }
@@ -85,7 +85,6 @@ namespace API_He_thong.Models
         public string? HoatDongNgoaiKhoa { get; set; }
 
         // Navigation property to UngTuyen (one-to-many relationship)
-        public virtual ICollection<UngTuyen>? UngTuyens { get; set; } = new List<UngTuyen>();
-        
+        public virtual ICollection<UngTuyen> UngTuyens { get; set; } = new List<UngTuyen>();
     }
 }

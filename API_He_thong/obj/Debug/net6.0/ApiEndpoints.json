@@ -757,22 +757,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Webbanthucan.Controllers.TokenController",
-    "Method": "Post",
-    "RelativePath": "api/Token",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "_userdata",
-        "Type": "API_He_thong.Models.NguoiDung",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "API_He_thong.Controllers.UngTuyenController",
     "Method": "PostUser",
     "RelativePath": "api/UngTuyen/Create",

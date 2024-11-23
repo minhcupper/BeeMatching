@@ -19,7 +19,7 @@ namespace BeeMatchingAPP.Controllers
             _logger = logger;
             _httpClient = httpClient;
         }
-      
+        [HttpGet]
         public async Task<ActionResult> CongViec()
         {
             List<CongViec> job = new List<CongViec>();

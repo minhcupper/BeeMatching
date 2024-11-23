@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using API_He_thong.Repositories;
+using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,33 +22,40 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuer = false,
         ValidateAudience = false,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
+        ValidateLifetime = true,  // Set to true to validate lifetime of the token
+        ValidateIssuerSigningKey = true,  // Validate signing key
         IssuerSigningKey = new SymmetricSecurityKey(key),
         ClockSkew = TimeSpan.Zero
     };
 });
 
+// Register Identity services
+builder.Services.AddSingleton<IPasswordHasher<NguoiDung>, PasswordHasher<NguoiDung>>();
+
+// Register your other services
+builder.Services.AddScoped<ILoginService, LoginService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<API_Context>(op=>op.UseSqlServer(builder.Configuration.GetConnectionString("Dbconection")));
-IServiceCollection serviceCollection1 = builder.Services.AddScoped<IUser, UserService>();
-IServiceCollection serviceCollection2 = builder.Services.AddScoped<IPlace, PlaceService>();
-IServiceCollection serviceCollection = builder.Services.AddScoped<ICompany, CompanyService>();
-IServiceCollection serviceCollection4 = builder.Services.AddScoped<INguoiXinViec, NguoiXinViecService>();
-IServiceCollection serviceCollection5 = builder.Services.AddScoped<IDanhGia, DanhGiaService>();
-IServiceCollection serviceCollection6 = builder.Services.AddScoped<IDanhMucKyNang, DanhMucKyNangService>();
-IServiceCollection serviceCollection7 = builder.Services.AddScoped<IThongBao, ThongBaoService>();
-IServiceCollection serviceCollection8 = builder.Services.AddScoped<IUngtuyen, UngTuyenService>();
-IServiceCollection serviceCollection9 = builder.Services.AddScoped<ISkillNguoiXinViec, SkillNguoiXinViecService>();
-IServiceCollection serviceCollection10 = builder.Services.AddScoped<ISkillCongViec, KyNangCongViecSerVice>();
-IServiceCollection serviceCollection11 = builder.Services.AddScoped<ICongViec, CongViecService>();
-IServiceCollection serviceCollection12 = builder.Services.AddScoped<IKinhNghiemNguoiXinViec,KinhNghiemNguoiXinViecService>();
-IServiceCollection serviceCollection13 = builder.Services.AddScoped<Ikinhnghiemcongviec, KinhNghiemCongViecService>();
-IServiceCollection serviceCollection14 = builder.Services.AddScoped<ILoginService, LoginService>();
-IServiceCollection serviceCollection15 = builder.Services.AddScoped<ILoginRepository, LoginRepository>();
+builder.Services.AddDbContext<API_Context>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("Dbconection")));
+builder.Services.AddScoped<IUser, UserService>();
+builder.Services.AddScoped<IPlace, PlaceService>();
+builder.Services.AddScoped<ICompany, CompanyService>();
+builder.Services.AddScoped<INguoiXinViec, NguoiXinViecService>();
+builder.Services.AddScoped<IDanhGia, DanhGiaService>();
+builder.Services.AddScoped<IDanhMucKyNang, DanhMucKyNangService>();
+builder.Services.AddScoped<IThongBao, ThongBaoService>();
+builder.Services.AddScoped<IUngtuyen, UngTuyenService>();
+builder.Services.AddScoped<ISkillNguoiXinViec, SkillNguoiXinViecService>();
+builder.Services.AddScoped<ISkillCongViec, KyNangCongViecSerVice>();
+builder.Services.AddScoped<ICongViec, CongViecService>();
+builder.Services.AddScoped<IKinhNghiemNguoiXinViec, KinhNghiemNguoiXinViecService>();
+builder.Services.AddScoped<Ikinhnghiemcongviec, KinhNghiemCongViecService>();
+builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,8 +66,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
+app.UseAuthentication();  // Middleware to authenticate the request
+app.UseAuthorization();   // Middleware to authorize the request
 
 app.MapControllers();
 

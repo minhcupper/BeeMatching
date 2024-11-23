@@ -10,6 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.IO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using helper;
 namespace BeeMatchingAPP.Controllers
 {
     //tuan day
@@ -25,27 +28,143 @@ namespace BeeMatchingAPP.Controllers
             _httpClient = httpClient;
             _hostingEnvironment = hostingEnvironment;   
         }
-        //demo1
+        private NguoiTimViec TrangThongTinCaNhan
+        {
+            get
+            {
+                // Truy xuất danh sách người tìm việc từ Session
+                return HttpContext.Session.Get<NguoiTimViec>("ThongTin") ?? new NguoiTimViec();
+            }
+        }
 
+        public async Task<ActionResult> TrangThongTinNguoiTimViec()
+        {
+            // Lấy dữ liệu từ Session
+            var data = TrangThongTinCaNhan;
+            return View(data);
+        }
+
+        private async Task ThemVaoTrangThongTinNguoiTimViec(int id)
+        {
+            // Khai báo đối tượng người tìm việc
+            NguoiTimViec userInfo = null;
+
+            // Gọi API để lấy danh sách người tìm việc
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/NguoiTimViec/GetAll");
+            if (response.IsSuccessStatusCode)
+            {
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
+                var allUsers = JsonConvert.DeserializeObject<List<NguoiTimViec>>(apiResponse);
+
+                // Tìm kiếm người dùng theo ID
+                userInfo = allUsers.Find(p => p.NguoiDungId == id);
+            }
+            else
+            {
+                throw new Exception("Không thể lấy danh sách người tìm việc từ API.");
+            }
+
+            // Nếu không tìm thấy người dùng, throw exception
+            if (userInfo == null)
+            {
+                throw new Exception($"Tài khoản với ID {id} không tồn tại hoặc chưa nhập thông tin.");
+            }
+
+            // Truy xuất thông tin người dùng từ Session
+            var data = TrangThongTinCaNhan;
+
+            // Tạo đối tượng mới từ thông tin người dùng
+            var newItem = new NguoiTimViec
+            {
+                HinhAnh = userInfo.HinhAnh,
+                so_dien_thoai = userInfo.so_dien_thoai,
+                gioi_tinh = userInfo.gioi_tinh,
+                email = userInfo.email,
+                DistrictId = userInfo.DistrictId,
+                dia_chi_nha = userInfo.dia_chi_nha,
+                WardId = userInfo.WardId,
+                ProvinceId = userInfo.ProvinceId,
+                ho_ten = userInfo.ho_ten,
+                KinhNghiem = userInfo.KinhNghiem,
+                ngay_sinh = userInfo.ngay_sinh,
+                HoatDongNgoaiKhoa = userInfo.HoatDongNgoaiKhoa,
+                MoTa = userInfo.MoTa,
+                ngay_tao = userInfo.ngay_tao,
+                NgonNgu = userInfo.NgonNgu,
+                trang_thai = userInfo.trang_thai
+            };
+
+            // Lưu thông tin người dùng vào Session
+            HttpContext.Session.Set("ThongTin", newItem);
+        }
+        // GET: Login
+        [HttpGet]
         public async Task<ActionResult> Login()
         {
             return View();
         }
+
+        // POST: Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(NguoiDung user)
         {
+            // Kiểm tra nếu người dùng chưa nhập thông tin
+            if (user == null || string.IsNullOrEmpty(user.ten_dang_nhap) || string.IsNullOrEmpty(user.mat_khau))
+            {
+                ModelState.AddModelError(string.Empty, "Tên đăng nhập và mật khẩu không được để trống.");
+                return View(user);
+            }
+
+            // Gửi yêu cầu xác thực người dùng
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("https://localhost:7287/api/Token", content);
+            var response = await _httpClient.PostAsync("https://localhost:7287/api/Login", content);
+
             if (response.IsSuccessStatusCode)
             {
-                if (user.ten_dang_nhap == "User1" || user.ten_dang_nhap == "user1")
+                // Lấy thông tin người dùng từ phản hồi API
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var userInfo = JsonConvert.DeserializeObject<NguoiDung>(responseBody);
+
+                if (userInfo != null)
                 {
-                    return RedirectToAction("Index", "ADMINController1");
+                    // Gọi phương thức ThemVaoTrangThongTinNguoiTimViec với ID người dùng
+                  try
+{
+    await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
+}
+catch (Exception ex)
+{
+    ModelState.AddModelError(string.Empty, ex.Message);
+    return View(user);
+}
+
+                    // Chuyển hướng dựa trên vai trò của người dùng
+                    if (userInfo.Roles == "ADMIN")
+                    {
+                        return RedirectToAction("Index", "ADMINController1");
+                    }
+                    else if (userInfo.Roles == "Người xin việc")
+                    {
+                        return RedirectToAction("CongViec", "CongViec");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Vai trò người dùng không hợp lệ.");
+                    }
                 }
-                return RedirectToAction();
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Không thể lấy thông tin người dùng.");
+                }
             }
-            ModelState.AddModelError(string.Empty, $"Invalid account (erro: token.)");
+            else
+            {
+                var errorDetails = await response.Content.ReadAsStringAsync();
+                ModelState.AddModelError(string.Empty, $"Lỗi đăng nhập: {errorDetails}");
+            }
+
             return View(user);
         }
         public async Task<ActionResult> Index()

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BeeMatchingAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00d86f9ff84d94beed094c7cb17447573fb8feae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25e7edb268e5ab672c2439d0cc2003aa8300cdb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("BeeMatchingAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BeeMatchingAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

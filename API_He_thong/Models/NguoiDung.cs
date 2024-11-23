@@ -25,10 +25,10 @@ namespace API_He_thong.Models
         [Required(ErrorMessage = "Mật khẩu không được để trống.")]
         public string mat_khau { get; set; }
         [MaxLength(20)]
-        [Required(ErrorMessage = "Roles không được để trống.")]
-        public string Roles { get; set; }
+ 
+        public string? Roles { get; set; }
         [MaxLength(20)]
-        [Required(ErrorMessage = "Trang thai không được để trống.")]
+      
         public string? TrangThai { get; set; } = "Đang hoạt động ";
 
         // Navigation properties
@@ -37,7 +37,7 @@ namespace API_He_thong.Models
         public virtual DoanhNghiep? DoanhNghiep { get; set; }
 
         // Collection of notifications
-        public virtual ICollection<ThongBao> ThongBaos { get; set; } = new List<ThongBao>();
+        public virtual ICollection<ThongBao>? ThongBaos { get; set; } = new List<ThongBao>();
 
         // Navigation properties for address relationships
    
