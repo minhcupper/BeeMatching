@@ -133,6 +133,38 @@ namespace BeeMatchingAPP.Controllers
             // Lưu thông tin người dùng vào Session
             HttpContext.Session.Set("ThongTin", newItem);
         }
+        private async Task ThemVaoTrangThongnguoidung(int id)
+        {
+            // Khai báo đối tượng người tìm việc
+            NguoiDung userInfo = null;
+
+            // Gọi API để lấy danh sách người tìm việc
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/User/GetAll");
+            if (response.IsSuccessStatusCode)
+            {
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
+                var allUsers = JsonConvert.DeserializeObject<List<NguoiDung>>(apiResponse);
+
+                // Tìm kiếm người dùng theo ID
+                userInfo = allUsers.Find(p => p.nguoi_dung_id == id);
+            }
+            else
+            {
+                throw new Exception("Không thể lấy danh sách người tìm việc từ API.");
+            }
+
+            // Nếu không tìm thấy người dùng, throw exception
+            if (userInfo == null)
+            {
+                throw new Exception($"Tài khoản với ID {id} không tồn tại hoặc chưa nhập thông tin.");
+            }
+
+            // Truy xuất thông tin người dùng từ Session
+            var data = TrangThongTinCaNhan;
+
+
+        }
         // GET: Login
         [HttpGet]
         public async Task<ActionResult> Login()
@@ -167,7 +199,7 @@ namespace BeeMatchingAPP.Controllers
                     // Gọi phương thức ThemVaoTrangThongTinNguoiTimViec với ID người dùng
                     try
                     {
-                        await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
+                        await ThemVaoTrangThongnguoidung(userInfo.nguoi_dung_id);
                     }
                     catch (Exception ex)
                     {
@@ -183,6 +215,10 @@ namespace BeeMatchingAPP.Controllers
                     else if (userInfo.Roles == "Người xin việc")
                     {
                         return RedirectToAction("CongViec", "CongViec");
+                    }
+                    else if (userInfo.Roles == "Doanh Nghiệp")
+                    {
+                        return RedirectToAction("Doanhnghiep", "DoanhNghieps");
                     }
                     else
                     {

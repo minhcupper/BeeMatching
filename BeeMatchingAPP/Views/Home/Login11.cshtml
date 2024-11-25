@@ -1,9 +1,10 @@
 ﻿@{
-    Layout = null; 
+    Layout = null;
 }
+@model BeeMatchingAPP.Models.NguoiDung
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login form</title>
@@ -14,197 +15,207 @@
     <style>
         import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,600,700,800,900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Maven Pro", sans-serif;
-}
-.wrapper {
-  height: 100vh;
-}
-.myColor {
-  background-image: linear-gradient(to right, #f83600 50%, #f9d423 150%);
-}
-.myShadow {
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
-}
-.myBtn {
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 20px;
-  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
-  border: none;
-}
-.myBtn:hover {
-  background-image: linear-gradient(to right, #495aff 0%, #0acffe 100%);
-}
-.myHr {
-  height: 2px;
-  border-radius: 100px;
-}
-.myLinkBtn {
-  border-radius: 100px;
-  width: 50%;
-  border: 2px solid #fff;
-}
-media (max-width: 720px) {
-  .wrapper {
-    margin: 2px;
-  }
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Maven Pro", sans-serif;
+        }
 
+        .wrapper {
+            height: 100vh;
+        }
+
+        .myColor {
+            background-image: linear-gradient(to right, #f83600 50%, #f9d423 150%);
+        }
+
+        .myShadow {
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .myBtn {
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+            border: none;
+        }
+
+            .myBtn:hover {
+                background-image: linear-gradient(to right, #495aff 0%, #0acffe 100%);
+            }
+
+        .myHr {
+            height: 2px;
+            border-radius: 100px;
+        }
+
+        .myLinkBtn {
+            border-radius: 100px;
+            width: 50%;
+            border: 2px solid #fff;
+        }
+
+        media (max-width: 720px) {
+            .wrapper
+
+        {
+            margin: 2px;
+        }
+
+        }
     </style>
-  </head>
-  <body class="bg-info">
+</head>
+<body class="bg-info">
     <div class="container">
-      <!-- Login Form Start -->
-      <div class="row justify-content-center wrapper" id="login-box">
-        <div class="col-lg-10 my-auto myShadow">
-          <div class="row">
-            <div class="col-lg-7 bg-white p-4">
-              <h1 class="text-center font-weight-bold text-primary">Đăng Nhập</h1>
-              <hr class="my-3" />
-              <form action="#" method="post" class="px-3" id="login-form">
-                <div class="input-group input-group-lg form-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
-                  </div>
-                  <input type="email" id="email" name="email" class="form-control rounded-0" placeholder="Nhập vào email" required />
+        <!-- Login Form Start -->
+        <div class="row justify-content-center wrapper" id="login-box">
+            <div class="col-lg-10 my-auto myShadow">
+                <div class="row">
+                    <div class="col-lg-7 bg-white p-4">
+                        <h1 class="text-center font-weight-bold text-primary">Đăng Nhập</h1>
+                        <hr class="my-3" />
+                        <form action="#" method="post" class="px-3" id="login-form">
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
+                                </div>
+                                <input asp-for="ten_dang_nhap" class="form-control" />
+                            </div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
+                                </div>
+                                <input asp-for="mat_khau" class="form-control" />
+                            </div>
+                            <div class="form-group clearfix">
+                                <div class="custom-control custom-checkbox float-left">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck" name="rem" />
+                                    <label class="custom-control-label" for="customCheck">Ghi nhớ tài khoản</label>
+                                </div>
+                                <div class="forgot float-right">
+                                    <a href="#" id="forgot-link">Quên mật khẩu?</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
+                        <h1 class="text-center font-weight-bold text-white">Xin Chào!</h1>
+                        <hr class="my-3 bg-light myHr" />
+                        <p class="text-center font-weight-bolder text-light lead">Đăng ký tài khoản mới nếu bạn chưa có tài khoản!</p>
+                        <button class="btn btn-outline-light btn-lg align-self-center font-weight-bolder mt-4 myLinkBtn" id="register-link">Đăng Ký</button>
+                    </div>
                 </div>
-                <div class="input-group input-group-lg form-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
-                  </div>
-                  <input type="password" id="password" name="password" class="form-control rounded-0" minlength="5" placeholder="Nhập vào mật khẩu " required autocomplete="off" />
-                </div>
-                <div class="form-group clearfix">
-                  <div class="custom-control custom-checkbox float-left">
-                    <input type="checkbox" class="custom-control-input" id="customCheck" name="rem" />
-                    <label class="custom-control-label" for="customCheck">Ghi nhớ tài khoản</label>
-                  </div>
-                  <div class="forgot float-right">
-                    <a href="#" id="forgot-link">Quên mật khẩu?</a>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input type="submit" id="login-btn" value="Đăng Nhập" class="btn btn-primary btn-lg btn-block myBtn" />
-                </div>
-              </form>
             </div>
-            <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
-              <h1 class="text-center font-weight-bold text-white">Xin Chào!</h1>
-              <hr class="my-3 bg-light myHr" />
-              <p class="text-center font-weight-bolder text-light lead">Đăng ký tài khoản mới nếu bạn chưa có tài khoản!</p>
-              <button class="btn btn-outline-light btn-lg align-self-center font-weight-bolder mt-4 myLinkBtn" id="register-link">Đăng Ký</button>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- Login Form End -->
-      <!-- Registration Form Start -->
-      <div class="row justify-content-center wrapper" id="register-box" style="display: none;">
-        <div class="col-lg-10 my-auto myShadow">
-          <div class="row">
-            <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
-              <h1 class="text-center font-weight-bold text-white">Xin Chào!</h1>
-              <hr class="my-4 bg-light myHr" />
-              <p class="text-center font-weight-bolder text-light lead">Vui lòng điền vào thông tin cá nhân của bạn.</p>
-              <button class="btn btn-outline-light btn-lg font-weight-bolder mt-4 align-self-center myLinkBtn" id="login-link">Đăng Nhập</button>
+        <!-- Login Form End -->
+        <!-- Registration Form Start -->
+        <div class="row justify-content-center wrapper" id="register-box" style="display: none;">
+            <div class="col-lg-10 my-auto myShadow">
+                <div class="row">
+                    <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
+                        <h1 class="text-center font-weight-bold text-white">Xin Chào!</h1>
+                        <hr class="my-4 bg-light myHr" />
+                        <p class="text-center font-weight-bolder text-light lead">Vui lòng điền vào thông tin cá nhân của bạn.</p>
+                        <button class="btn btn-outline-light btn-lg font-weight-bolder mt-4 align-self-center myLinkBtn" id="login-link">Đăng Nhập</button>
+                    </div>
+                    <div class="col-lg-7 bg-white p-4">
+                        <h1 class="text-center font-weight-bold text-primary">Tạo Tài Khoản</h1>
+                        <hr class="my-3" />
+                        <form action="#" method="post" class="px-3" id="register-form">
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="far fa-user fa-lg fa-fw"></i></span>
+                                </div>
+                                <input type="text" id="name" name="name" class="form-control rounded-0" placeholder="Họ và Tên" required />
+                            </div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
+                                </div>
+                                <input type="email" id="remail" name="email" class="form-control rounded-0" placeholder="Email" required />
+                            </div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
+                                </div>
+                                <input type="password" id="rpassword" name="password" class="form-control rounded-0" minlength="5" placeholder="Mật khẩu" required />
+                            </div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
+                                </div>
+                                <input type="password" id="cpassword" name="cpassword" class="form-control rounded-0" minlength="5" placeholder="Xác nhận mật khẩu" required />
+                            </div>
+                            <div class="form-group">
+                                <div id="passError" class="text-danger font-weight-bolder"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" id="register-btn" value="Đăng Ký" class="btn btn-primary btn-lg btn-block myBtn" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-7 bg-white p-4">
-              <h1 class="text-center font-weight-bold text-primary">Tạo Tài Khoản</h1>
-              <hr class="my-3" />
-              <form action="#" method="post" class="px-3" id="register-form">
-                <div class="input-group input-group-lg form-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0"><i class="far fa-user fa-lg fa-fw"></i></span>
-                  </div>
-                  <input type="text" id="name" name="name" class="form-control rounded-0" placeholder="Họ và Tên" required />
-                </div>
-                <div class="input-group input-group-lg form-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
-                  </div>
-                  <input type="email" id="remail" name="email" class="form-control rounded-0" placeholder="Email" required />
-                </div>
-                <div class="input-group input-group-lg form-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
-                  </div>
-                  <input type="password" id="rpassword" name="password" class="form-control rounded-0" minlength="5" placeholder="Mật khẩu" required />
-                </div>
-                <div class="input-group input-group-lg form-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
-                  </div>
-                  <input type="password" id="cpassword" name="cpassword" class="form-control rounded-0" minlength="5" placeholder="Xác nhận mật khẩu" required />
-                </div>
-                <div class="form-group">
-                  <div id="passError" class="text-danger font-weight-bolder"></div>
-                </div>
-                <div class="form-group">
-                  <input type="submit" id="register-btn" value="Đăng Ký" class="btn btn-primary btn-lg btn-block myBtn" />
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- Registration Form End -->
-      <!-- Forgot Password Form Start -->
-      <div class="row justify-content-center wrapper" id="forgot-box" style="display: none;">
-        <div class="col-lg-10 my-auto myShadow">
-          <div class="row">
-            <div class="col-lg-7 bg-white p-4">
-              <h1 class="text-center font-weight-bold text-primary">Quên mật khẩu?</h1>
-              <hr class="my-3" />
-              <p class="lead text-center text-secondary">Để đặt lại mật khẩu, hãy nhập địa chỉ email đã đăng ký và chúng tôi sẽ gửi cho bạn hướng dẫn đặt lại mật khẩu qua email của bạn!</p>
-              <form action="#" method="post" class="px-3" id="forgot-form">
-                <div id="forgotAlert"></div>
-                <div class="input-group input-group-lg form-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg"></i></span>
-                  </div>
-                  <input type="email" id="femail" name="email" class="form-control rounded-0" placeholder="Email" required />
+        <!-- Registration Form End -->
+        <!-- Forgot Password Form Start -->
+        <div class="row justify-content-center wrapper" id="forgot-box" style="display: none;">
+            <div class="col-lg-10 my-auto myShadow">
+                <div class="row">
+                    <div class="col-lg-7 bg-white p-4">
+                        <h1 class="text-center font-weight-bold text-primary">Quên mật khẩu?</h1>
+                        <hr class="my-3" />
+                        <p class="lead text-center text-secondary">Để đặt lại mật khẩu, hãy nhập địa chỉ email đã đăng ký và chúng tôi sẽ gửi cho bạn hướng dẫn đặt lại mật khẩu qua email của bạn!</p>
+                        <form action="#" method="post" class="px-3" id="forgot-form">
+                            <div id="forgotAlert"></div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg"></i></span>
+                                </div>
+                                <input type="email" id="femail" name="email" class="form-control rounded-0" placeholder="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" id="forgot-btn" value="Thay Đổi Mật Khẩu" class="btn btn-primary btn-lg btn-block myBtn" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
+                        <h1 class="text-center font-weight-bold text-white">Thay Đổi Mật Khẩu!</h1>
+                        <hr class="my-4 bg-light myHr" />
+                        <button class="btn btn-outline-light btn-lg font-weight-bolder myLinkBtn align-self-center" id="back-link">Trở về</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <input type="submit" id="forgot-btn" value="Thay Đổi Mật Khẩu" class="btn btn-primary btn-lg btn-block myBtn" />
-                </div>
-              </form>
             </div>
-            <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
-              <h1 class="text-center font-weight-bold text-white">Thay Đổi Mật Khẩu!</h1>
-              <hr class="my-4 bg-light myHr" />
-              <button class="btn btn-outline-light btn-lg font-weight-bolder myLinkBtn align-self-center" id="back-link">Trở về</button>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- Forgot Password Form End -->
+        <!-- Forgot Password Form End -->
     </div>
     <!-- jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(function () {
-    $("#register-link").click(function () {
-      $("#login-box").hide();
-      $("#register-box").show();
-    });
-    $("#login-link").click(function () {
-      $("#login-box").show();
-      $("#register-box").hide();
-    });
-    $("#forgot-link").click(function () {
-      $("#login-box").hide();
-      $("#forgot-box").show();
-    });
-    $("#back-link").click(function () {
-      $("#login-box").show();
-      $("#forgot-box").hide();
-    });
-  });
-  
+            $("#register-link").click(function () {
+                $("#login-box").hide();
+                $("#register-box").show();
+            });
+            $("#login-link").click(function () {
+                $("#login-box").show();
+                $("#register-box").hide();
+            });
+            $("#forgot-link").click(function () {
+                $("#login-box").hide();
+                $("#forgot-box").show();
+            });
+            $("#back-link").click(function () {
+                $("#login-box").show();
+                $("#forgot-box").hide();
+            });
+        });
+
     </script>
-  </body>
+</body>
 </html>
