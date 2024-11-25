@@ -1,26 +1,26 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient();
-builder.Services.AddMvc();  
-builder.Services.AddAntiforgery(options =>
-{
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-});
-builder.Services.AddDistributedMemoryCache(); // Use in-memory cache for session storage
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
+         builder.Services.AddControllersWithViews();
+        
+        builder.Services.AddHttpClient();
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddSession();
+        // Configure Antiforgery
+        builder.Services.AddAntiforgery(options =>
+        {
+            options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Ensure secure cookies
+        });
 
-var app = builder.Build();
+        // Configure Session
+        builder.Services.AddDistributedMemoryCache(); // Use in-memory cache for session storage
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+            options.Cookie.HttpOnly = true; // Enhance security
+            options.Cookie.IsEssential = true; // Required for GDPR compliance
+        });
 
+        var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -29,19 +29,20 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseAuthorization();
-app.UseRouting();
+app.UseHttpsRedirection(); // Redirect HTTP to HTTPS
+        app.UseStaticFiles(); // Serve static files
 
-app.UseSession();
-app.UseAuthorization();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
-});
+        app.UseRouting(); // Enable routing
+        app.UseSession(); // Enable session middleware
+        app.UseAuthorization(); // Enable authorization
 
+        // Map controller routes
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+        });
 
-app.Run();
+        app.Run();
+    

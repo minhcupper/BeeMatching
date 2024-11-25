@@ -303,7 +303,7 @@ namespace API_He_thong.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 */
-            migrationBuilder.CreateTable(
+   /*         migrationBuilder.CreateTable(
                 name: "KinhNghiemCongViec",
                 columns: table => new
                 {
@@ -323,7 +323,7 @@ namespace API_He_thong.Migrations
                         principalTable: "CongViec",
                         principalColumn: "CongViecId",
                         onDelete: ReferentialAction.Cascade);
-                });
+                });*/
 /*
             migrationBuilder.CreateTable(
                 name: "KyNangCongViec",

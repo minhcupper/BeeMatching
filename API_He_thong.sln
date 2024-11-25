@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_He_thong", "API_He_thon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeeMatchingAPP", "BeeMatchingAPP\BeeMatchingAPP.csproj", "{5BF64409-050B-46C5-81B1-DFD5D59F577E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{01813B57-C49B-4C81-985F-FBD8AFB47C47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5BF64409-050B-46C5-81B1-DFD5D59F577E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF64409-050B-46C5-81B1-DFD5D59F577E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF64409-050B-46C5-81B1-DFD5D59F577E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01813B57-C49B-4C81-985F-FBD8AFB47C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01813B57-C49B-4C81-985F-FBD8AFB47C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01813B57-C49B-4C81-985F-FBD8AFB47C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01813B57-C49B-4C81-985F-FBD8AFB47C47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

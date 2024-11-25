@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "TrangThongTinNguoiTimViec";
+    NguoiTimViec ntv = ViewData["HoSo"] as NguoiTimViec;
 }
 
 
@@ -20,476 +21,189 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.ico">
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/assets/css/flaticon.css">
-    <link rel="stylesheet" href="~/assets/css/slicknav.css">
-    <link rel="stylesheet" href="~/assets/css/price_rangs.css">
-    <link rel="stylesheet" href="~/assets/css/animate.min.css">
-    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="~/assets/css/slick.css">
-    <link rel="stylesheet" href="~/assets/css/nice-select.css">
-    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <link rel="stylesheet" href="~/assets/css/hoso.css">
+    <style>
+        .field-disabled {
+            background-color: #f0f0f0; /* Màu nền cho trường disabled */
+            color: #666; /* Màu chữ cho trường disabled */
+        }
+
+        .field-edit {
+            background-color: #fff7e6; /* Màu nền cho trường đang chỉnh sửa */
+            color: #000; /* Màu chữ cho trường đang chỉnh sửa */
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
-    <header>
-        <!-- Header Start -->
-        <div class="header-area header-transparrent">
-            <div class="headder-top header-sticky">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 col-md-2">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9">
-                            <div class="menu-wrapper">
-                                <!-- Main-menu -->
-                                <div class="main-menu">
-                                    <nav class="d-none d-lg-block">
-                                        <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="job_listing.html">Find a Jobs </a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li>
-                                                <a href="#">Page</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="job_details.html">job Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!-- Header-btn -->
-                                <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="#" class="btn head-btn1">Register</a>
-                                    <a href="#" class="btn head-btn2">Login</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
+
     <main>
 
-        <!-- Hero Area Start-->
-        <div class="slider-area ">
-            <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>UI/UX Designer</h2>
+        <div class="wrapper">
+            <div class="profile">
+                <div class="content">
+                    <h1>Thông tin cá nhân</h1>
+                    <form asp-action="CapNhatThongTin" method="post">
+                        <!-- Photo -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="avatar">Ảnh hồ sơ</label>
                             </div>
-                        </div>
-                    </div>
+                            <div class="grid-65">
+                                <span class="photo" title="Upload your Avatar!"></span>
+                                <input type="file" class="btn" />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="fname">Họ và tên</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv.ho_ten" id="fname" tabindex="1" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="email">Số điện thoại</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="phonenumber" value="@ntv.so_dien_thoai" id="phonenumber" tabindex="6" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+                        <!-- Email -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="email" value="@ntv.email" id="email" tabindex="6" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="lname">Ngày tạo</label>
+                            </div>
+                            <div class="grid-65">
+                                <input disabled value="@ntv.ngay_tao" id="lname" tabindex="2" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="lname">Ngày sinh</label>
+                            </div>
+                            <div class="grid-65">
+                                <input value="@ntv.ngay_sinh" id="lname" type="date" tabindex="2" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+                        <!-- Description about User -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="description">Mô tả</label>
+                            </div>
+                            <div class="grid-65">
+                                <textarea name="" cols="30" rows="auto" tabindex="3" class="field-disabled" disabled>@ntv.MoTa</textarea>
+                            </div>
+                        </fieldset>
+                        <!-- Location -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="location">Nơi ở / Xã</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv.WardId" id="location" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="location">Nơi ở / Huyện</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv.DistrictId" id="location" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                        </fieldset><fieldset>
+                            <div class="grid-35">
+                                <label for="location">Nơi ở / Tỉnh</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv.ProvinceId" id="location" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+                        <!-- Country -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="activities">Hoạt động ngoại khóa</label>
+                            </div>
+                            <div class="grid-65">
+                                <textarea id="activities" tabindex="3" class="field-disabled" disabled rows="auto" cols="30">@ntv.HoatDongNgoaiKhoa</textarea>
+                            </div>
+                        </fieldset>
+
+
+                        <!-- Looking for Work -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="qualification">Năm kinh nghiệm</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv.KinhNghiem" id="location" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                            @*  <div class="grid-65">
+                            <select name="qualification" id="qualification" tabindex="8">
+                            <option selected="selected" value="--------------" disabled>--------------</option>
+                            <option value="primary_school">1</option>
+                            <option value="primary_school">2</option>
+                            <option value="primary_school">3</option>
+                            <option value="primary_school">4</option>
+                            <option value="primary_school">5</option>
+                            <option value="primary_school">trên năm 5</option>
+
+                            </select>
+                            </div> *@
+                        </fieldset>
+                        <!-- Highest Qualification -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="qualification">Ngôn ngữ</label>
+                            </div>
+                            <div class="grid-65">
+                                @* <select name="qualification" id="qualification" tabindex="8">
+                                <option selected="selected" value="--------------" disabled>--------------</option>
+                                <option value="primary_school">Tiếng Việt - Tiếng Anh</option>
+                                <option value="high_school">Tiếng việt - Tiếng Trung</option>
+                                <option value="high_school">Tiếng việt - Tiếng Hàn</option>
+                                <option value="high_school">Tiếng việt - Tiếng Nhật</option>
+                                </select> *@
+                                <input type="text" value="@ntv.NgonNgu" id="location" tabindex="4" class="field-disabled" disabled />
+
+                            </div>
+                        </fieldset>
+                        <!-- School -->
+                        <fieldset>
+                            <input type="" class="Btn edit" value="Sửa" onclick="editProfile()"/>
+                            <input type="submit" class="Btn" value="Lưu" />
+                        </fieldset>
+
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- Hero Area End -->
-        <!-- job post company Start -->
 
 
-        <div class="job-post-company pt-120 pb-120">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <!-- Left Content -->
-                    <div class="col-xl-7 col-lg-8">
-                        <!-- job single -->
-                        <div class="single-job-items mb-50">
-                            <div class="job-items">
-                                <div class="company-img company-img-details">
-                                    <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                   @*  <a href="#">
-                                        <h4></h4>
-                                    </a>
-                                    <ul>
-                                        <li><i class="fas fa-map-marker-alt"></i></li>
-                                        <li> </li>
-                                    </ul> *@
-                                    <div>
-                                        <h4>HoSoNguoiTimViec</h4>
-                                        <hr />
-                                        <dl class="row">
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.NguoiTimViecId)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.NguoiTimViecId)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.HinhAnh)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.HinhAnh)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.NguoiDungId)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.NguoiDungId)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.MoTa)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.MoTa)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.NgonNgu)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.NgonNgu)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.email)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.email)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.KinhNghiem)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.KinhNghiem)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.ho_ten)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.ho_ten)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.ngay_sinh)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.ngay_sinh)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.gioi_tinh)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.gioi_tinh)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.so_dien_thoai)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.so_dien_thoai)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.dia_chi_nha)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.dia_chi_nha)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.DistrictId)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.DistrictId)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.WardId)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.WardId)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.ProvinceId)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.ProvinceId)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.trang_thai)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.trang_thai)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.ngay_tao)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.ngay_tao)
-                                            </dd>
-                                            <dt class="col-sm-2">
-                                                @Html.DisplayNameFor(model => model.HoatDongNgoaiKhoa)
-                                            </dt>
-                                            <dd class="col-sm-10">
-                                                @Html.DisplayFor(model => model.HoatDongNgoaiKhoa)
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div>
-                                        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-                                        <a asp-action="Index">Back to List</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- job single End -->
-
-                        <div class="job-post-details">
-                            <div class="post-details1 mb-50">
-                                <!-- Small Section Tittle -->
-                                <div class="small-section-tittle">
-                                   @*  @foreach (var item in kyNang)
-                                    {
-                                        <h4>@item.TenKyNang</h4>
-                                        <p>@item.MoTa</p>
-                                    }
- *@
-
-                                </div>
-
-                            </div>
-                            <div class="post-details2  mb-50">
-                                <!-- Small Section Tittle -->
-                                <div class="small-section-tittle">
-                                    <h4>Required Knowledge, Skills, and Abilities</h4>
-                                </div>
-                                <ul>
-                                    <li>System Software Development</li>
-                                    <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
-                                    <li>Research and code , libraries, APIs and frameworks</li>
-                                    <li>Strong knowledge on software development life cycle</li>
-                                    <li>Strong problem solving and debugging skills</li>
-                                </ul>
-                            </div>
-                            <div class="post-details2  mb-50">
-                                <!-- Small Section Tittle -->
-                                <div class="small-section-tittle">
-                                    <h4>Education + Experience</h4>
-                                </div>
-                                <ul>
-
-@* 
-                                    @foreach (var item in kinhNghiem)
-                                    {
-                                        <h4>@item.MoTa</h4>
-                                        <h4>@item.TenKinhNghiem</h4>
-                                        <h4>@item.SoNamKinhNghiem</h4>
-                                    }
- *@
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- Right Content -->
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="post-details3  mb-50">
-                            <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
-                                <h4>Job Overview</h4>
-                            </div>
-                            <ul>
-                            @*     <li>Posted date : <span>@congViec.NgayDang.ToString("dd/MM/yyyy")</span></li>
-                                <li>Location : <span>@congViec.ProvinceName</span></li>
-                                <li>Vacancy : <span>@congViec.SoLuong</span></li>
-                                <li>Job nature : <span>@congViec.DangCongViec</span></li>
-                                <li>Salary :  <span> @congViec.LuongHangThang.ToString("C0") </span></li>
-                                <li>Application date : <span>@congViec.HanNopHoSo.ToString("dd/MM/yyyy")</span></li> *@
-                            </ul>
-                            <div class="apply-btn2">
-                                <button type="submit" name="submid" >
-                                    <a href="#" class="btn">Apply Now</a>
-                                </button>
-
-                            </div>
-                        </div>
-                        <div class="post-details4  mb-50">
-                            <!-- Small Section Tittle -->
-                           @*  <div class="small-section-tittle">
-                                <h4>@doanhNghiep.TenCongTy</h4>
-                            </div>
-                            <img style="width:200px;height:180px" src="~/Images/minh.jpg.png" alt="@doanhNghiep.DoanhNghiepId" class="img-fluid rounded-4" />
-                            <span>Colorlib</span>
-                            <p>@doanhNghiep.MoTa</p>
-                            <ul>
-                                <li>Name: <span>@doanhNghiep.TenCongTy </span></li>
-                                <li>Location: <span>@doanhNghiep.DiaChi </span></li>
-                                <li>Web : <span> colorlib.com</span></li>
-                                <li>Email: <span>@doanhNghiep.HinhAnh</span></li>
-                            </ul> *@
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- job post company End -->
-
-
+        <script>
+            function editProfile() {
+                // Lấy tất cả các trường input trong form
+                const inputs = document.querySelectorAll('input[type="text"],input[type="phonenumber"],input[type="date"], input[type="email"], textarea');
+                inputs.forEach(input => {
+                    input.disabled = false; // Bỏ disable cho tất cả các trường
+                    input.classList.remove('field-disabled'); // Xóa lớp disabled
+                    input.classList.add('field-edit'); // Thêm lớp edit
+                });
+            }
+        </script>
 
     </main>
-    <footer>
-        <!-- Footer Start-->
-        <div class="footer-area footer-bg footer-padding">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30">
-                                <div class="footer-tittle">
-                                    <h4>About Us</h4>
-                                    <div class="footer-pera">
-                                        <p>Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so behold.</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Contact Info</h4>
-                                <ul>
-                                    <li>
-                                        <p>
-                                            Address :Your address goes
-                                            here, your demo address.
-                                        </p>
-                                    </li>
-                                    <li><a href="#">Phone : +8880 44338899</a></li>
-                                    <li><a href="#">Email : info@colorlib.com</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Important Link</h4>
-                                <ul>
-                                    <li><a href="#"> View Project</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Testimonial</a></li>
-                                    <li><a href="#">Proparties</a></li>
-                                    <li><a href="#">Support</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Newsletter</h4>
-                                <div class="footer-pera footer-pera2">
-                                    <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
-                                </div>
-                                <!-- Form -->
-                                <div class="footer-form">
-                                    <div id="mc_embed_signup">
-                                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                              method="get" class="subscribe_form relative mail_part">
-                                            <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                                   class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                                   onblur="this.placeholder = ' Email Address '">
-                                            <div class="form-icon">
-                                                <button type="submit" name="submit" id="newsletter-submit"
-                                                        class="email_icon newsletter-submit button-contactForm">
-                                                    <img src="assets/img/icon/form.png" alt="">
-                                                </button>
-                                            </div>
-                                            <div class="mt-10 info"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="row footer-wejed justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <!-- logo -->
-                        <div class="footer-logo mb-20">
-                            <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="footer-tittle-bottom">
-                            <span>5000+</span>
-                            <p>Talented Hunter</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="footer-tittle-bottom">
-                            <span>451</span>
-                            <p>Talented Hunter</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <!-- Footer Bottom Tittle -->
-                        <div class="footer-tittle-bottom">
-                            <span>568</span>
-                            <p>Talented Hunter</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer-bottom area -->
-        <div class="footer-bottom-area footer-bg">
-            <div class="container">
-                <div class="footer-border">
-                    <div class="row d-flex justify-content-between align-items-center">
-                        <div class="col-xl-10 col-lg-10 ">
-                            <div class="footer-copy-right">
-                                <p>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="footer-social f-right">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fas fa-globe"></i></a>
-                                <a href="#"><i class="fab fa-behance"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End-->
-    </footer>
 
     <!-- JS here -->
     <!-- All JS Custom Plugins Link Here here -->

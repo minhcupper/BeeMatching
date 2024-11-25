@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API_He_thong.DATA
 {
-    public class NguoiXinViecService:INguoiXinViec
+    public class NguoiXinViecService : INguoiXinViec
     {
         private readonly API_Context context;
 
@@ -53,13 +53,20 @@ namespace API_He_thong.DATA
             if (existingUser != null)
             {
                 // Update fields
+                existingUser.ho_ten = user.ho_ten;
+                existingUser.so_dien_thoai = user.so_dien_thoai;
+                existingUser.email = user.email;
+                existingUser.ngay_sinh = user.ngay_sinh;
                 existingUser.MoTa = user.MoTa;
+                existingUser.WardId = user.WardId;
+                existingUser.DistrictId = user.DistrictId;
+                existingUser.ProvinceId = user.ProvinceId;
                 existingUser.NgonNgu = user.NgonNgu;
                 existingUser.HinhAnh = user.HinhAnh;
                 existingUser.KinhNghiem = user.KinhNghiem;
                 existingUser.HoatDongNgoaiKhoa = user.HoatDongNgoaiKhoa;
                 existingUser.KyNangNguoiXinViecs = user.KyNangNguoiXinViecs;
-               
+
 
 
                 await context.SaveChangesAsync();

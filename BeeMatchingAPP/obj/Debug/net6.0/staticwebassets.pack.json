@@ -1549,6 +1549,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\fontawesome-all.min.css"
     },
     {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\css\\hoso.css",
+      "PackagePath": "staticwebassets\\assets\\css\\hoso.css"
+    },
+    {
       "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\css\\magnific-popup.css",
       "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.css"
     },

@@ -25,4 +25,14 @@
     <Folder Include="Views\CongViec\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API_He_thong\API_He_thong.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controllers\HomeController.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

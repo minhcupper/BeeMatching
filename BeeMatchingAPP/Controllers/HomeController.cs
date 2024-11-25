@@ -23,11 +23,11 @@ namespace BeeMatchingAPP.Controllers
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly ILogger<HomeController> _logger;
         HttpClient _httpClient;
-        public HomeController(ILogger<HomeController> logger, HttpClient httpClient , IWebHostEnvironment hostingEnvironment)
+        public HomeController(ILogger<HomeController> logger, HttpClient httpClient, IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
             _httpClient = httpClient;
-            _hostingEnvironment = hostingEnvironment;   
+            _hostingEnvironment = hostingEnvironment;
         }
         private NguoiTimViec TrangThongTinCaNhan
         {
@@ -52,9 +52,42 @@ namespace BeeMatchingAPP.Controllers
         {
             // Truy xuất dữ liệu cá nhân (được giả định là từ mô hình hoặc session)
             var data = TrangThongTinCaNhan;
-
-           
+            ViewData["HoSo"] = data;
             return View(data);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CapNhatThongTin(NguoiTimViec nguoiTimViec)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new NguoiTimViec
+                {
+                    ho_ten = nguoiTimViec.ho_ten,
+                    so_dien_thoai = nguoiTimViec.so_dien_thoai,
+                    email = nguoiTimViec.email,
+                    ngay_sinh = nguoiTimViec.ngay_sinh,
+                    MoTa = nguoiTimViec.MoTa,
+                    WardId = nguoiTimViec.WardId,
+                    DistrictId = nguoiTimViec.DistrictId,
+                    ProvinceId = nguoiTimViec.ProvinceId,
+                    NgonNgu = nguoiTimViec.NgonNgu,
+                    HinhAnh = nguoiTimViec.HinhAnh,
+                    KinhNghiem = nguoiTimViec.KinhNghiem,
+                    HoatDongNgoaiKhoa = nguoiTimViec.HoatDongNgoaiKhoa,
+                    KyNangNguoiXinViecs = nguoiTimViec.KyNangNguoiXinViecs
+
+                };
+                var response = await _httpClient.PutAsJsonAsync($"https://localhost:7287/api/NguoiTimViec/Edit/{nguoiTimViec.NguoiTimViecId}", user);
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("TrangThongTinNguoiTimViec");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Cập nhật thông tin không thành công");
+                }
+            }
+            return View(nguoiTimViec);
         }
 
         // Phương thức hiển thị thông tin ứng tuyển
@@ -164,6 +197,38 @@ namespace BeeMatchingAPP.Controllers
             // Lưu thông tin ứng tuyển vào session
             HttpContext.Session.Set("ungtuyen", newItem1);
         }
+        private async Task ThemVaoTrangThongnguoidung(int id)
+        {
+            // Khai báo đối tượng người tìm việc
+            NguoiDung userInfo = null;
+
+            // Gọi API để lấy danh sách người tìm việc
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/User/GetAll");
+            if (response.IsSuccessStatusCode)
+            {
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
+                var allUsers = JsonConvert.DeserializeObject<List<NguoiDung>>(apiResponse);
+
+                // Tìm kiếm người dùng theo ID
+                userInfo = allUsers.Find(p => p.nguoi_dung_id == id);
+            }
+            else
+            {
+                throw new Exception("Không thể lấy danh sách người tìm việc từ API.");
+            }
+
+            // Nếu không tìm thấy người dùng, throw exception
+            if (userInfo == null)
+            {
+                throw new Exception($"Tài khoản với ID {id} không tồn tại hoặc chưa nhập thông tin.");
+            }
+
+            // Truy xuất thông tin người dùng từ Session
+            var data = TrangThongTinCaNhan;
+
+
+        }
         // GET: Login
         [HttpGet]
         public async Task<ActionResult> Login()
@@ -196,15 +261,14 @@ namespace BeeMatchingAPP.Controllers
                 if (userInfo != null)
                 {
                     // Gọi phương thức ThemVaoTrangThongTinNguoiTimViec với ID người dùng
-                  try
-                {
-    await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
-                    
-                 }
-                catch (Exception ex)
+                    try
                     {
-    ModelState.AddModelError(string.Empty, ex.Message);
-    return View(user);
+                        await ThemVaoTrangThongnguoidung(userInfo.nguoi_dung_id);
+                    }
+                    catch (Exception ex)
+                    {
+                        ModelState.AddModelError(string.Empty, ex.Message);
+                        return View(user);
                     }
 
                   
@@ -216,6 +280,10 @@ namespace BeeMatchingAPP.Controllers
                     else if (userInfo.Roles == "Người xin việc")
                     {
                         return RedirectToAction("CongViec", "CongViec");
+                    }
+                    else if (userInfo.Roles == "Doanh Nghiệp")
+                    {
+                        return RedirectToAction("Doanhnghiep", "DoanhNghieps");
                     }
                     else
                     {
@@ -323,7 +391,7 @@ namespace BeeMatchingAPP.Controllers
                 kynangcongviec = JsonConvert.DeserializeObject<List<KyNangCongViec>>(apiresponse);
             }
 
-            // Các cuộc gọi API khác cho districts, wards, v.v.
+
             List<provinces> provinces = new List<provinces>();
             var provinceResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAllprovinces");
             if (provinceResponse.IsSuccessStatusCode)
@@ -453,56 +521,56 @@ namespace BeeMatchingAPP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(NguoiDung user, IFormFile hinh_anh)
         {
-          /*  // Kiểm tra nếu hinh_anh không phải null
-            if (hinh_anh == null || hinh_anh.Length == 0)
-            {
-                ModelState.AddModelError("hinh_anh", "Vui lòng chọn hình ảnh.");
-                return View(user);
-            }
+            /*  // Kiểm tra nếu hinh_anh không phải null
+              if (hinh_anh == null || hinh_anh.Length == 0)
+              {
+                  ModelState.AddModelError("hinh_anh", "Vui lòng chọn hình ảnh.");
+                  return View(user);
+              }
 
-            // Kiểm tra phần mở rộng của tệp
-            string fileExtension = Path.GetExtension(hinh_anh.FileName).ToLower();
-            string[] allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+              // Kiểm tra phần mở rộng của tệp
+              string fileExtension = Path.GetExtension(hinh_anh.FileName).ToLower();
+              string[] allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
 
-            if (!allowedExtensions.Contains(fileExtension))
-            {
-                ModelState.AddModelError(string.Empty, "Chỉ chấp nhận tệp hình ảnh (.jpg, .jpeg, .png, .gif).");
-                return View(user);
-            }
+              if (!allowedExtensions.Contains(fileExtension))
+              {
+                  ModelState.AddModelError(string.Empty, "Chỉ chấp nhận tệp hình ảnh (.jpg, .jpeg, .png, .gif).");
+                  return View(user);
+              }
 
-            // Kiểm tra dung lượng tệp (giới hạn 5MB)
-            if (hinh_anh.Length > 5 * 1024 * 1024) // 5MB
-            {
-                ModelState.AddModelError(string.Empty, "Dung lượng tệp không được vượt quá 5MB.");
-                return View(user);
-            }
+              // Kiểm tra dung lượng tệp (giới hạn 5MB)
+              if (hinh_anh.Length > 5 * 1024 * 1024) // 5MB
+              {
+                  ModelState.AddModelError(string.Empty, "Dung lượng tệp không được vượt quá 5MB.");
+                  return View(user);
+              }
 
-            // Tạo tên tệp (ví dụ: nv123.jpg)
-            string fileName = "nv" + user.nguoi_dung_id.ToString() + fileExtension;
+              // Tạo tên tệp (ví dụ: nv123.jpg)
+              string fileName = "nv" + user.nguoi_dung_id.ToString() + fileExtension;
 
-            // Đường dẫn đến thư mục lưu tệp
-            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Upload", "images", fileName);
+              // Đường dẫn đến thư mục lưu tệp
+              string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Upload", "images", fileName);
 
-            // Kiểm tra và tạo thư mục nếu chưa tồn tại
-            var directory = Path.GetDirectoryName(filePath);
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
+              // Kiểm tra và tạo thư mục nếu chưa tồn tại
+              var directory = Path.GetDirectoryName(filePath);
+              if (!Directory.Exists(directory))
+              {
+                  Directory.CreateDirectory(directory);
+              }
 
-            // Lưu tệp vào thư mục
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await hinh_anh.CopyToAsync(stream);
-            }
+              // Lưu tệp vào thư mục
+              using (var stream = new FileStream(filePath, FileMode.Create))
+              {
+                  await hinh_anh.CopyToAsync(stream);
+              }
 
-            // Cập nhật tên tệp vào trường hinh_anh trong model
-            user.hinh_anh = fileName;
+              // Cập nhật tên tệp vào trường hinh_anh trong model
+              user.hinh_anh = fileName;
 
-            // Tiến hành lưu dữ liệu vào cơ sở dữ liệu, hoặc thực hiện các bước tiếp theo
-            // Bạn có thể gọi API hoặc lưu thông tin vào cơ sở dữ liệu ở đây
+              // Tiến hành lưu dữ liệu vào cơ sở dữ liệu, hoặc thực hiện các bước tiếp theo
+              // Bạn có thể gọi API hoặc lưu thông tin vào cơ sở dữ liệu ở đây
 
-            // Example API Call (Có thể sửa theo nhu cầu của bạn)*/
+              // Example API Call (Có thể sửa theo nhu cầu của bạn)*/
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("https://localhost:7287/api/User/Create", content);
 
@@ -516,7 +584,7 @@ namespace BeeMatchingAPP.Controllers
             ModelState.AddModelError(string.Empty, $"Error occurred while creating user: {responseContent}");
             return View(user);  // Trả về view với thông báo lỗi
         }
-     
+
 
         public IActionResult Privacy()
         {
