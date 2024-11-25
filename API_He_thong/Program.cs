@@ -56,6 +56,8 @@ builder.Services.AddScoped<Ikinhnghiemcongviec, KinhNghiemCongViecService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,11 +1,14 @@
-﻿@model BeeMatchingAPP.Models.CongViec
+﻿@model BeeMatchingAPP.Models.UngTuyen
 
 @{
-    CongViec congViec = ViewData["reservation"] as CongViec;
-    List<KyNangCongViec> kyNang = ViewData["kynang"] as List<KyNangCongViec>;
-    DoanhNghiep doanhNghiep = ViewData["doanhnghiep"] as DoanhNghiep;
-    List<KinhNghiemCongViec> kinhNghiem = ViewData["kinhnghiem"] as List<KinhNghiemCongViec>;
+    ViewData["Title"] = "TrangThongTinUngTuyen";
+    UngTuyen ut = ViewData["ungtuyen"] as UngTuyen;
+    CongViec congViec = ViewData["id"] as CongViec;
 }
+
+  
+
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -54,7 +57,7 @@
                         <div class="col-lg-3 col-md-2">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="/assets/img/logo/logo.png" alt=""></a>
+                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -128,13 +131,15 @@
                                     <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
-                                    <a href="#">
-                                        <h4>@congViec.TieuDe</h4>
+                                    @*  <a href="#">
+                                    <h4></h4>
                                     </a>
                                     <ul>
-                                        <li><i class="fas fa-map-marker-alt"></i>@congViec.DistrictName, @congViec.WardName, @congViec.ProvinceName</li>
-                                        <li>@congViec.LuongHangThang.ToString("C0") </li>
-                                    </ul>
+                                    <li><i class="fas fa-map-marker-alt"></i></li>
+                                    <li> </li>
+                                    </ul> *@
+                                    <div>
+                                       
                                 </div>
                             </div>
                         </div>
@@ -144,12 +149,73 @@
                             <div class="post-details1 mb-50">
                                 <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
-                                    @foreach (var item in kyNang)
+                                    @*  @foreach (var item in kyNang)
                                     {
-                                        <h4>@item.TenKyNang</h4>
-                                        <p>@item.MoTa</p>
+                                    <h4>@item.TenKyNang</h4>
+                                    <p>@item.MoTa</p>
                                     }
+                                    *@
+                                        <h1>TrangThongTinUngTuyen</h1>
 
+                                        <h4>UngTuyen</h4>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <form asp-action="TrangThongTinUngTuyen">
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                   
+                                                    <div class="form-group">
+                                                        <label asp-for="CongViecId" class="control-label"></label>
+                                                        <input asp-for=" @congViec.CongViecId" class="form-control" />
+                                                        <span asp-validation-for="CongViecId" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label asp-for="NguoiTimViecId" class="control-label"></label>
+                                                        <input asp-for="NguoiTimViecId" class="form-control" />
+                                                        <span asp-validation-for="NguoiTimViecId" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label asp-for="NgayUngTuyen" class="control-label"></label>
+                                                        <input asp-for="NgayUngTuyen" class="form-control" />
+                                                        <span asp-validation-for="NgayUngTuyen" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label asp-for="DeXuat" class="control-label"></label>
+                                                        <input asp-for="DeXuat" class="form-control" />
+                                                        <span asp-validation-for="DeXuat" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label asp-for="TrangThai" class="control-label"></label>
+                                                        <input asp-for="TrangThai" class="form-control" />
+                                                        <span asp-validation-for="TrangThai" class="text-danger"></span>
+                                                    </div>
+
+                                                    <div class="form-group form-check">
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" asp-for="ChapNhanCongViec" /> @Html.DisplayNameFor(model => model.ChapNhanCongViec)
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <a asp-action="Index">Back to List</a>
+                                        </div>
+
+                                        @section Scripts {
+                                            @{
+                                                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+                                            }
+                                        }
 
                                 </div>
 
@@ -170,16 +236,19 @@
                             <div class="post-details2  mb-50">
                                 <!-- Small Section Tittle -->
                                 <div class="small-section-tittle">
+                                    <h4>Education + Experience</h4>
+                                </div>
+                                <ul>
+
+                                    @*
                                     @foreach (var item in kinhNghiem)
                                     {
-                                        <h4>@item.MoTa</h4>
-                                        <p>@item.TenKinhNghiem</p>
-                                        <p>@item.SoNamKinhNghiem</p>
+                                    <h4>@item.MoTa</h4>
+                                    <h4>@item.TenKinhNghiem</h4>
+                                    <h4>@item.SoNamKinhNghiem</h4>
                                     }
-
-                                </div>
-                              
-                              
+                                    *@
+                                </ul>
                             </div>
                         </div>
 
@@ -192,34 +261,34 @@
                                 <h4>Job Overview</h4>
                             </div>
                             <ul>
-                                <li>Posted date : <span>@congViec.NgayDang.ToString("dd/MM/yyyy")</span></li>
+                                @*     <li>Posted date : <span>@congViec.NgayDang.ToString("dd/MM/yyyy")</span></li>
                                 <li>Location : <span>@congViec.ProvinceName</span></li>
                                 <li>Vacancy : <span>@congViec.SoLuong</span></li>
                                 <li>Job nature : <span>@congViec.DangCongViec</span></li>
                                 <li>Salary :  <span> @congViec.LuongHangThang.ToString("C0") </span></li>
-                                <li>Application date : <span>@congViec.HanNopHoSo.ToString("dd/MM/yyyy")</span></li>
+                                <li>Application date : <span>@congViec.HanNopHoSo.ToString("dd/MM/yyyy")</span></li> *@
                             </ul>
                             <div class="apply-btn2">
-                                <button>
-                                    <a asp-controller="Home" asp-route-id="@congViec.CongViecId" asp-action="TrangThongTinUngTuyen">Ứng Tuyển </a>
+                                <button type="submit" name="submid">
+                                    <a href="#" class="btn">Apply Now</a>
                                 </button>
 
                             </div>
                         </div>
                         <div class="post-details4  mb-50">
                             <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
-                                <h4>@doanhNghiep.TenCongTy</h4>
+                            @*  <div class="small-section-tittle">
+                            <h4>@doanhNghiep.TenCongTy</h4>
                             </div>
                             <img style="width:200px;height:180px" src="~/Images/minh.jpg.png" alt="@doanhNghiep.DoanhNghiepId" class="img-fluid rounded-4" />
                             <span>Colorlib</span>
                             <p>@doanhNghiep.MoTa</p>
                             <ul>
-                                <li>Name: <span>@doanhNghiep.TenCongTy </span></li>
-                                <li>Location: <span>@doanhNghiep.DiaChi </span></li>
-                                <li>Web : <span> colorlib.com</span></li>
-                                <li>Email: <span>@doanhNghiep.HinhAnh</span></li>
-                            </ul>
+                            <li>Name: <span>@doanhNghiep.TenCongTy </span></li>
+                            <li>Location: <span>@doanhNghiep.DiaChi </span></li>
+                            <li>Web : <span> colorlib.com</span></li>
+                            <li>Email: <span>@doanhNghiep.HinhAnh</span></li>
+                            </ul> *@
                         </div>
                     </div>
                 </div>

@@ -40,6 +40,17 @@ namespace API_He_thong.Controllers
             return Ok(user);
         }
 
+        /*[HttpGet("GetByDangCongViec/{dangCongViec}")]
+        public async Task<IActionResult> GetJobByDangCongViec(string dangCongViec)
+        {
+            var listCongViec = await GetJobByDangCongViec(dangCongViec);
+            if(listCongViec == null)
+            {
+                return NotFound();
+            }
+            return Ok(listCongViec);
+        }*/
+
         // POST: api/User/Create
         [HttpPost("Create")]
         public async Task<IActionResult> PostUser(CongViec user)
@@ -85,5 +96,7 @@ namespace API_He_thong.Controllers
             }
             return NotFound($"User with ID {id} not found.");
         }
+
+        
     }
 }

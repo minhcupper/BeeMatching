@@ -13,6 +13,7 @@ using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using helper;
+using Microsoft.VisualBasic;
 namespace BeeMatchingAPP.Controllers
 {
     //tuan day
@@ -36,16 +37,67 @@ namespace BeeMatchingAPP.Controllers
                 return HttpContext.Session.Get<NguoiTimViec>("ThongTin") ?? new NguoiTimViec();
             }
         }
+        // Thuộc tính để truy xuất dữ liệu từ session
+        private UngTuyen DuLieuTrangUngTuyen
+        {
+            get
+            {
+                // Truy xuất đối tượng UngTuyen từ session, hoặc trả về một thể hiện mới nếu không tìm thấy
+                return HttpContext.Session.Get<UngTuyen>("ungtuyen") ?? new UngTuyen();
+            }
+        }
 
+        // Phương thức xử lý trang thông tin cá nhân cho người tìm việc
         public async Task<ActionResult> TrangThongTinNguoiTimViec()
         {
-            // Lấy dữ liệu từ Session
+            // Truy xuất dữ liệu cá nhân (được giả định là từ mô hình hoặc session)
             var data = TrangThongTinCaNhan;
+
+           
             return View(data);
         }
 
+        // Phương thức hiển thị thông tin ứng tuyển
+        public async Task<ActionResult> TrangThongTinUngTuyen(int id)
+        {
+            // Truy xuất dữ liệu từ session
+            var data = DuLieuTrangUngTuyen;
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Không thể lấy công việc từ API.");
+            }
+            var apiResponse = await response.Content.ReadAsStringAsync();
+            var congviec = JsonConvert.DeserializeObject<CongViec>(apiResponse);
+            ViewData["id"] = congviec;
+            // Truyền dữ liệu vào view thông qua ViewData
+            ViewData["ungtuyen"] = data;
+
+            // Trả về view với dữ liệu ứng tuyển
+            return View(data);
+        }
+        private async Task ThemIDCongViecVaoTrangThongTinUngTuyen(int id)
+        {
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Không thể lấy công việc từ API.");
+            }
+
+            var apiResponse = await response.Content.ReadAsStringAsync();
+            var congviec = JsonConvert.DeserializeObject<CongViec>(apiResponse);
+
+            if (congviec == null)
+            {
+                throw new Exception($"Công việc với ID {id} không tồn tại.");
+            }
+
+            // Lưu CongViecId vào Session
+            HttpContext.Session.SetInt32("CongViecId", congviec.CongViecId);
+        }
         private async Task ThemVaoTrangThongTinNguoiTimViec(int id)
         {
+         
             // Khai báo đối tượng người tìm việc
             NguoiTimViec userInfo = null;
 
@@ -72,11 +124,12 @@ namespace BeeMatchingAPP.Controllers
             }
 
             // Truy xuất thông tin người dùng từ Session
-            var data = TrangThongTinCaNhan;
+         //   var data = TrangThongTinCaNhan;
 
             // Tạo đối tượng mới từ thông tin người dùng
             var newItem = new NguoiTimViec
-            {
+            {  NguoiTimViecId=userInfo.NguoiTimViecId,
+                NguoiDungId = id,
                 HinhAnh = userInfo.HinhAnh,
                 so_dien_thoai = userInfo.so_dien_thoai,
                 gioi_tinh = userInfo.gioi_tinh,
@@ -95,8 +148,21 @@ namespace BeeMatchingAPP.Controllers
                 trang_thai = userInfo.trang_thai
             };
 
-            // Lưu thông tin người dùng vào Session
+           //Lưu thông tin người dùng vào Session
             HttpContext.Session.Set("ThongTin", newItem);
+
+            // Tạo mới đối tượng ứng tuyển
+            var newItem1 = new UngTuyen
+            {
+                NguoiTimViecId = userInfo.NguoiTimViecId,
+                NgayUngTuyen = DateTime.Now,
+                DeXuat = "",
+                TrangThai = "Đang xem xét",
+                ChapNhanCongViec = true
+            };
+
+            // Lưu thông tin ứng tuyển vào session
+            HttpContext.Session.Set("ungtuyen", newItem1);
         }
         // GET: Login
         [HttpGet]
@@ -131,15 +197,17 @@ namespace BeeMatchingAPP.Controllers
                 {
                     // Gọi phương thức ThemVaoTrangThongTinNguoiTimViec với ID người dùng
                   try
-{
+                {
     await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
-}
-catch (Exception ex)
-{
+                    
+                 }
+                catch (Exception ex)
+                    {
     ModelState.AddModelError(string.Empty, ex.Message);
     return View(user);
-}
+                    }
 
+                  
                     // Chuyển hướng dựa trên vai trò của người dùng
                     if (userInfo.Roles == "ADMIN")
                     {
@@ -218,6 +286,17 @@ catch (Exception ex)
         }
         public async Task<ActionResult> Details(int id)
         {
+            try
+            {
+                // Gọi phương thức ThemIDCongViecVaoTrangThongTinUngTuyen để lưu id công việc vào session
+                await ThemIDCongViecVaoTrangThongTinUngTuyen(id);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu có
+                ModelState.AddModelError(string.Empty, ex.Message);
+
+            }
             CongViec reservation = new CongViec();
             var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
             if (response.IsSuccessStatusCode)
@@ -225,6 +304,9 @@ catch (Exception ex)
                 var apiresponse = await response.Content.ReadAsStringAsync();
                 reservation = JsonConvert.DeserializeObject<CongViec>(apiresponse);
             }
+          
+
+            // Lấy các dữ liệu liên quan khác như trước
             List<KyNangCongViec> kynangcongviec = new List<KyNangCongViec>();
             var responsekynang = await _httpClient.GetAsync($"https://localhost:7287/api/SkillCongViec/GetAll");
             if (responsekynang.IsSuccessStatusCode)
@@ -232,15 +314,16 @@ catch (Exception ex)
                 var apiresponse = await responsekynang.Content.ReadAsStringAsync();
                 kynangcongviec = JsonConvert.DeserializeObject<List<KyNangCongViec>>(apiresponse);
             }
+            // Lấy các dữ liệu liên quan khác như trước
             List<KinhNghiemCongViec> kinhnghiemcongviec = new List<KinhNghiemCongViec>();
             var responsekinhnghiem = await _httpClient.GetAsync($"https://localhost:7287/api/KinhNghiemCongViec/GetAll");
-            if (responsekinhnghiem.IsSuccessStatusCode)
+            if (responsekynang.IsSuccessStatusCode)
             {
                 var apiresponse = await responsekynang.Content.ReadAsStringAsync();
-                kinhnghiemcongviec = JsonConvert.DeserializeObject<List<KinhNghiemCongViec>>(apiresponse);
+                kynangcongviec = JsonConvert.DeserializeObject<List<KyNangCongViec>>(apiresponse);
             }
-           
 
+            // Các cuộc gọi API khác cho districts, wards, v.v.
             List<provinces> provinces = new List<provinces>();
             var provinceResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAllprovinces");
             if (provinceResponse.IsSuccessStatusCode)
@@ -265,64 +348,44 @@ catch (Exception ex)
                 wards = JsonConvert.DeserializeObject<List<wards>>(wardApiResponse);
             }
 
-            // Now map the related province, district, and ward names to the jobs
-
-
-            // Map Province name based on ProvinceId
+            // Bây giờ gán tên các tỉnh, huyện, phường vào công việc
             reservation.ProvinceName = provinces.FirstOrDefault(p => p.code == reservation.ProvinceId)?.full_name ?? "Unknown Province";
-
-            // Map District name based on DistrictId
             reservation.DistrictName = districts.FirstOrDefault(d => d.code == reservation.DistrictId)?.full_name ?? "Unknown District";
-
-            // Map Ward name based on WardId
             reservation.WardName = wards.FirstOrDefault(w => w.code == reservation.WardId)?.full_name ?? "Unknown Ward";
 
+            // Lấy thông tin doanh nghiệp
+            DoanhNghiep doanhnghiep = await CallDoanhNghiep(reservation.DoanhNghiepId);
 
-            DoanhNghiep doanhnghiep = new DoanhNghiep();
-            doanhnghiep = await CallDoanhNghiep(reservation.DoanhNghiepId);
-            List<KyNangCongViec> matchingKynang = null;
-            if (reservation != null && kynangcongviec != null)
-            {
-                // Lọc kỹ năng có CongViecId trùng với reservation.CongViecId
-                matchingKynang = kynangcongviec.Where(k => k.CongViecId == reservation.CongViecId).ToList();
-            }
-
+            // Lọc các kỹ năng phù hợp
+            List<KyNangCongViec> matchingKynang = kynangcongviec.Where(k => k.CongViecId == reservation.CongViecId).ToList();
             List<KyNangCongViec> kynang = new List<KyNangCongViec>();
-            if (matchingKynang != null && matchingKynang.Any())
+            foreach (var item in matchingKynang)
             {
-                foreach (var item in matchingKynang)
+                var fetchedKynang = await CallkynangCongViec(item.KyNangId);
+                if (fetchedKynang != null)
                 {
-                    var fetchedKynang = await CallkynangCongViec(item.KyNangId);
-                    if (fetchedKynang != null)
-                    {
-                        kynang.Add(fetchedKynang);
-                    }
+                    kynang.Add(fetchedKynang);
                 }
             }
-            List<KinhNghiemCongViec> matchingKinhNghiem = null;
-            if (reservation != null && kinhnghiemcongviec != null)
-            {
-                // Lọc kỹ năng có CongViecId trùng với reservation.CongViecId
-                matchingKinhNghiem = kinhnghiemcongviec.Where(k => k.CongViecId == reservation.CongViecId).ToList();
-            }
+
+            // Lọc các kinh nghiệm phù hợp
+            List<KinhNghiemCongViec> matchingKinhNghiem = kinhnghiemcongviec.Where(k => k.CongViecId == reservation.CongViecId).ToList();
             List<KinhNghiemCongViec> kinhNghiem = new List<KinhNghiemCongViec>();
-            if (matchingKinhNghiem != null && matchingKinhNghiem.Any())
+            foreach (var item in matchingKinhNghiem)
             {
-                foreach (var item in matchingKinhNghiem)
+                var fetchedKinhnghiem = await CallkinhnghiemCongViec(item.KinhNghiemId);
+                if (fetchedKinhnghiem != null)
                 {
-                    var fetchedKinhnghiem = await CallkinhnghiemCongViec(item.KinhNghiemId);
-                    if (fetchedKinhnghiem != null)
-                    {
-                        Console.WriteLine($"Fetched: MoTa={fetchedKinhnghiem.MoTa}, TenKinhNghiem={fetchedKinhnghiem.TenKinhNghiem}, SoNamKinhNghiem={fetchedKinhnghiem.SoNamKinhNghiem}");
-                        kinhNghiem.Add(fetchedKinhnghiem);
-                    }
+                    kinhNghiem.Add(fetchedKinhnghiem);
                 }
             }
-            // Nếu tìm thấy kỹ năng phù hợp, gọi CallkynangCongViec với id của kỹ năng đó
+
+            // Đặt ViewData cho việc render view
             ViewData["kinhnghiem"] = kinhNghiem;
             ViewData["kynang"] = kynang;
             ViewData["doanhnghiep"] = doanhnghiep;
             ViewData["reservation"] = reservation;
+          
             return View(reservation);
         }
         public async Task<KyNangCongViec> CallkynangCongViec(int id)

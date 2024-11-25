@@ -6,6 +6,7 @@ using System.Net.Http;
 using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 
 namespace BeeMatchingAPP.Controllers
@@ -71,20 +72,6 @@ namespace BeeMatchingAPP.Controllers
         }
         public async Task<ActionResult> Details(int id)
         {
-            List<KyNangCongViec> kynangcongviec = new List<KyNangCongViec>();
-            var responsekynang = await _httpClient.GetAsync($"https://localhost:7287/api/SkillCongViec/GetAll");
-            if (responsekynang.IsSuccessStatusCode)
-            {
-                var apiresponse = await responsekynang.Content.ReadAsStringAsync();
-                kynangcongviec = JsonConvert.DeserializeObject <List<KyNangCongViec>>(apiresponse);
-            }
-            List<KinhNghiemCongViec> kinhNghiemCongViec = new List<KinhNghiemCongViec>();
-            var responsekinhnghiem = await _httpClient.GetAsync($"https://localhost:7287/api/KinhNghiemCongViec/GetAll");
-            if (responsekinhnghiem.IsSuccessStatusCode)
-            {
-                var apiresponse = await responsekynang.Content.ReadAsStringAsync();
-                kinhNghiemCongViec = JsonConvert.DeserializeObject<List<KinhNghiemCongViec>>(apiresponse);
-            }
             CongViec reservation = new CongViec();
             var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
             if (response.IsSuccessStatusCode)
@@ -92,6 +79,21 @@ namespace BeeMatchingAPP.Controllers
                 var apiresponse = await response.Content.ReadAsStringAsync();
                 reservation = JsonConvert.DeserializeObject<CongViec>(apiresponse);
             }
+            List<KyNangCongViec> kynangcongviec = new List<KyNangCongViec>();
+            var responsekynang = await _httpClient.GetAsync($"https://localhost:7287/api/SkillCongViec/GetAll");
+            if (responsekynang.IsSuccessStatusCode)
+            {
+                var apiresponse = await responsekynang.Content.ReadAsStringAsync();
+                kynangcongviec = JsonConvert.DeserializeObject<List<KyNangCongViec>>(apiresponse);
+            }
+            List<KinhNghiemCongViec> kinhnghiemcongviec = new List<KinhNghiemCongViec>();
+            var responsekinhnghiem = await _httpClient.GetAsync($"https://localhost:7287/api/KinhNghiemCongViec/GetAll");
+            if (responsekinhnghiem.IsSuccessStatusCode)
+            {
+                var apiresponse = await responsekynang.Content.ReadAsStringAsync();
+                kinhnghiemcongviec = JsonConvert.DeserializeObject<List<KinhNghiemCongViec>>(apiresponse);
+            }
+
 
             List<provinces> provinces = new List<provinces>();
             var provinceResponse = await _httpClient.GetAsync("https://localhost:7287/api/Places/GetAllprovinces");
@@ -118,44 +120,60 @@ namespace BeeMatchingAPP.Controllers
             }
 
             // Now map the related province, district, and ward names to the jobs
-          
-            
-                // Map Province name based on ProvinceId
-                reservation.ProvinceName = provinces.FirstOrDefault(p => p.code == reservation.ProvinceId)?.full_name ?? "Unknown Province";
+
+
+            // Map Province name based on ProvinceId
+            reservation.ProvinceName = provinces.FirstOrDefault(p => p.code == reservation.ProvinceId)?.full_name ?? "Unknown Province";
 
             // Map District name based on DistrictId
             reservation.DistrictName = districts.FirstOrDefault(d => d.code == reservation.DistrictId)?.full_name ?? "Unknown District";
 
             // Map Ward name based on WardId
             reservation.WardName = wards.FirstOrDefault(w => w.code == reservation.WardId)?.full_name ?? "Unknown Ward";
-            
+
 
             DoanhNghiep doanhnghiep = new DoanhNghiep();
             doanhnghiep = await CallDoanhNghiep(reservation.DoanhNghiepId);
-            KyNangCongViec matchingKynang = null;
-            if (reservation != null && kynangcongviec != null )
+            List<KyNangCongViec> matchingKynang = null;
+            if (reservation != null && kynangcongviec != null)
             {
                 // Lọc kỹ năng có CongViecId trùng với reservation.CongViecId
-                matchingKynang = kynangcongviec.FirstOrDefault(k => k.CongViecId == reservation.CongViecId);
+                matchingKynang = kynangcongviec.Where(k => k.CongViecId == reservation.CongViecId).ToList();
             }
-            KyNangCongViec kynang = new KyNangCongViec();
-            if (matchingKynang != null)
+
+            List<KyNangCongViec> kynang = new List<KyNangCongViec>();
+            if (matchingKynang != null && matchingKynang.Any())
             {
-                kynang = await CallkynangCongViec(matchingKynang.KyNangId);
+                foreach (var item in matchingKynang)
+                {
+                    var fetchedKynang = await CallkynangCongViec(item.KyNangId);
+                    if (fetchedKynang != null)
+                    {
+                        kynang.Add(fetchedKynang);
+                    }
+                }
             }
-            KinhNghiemCongViec matchingKinhNghiem = null;
-            if (reservation != null && matchingKinhNghiem != null)
+            List<KinhNghiemCongViec> matchingKinhNghiem = null;
+            if (reservation != null && kinhnghiemcongviec != null)
             {
                 // Lọc kỹ năng có CongViecId trùng với reservation.CongViecId
-                matchingKinhNghiem = kinhNghiemCongViec.FirstOrDefault(k => k.CongViecId == reservation.CongViecId);
+                matchingKinhNghiem = kinhnghiemcongviec.Where(k => k.CongViecId == reservation.CongViecId).ToList();
             }
-            KinhNghiemCongViec kinhnghiem = new KinhNghiemCongViec();
-            if (matchingKynang != null)
+            List<KinhNghiemCongViec> kinhNghiem = new List<KinhNghiemCongViec>();
+            if (matchingKinhNghiem != null && matchingKinhNghiem.Any())
             {
-                kinhnghiem = await CallkinhnghiemCongViec(matchingKinhNghiem.KinhNghiemId);
+                foreach (var item in matchingKinhNghiem)
+                {
+                    var fetchedKinhnghiem = await CallkinhnghiemCongViec(item.KinhNghiemId);
+                    if (fetchedKinhnghiem != null)
+                    {
+                        Console.WriteLine($"Fetched: MoTa={fetchedKinhnghiem.MoTa}, TenKinhNghiem={fetchedKinhnghiem.TenKinhNghiem}, SoNamKinhNghiem={fetchedKinhnghiem.SoNamKinhNghiem}");
+                        kinhNghiem.Add(fetchedKinhnghiem);
+                    }
+                }
             }
             // Nếu tìm thấy kỹ năng phù hợp, gọi CallkynangCongViec với id của kỹ năng đó
-            ViewData["kinhnghiem"] = kinhNghiemCongViec;
+            ViewData["kinhnghiem"] = kinhNghiem;
             ViewData["kynang"] = kynang;
             ViewData["doanhnghiep"] = doanhnghiep;
             ViewData["reservation"] = reservation;
@@ -216,6 +234,28 @@ namespace BeeMatchingAPP.Controllers
             ViewData["job"] = hassearch;
             return View("CongViec");
 
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> CheckBoxDangCongViec(string dangCongViec)
+        {
+            List<CongViec> jobList = new List<CongViec>();
+            List<CongViec> jobListHasChecked = new List<CongViec>();
+            var response = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
+            if(response.IsSuccessStatusCode)
+            {
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                jobList = JsonConvert.DeserializeObject<List<CongViec>>(apiResponse);
+            }
+            foreach(var item in jobList)
+            {
+                if(item.DangCongViec.ToLower() == dangCongViec.ToLower())
+                {
+                    jobListHasChecked.Add(item);
+                }
+            }
+            ViewData["job"] = jobListHasChecked;
+            return View("CongViec");
         }
 
     }
