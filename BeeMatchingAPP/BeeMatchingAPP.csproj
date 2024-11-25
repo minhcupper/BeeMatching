@@ -25,4 +25,8 @@
     <Folder Include="Views\CongViec\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API_He_thong\API_He_thong.csproj" />
+  </ItemGroup>
+
 </Project>

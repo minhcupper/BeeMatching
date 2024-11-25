@@ -9,99 +9,103 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BeeMatchingAPP
 build_property.RootNamespace = BeeMatchingAPP
-build_property.ProjectDir = E:\sourceCode\C#\duantotnghiep\BeeMatching\BeeMatchingAPP\
+build_property.ProjectDir = D:\doan\BeeMatching1\BeeMatchingAPP\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\sourceCode\C#\duantotnghiep\BeeMatching\BeeMatchingAPP
+build_property.MSBuildProjectDirectory = D:\doan\BeeMatching1\BeeMatchingAPP
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/CongViec.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/CongViec.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxDb25nVmllYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/DeleteCongViec.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/DeleteCongViec.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxEZWxldGVDb25nVmllYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/DeleteDoanhNghiep.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/DeleteDoanhNghiep.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxEZWxldGVEb2FuaE5naGllcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/DoanhNghiep.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/DoanhNghiep.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxEb2FuaE5naGllcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/EditCongViec.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/EditCongViec.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxFZGl0Q29uZ1ZpZWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/EditDoanhNghiep.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/EditDoanhNghiep.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxFZGl0RG9hbmhOZ2hpZXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/Index.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/ADMINController1/Login.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/ADMINController1/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQURNSU5Db250cm9sbGVyMVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/CongViec/CongViec.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/CongViec/CongViec.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ1ZpZWNcQ29uZ1ZpZWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/CongViec/Details.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/CongViec/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ1ZpZWNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/DoanhNghieps/Doanhnghiep.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/DoanhNghieps/Doanhnghiep.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9hbmhOZ2hpZXBzXERvYW5obmdoaWVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Home/Details.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Home/CapNhatThongTin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXBOaGF0VGhvbmdUaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Home/Index.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Home/Login.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Home/Login11.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Home/Login11.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbjExLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Home/Privacy.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Home/TrangThongTinNguoiTimViec.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Home/TrangThongTinNguoiTimViec.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmFuZ1Rob25nVGluTmd1b2lUaW1WaWVjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Shared/Error.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/_ViewImports.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/_ViewStart.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/sourceCode/C\#/duantotnghiep/BeeMatching/BeeMatchingAPP/Views/Shared/_Layout.cshtml]
+[D:/doan/BeeMatching1/BeeMatchingAPP/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-27ky1gegg4

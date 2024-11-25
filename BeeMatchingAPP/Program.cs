@@ -1,3 +1,5 @@
+using API_He_thong.DATA;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +10,7 @@ builder.Services.AddAntiforgery(options =>
 {
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 });
+
 builder.Services.AddDistributedMemoryCache(); // Use in-memory cache for session storage
 builder.Services.AddSession(options =>
 {
