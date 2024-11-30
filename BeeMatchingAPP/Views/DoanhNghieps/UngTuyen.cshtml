@@ -1,8 +1,8 @@
-﻿@model IEnumerable<BeeMatchingAPP.Models.CongViec>
+﻿@model IEnumerable<BeeMatchingAPP.Models.UngTuyen>
 
 @{
-    ViewData["Title"] = "Index";
-    List<CongViec> congViecs = ViewData["congviec"] as List<CongViec>;
+    ViewData["Title"] = "UngTuyen";
+    List<UngTuyen> ut = ViewData["ungtuyen"] as List<UngTuyen>;
 }
 
 <!DOCTYPE html>
@@ -251,83 +251,52 @@
                                     <thead>
 
                                         <tr>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tiêu Đề</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Mô Tả</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vị Trí  </th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Lương Hàng Tháng</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ngày Đăng</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hạn Nộp</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Địa Chỉ</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Số Lượng</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Dạng Công Việc</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trạng Thái  </th>
-                                            <th class="text-secondary opacity-7"></th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ứng Tuyển ID</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Công Việc ID </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Đề xuất từ người tìm việc</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Người tìm việc ID  </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trạng Thái</th>
+                                           
+                                          
+                                           <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
-                                    @foreach (var item in congViecs)
+                                    @foreach (var item in ut)
                                     {
 
                                         <tbody>
                                             <tr>
                                                 <td>
                                                     <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="/assetlogin/assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
-                                                        </div>
+                                                       
                                                         <div class="d-flex flex-column justify-content-center">
 
-                                                            <p class="text-xs text-secondary mb-0">@item.TieuDe</p>
+                                                            <p class="text-xs text-secondary mb-0">@item.UngTuyenId</p>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <p class="text-xs font-weight-bold mb-0">@item.MoTa</p>
+                                                    <p class="text-xs font-weight-bold mb-0">@item.CongViecId</p>
 
                                                 </td>
 
                                                 <td>
-                                                    <p class="text-xs font-weight-bold mb-0">@item.ViTri</p>
+                                                    <p class="text-xs font-weight-bold mb-0">@item.DeXuat</p>
 
                                                 </td>
+                                                
                                                 <td>
-                                                    <p class="text-xs font-weight-bold mb-0">@item.LuongHangThang</p>
-
-                                                </td>
-                                                <td>
-                                                    <p class="align-middle text-center text-sm">@item.NgayDang</p>
-
-                                                </td>
-                                                <td>
-                                                    <p class="align-middle text-center text-sm">@item.HanNopHoSo</p>
-
-                                                </td>
-
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">@item.WardName,@item.DistrictName,@item.ProvinceName</p>
-
-                                                </td>
-                                                <td>
-                                                    <p class="align-middle text-center text-sm">@item.SoLuong</p>
-
-                                                </td>
-                                                <td>
-                                                    <p class="text-xs font-weight-bold mb-0">@item.DangCongViec</p>
+                                                    <p class="align-middle text-center text-sm">@item.NguoiTimViecId</p>
 
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
                                                     <span class="badge badge-sm bg-gradient-success">@item.TrangThai</span>
                                                 </td>
-
                                                 <td class="align-middle">
-                                                    <a asp-action="EditCongViec" asp-route-id="@item.CongViecId" class="nav-link text-dark">
-                                                        <span class="nav-link-text ms-1">Sửa bài đăng|</span>
+                                                    <a asp-action="DanhGia" asp-route-id="@item.UngTuyenId" class="nav-link text-dark">
+                                                        <span class="nav-link-text ms-1">Đánh giá |</span>
                                                     </a>
-                                                    <a asp-action="DeleteCongViec" asp-route-id="@item.CongViecId" class="nav-link text-dark">
-                                                        <span class="nav-link-text ms-1">Xóa bài|</span>
-                                                    </a>
-                                                    <a asp-action="UngTuyen" asp-route-id="@item.CongViecId" class="nav-link text-dark">
-                                                        <span class="nav-link-text ms-1">Xem danh sách ứng tuyển|</span>
-                                                    </a>
+                                                  
                                                 </td>
                                             </tr>
 

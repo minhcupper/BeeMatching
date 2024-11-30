@@ -58,12 +58,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZ1ZpZWNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/học tập/DATN/API_He_thong/BeeMatchingAPP/Views/DoanhNghieps/Doanhnghiep.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9hbmhOZ2hpZXBzXERvYW5obmdoaWVwLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/học tập/DATN/API_He_thong/BeeMatchingAPP/Views/DoanhNghieps/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9hbmhOZ2hpZXBzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/học tập/DATN/API_He_thong/BeeMatchingAPP/Views/DoanhNghieps/UngTuyen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9hbmhOZ2hpZXBzXFVuZ1R1eWVuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/học tập/DATN/API_He_thong/BeeMatchingAPP/Views/Home/CapNhatThongTin.cshtml]
@@ -80,10 +80,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/học tập/DATN/API_He_thong/BeeMatchingAPP/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/học tập/DATN/API_He_thong/BeeMatchingAPP/Views/Home/Login11.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbjExLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/học tập/DATN/API_He_thong/BeeMatchingAPP/Views/Home/Privacy.cshtml]

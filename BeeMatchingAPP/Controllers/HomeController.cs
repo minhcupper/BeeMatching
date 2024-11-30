@@ -29,6 +29,14 @@ namespace BeeMatchingAPP.Controllers
             _httpClient = httpClient;
             _hostingEnvironment = hostingEnvironment;
         }
+        private DoanhNghiep thongtindoanhnghiep
+        {
+            get
+            {
+                // Truy xuất danh sách người tìm việc từ Session
+                return HttpContext.Session.Get<DoanhNghiep>("ThongTindoanhnghiep") ?? new DoanhNghiep();
+            }
+        }
         private NguoiTimViec TrangThongTinCaNhan
         {
             get
@@ -55,40 +63,13 @@ namespace BeeMatchingAPP.Controllers
             ViewData["HoSo"] = data;
             return View(data);
         }
-       /* [HttpPost]
-        public async Task<IActionResult> CapNhatThongTin(NguoiTimViec nguoiTimViec)
+        public async Task<ActionResult> TrangThongTinDoanhNghiep()
         {
-            if (ModelState.IsValid)
-            {
-                var user = new NguoiTimViec
-                {
-                    ho_ten = nguoiTimViec.ho_ten,
-                    so_dien_thoai = nguoiTimViec.so_dien_thoai,
-                    email = nguoiTimViec.email,
-                    ngay_sinh = nguoiTimViec.ngay_sinh,
-                    MoTa = nguoiTimViec.MoTa,
-                    WardId = nguoiTimViec.WardId,
-                    DistrictId = nguoiTimViec.DistrictId,
-                    ProvinceId = nguoiTimViec.ProvinceId,
-                    NgonNgu = nguoiTimViec.NgonNgu,
-                    HinhAnh = nguoiTimViec.HinhAnh,
-                    KinhNghiem = nguoiTimViec.KinhNghiem,
-                    HoatDongNgoaiKhoa = nguoiTimViec.HoatDongNgoaiKhoa,
-                    KyNangNguoiXinViecs = nguoiTimViec.KyNangNguoiXinViecs
-
-                };
-                var response = await _httpClient.PutAsJsonAsync($"https://localhost:7287/api/NguoiTimViec/Edit/{nguoiTimViec.NguoiTimViecId}", user);
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("TrangThongTinNguoiTimViec");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Cập nhật thông tin không thành công");
-                }
-            }
-            return View(nguoiTimViec);
-        }*/
+            // Truy xuất dữ liệu cá nhân (được giả định là từ mô hình hoặc session)
+            var data = thongtindoanhnghiep;
+            ViewData["HoSo"] = data;
+            return View(data);
+        }
 
         // Phương thức hiển thị thông tin ứng tuyển
         public async Task<ActionResult> TrangThongTinUngTuyen(int id)
@@ -109,25 +90,59 @@ namespace BeeMatchingAPP.Controllers
             // Trả về view với dữ liệu ứng tuyển
             return View(data);
         }
-       /* private async Task ThemIDCongViecVaoTrangThongTinUngTuyen(int id)
+        private async Task ThemVaoTrangThongTinDoanhNghiep(int id)
         {
-            var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
-            if (!response.IsSuccessStatusCode)
+
+            // Khai báo đối tượng người tìm việc
+            DoanhNghiep userInfo = null;
+
+            // Gọi API để lấy danh sách người tìm việc
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/Company/GetAll");
+            if (response.IsSuccessStatusCode)
             {
-                throw new Exception("Không thể lấy công việc từ API.");
+                var apiResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
+                var allUsers = JsonConvert.DeserializeObject<List<DoanhNghiep>>(apiResponse);
+
+                // Tìm kiếm người dùng theo ID
+                userInfo = allUsers.Find(p => p.NguoiDungId == id);
+            }
+            else
+            {
+                throw new Exception("Không thể lấy danh sách người tìm việc từ API.");
             }
 
-            var apiResponse = await response.Content.ReadAsStringAsync();
-            var congviec = JsonConvert.DeserializeObject<CongViec>(apiResponse);
-
-            if (congviec == null)
+            // Nếu không tìm thấy người dùng, throw exception
+            if (userInfo == null)
             {
-                throw new Exception($"Công việc với ID {id} không tồn tại.");
+                throw new Exception($"Tài khoản với ID {id} không tồn tại hoặc chưa nhập thông tin.");
             }
 
-            // Lưu CongViecId vào Session
-            HttpContext.Session.SetInt32("CongViecId", congviec.CongViecId);
-        }*/
+            // Truy xuất thông tin người dùng từ Session
+            //   var data = TrangThongTinCaNhan;
+
+            // Tạo đối tượng mới từ thông tin người dùng
+            var newItem = new DoanhNghiep
+            {
+                DoanhNghiepId = userInfo.DoanhNghiepId,
+                NguoiDungId = id,
+                HinhAnh = userInfo.HinhAnh,
+                TrangThai = userInfo.TrangThai,
+                TenCongTy = userInfo.TenCongTy,
+                email = userInfo.email,
+                DistrictId = userInfo.DistrictId,
+             
+                WardId = userInfo.WardId,
+                ProvinceId = userInfo.ProvinceId,
+                MoTa = userInfo.MoTa,
+             
+            };
+
+            //Lưu thông tin người dùng vào Session
+            HttpContext.Session.Set("ThongTindoanhnghiep", newItem);
+
+         
+        }
         private async Task ThemVaoTrangThongTinNguoiTimViec(int id)
         {
          
@@ -197,38 +212,7 @@ namespace BeeMatchingAPP.Controllers
             // Lưu thông tin ứng tuyển vào session
             HttpContext.Session.Set("ungtuyen", newItem1);
         }
-  /*    private async Task ThemVaoTrangThongnguoidung(int id)
-        {
-            // Khai báo đối tượng người tìm việc
-            NguoiTimViec userInfo = null;
-
-            // Gọi API để lấy danh sách người tìm việc
-            var response = await _httpClient.GetAsync($"https://localhost:7287/api/NguoiTimViec/GetAll");
-            if (response.IsSuccessStatusCode)
-            {
-                var apiResponse = await response.Content.ReadAsStringAsync();
-                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
-                var allUsers = JsonConvert.DeserializeObject<List<NguoiTimViec>>(apiResponse);
-
-                // Tìm kiếm người dùng theo ID
-                userInfo = allUsers.Find(p => p.NguoiDungId == id);
-            }
-            else
-            {
-                throw new Exception("Không thể lấy danh sách người tìm việc từ API.");
-            }
-
-            // Nếu không tìm thấy người dùng, throw exception
-            if (userInfo == null)
-            {
-                throw new Exception($"Tài khoản với ID {id} không tồn tại hoặc chưa nhập thông tin.");
-            }
-
-            // Truy xuất thông tin người dùng từ Session
-            var data = TrangThongTinCaNhan;
-
-
-        }*/
+  
         // GET: Login
         [HttpGet]
         public async Task<ActionResult> Login()
@@ -284,7 +268,18 @@ namespace BeeMatchingAPP.Controllers
                     }
                     else if (userInfo.Roles == "Doanh Nghiệp")
                     {
-                        return RedirectToAction("Index", "DoanhNghieps", new { id = userInfo.nguoi_dung_id });
+
+                        try
+                        {
+                            await ThemVaoTrangThongTinDoanhNghiep(userInfo.nguoi_dung_id);
+                        }
+                        catch (Exception ex)
+                        {
+                            ModelState.AddModelError(string.Empty, ex.Message);
+                            return View(user);
+                        }
+
+                        return RedirectToAction("Index", "DoanhNghieps", new { id = thongtindoanhnghiep.DoanhNghiepId });
                     }
                     else
                     {

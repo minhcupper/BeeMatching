@@ -21,55 +21,79 @@ namespace BeeMatchingAPP.Controllers
         }
 
 
-        public async Task<ActionResult> DoanhNghiep()
-        {
 
-            List<DoanhNghiep> users = new List<DoanhNghiep>();
-            var response = await _httpClient.GetAsync("https://localhost:7287/api/Company/GetAll");
-            if (response.IsSuccessStatusCode)
-            {
-                var apiResponse = await response.Content.ReadAsStringAsync();
-                users = JsonConvert.DeserializeObject<List<DoanhNghiep>>(apiResponse);
-            }
-
-            return View(users);
-        }
         [HttpGet]
         public async Task<ActionResult> Index(int id)
         {
-
-            DoanhNghiep users = new DoanhNghiep();
-            var response = await _httpClient.GetAsync($"https://localhost:7287/api/Company/GetById/{id}");
-            if (response.IsSuccessStatusCode)
+            // Kiểm tra id hợp lệ
+            if (id <= 0)
             {
-                var apiResponse = await response.Content.ReadAsStringAsync();
-                users = JsonConvert.DeserializeObject<DoanhNghiep>(apiResponse);
+                return RedirectToAction("Error", "Home", new { message = "ID không hợp lệ." });
             }
 
             List<CongViec> listcongviec = new List<CongViec>();
-            var congviec = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
-            if (congviec.IsSuccessStatusCode)
-            {
-                var congviecs = await congviec.Content.ReadAsStringAsync(); // Sử dụng congviec.Content thay vì response.Content
-                var alllistcongviec = JsonConvert.DeserializeObject<List<CongViec>>(congviecs);
 
-                // Lọc danh sách các công việc có DoanhNghiepId trùng với id
-                listcongviec = alllistcongviec.Where(p => p.DoanhNghiepId == users.DoanhNghiepId).ToList();
-            }
-            /*
-            UngTuyen ListUngTuyen= new UngTuyen();
-            var responseungtuyen = await _httpClient.GetAsync($"https://localhost:7287/api/UngTuyen/GetAll");
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var apiResponse = await response.Content.ReadAsStringAsync();
-                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
-                var allUngTuyen = JsonConvert.DeserializeObject<List<UngTuyen>>(apiResponse);
+                // Gọi API để lấy danh sách công việc
+                var congviec = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
+                if (!congviec.IsSuccessStatusCode)
+                {
+                    _logger.LogError("Lỗi khi gọi API CongViec: {StatusCode}", congviec.StatusCode);
+                    return View(new List<CongViec>());
+                }
 
-                // Tìm kiếm người dùng theo ID
-                ListUngTuyen = allUngTuyen.Find(p => p.CongViecId == id);
+                var congviecs = await congviec.Content.ReadAsStringAsync();
+                var alllistcongviec = JsonConvert.DeserializeObject<List<CongViec>>(congviecs) ?? new List<CongViec>();
+
+                // Lọc danh sách các công việc theo DoanhNghiepId
+                listcongviec = alllistcongviec.Where(p => p.DoanhNghiepId == id).ToList();
             }
-          */
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi xảy ra khi lấy danh sách công việc.");
+                return View(new List<CongViec>()); // Trả về view trống nếu xảy ra lỗi
+            }
+
+            ViewData["congviec"]=listcongviec;
             return View(listcongviec);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> UngTuyen(int id)
+        {
+            // Kiểm tra id hợp lệ
+            if (id <= 0)
+            {
+                return RedirectToAction("Error", "Home", new { message = "ID không hợp lệ." });
+            }
+
+            List<UngTuyen> listungtuyen = new List<UngTuyen>();
+
+            try
+            {
+                // Gọi API để lấy danh sách công việc
+                var ungtuyen = await _httpClient.GetAsync("https://localhost:7287/api/UngTuyen/GetAll");
+                if (!ungtuyen.IsSuccessStatusCode)
+                {
+                    _logger.LogError("Lỗi khi gọi API CongViec: {StatusCode}", ungtuyen.StatusCode);
+                    return View(new List<UngTuyen>());
+                }
+
+                var ungtuyens = await ungtuyen.Content.ReadAsStringAsync();
+                var alllistcongviec = JsonConvert.DeserializeObject<List<UngTuyen>>(ungtuyens) ?? new List<UngTuyen>();
+
+                // Lọc danh sách các công việc theo DoanhNghiepId
+                listungtuyen = alllistcongviec.Where(p => p.CongViecId == id).ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi xảy ra khi lấy danh sách công việc.");
+                return View(new List<CongViec>()); // Trả về view trống nếu xảy ra lỗi
+            }
+
+            ViewData["ungtuyen"] = listungtuyen;
+            return View(listungtuyen);
         }
     }
 }
