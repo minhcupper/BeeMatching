@@ -55,7 +55,7 @@ namespace BeeMatchingAPP.Controllers
             ViewData["HoSo"] = data;
             return View(data);
         }
-        [HttpPost]
+       /* [HttpPost]
         public async Task<IActionResult> CapNhatThongTin(NguoiTimViec nguoiTimViec)
         {
             if (ModelState.IsValid)
@@ -88,7 +88,7 @@ namespace BeeMatchingAPP.Controllers
                 }
             }
             return View(nguoiTimViec);
-        }
+        }*/
 
         // Phương thức hiển thị thông tin ứng tuyển
         public async Task<ActionResult> TrangThongTinUngTuyen(int id)
@@ -109,7 +109,7 @@ namespace BeeMatchingAPP.Controllers
             // Trả về view với dữ liệu ứng tuyển
             return View(data);
         }
-        private async Task ThemIDCongViecVaoTrangThongTinUngTuyen(int id)
+       /* private async Task ThemIDCongViecVaoTrangThongTinUngTuyen(int id)
         {
             var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
             if (!response.IsSuccessStatusCode)
@@ -127,7 +127,7 @@ namespace BeeMatchingAPP.Controllers
 
             // Lưu CongViecId vào Session
             HttpContext.Session.SetInt32("CongViecId", congviec.CongViecId);
-        }
+        }*/
         private async Task ThemVaoTrangThongTinNguoiTimViec(int id)
         {
          
@@ -197,21 +197,21 @@ namespace BeeMatchingAPP.Controllers
             // Lưu thông tin ứng tuyển vào session
             HttpContext.Session.Set("ungtuyen", newItem1);
         }
-        private async Task ThemVaoTrangThongnguoidung(int id)
+  /*    private async Task ThemVaoTrangThongnguoidung(int id)
         {
             // Khai báo đối tượng người tìm việc
-            NguoiDung userInfo = null;
+            NguoiTimViec userInfo = null;
 
             // Gọi API để lấy danh sách người tìm việc
-            var response = await _httpClient.GetAsync($"https://localhost:7287/api/User/GetAll");
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/NguoiTimViec/GetAll");
             if (response.IsSuccessStatusCode)
             {
                 var apiResponse = await response.Content.ReadAsStringAsync();
                 Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
-                var allUsers = JsonConvert.DeserializeObject<List<NguoiDung>>(apiResponse);
+                var allUsers = JsonConvert.DeserializeObject<List<NguoiTimViec>>(apiResponse);
 
                 // Tìm kiếm người dùng theo ID
-                userInfo = allUsers.Find(p => p.nguoi_dung_id == id);
+                userInfo = allUsers.Find(p => p.NguoiDungId == id);
             }
             else
             {
@@ -228,7 +228,7 @@ namespace BeeMatchingAPP.Controllers
             var data = TrangThongTinCaNhan;
 
 
-        }
+        }*/
         // GET: Login
         [HttpGet]
         public async Task<ActionResult> Login()
@@ -261,16 +261,7 @@ namespace BeeMatchingAPP.Controllers
                 if (userInfo != null)
                 {
                     // Gọi phương thức ThemVaoTrangThongTinNguoiTimViec với ID người dùng
-                    try
-                    {
-                        await ThemVaoTrangThongnguoidung(userInfo.nguoi_dung_id);
-                    }
-                    catch (Exception ex)
-                    {
-                        ModelState.AddModelError(string.Empty, ex.Message);
-                        return View(user);
-                    }
-
+                   
                   
                     // Chuyển hướng dựa trên vai trò của người dùng
                     if (userInfo.Roles == "ADMIN")
@@ -279,11 +270,21 @@ namespace BeeMatchingAPP.Controllers
                     }
                     else if (userInfo.Roles == "Người xin việc")
                     {
+                        try
+                        {
+                            await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
+                        }
+                        catch (Exception ex)
+                        {
+                            ModelState.AddModelError(string.Empty, ex.Message);
+                            return View(user);
+                        }
+
                         return RedirectToAction("CongViec", "CongViec");
                     }
                     else if (userInfo.Roles == "Doanh Nghiệp")
                     {
-                        return RedirectToAction("Doanhnghiep", "DoanhNghieps");
+                        return RedirectToAction("Index", "DoanhNghieps", new { id = userInfo.nguoi_dung_id });
                     }
                     else
                     {
@@ -354,17 +355,7 @@ namespace BeeMatchingAPP.Controllers
         }
         public async Task<ActionResult> Details(int id)
         {
-            try
-            {
-                // Gọi phương thức ThemIDCongViecVaoTrangThongTinUngTuyen để lưu id công việc vào session
-                await ThemIDCongViecVaoTrangThongTinUngTuyen(id);
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi nếu có
-                ModelState.AddModelError(string.Empty, ex.Message);
-
-            }
+          
             CongViec reservation = new CongViec();
             var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
             if (response.IsSuccessStatusCode)
@@ -521,7 +512,7 @@ namespace BeeMatchingAPP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(NguoiDung user, IFormFile hinh_anh)
         {
-            /*  // Kiểm tra nếu hinh_anh không phải null
+            /*// Kiểm tra nếu hinh_anh không phải null
               if (hinh_anh == null || hinh_anh.Length == 0)
               {
                   ModelState.AddModelError("hinh_anh", "Vui lòng chọn hình ảnh.");
