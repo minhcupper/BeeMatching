@@ -16,7 +16,7 @@ namespace BeeMatchingAPP.Controllers
             _httpClient = httpClient;
             _hostingEnvironment = hostingEnvironment;
         }
-        //demo1
+     
 
         public async Task<ActionResult> Index()
         {
