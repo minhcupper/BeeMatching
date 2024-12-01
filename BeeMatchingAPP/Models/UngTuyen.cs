@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace BeeMatchingAPP.Models
 {
@@ -9,6 +10,8 @@ namespace BeeMatchingAPP.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UngTuyenId { get; set; }
+        [MaxLength(20)]
+        public string? HinhAnhCV { get; set; }
 
         // Khóa ngoại kiểu int trỏ tới CongViec
         [Required(ErrorMessage = "CongViecId không được để trống.")]
@@ -35,6 +38,7 @@ namespace BeeMatchingAPP.Models
 
         // Trạng thái ứng tuyển (vd: đang xem xét, đã chấp nhận, từ chối)
         [MaxLength(20)]
+        [DefaultValue("Đang xem xét")]
         public string TrangThai { get; set; } = "Đang xem xét";
 
         // Chấp nhận công việc hay không

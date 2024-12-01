@@ -15,10 +15,12 @@ namespace API_He_thong.Models
 
         // Tên đăng nhập, bắt buộc, tối đa 50 ký tự, không được trống
         [MaxLength(50)]
-        [Required(ErrorMessage = "Tên đăng nhập không được để trống.")]
-        public string ten_dang_nhap { get; set; }
+       // [Required(ErrorMessage = "Tên đăng nhập không được để trống.")]
+        public string? ten_dang_nhap { get; set; }
 
-    
+        [MaxLength(50)]
+        [Required(ErrorMessage = "Email không được để trống.")]
+        public string Email { get; set; }
 
         // Mật khẩu, bắt buộc, tối đa 10 ký tự, không được trống
         [MaxLength(50)]

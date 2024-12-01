@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_He_thong.Models
@@ -56,6 +57,8 @@ namespace API_He_thong.Models
         [ForeignKey("ProvinceId")]
         public virtual provinces? Provinces { get; set; }
         [MaxLength(20)]
+        
+        [DefaultValue("Đang hoạt động")]
         [Required(ErrorMessage = "Trang thai không được để trống.")]
         public string? TrangThai { get; set; } = "Đang hoạt động ";
 

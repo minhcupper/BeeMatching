@@ -25,16 +25,17 @@ namespace API_He_thong.Controllers
         public async Task<IActionResult> Post([FromBody] NguoiDung _userdata)
         {
             // Kiểm tra xem dữ liệu người dùng có hợp lệ không
-            if (_userdata == null || string.IsNullOrEmpty(_userdata.ten_dang_nhap) || string.IsNullOrEmpty(_userdata.mat_khau))
+            if (_userdata == null || string.IsNullOrEmpty(_userdata.Email) || string.IsNullOrEmpty(_userdata.mat_khau))
             {
                 return BadRequest(new { error = "Dữ liệu người dùng là bắt buộc." });
             }
 
             // Xác thực người dùng với tài khoản và mật khẩu
-            var user = await _loginService.AuthenticateAsync(_userdata.ten_dang_nhap, _userdata.mat_khau);
+            var user = await _loginService.AuthenticateAsync(_userdata.Email, _userdata.mat_khau);
 
             if (user != null)
             {
+            
                 // Kiểm tra và gán vai trò người dùng
                 if (string.IsNullOrEmpty(user.Roles))
                 {
@@ -49,7 +50,8 @@ namespace API_He_thong.Controllers
                 {
                     nguoi_dung_id = user.nguoi_dung_id, // Sửa từ 'id' thành 'nguoi_dung_id'
                     token = token,
-                    username = user.ten_dang_nhap,
+                    Email = user.Email,
+                    Tendangnhap=user.ten_dang_nhap,
                     roles = user.Roles
                 });
             }

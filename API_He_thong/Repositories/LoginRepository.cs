@@ -14,7 +14,7 @@ namespace API_He_thong.Repositories
 
         public async Task<NguoiDung> GetUserAsync(string tai_khoan)
         {
-            return await _context.NguoiDung.FirstOrDefaultAsync(u => u.ten_dang_nhap == tai_khoan );
+            return await _context.NguoiDung.FirstOrDefaultAsync(u => u.Email == tai_khoan );
         }
         public async Task<List<string>> GetUserRoleAsync(int nguoi_dung_id)
         {

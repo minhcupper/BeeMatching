@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace BeeMatchingAPP.Models
 {
@@ -75,6 +76,7 @@ namespace BeeMatchingAPP.Models
         // Loại người dùng, tối đa 15 ký tự
         // Trạng thái tài khoản, tối đa 15 ký tự, mặc định là "Hoạt động"
         [MaxLength(15)]
+        [DefaultValue("Đang hoạt động")]
         public string trang_thai { get; set; } = "Hoạt động";
 
         // Ngày tạo tài khoản, mặc định là ngày hiện tại

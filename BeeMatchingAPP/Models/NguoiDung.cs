@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BeeMatchingAPP.Models
@@ -14,10 +15,13 @@ namespace BeeMatchingAPP.Models
 
         // Tên đăng nhập, bắt buộc, tối đa 50 ký tự, không được trống
         [MaxLength(50)]
-        [Required(ErrorMessage = "Tên đăng nhập không được để trống.")]
-        public string ten_dang_nhap { get; set; }
+        //[Required(ErrorMessage = "Tên đăng nhập không được để trống.")]
+        public string? ten_dang_nhap { get; set; }
 
 
+        [MaxLength(50)]
+        [Required(ErrorMessage = "Email không được để trống.")]
+        public string Email { get; set; }
 
         // Mật khẩu, bắt buộc, tối đa 10 ký tự, không được trống
         [MaxLength(10)]
@@ -27,7 +31,8 @@ namespace BeeMatchingAPP.Models
         [Required(ErrorMessage = "Roles không được để trống.")]
         public string? Roles { get; set; }
         [MaxLength(10)]
-        [Required(ErrorMessage = "Roles không được để trống.")]
+        [Required(ErrorMessage = "Trang thai không được để trống.")]
+        [DefaultValue("Đang hoạt động")]
         public string? TrangThai { get; set; } = "Đang hoạt động ";
 
         // Navigation properties

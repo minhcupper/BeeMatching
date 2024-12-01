@@ -225,12 +225,12 @@ namespace BeeMatchingAPP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(NguoiDung user)
         {
-            // Kiểm tra nếu người dùng chưa nhập thông tin
-            if (user == null || string.IsNullOrEmpty(user.ten_dang_nhap) || string.IsNullOrEmpty(user.mat_khau))
+       /*     // Kiểm tra nếu người dùng chưa nhập thông tin
+            if (user == null || string.IsNullOrEmpty(user.ten_dang_nhap) || string.IsNullOrEmpty(user.Email))
             {
-                ModelState.AddModelError(string.Empty, "Tên đăng nhập và mật khẩu không được để trống.");
+                ModelState.AddModelError(string.Empty, "Email và mật khẩu không được để trống.");
                 return View(user);
-            }
+            }*/
 
             // Gửi yêu cầu xác thực người dùng
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
@@ -244,60 +244,28 @@ namespace BeeMatchingAPP.Controllers
 
                 if (userInfo != null)
                 {
-                    // Gọi phương thức ThemVaoTrangThongTinNguoiTimViec với ID người dùng
-                   
-                  
-                    // Chuyển hướng dựa trên vai trò của người dùng
-                    if (userInfo.Roles == "ADMIN")
+                    switch (userInfo.Roles)
                     {
-                        return RedirectToAction("Index", "ADMINController1");
-                    }
-                    else if (userInfo.Roles == "Người xin việc")
-                    {
-                        try
-                        {
+                        case "ADMIN":
+                            return RedirectToAction("Index", "ADMINController1");
+
+                        case "Người xin việc":
                             await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
-                        }
-                        catch (Exception ex)
-                        {
-                            ModelState.AddModelError(string.Empty, ex.Message);
-                            return View(user);
-                        }
+                            return RedirectToAction("CongViec", "CongViec");
 
-                        return RedirectToAction("CongViec", "CongViec");
-                    }
-                    else if (userInfo.Roles == "Doanh Nghiệp")
-                    {
-
-                        try
-                        {
+                        case "Doanh Nghiệp":
                             await ThemVaoTrangThongTinDoanhNghiep(userInfo.nguoi_dung_id);
-                        }
-                        catch (Exception ex)
-                        {
-                            ModelState.AddModelError(string.Empty, ex.Message);
-                            return View(user);
-                        }
+                            return RedirectToAction("Index", "DoanhNghieps", new { id = thongtindoanhnghiep.DoanhNghiepId });
 
-                        return RedirectToAction("Index", "DoanhNghieps", new { id = thongtindoanhnghiep.DoanhNghiepId });
+                        default:
+                            ModelState.AddModelError(string.Empty, "Vai trò người dùng không hợp lệ.");
+                            return null;
                     }
-                    else
-                    {
-                        ModelState.AddModelError(string.Empty, "Vai trò người dùng không hợp lệ.");
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Không thể lấy thông tin người dùng.");
+
                 }
             }
-            else
-            {
-                var errorDetails = await response.Content.ReadAsStringAsync();
-                ModelState.AddModelError(string.Empty, $"Lỗi đăng nhập: {errorDetails}");
-            }
-
-            return View(user);
+                return View(user);
+            
         }
         public async Task<ActionResult> Index()
         {

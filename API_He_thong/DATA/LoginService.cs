@@ -20,22 +20,22 @@ namespace API_He_thong.DATA
             _configuration = configuration;
             _passwordHasher = passwordHasher;
         }
-        public async Task<NguoiDung?> AuthenticateAsync(string tai_khoan, string mat_khau)
+        public async Task<NguoiDung?> AuthenticateAsync(string Email, string mat_khau)
         {
             // Kiểm tra nếu tài khoản hoặc mật khẩu rỗng
-            if (string.IsNullOrEmpty(tai_khoan) || string.IsNullOrEmpty(mat_khau))
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(mat_khau))
             {
                 Console.WriteLine("Authentication failed: Missing username or password.");
                 return null;
             }
 
             // Lấy thông tin người dùng từ cơ sở dữ liệu
-            var user = await _loginRepository.GetUserAsync(tai_khoan);
+            var user = await _loginRepository.GetUserAsync(Email);
 
             if (user == null)
             {
                 // Nếu không tìm thấy người dùng
-                Console.WriteLine($"Authentication failed: User '{tai_khoan}' not found.");
+                Console.WriteLine($"Authentication failed: User '{Email}' not found.");
                 return null;
             }
 
@@ -43,9 +43,18 @@ namespace API_He_thong.DATA
             if (user.mat_khau != mat_khau)
             {
                 // Mật khẩu không chính xác
-                Console.WriteLine($"Authentication failed: Incorrect password for user '{tai_khoan}'.");
+                Console.WriteLine($"Authentication failed: Incorrect password for user '{Email}'.");
                 return null;
+
             }
+            if (user.Email != Email)
+            {
+                // Mật khẩu không chính xác
+                Console.WriteLine($"Authentication failed: Incorrect email for user '{Email}'.");
+                return null;
+
+            }
+
 
             // Lấy vai trò người dùng từ cơ sở dữ liệu
             var roles = await _loginRepository.GetUserRoleAsync(user.nguoi_dung_id);
@@ -58,7 +67,7 @@ namespace API_He_thong.DATA
             else
             {
                 // Nếu không tìm thấy vai trò
-                Console.WriteLine($"Authentication warning: No roles found for user '{tai_khoan}'.");
+                Console.WriteLine($"Authentication warning: No roles found for user '{Email}'.");
             }
 
             // Đăng nhập thành công, trả về thông tin người dùng
@@ -68,11 +77,11 @@ namespace API_He_thong.DATA
         {
             var claims = new List<Claim>
     {
-        new Claim(JwtRegisteredClaimNames.Sub, nguoiDung.ten_dang_nhap),
+        new Claim(JwtRegisteredClaimNames.Sub, nguoiDung.Email),
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         new Claim(JwtRegisteredClaimNames.Iat, ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds().ToString()),
         new Claim("Id", nguoiDung.nguoi_dung_id.ToString() ?? string.Empty),
-        new Claim("Username", nguoiDung.ten_dang_nhap ?? string.Empty)
+        new Claim("Email", nguoiDung.Email ?? string.Empty)
     };
 
             // Thêm vai trò vào claim (nếu có)
