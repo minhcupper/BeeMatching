@@ -1,8 +1,9 @@
-﻿@model BeeMatchingAPP.Models.DoanhNghiep
+﻿@model BeeMatchingAPP.Models.CongViec
 
 @{
-    ViewData["Title"] = "EditDoanhNghiep";
+    ViewData["Title"] = "EditCongViec";
 }
+
 
 
 
@@ -29,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/assetlogin/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="/assetlogin/assets/img/favicon.png">
     <title>
-        Material Dashboard 3 by Creative Tim
+        Chỉnh Sửa Công Việc
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
@@ -49,68 +50,47 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-                <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
-                <span class="ms-1 text-sm text-dark">Creative Tim</span>
+                <img src="~/assets/img/logo/beematching-logo.jpg" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+                <span class="ms-1 text-sm text-dark">Bee Matching</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0 mb-2">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a asp-action="Index" class="nav-link text-dark" >
+                    <a asp-action="Index" class="nav-link active bg-gradient-dark text-white">
                         <i class="material-symbols-rounded opacity-5">dashboard</i>
-                        <span class="nav-link-text ms-1">Dashboard</span>
+                        <span class="nav-link-text ms-1">Quản Lý</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active bg-gradient-dark text-white" href="/assetlogin/pages/tables.html">
+                    <a asp-action="CongViec" class="nav-link text-dark">
                         <i class="material-symbols-rounded opacity-5">table_view</i>
-                        <span class="nav-link-text ms-1">Tables</span>
+                        <span class="nav-link-text ms-1">Quản Lý Công Việc</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/billing.html">
-                        <i class="material-symbols-rounded opacity-5">receipt_long</i>
-                        <span class="nav-link-text ms-1">Billing</span>
+                    <a asp-action="DoanhNghiep" class="nav-link text-dark">
+                        <i class="material-symbols-rounded opacity-5">table_view</i>
+                        <span class="nav-link-text ms-1">Quản Lý Doanh Nghiệp</span>
                     </a>
+
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/virtual-reality.html">
-                        <i class="material-symbols-rounded opacity-5">view_in_ar</i>
-                        <span class="nav-link-text ms-1">Virtual Reality</span>
+                    <a asp-action="NguoiDung" class="nav-link text-dark">
+                        <i class="material-symbols-rounded opacity-5">table_view</i>
+                        <span class="nav-link-text ms-1">Quản Lý Người Dùng</span>
                     </a>
+
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/rtl.html">
-                        <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
-                        <span class="nav-link-text ms-1">RTL</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/notifications.html">
-                        <i class="material-symbols-rounded opacity-5">notifications</i>
-                        <span class="nav-link-text ms-1">Notifications</span>
-                    </a>
-                </li>
+
                 <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
+                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Thoát</h6>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/profile.html">
-                        <i class="material-symbols-rounded opacity-5">person</i>
-                        <span class="nav-link-text ms-1">Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-in.html">
-                        <i class="material-symbols-rounded opacity-5">login</i>
-                        <span class="nav-link-text ms-1">Sign In</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-up.html">
+                    <a class="nav-link text-dark" href="/">
                         <i class="material-symbols-rounded opacity-5">assignment</i>
-                        <span class="nav-link-text ms-1">Sign Up</span>
+                        <span class="nav-link-text ms-1">Đăng Xuất</span>
                     </a>
                 </li>
             </ul>
@@ -249,104 +229,109 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Authors table</h6>
-                            </div>
+                                <h6 class="text-white text-capitalize ps-3">Chỉnh sửa công việc</h6>
+                            </div>  
                         </div>
-
-                        <h1>EditDoanhNghiep</h1>
-
-                        <h4>DoanhNghiep</h4>
-                        <hr />
                         <div class="row">
-                            <div class="col-md-10">
-                                <form asp-action="EditDoanhNghiep">
+                            <div class="col-md-4">
+                                <form asp-action="EditCongViec">
                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                                     <div class="form-group">
-                                        <label asp-for="DoanhNghiepId" class="control-label"></label>
-                                        <input asp-for="DoanhNghiepId" class="form-control" />
-                                        <span asp-validation-for="DoanhNghiepId" class="text-danger"></span>
+                                        <label asp-for="CongViecId" class="control-label">ID Công Việc</label>
+                                        <input asp-for="CongViecId" class="form-control" />
+                                        <span asp-validation-for="CongViecId" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="TieuDe" class="control-label">Tiêu Đề</label>
+                                        <input asp-for="TieuDe" class="form-control" />
+                                        <span asp-validation-for="TieuDe" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="HinhAnh" class="control-label"></label>
-                                        <input asp-for="HinhAnh" class="form-control" />
-                                        <span asp-validation-for="HinhAnh" class="text-danger"></span>
-                                    </div>
-                                   @*  <div class="form-group">
-                                        <label asp-for="NguoiDungId" class="control-label"></label>
-                                        <input asp-for="NguoiDungId" class="form-control" />
-                                        <span asp-validation-for="NguoiDungId" class="text-danger"></span>
-                                    </div> *@
-                                    <div class="form-group">
-                                        <label asp-for="TenCongTy" class="control-label"></label>
-                                        <input asp-for="TenCongTy" class="form-control" />
-                                        <span asp-validation-for="TenCongTy" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="MoTa" class="control-label"></label>
+                                        <label asp-for="MoTa" class="control-label">Mô Tả</label>
                                         <input asp-for="MoTa" class="form-control" />
                                         <span asp-validation-for="MoTa" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="email" class="control-label"></label>
-                                        <input asp-for="email" class="form-control" />
-                                        <span asp-validation-for="email" class="text-danger"></span>
+                                        <label asp-for="LuongHangThang" class="control-label">Lương Hằng Tháng</label>
+                                        <input asp-for="LuongHangThang" class="form-control" />
+                                        <span asp-validation-for="LuongHangThang" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="DiaChi" class="control-label"></label>
-                                        <input asp-for="DiaChi" class="form-control" />
-                                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                                        <label asp-for="ViTri" class="control-label">Vị Trí Tuyển Dụng</label>
+                                        <input asp-for="ViTri" class="form-control" />
+                                        <span asp-validation-for="ViTri" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label asp-for="DistrictId" class="control-label"></label>
-                                        <input asp-for="DistrictId" class="form-control" />
-                                        <span asp-validation-for="DistrictId" class="text-danger"></span>
+                                        <label asp-for="DangCongViec" class="control-label">Dạng Công Việc(Full time - Part time)</label>
+                                        <input asp-for="DangCongViec" class="form-control" />
+                                        <span asp-validation-for="DangCongViec" class="text-danger"></span>
                                     </div>
-                                   @*  <div class="form-group">
-                                        <label asp-for="DistrictName" class="control-label"></label>
-                                        <input asp-for="DistrictName" class="form-control" />
-                                        <span asp-validation-for="DistrictName" class="text-danger"></span>
-                                    </div> *@
                                     <div class="form-group">
-                                        <label asp-for="WardId" class="control-label"></label>
-                                        <input asp-for="WardId" class="form-control" />
-                                        <span asp-validation-for="WardId" class="text-danger"></span>
-                                    </div>
-                                  @*   <div class="form-group">
-                                        <label asp-for="WardName" class="control-label"></label>
-                                        <input asp-for="WardName" class="form-control" />
-                                        <span asp-validation-for="WardName" class="text-danger"></span>
-                                    </div> *@
-                                    <div class="form-group">
-                                        <label asp-for="ProvinceId" class="control-label"></label>
-                                        <input asp-for="ProvinceId" class="form-control" />
-                                        <span asp-validation-for="ProvinceId" class="text-danger"></span>
-                                    </div>
-                                   @*  <div class="form-group">
-                                        <label asp-for="ProvinceName" class="control-label"></label>
-                                        <input asp-for="ProvinceName" class="form-control" />
-                                        <span asp-validation-for="ProvinceName" class="text-danger"></span>
-                                    </div> *@
-                                    <div class="form-group">
-                                        <label asp-for="TrangThai" class="control-label"></label>
+                                        <label asp-for="TrangThai" class="control-label">Trạng Thái</label>
                                         <input asp-for="TrangThai" class="form-control" />
                                         <span asp-validation-for="TrangThai" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" value="Save" class="btn btn-primary" />
+                                        <label asp-for="SoLuong" class="control-label">Số Lượng Tuyển</label>
+                                        <input asp-for="SoLuong" class="form-control" />
+                                        <span asp-validation-for="SoLuong" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="NgayDang" class="control-label">Ngày Đăng Tuyển</label>
+                                        <input asp-for="NgayDang" class="form-control" />
+                                        <span asp-validation-for="NgayDang" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="HanNopHoSo" class="control-label">Hạn Nộp Hồ Sơ</label>
+                                        <input asp-for="HanNopHoSo" class="form-control" />
+                                        <span asp-validation-for="HanNopHoSo" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="DistrictId" class="control-label">Mã Quận</label>
+                                        <input asp-for="DistrictId" class="form-control" />
+                                        <span asp-validation-for="DistrictId" class="text-danger"></span>
+                                    </div>
+                                    @*   <div class="form-group">
+                                    <label asp-for="DistrictName" class="control-label"></label>
+                                    <input asp-for="DistrictName" class="form-control" />
+                                    <span asp-validation-for="DistrictName" class="text-danger"></span>
+                                    </div> *@
+                                    <div class="form-group">
+                                        <label asp-for="WardId" class="control-label">Mã Phường</label>
+                                        <input asp-for="WardId" class="form-control" />
+                                        <span asp-validation-for="WardId" class="text-danger"></span>
+                                    </div>
+                                    @*    <div class="form-group">
+                                    <label asp-for="WardName" class="control-label"></label>
+                                    <input asp-for="WardName" class="form-control" />
+                                    <span asp-validation-for="WardName" class="text-danger"></span>
+                                    </div> *@
+                                    <div class="form-group">
+                                        <label asp-for="ProvinceId" class="control-label">Mã Tỉnh</label>
+                                        <input asp-for="ProvinceId" class="form-control" />
+                                        <span asp-validation-for="ProvinceId" class="text-danger"></span>
+                                    </div>
+                                    @*  <div class="form-group">
+                                    <label asp-for="ProvinceName" class="control-label"></label>
+                                    <input asp-for="ProvinceName" class="form-control" />
+                                    <span asp-validation-for="ProvinceName" class="text-danger"></span>
+                                    </div>  *@
+                                    <div class="form-group">
+                                        <input type="submit" value="Lưu" class="btn btn-primary" />
                                     </div>
                                 </form>
                             </div>
                         </div>
 
                         <div>
-                            <a asp-action="DoanhNghiep">Trở về trang quản lý </a>
+                            <a asp-action="">Quay lại</a>
                         </div>
-
-                      
                     </div>
-
+                </div>
             </div>
-          
+
             <footer class="footer py-4  ">
                 <div class="container-fluid">
                     <div class="row align-items-center justify-content-lg-between">

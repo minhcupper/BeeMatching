@@ -29,6 +29,9 @@ namespace BeeMatchingAPP.Models
         public string mat_khau { get; set; }
         [MaxLength(10)]
         [Required(ErrorMessage = "Roles không được để trống.")]
+        [DataType(DataType.Password)]
+        [Compare("mat_khau", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp")]
+        public string? ConfirmPassword { get; set; }
         public string? Roles { get; set; }
         [MaxLength(10)]
         [Required(ErrorMessage = "Trang thai không được để trống.")]

@@ -1,11 +1,8 @@
-﻿@model BeeMatchingAPP.Models.CongViec
+﻿@model IEnumerable<BeeMatchingAPP.Models.NguoiDung>
 
 @{
-    ViewData["Title"] = "EditCongViec";
+    ViewData["Title"] = "NguoiDung";
 }
-
-
-
 
 <!--
 =========================================================
@@ -30,7 +27,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/assetlogin/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="/assetlogin/assets/img/favicon.png">
     <title>
-        Material Dashboard 3 by Creative Tim
+        ::.. Admin DashBoard BeeMatching ..::
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
@@ -49,71 +46,52 @@
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2" id="sidenav-main">
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-                <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
-                <span class="ms-1 text-sm text-dark">Creative Tim</span>
+          <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+				<img src= "~/assets/img/logo/beematching-logo.jpg" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+                <span class="ms-1 text-sm text-dark">Bee Matching</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0 mb-2">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a asp-action="Index" class="nav-link text-dark" >
+                    <a asp-action="Index" class="nav-link active bg-gradient-dark text-white">
                         <i class="material-symbols-rounded opacity-5">dashboard</i>
-                        <span class="nav-link-text ms-1">Dashboard</span>
+                        <span class="nav-link-text ms-1">Quản Lý</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active bg-gradient-dark text-white" href="/assetlogin/pages/tables.html">
+                    <a asp-action="CongViec" class="nav-link text-dark">
                         <i class="material-symbols-rounded opacity-5">table_view</i>
-                        <span class="nav-link-text ms-1">Tables</span>
+                        <span class="nav-link-text ms-1">Quản Lý Công Việc</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/billing.html">
-                        <i class="material-symbols-rounded opacity-5">receipt_long</i>
-                        <span class="nav-link-text ms-1">Billing</span>
+                    <a asp-action="DoanhNghiep" class="nav-link text-dark">
+                        <i class="material-symbols-rounded opacity-5">table_view</i>
+                        <span class="nav-link-text ms-1">Quản Lý Doanh Nghiệp</span>
                     </a>
+
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/virtual-reality.html">
-                        <i class="material-symbols-rounded opacity-5">view_in_ar</i>
-                        <span class="nav-link-text ms-1">Virtual Reality</span>
+                    <a asp-action="NguoiDung" class="nav-link text-dark">
+                        <i class="material-symbols-rounded opacity-5">table_view</i>
+                        <span class="nav-link-text ms-1">Quản Lý Người Dùng</span>
                     </a>
+
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/rtl.html">
-                        <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
-                        <span class="nav-link-text ms-1">RTL</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/notifications.html">
-                        <i class="material-symbols-rounded opacity-5">notifications</i>
-                        <span class="nav-link-text ms-1">Notifications</span>
-                    </a>
-                </li>
+               
                 <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
+                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Thoát</h6>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/profile.html">
+                    <a class="nav-link text-dark" href="/">
                         <i class="material-symbols-rounded opacity-5">person</i>
-                        <span class="nav-link-text ms-1">Profile</span>
+                        <span class="nav-link-text ms-1">Đăng Xuất</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-in.html">
-                        <i class="material-symbols-rounded opacity-5">login</i>
-                        <span class="nav-link-text ms-1">Sign In</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-up.html">
-                        <i class="material-symbols-rounded opacity-5">assignment</i>
-                        <span class="nav-link-text ms-1">Sign Up</span>
-                    </a>
-                </li>
+      
             </ul>
         </div>
         <div class="sidenav-footer position-absolute w-100 bottom-0 ">
@@ -129,8 +107,8 @@
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tables</li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Quản lý</a></li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Người Dùng</li>
                     </ol>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
@@ -242,7 +220,8 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav
+        <!------>
         <!-- End Navbar -->
         <div class="container-fluid py-2">
             <div class="row">
@@ -250,141 +229,108 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Authors table</h6>
+                                <h6 class="text-white text-capitalize ps-3">Bảng quản lý người dùng</h6>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <form asp-action="EditCongViec">
-                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                                    <div class="form-group">
-                                        <label asp-for="CongViecId" class="control-label"></label>
-                                        <input asp-for="CongViecId" class="form-control" />
-                                        <span asp-validation-for="CongViecId" class="text-danger"></span>
+                        <div class="card-body px-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+                                    
+                                    <!-- Modal xác nhận xóa -->
+                                    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteConfirmationLabel">Xác nhận xóa</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Bạn có chắc chắn muốn xóa người dùng này?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                                    <form id="deleteForm" method="post">
+                                                        <button type="submit" class="btn btn-danger">Xác nhận</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label asp-for="TieuDe" class="control-label"></label>
-                                        <input asp-for="TieuDe" class="form-control" />
-                                        <span asp-validation-for="TieuDe" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="MoTa" class="control-label"></label>
-                                        <input asp-for="MoTa" class="form-control" />
-                                        <span asp-validation-for="MoTa" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="LuongHangThang" class="control-label"></label>
-                                        <input asp-for="LuongHangThang" class="form-control" />
-                                        <span asp-validation-for="LuongHangThang" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="ViTri" class="control-label"></label>
-                                        <input asp-for="ViTri" class="form-control" />
-                                        <span asp-validation-for="ViTri" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="DangCongViec" class="control-label"></label>
-                                        <input asp-for="DangCongViec" class="form-control" />
-                                        <span asp-validation-for="DangCongViec" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="TrangThai" class="control-label"></label>
-                                        <input asp-for="TrangThai" class="form-control" />
-                                        <span asp-validation-for="TrangThai" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="SoLuong" class="control-label"></label>
-                                        <input asp-for="SoLuong" class="form-control" />
-                                        <span asp-validation-for="SoLuong" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="NgayDang" class="control-label"></label>
-                                        <input asp-for="NgayDang" class="form-control" />
-                                        <span asp-validation-for="NgayDang" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="HanNopHoSo" class="control-label"></label>
-                                        <input asp-for="HanNopHoSo" class="form-control" />
-                                        <span asp-validation-for="HanNopHoSo" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="DistrictId" class="control-label"></label>
-                                        <input asp-for="DistrictId" class="form-control" />
-                                        <span asp-validation-for="DistrictId" class="text-danger"></span>
-                                    </div>
-                                  @*   <div class="form-group">
-                                        <label asp-for="DistrictName" class="control-label"></label>
-                                        <input asp-for="DistrictName" class="form-control" />
-                                        <span asp-validation-for="DistrictName" class="text-danger"></span>
-                                    </div> *@
-                                    <div class="form-group">
-                                        <label asp-for="WardId" class="control-label"></label>
-                                        <input asp-for="WardId" class="form-control" />
-                                        <span asp-validation-for="WardId" class="text-danger"></span>
-                                    </div>
-                                  @*    <div class="form-group">
-                                    <label asp-for="WardName" class="control-label"></label>
-                                    <input asp-for="WardName" class="form-control" />
-                                    <span asp-validation-for="WardName" class="text-danger"></span>
-                                    </div> *@
-                                    <div class="form-group">
-                                    <label asp-for="ProvinceId" class="control-label"></label>
-                                    <input asp-for="ProvinceId" class="form-control" />
-                                    <span asp-validation-for="ProvinceId" class="text-danger"></span>
-                                    </div>
-                                   @*  <div class="form-group">
-                                    <label asp-for="ProvinceName" class="control-label"></label>
-                                    <input asp-for="ProvinceName" class="form-control" />
-                                    <span asp-validation-for="ProvinceName" class="text-danger"></span>
-                                    </div>  *@
-                                    <div class="form-group">
-                                        <input type="submit" value="Save" class="btn btn-primary" />
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                                    <!-- Modal xác nhận xóa -->
 
-                        <div>
-                            <a asp-action="Index">Back to List</a>
+
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tên đăng nhập</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vai trò</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trạng thái</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hành động</th>
+                                        </tr>
+                                        <!-------------------------------------------->
+                                    </thead>
+                                     @if (TempData["SuccessMessage"] != null)
+                                    {
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            @TempData["SuccessMessage"]
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    }
+
+                                    @if (TempData["ErrorMessage"] != null)
+                                    {
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            @TempData["ErrorMessage"]
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    } 
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                        <div>
+                                                            <img src="/assetlogin/assets/img/team-2.jpg"
+                                                                 class="avatar avatar-sm me-3 border-radius-lg"
+                                                                 alt="user-avatar">
+                                                        </div>
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <p class="text-xs text-secondary mb-0">@item.ten_dang_nhap</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="text-xs font-weight-bold mb-0">@item.Roles</p>
+                                                </td>
+                                                <td>
+                                                    <p class="text-xs font-weight-bold mb-0">@item.TrangThai</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button"
+                                                            class="btn btn-danger btn-sm"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#deleteConfirmationModal"
+                                                            onclick="setDeleteFormAction(@item.nguoi_dung_id)">
+                                                        <i class="fa fa-trash"></i> Xóa
+                                                    </button>
+
+                                                </td>
+                                            
+                                            </tr>
+                                        }
+                                    </tbody>
+
+        <!-----------------------------
+                                </table>
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
-          
-            <footer class="footer py-4  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                © <script>
-                                      document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                                for a better web.
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+           
+            
         </div>
     </main>
     <div class="fixed-plugin">
@@ -462,6 +408,13 @@
         </div>
     </div>
     <!--   Core JS Files   -->
+    <script>
+        function setDeleteFormAction(userId) {
+            const deleteForm = document.getElementById('deleteForm')
+            deleteForm.action = `/ADMINController1/DeleteUser/${userId}`
+        }
+    </script>
+
     <script src="/assetloginassets/js/core/popper.min.js"></script>
     <script src="/assetloginassets/js/core/bootstrap.min.js"></script>
     <script src="/assetloginassets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -475,10 +428,17 @@
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
     </script>
+
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="/assetlogin/assets/js/material-dashboard.min.js?v=3.2.0"></script>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -1,13 +1,8 @@
-﻿@{
-    Layout = null;
-}
-
-@model BeeMatchingAPP.Models.NguoiDung
-
+﻿@model BeeMatchingAPP.Models.NguoiDung
+@* //thinhne *@
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Register";
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,98 +70,82 @@
 </head>
 <body class="bg-info">
     <div class="container">
-        <!-- Login Form Start -->
-        <div class="row justify-content-center wrapper" id="login-box">
-            <div class="col-lg-10 my-auto myShadow">
-                <div class="row">
-                    <div class="col-lg-7 bg-white p-4">
-                        <h1 class="text-center font-weight-bold text-primary">Đăng Nhập</h1>
-                        <hr class="my-3" />
-                        <form asp-action="Login">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            @if (TempData["ErrorMessage"] != null)
-                            {
-                                <div style="color: red;">
-                                    @TempData["ErrorMessage"]
-                                </div>
-                            }
-                            <div class="form-group">
-                                <label asp-for="Email" class="control-label"></label>
-                                <input asp-for="Email" class="form-control" />
-                                <span asp-validation-for="Email" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="mat_khau" class="control-label">Mật Khẩu</label>
-                                <input asp-for="mat_khau" class="form-control" />
-                                <span asp-validation-for="mat_khau" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Login" class="btn btn-primary" />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
-                        <h1 class="text-center font-weight-bold text-white">Xin Chào!</h1>
-                        <hr class="my-3 bg-light myHr" />
-                        <p class="text-center font-weight-bolder text-light lead">Đăng ký tài khoản mới nếu bạn chưa có tài khoản!</p>
-                        <button class="btn btn-outline-light btn-lg font-weight-bolder mt-4 align-self-center myLinkBtn">
-                            <a asp-action="Register" class="btn head-btn2">Đăng ký</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Login Form End -->
-        @* <!-- Registration Form Start -->
-        <div class="row justify-content-center wrapper" id="register-box" style="display: none;">
+
+        <!-- Registration Form Start -->
+        <div class="row justify-content-center wrapper">
             <div class="col-lg-10 my-auto myShadow">
                 <div class="row">
                     <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
                         <h1 class="text-center font-weight-bold text-white">Xin Chào!</h1>
                         <hr class="my-4 bg-light myHr" />
                         <p class="text-center font-weight-bolder text-light lead">Vui lòng điền vào thông tin cá nhân của bạn.</p>
-                        <button class="btn btn-outline-light btn-lg font-weight-bolder mt-4 align-self-center myLinkBtn" id="login-link">Đăng Nhập</button>
+                        <button class="btn btn-outline-light btn-lg font-weight-bolder mt-4 align-self-center myLinkBtn">
+                            <a asp-action="Login" class="btn head-btn2">Đăng nhập</a>
+                        </button>
                     </div>
                     <div class="col-lg-7 bg-white p-4">
                         <h1 class="text-center font-weight-bold text-primary">Tạo Tài Khoản</h1>
                         <hr class="my-3" />
-                        <form action="#" method="post" class="px-3" id="register-form">
+                        <form asp-action="Register" method="post" class="px-3">
+                            @if (TempData["ErrorMessage"] != null)
+                            {
+                                <div style="color: red; font-weight: bold; margin-bottom: 10px;">
+                                    @TempData["ErrorMessage"]
+                                </div>
+                            }
                             <div class="input-group input-group-lg form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="far fa-user fa-lg fa-fw"></i></span>
                                 </div>
-                                <input type="text" id="name" name="name" class="form-control rounded-0" placeholder="Họ và Tên" required />
-                            </div>
-                            <div class="input-group input-group-lg form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
-                                </div>
-                                <input type="email" id="remail" name="email" class="form-control rounded-0" placeholder="Email" required />
+                                <input asp-for="ten_dang_nhap" class=" form-control rounded-0" placeholder="Tên đăng nhập" required />
+                                <span asp-validation-for="ten_dang_nhap" class="text-danger"></span>
                             </div>
                             <div class="input-group input-group-lg form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
                                 </div>
-                                <input type="password" id="rpassword" name="password" class="form-control rounded-0" minlength="5" placeholder="Mật khẩu" required />
+                                <input asp-for="Email" class="form-control rounded-0" minlength="5" placeholder="Email" required />
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             <div class="input-group input-group-lg form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
                                 </div>
-                                <input type="password" id="cpassword" name="cpassword" class="form-control rounded-0" minlength="5" placeholder="Xác nhận mật khẩu" required />
+                                <input asp-for="mat_khau" class="form-control rounded-0" minlength="5" placeholder="Mật khẩu" required />
+                                <span asp-validation-for="mat_khau" class="text-danger"></span>
+                            </div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
+                                </div>
+                                <input asp-for="ConfirmPassword" type="password" class="form-control rounded-0" minlength="5" placeholder="Xác nhận mật khẩu" required />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div style="margin-top: 10px" class="input-group input-group-lg form-group">
+                                <div>
+                                    <!-- "Người xin việc" được chọn mặc định -->
+                                    <input style="margin-left: 65px" type="radio" name="Roles" value="Người xin việc" checked />
+                                    <label style="margin-right: 100px" for="Roles">Người xin việc</label>
+                                </div>
+                                <div>
+                                    <!-- "Doanh nghiệp" không được chọn mặc định -->
+                                    <input type="radio" name="Roles" value="Doanh Nghiệp" />
+                                    <label for="Roles">Doanh nghiệp</label>
+                                </div>
+                                <span asp-validation-for="Roles" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <div id="passError" class="text-danger font-weight-bolder"></div>
                             </div>
                             <div class="form-group">
-                                <input type="submit" id="register-btn" value="Đăng Ký" class="btn btn-primary btn-lg btn-block myBtn" />
+                                <input type="submit" value="Đăng Ký" class="btn btn-primary btn-lg btn-block myBtn" />
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Registration Form End --> *@
+        <!-- Registration Form End -->
         <!-- Forgot Password Form Start -->
         <div class="row justify-content-center wrapper" id="forgot-box" style="display: none;">
             <div class="col-lg-10 my-auto myShadow">
@@ -229,3 +208,58 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
+@* <h4>Register</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ten_dang_nhap" class="control-label"></label>
+                <input asp-for="ten_dang_nhap" class="form-control" />
+                <span asp-validation-for="ten_dang_nhap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mat_khau" class="control-label"></label>
+                <input asp-for="mat_khau" class="form-control" />
+                <span asp-validation-for="mat_khau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="ConfirmPassword">Xác nhận mật khẩu</label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Roles" class="control-label"></label>
+                <input asp-for="Roles" class="form-control" />
+                <span asp-validation-for="Roles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="TrangThai" type="hidden" value="Đang hoạt động " class="form-control" />
+                <span asp-validation-for="TrangThai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+
+<div style="margin-top: 10px" class="input-group input-group-lg form-group">
+    <div>
+        <!-- "Người xin việc" được chọn mặc định -->
+        <input style="margin-left: 65px" type="radio" name="Roles" value="Người xin việc" checked />
+        <label style="margin-right: 100px" for="Roles">Người xin việc</label>
+    </div>
+    <div>
+        <!-- "Doanh nghiệp" không được chọn mặc định -->
+        <input type="radio" name="Roles" value="Doanh Nghiệp" />
+        <label for="Roles">Doanh nghiệp</label>
+    </div>
+    <span asp-validation-for="Roles" class="text-danger"></span>
+</div> 

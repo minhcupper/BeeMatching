@@ -72,26 +72,26 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="job_listing.html">Find a Jobs </a></li>
+                                            <li><a href="job_listing.html">Tìm Việc</a></li>
                                             <li></li>
                                             <li>
                                                 <a href="#">Thông Tin Cá Nhân </a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
+                                                    <li><a href="blog.html">Giới thiệu<a></li>
                                                     <li><a href="single-blog.html">Blog Details</a></li>
                                                     <li><a href="elements.html">Elements</a></li>
                                                     <li><a asp-controller="Home" asp-action="TrangThongTinNguoiTimViec">Thong Tin Cá Nhân</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="contact.html">Liên hệ</a></li>
                                         </ul>
                                     </nav>
                                 </div>
-                                <!-- Header-btn -->
+                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="#" class="btn head-btn1">Register</a>
+                                    <a href="#" class="btn head-btn1">Đăng xu</a>
                                     <a href="#" class="btn head-btn2">Login</a>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -323,7 +323,7 @@
                                     <div class="single-job-items mb-30">
                                         <div class="job-items">
                                             <div class="company-img">
-                                                <img style="width:200px;height:180px" src="~/Images/minh.jpg.png" alt="@item.CongViecId" class="img-fluid rounded-4" />
+                                                <img style="width:200px;height:180px" src="~/Images/minh.jpg" alt="@item.CongViecId" class="img-fluid rounded-4" />
                                             </div>
                                             <div class="job-tittle">
                                                 <a asp-action="Details"  asp-route-id="@item.CongViecId">

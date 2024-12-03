@@ -1,27 +1,61 @@
-﻿using BeeMatchingAPP.Models;
+﻿using API_He_thong.DATA;
+using BeeMatchingAPP.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Text;
 
 namespace BeeMatchingAPP.Controllers
 {
-    public class ADMINController1 : Controller
+    public class Admin : Controller
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
-        private readonly ILogger<ADMINController1> _logger;
+        private readonly ILogger<Admin> _logger;
         HttpClient _httpClient;
-        public ADMINController1(ILogger<ADMINController1> logger, HttpClient httpClient, IWebHostEnvironment hostingEnvironment)
+        public Admin(ILogger<Admin> logger, HttpClient httpClient, IWebHostEnvironment hostingEnvironment)
         {
             _logger = logger;
             _httpClient = httpClient;
             _hostingEnvironment = hostingEnvironment;
         }
-     
+        //demo1
 
         public async Task<ActionResult> Index()
         {
             return View();
         }
+
+        public async Task<ActionResult> NguoiDung()
+        {
+
+            List<NguoiDung> nguoiDungs = new List<NguoiDung>();
+            var userResponse = await _httpClient.GetAsync("https://localhost:7287/api/User/GetAll");
+            if (userResponse.IsSuccessStatusCode)
+            {
+                var apiUserResponse = await userResponse.Content.ReadAsStringAsync();
+                nguoiDungs = JsonConvert.DeserializeObject<List<NguoiDung>>(apiUserResponse);
+            }
+            return View(nguoiDungs);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var deleteResponse = await _httpClient.DeleteAsync($"https://localhost:7287/api/User/Delete/{id}");
+            if (deleteResponse.IsSuccessStatusCode)
+            {
+                TempData["SuccessMessage"] = "Người dùng đã được xóa thành công.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Xóa người dùng thất bại. Vui lòng thử lại.";
+            }
+
+            return RedirectToAction("NguoiDung");
+        }
+
+
+
         public async Task<ActionResult> DoanhNghiep()
         {
 
@@ -164,7 +198,7 @@ namespace BeeMatchingAPP.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["SuccessMessage"] = "Xóa công việc thành công!";
-                    return RedirectToAction("CongViec", "ADMINController1");
+                    return RedirectToAction("CongViec", "Admin");
                 }
                 else
                 {
@@ -180,68 +214,68 @@ namespace BeeMatchingAPP.Controllers
             return View(job);
         }
         [HttpGet]
-public async Task<ActionResult> EditCongViec(int id)
-{
-    try
-    {
-        CongViec reservation = null;
-        var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
-        if (response.IsSuccessStatusCode)
+        public async Task<ActionResult> EditCongViec(int id)
         {
-            var apiResponse = await response.Content.ReadAsStringAsync();
-            reservation = JsonConvert.DeserializeObject<CongViec>(apiResponse);
-        }
-        else
-        {
-            ModelState.AddModelError("", "Không thể tải thông tin công việc. Vui lòng thử lại.");
-        }
-        return View(reservation);
-    }
-    catch (Exception ex)
-    {
-        // Log lỗi nếu cần
-        ModelState.AddModelError("", $"Đã xảy ra lỗi: {ex.Message}");
-        return RedirectToAction("Error", "Home"); // Điều hướng đến trang lỗi chung
-    }
-}
-
-[HttpPost]
-[ValidateAntiForgeryToken]
-public async Task<ActionResult> EditCongViec(int id, CongViec job)
-{
-    if (!ModelState.IsValid) // Kiểm tra dữ liệu hợp lệ
-    {
-        return View(job);
-    }
-
-    if (id != job.CongViecId)
-    {
-        ModelState.AddModelError("", "ID không khớp.");
-        return View(job);
-    }
-
-    try
-    {
-        var content = new StringContent(JsonConvert.SerializeObject(job), Encoding.UTF8, "application/json");
-        var response = await _httpClient.PutAsync($"https://localhost:7287/api/CongViec/Edit/{id}", content);
-        if (response.IsSuccessStatusCode)
-        {
-            TempData["SuccessMessage"] = "Cập nhật công việc thành công!";
-                    return RedirectToAction("CongViec", "ADMINController1");
+            try
+            {
+                CongViec reservation = null;
+                var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    var apiResponse = await response.Content.ReadAsStringAsync();
+                    reservation = JsonConvert.DeserializeObject<CongViec>(apiResponse);
                 }
-        else
-        {
-            ModelState.AddModelError("", "Không thể cập nhật công việc. Vui lòng thử lại.");
+                else
+                {
+                    ModelState.AddModelError("", "Không thể tải thông tin công việc. Vui lòng thử lại.");
+                }
+                return View(reservation);
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                ModelState.AddModelError("", $"Đã xảy ra lỗi: {ex.Message}");
+                return RedirectToAction("Error", "Home"); // Điều hướng đến trang lỗi chung
+            }
         }
-    }
-    catch (Exception ex)
-    {
-        // Log lỗi nếu cần
-        ModelState.AddModelError("", $"Đã xảy ra lỗi: {ex.Message}");
-    }
 
-    return View(job);
-}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EditCongViec(int id, CongViec job)
+        {
+            if (!ModelState.IsValid) // Kiểm tra dữ liệu hợp lệ
+            {
+                return View(job);
+            }
+
+            if (id != job.CongViecId)
+            {
+                ModelState.AddModelError("", "ID không khớp.");
+                return View(job);
+            }
+
+            try
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(job), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PutAsync($"https://localhost:7287/api/CongViec/Edit/{id}", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    TempData["SuccessMessage"] = "Cập nhật công việc thành công!";
+                    return RedirectToAction("CongViec", "Admin");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Không thể cập nhật công việc. Vui lòng thử lại.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                ModelState.AddModelError("", $"Đã xảy ra lỗi: {ex.Message}");
+            }
+
+            return View(job);
+        }
         public async Task<ActionResult> Details(int id)
         {
             CongViec reservation = new CongViec();
@@ -417,7 +451,7 @@ public async Task<ActionResult> EditCongViec(int id, CongViec job)
             if (!ModelState.IsValid) // Kiểm tra dữ liệu hợp lệ
             {
                 return View(job);
-                
+
             }
 
             if (id != job.DoanhNghiepId)
@@ -433,7 +467,7 @@ public async Task<ActionResult> EditCongViec(int id, CongViec job)
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["SuccessMessage"] = "Xóa Doanh Nghiep thành công!";
-                    return RedirectToAction("DoanhNghiep", "ADMINController1");
+                    return RedirectToAction("DoanhNghiep", "Admin");
                 }
                 else
                 {
@@ -507,7 +541,7 @@ public async Task<ActionResult> EditCongViec(int id, CongViec job)
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["SuccessMessage"] = "Cập nhật doanh nghiep thành công!";
-                    return RedirectToAction("DoanhNghiep", "ADMINController1");
+                    return RedirectToAction("DoanhNghiep", "Admin");
                 }
                 else
                 {
