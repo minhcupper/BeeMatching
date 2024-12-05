@@ -71,6 +71,19 @@ namespace API_He_thong.DATA
             }
 
             // Đăng nhập thành công, trả về thông tin người dùng
+            // Lấy vai trò người dùng từ cơ sở dữ liệu
+            var status = await _loginRepository.GetUserStatusAsync(user.nguoi_dung_id);
+
+            if (status != null && status.Any())
+            {
+                // Gán vai trò đầu tiên cho người dùng (nếu có nhiều vai trò)
+                user.TrangThai = status.First();
+            }
+            else
+            {
+                // Nếu không tìm thấy vai trò
+                Console.WriteLine($"Authentication warning: No roles found for user '{Email}'.");
+            }
             return user;
         }
         public string GenerateJwtToken(NguoiDung nguoiDung)

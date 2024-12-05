@@ -51,8 +51,9 @@ namespace API_He_thong.Controllers
                     nguoi_dung_id = user.nguoi_dung_id, // Sửa từ 'id' thành 'nguoi_dung_id'
                     token = token,
                     Email = user.Email,
-                    Tendangnhap=user.ten_dang_nhap,
-                    roles = user.Roles
+                    Tendangnhap = user.ten_dang_nhap,
+                    roles = user.Roles,
+                    trangthai = user.TrangThai
                 });
             }
             else

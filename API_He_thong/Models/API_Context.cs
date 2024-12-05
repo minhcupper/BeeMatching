@@ -34,7 +34,10 @@ namespace API_He_thong.Models
                 ConfigureDanhGia(modelBuilder);
                 ConfigureThongBao(modelBuilder);
                 ConfigureKyNangCongViec(modelBuilder);
-            }
+            modelBuilder.Entity<CongViec>()
+        .Property(c => c.LuongHangThang)
+        .HasPrecision(18, 4); // Adjust precision and scale based on your data needs
+        }
 
             private void ConfigureNguoiTimViec(ModelBuilder modelBuilder)
             {

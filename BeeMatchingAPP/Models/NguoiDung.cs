@@ -11,31 +11,25 @@ namespace BeeMatchingAPP.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int nguoi_dung_id { get; set; }
 
-
-
-        // Tên đăng nhập, bắt buộc, tối đa 50 ký tự, không được trống
-        [MaxLength(50)]
-        //[Required(ErrorMessage = "Tên đăng nhập không được để trống.")]
+        [Required(ErrorMessage = "Tên đăng nhập không được để trống.")]
         public string? ten_dang_nhap { get; set; }
 
+
+        [Required(ErrorMessage = "Mật khẩu không được để trống.")]
+        [DataType(DataType.Password)]
+        public string mat_khau { get; set; }
+
+
+        [DataType(DataType.Password)]
+        [Compare("mat_khau", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp")]
+        public string? ConfirmPassword { get; set; }
 
         [MaxLength(50)]
         [Required(ErrorMessage = "Email không được để trống.")]
         public string Email { get; set; }
-
-        // Mật khẩu, bắt buộc, tối đa 10 ký tự, không được trống
-        [MaxLength(10)]
-        [Required(ErrorMessage = "Mật khẩu không được để trống.")]
-        public string mat_khau { get; set; }
-        [MaxLength(10)]
         [Required(ErrorMessage = "Roles không được để trống.")]
-        [DataType(DataType.Password)]
-        [Compare("mat_khau", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp")]
-        public string? ConfirmPassword { get; set; }
         public string? Roles { get; set; }
-        [MaxLength(10)]
-        [Required(ErrorMessage = "Trang thai không được để trống.")]
-        [DefaultValue("Đang hoạt động")]
+
         public string? TrangThai { get; set; } = "Đang hoạt động ";
 
         // Navigation properties
@@ -47,6 +41,5 @@ namespace BeeMatchingAPP.Models
         public virtual ICollection<ThongBao>? ThongBaos { get; set; } = new List<ThongBao>();
 
         // Navigation properties for address relationships
-
     }
 }

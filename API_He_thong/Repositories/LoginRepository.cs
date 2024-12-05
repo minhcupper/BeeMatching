@@ -33,5 +33,22 @@ namespace API_He_thong.Repositories
             // Return an empty list if no roles found
             return new List<string>();
         }
+        public async Task<List<string>> GetUserStatusAsync(int nguoi_dung_id)
+        {
+            // Retrieve the user by their ID
+            var user = await _context.NguoiDung
+                                      .FirstOrDefaultAsync(u => u.nguoi_dung_id == nguoi_dung_id);
+
+            // Check if user exists and roles field is not empty
+            if (user != null && !string.IsNullOrEmpty(user.TrangThai))
+            {
+                // Split the Roles string by commas (assuming roles are comma-separated)
+                var status = user.TrangThai.Split(',').ToList();
+                return status;
+            }
+
+            // Return an empty list if no roles found
+            return new List<string>();
+        }
     }
 }

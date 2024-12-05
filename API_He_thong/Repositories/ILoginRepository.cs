@@ -6,6 +6,7 @@ namespace API_He_thong.Repositories
     {
         Task<NguoiDung> GetUserAsync(string tai_khoan);
         Task<List<string>> GetUserRoleAsync(int nguoi_dung_id);
-     
+        Task<List<string>> GetUserStatusAsync(int nguoi_dung_id);
+
     }
 }
