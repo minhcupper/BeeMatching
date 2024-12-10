@@ -2,37 +2,35 @@
 
 @{
     ViewData["Title"] = "TrangThongTinUngTuyen";
-    UngTuyen ut = ViewData["ungtuyen"] as UngTuyen;
-    CongViec congViec = ViewData["id"] as CongViec;
+ //   UngTuyen ut = ViewData["ungtuyen"] as UngTuyen;
+   // CongViec congViec = ViewData["id"] as CongViec;
+   
 }
-
-  
-
 
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Job board HTML-5 Template </title>
+    <title>BeeMatching - Kết Nối Giá Trị </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/icon/favicon.png">
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/assets/css/flaticon.css">
-    <link rel="stylesheet" href="~/assets/css/slicknav.css">
-    <link rel="stylesheet" href="~/assets/css/price_rangs.css">
-    <link rel="stylesheet" href="~/assets/css/animate.min.css">
-    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="~/assets/css/slick.css">
-    <link rel="stylesheet" href="~/assets/css/nice-select.css">
-    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/price_rangs.css">
+    <link rel="stylesheet" href="/assets/css/slicknav.css">
+    <link rel="stylesheet" href="/assets/css/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
@@ -42,7 +40,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
+                    <img src="/assets/img/logo/beematching-logo.jpg" alt="logo">
                 </div>
             </div>
         </div>
@@ -57,7 +55,7 @@
                         <div class="col-lg-3 col-md-2">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href=""><img src="/assets/img/logo/beematching-logo.jpg" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -66,26 +64,25 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="job_listing.html">Find a Jobs </a></li>
-                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="">Trang Chủ</a></li>
+                                            <li><a asp-controller="CongViec" asp-action="CongViec">Công Việc</a></li>
+                                            <li><a asp-action="TrangThongTinNguoiTimViec">Giới Thiệu</a></li>
                                             <li>
-                                                <a href="#">Page</a>
+                                                <a href="#">Liên Kết</a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="job_details.html">job Details</a></li>
+                                                    <li><a href="#">Giới Thiệu</a></li>
+                                                    <li><a href="#">FanPage</a></li>
+                                                    <li><a href="#">Tin tức</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="#">Liên hệ</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="#" class="btn head-btn1">Register</a>
-                                    <a href="#" class="btn head-btn2">Login</a>
+                                    <a asp-action="Register" class="btn head-btn1">Đăng ký</a>
+                                    <a asp-action="Login" class="btn head-btn2">Đăng nhập</a>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +125,7 @@
                         <div class="single-job-items mb-50">
                             <div class="job-items">
                                 <div class="company-img company-img-details">
-                                    <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
+                                    <a href="#"><img src="/assets/img/icon/job-list1.png" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
                                     @*  <a href="#">
@@ -156,52 +153,75 @@
                                     }
                                     *@
                                         <h1>TrangThongTinUngTuyen</h1>
+                                        <h2>Thông tin công việc</h2>
+                                      @*   <div>
+                                            <p><strong>Tiêu đề:</strong> @Model.CongViec.TieuDe</p>
+                                            <p><strong>Mô tả:</strong> @Model.CongViec.MoTa</p>
+                                            <p><strong>Lương:</strong> @Model.CongViec.LuongHangThang</p>
+                                        </div> *@
 
+                                        <hr />
                                         <h4>UngTuyen</h4>
                                         <hr />
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <form asp-action="TrangThongTinUngTuyen">
+
+                                                <form asp-controller="Home" asp-action="TrangThongTinUngTuyen" method="post" enctype="multipart/form-data">
                                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                                   
+
+                                                    <!-- Trường hình ảnh -->
+                                                    <div class="form-group">
+                                                        <label asp-for="HinhAnhCV" class="control-label"></label>
+                                                        <input type="file" asp-for="HinhAnhCV" name="hinh_anh" id="hinh_anh" class="form-control" />
+                                                        <span asp-validation-for="HinhAnhCV" class="text-danger"></span>
+                                                    </div>
+
+                                                    <!-- Trường CongViecId (dạng ẩn) -->
                                                     <div class="form-group">
                                                         <label asp-for="CongViecId" class="control-label"></label>
-                                                        <input asp-for=" @congViec.CongViecId" class="form-control" />
+                                                        <input type="text" asp-for="CongViecId" class="form-control"  />
                                                         <span asp-validation-for="CongViecId" class="text-danger"></span>
                                                     </div>
 
+                                                    <!-- Trường NguoiTimViecId (dạng ẩn) -->
                                                     <div class="form-group">
                                                         <label asp-for="NguoiTimViecId" class="control-label"></label>
-                                                        <input asp-for="NguoiTimViecId" class="form-control" />
+                                                        <input type="text" asp-for="NguoiTimViecId" class="form-control"  />
                                                         <span asp-validation-for="NguoiTimViecId" class="text-danger"></span>
                                                     </div>
 
+                                                    <!-- Trường Ngày ứng tuyển -->
                                                     <div class="form-group">
                                                         <label asp-for="NgayUngTuyen" class="control-label"></label>
-                                                        <input asp-for="NgayUngTuyen" class="form-control" />
+                                                        <input type="date" asp-for="NgayUngTuyen" class="form-control" />
                                                         <span asp-validation-for="NgayUngTuyen" class="text-danger"></span>
                                                     </div>
 
+                                                    <!-- Trường Đề xuất -->
                                                     <div class="form-group">
                                                         <label asp-for="DeXuat" class="control-label"></label>
                                                         <input asp-for="DeXuat" class="form-control" />
                                                         <span asp-validation-for="DeXuat" class="text-danger"></span>
                                                     </div>
 
+                                                    <!-- Trường Trạng thái -->
                                                     <div class="form-group">
                                                         <label asp-for="TrangThai" class="control-label"></label>
                                                         <input asp-for="TrangThai" class="form-control" />
                                                         <span asp-validation-for="TrangThai" class="text-danger"></span>
                                                     </div>
 
+                                                    <!-- Checkbox Chấp nhận công việc -->
                                                     <div class="form-group form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" asp-for="ChapNhanCongViec" /> @Html.DisplayNameFor(model => model.ChapNhanCongViec)
+                                                        <label asp-for="ChapNhanCongViec" class="form-check-label">
+                                                            <input class="form-check-input" asp-for="ChapNhanCongViec" />
+                                                            Đồng ý với công việc
                                                         </label>
                                                     </div>
 
+                                                    <!-- Nút gửi -->
                                                     <div class="form-group">
-                                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                                        <input type="submit" value="Tạo mới" class="btn btn-primary" />
                                                     </div>
                                                 </form>
                                             </div>

@@ -61,7 +61,6 @@ namespace API_He_thong.Models
         [DefaultValue("Đang hoạt động")]
         [Required(ErrorMessage = "Trang thai không được để trống.")]
         public string? TrangThai { get; set; } = "Đang hoạt động ";
-
-
+      
     }
 }

@@ -5,6 +5,7 @@ namespace BeeMatchingAPP.Models
 {
     public class DanhGia
     {
+
         // Khóa chính (Primary Key)
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -29,5 +30,6 @@ namespace BeeMatchingAPP.Models
 
         // Ngày đánh giá
         public DateTime NgayDanhGia { get; set; } = DateTime.Now;
+        public int DoanhNghiepId { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace API_He_thong.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UngTuyenId { get; set; }
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string? HinhAnhCV { get; set; }
         // Khóa ngoại kiểu int trỏ tới CongViec
         [Required(ErrorMessage = "CongViecId không được để trống.")]
@@ -44,6 +44,6 @@ namespace API_He_thong.Models
         public bool? ChapNhanCongViec { get; set; } = false;
 
         // Navigation property cho DanhGia (quan hệ một-nhiều)
-        public virtual ICollection<DanhGia>? DanhGias { get; set; } = new List<DanhGia>();
+        public virtual DanhGia? DanhGia { get; set; }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_He_thong.Migrations
 {
     [DbContext(typeof(API_Context))]
-    [Migration("20241118144910_BeeMatching")]
+    [Migration("20241207204655_BeeMatching")]
     partial class BeeMatching
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,10 @@ namespace API_He_thong.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CongViecId"), 1L, 1);
 
+                    b.Property<string>("DangCongViec")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("DistrictId")
                         .HasColumnType("nvarchar(20)");
 
@@ -42,7 +46,8 @@ namespace API_He_thong.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("LuongHangThang")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("MoTa")
                         .HasColumnType("nvarchar(max)");
@@ -52,6 +57,9 @@ namespace API_He_thong.Migrations
 
                     b.Property<string>("ProvinceId")
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
 
                     b.Property<string>("TieuDe")
                         .IsRequired()
@@ -94,6 +102,9 @@ namespace API_He_thong.Migrations
                     b.Property<int>("DiemDanhGia")
                         .HasColumnType("int");
 
+                    b.Property<int>("DoanhNghiepId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("NgayDanhGia")
                         .HasColumnType("datetime2");
 
@@ -107,7 +118,8 @@ namespace API_He_thong.Migrations
 
                     b.HasKey("DanhGiaId");
 
-                    b.HasIndex("UngTuyenId");
+                    b.HasIndex("UngTuyenId")
+                        .IsUnique();
 
                     b.ToTable("DanhGia");
                 });
@@ -140,10 +152,7 @@ namespace API_He_thong.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("administrative_region_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("administrative_unit_id")
+                    b.Property<int?>("administrative_unit_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("code_name")
@@ -170,6 +179,11 @@ namespace API_He_thong.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("province_code")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("code");
 
@@ -207,6 +221,11 @@ namespace API_He_thong.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TrangThai")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("WardId")
                         .HasColumnType("nvarchar(20)");
@@ -366,13 +385,16 @@ namespace API_He_thong.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("nguoi_dung_id"), 1L, 1);
 
-                    b.Property<string>("Roles")
+                    b.Property<string>("Email")
                         .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Roles")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("TrangThai")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
@@ -382,7 +404,6 @@ namespace API_He_thong.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ten_dang_nhap")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -564,7 +585,7 @@ namespace API_He_thong.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UngTuyenId"), 1L, 1);
 
-                    b.Property<bool>("ChapNhanCongViec")
+                    b.Property<bool?>("ChapNhanCongViec")
                         .HasColumnType("bit");
 
                     b.Property<int>("CongViecId")
@@ -574,6 +595,10 @@ namespace API_He_thong.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<string>("HinhAnhCV")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<DateTime>("NgayUngTuyen")
                         .HasColumnType("datetime2");
 
@@ -581,7 +606,6 @@ namespace API_He_thong.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TrangThai")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
@@ -600,9 +624,6 @@ namespace API_He_thong.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("administrative_region_Id")
-                        .HasColumnType("int");
-
                     b.Property<int?>("administrative_unit_id")
                         .HasColumnType("int");
 
@@ -610,6 +631,11 @@ namespace API_He_thong.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("district_code")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("full_name")
                         .IsRequired()
@@ -668,8 +694,8 @@ namespace API_He_thong.Migrations
             modelBuilder.Entity("API_He_thong.Models.DanhGia", b =>
                 {
                     b.HasOne("API_He_thong.Models.UngTuyen", "UngTuyen")
-                        .WithMany("DanhGias")
-                        .HasForeignKey("UngTuyenId")
+                        .WithOne("DanhGia")
+                        .HasForeignKey("API_He_thong.Models.DanhGia", "UngTuyenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -883,7 +909,7 @@ namespace API_He_thong.Migrations
 
             modelBuilder.Entity("API_He_thong.Models.UngTuyen", b =>
                 {
-                    b.Navigation("DanhGias");
+                    b.Navigation("DanhGia");
                 });
 
             modelBuilder.Entity("API_He_thong.Models.wards", b =>

@@ -7,25 +7,24 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="/assetlogin/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="/assetlogin/assets/img/favicon.png">
-    <title>
-        Material Dashboard 3 by Creative Tim
-    </title>
-    <!--     Fonts and icons     -->
+    <link rel="icon" type="image/png" href="/assets/img/icon/favicon.png">
+
+    <title>::. Doanh Nghiệp ::</title>
+
+    <!-- Fonts and Icons -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <!-- Nucleo Icons -->
     <link href="/assetlogin/assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="/assetlogin/assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!-- Material Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <!-- CSS Files -->
+
+    <!-- Material Dashboard CSS -->
     <link id="pagestyle" href="/assetlogin/assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
 </head>
 
@@ -34,8 +33,8 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-                <img src="/assetlogin/assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
-                <span class="ms-1 text-sm text-dark">Creative Tim</span>
+                <img src="~/assets/img/logo/beematching-logo.jpg" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+                <span class="ms-1 text-sm text-dark">Bee Matching</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0 mb-2">
@@ -44,7 +43,7 @@
                 <li class="nav-item">
                     <a asp-action="Index" class="nav-link active bg-gradient-dark text-white">
                         <i class="material-symbols-rounded opacity-5">dashboard</i>
-                        <span class="nav-link-text ms-1">Home</span>
+                        <span class="nav-link-text ms-1">Doanh Nghiệp</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -61,61 +60,20 @@
 
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/billing.html">
-                        <i class="material-symbols-rounded opacity-5">receipt_long</i>
-                        <span class="nav-link-text ms-1">Quản lý ứng tuyển</span>
-                    </a>
-                </li>
-                <li class="nav-item" >
-                    <a asp-controller="Home" asp-action="TrangThongTinDoanhNghiep" class="nav-link text-dark" >
-                        <i class="material-symbols-rounded opacity-5">view_in_ar</i>
-                        <span  class="nav-link-text ms-1">Quản lý hồ sơ</span>
-                
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href=/assetlogin/pages/rtl.html">
-                        <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
-                        <span class="nav-link-text ms-1">RTL</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/notifications.html">
-                        <i class="material-symbols-rounded opacity-5">notifications</i>
-                        <span class="nav-link-text ms-1">Notifications</span>
-                    </a>
-                </li>
+
                 <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
+                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Thoát</h6>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/profile.html">
+                    <a class="nav-link text-dark" href="/">
                         <i class="material-symbols-rounded opacity-5">person</i>
-                        <span class="nav-link-text ms-1">Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-in.html">
-                        <i class="material-symbols-rounded opacity-5">login</i>
-                        <span class="nav-link-text ms-1">Sign In</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-up.html">
-                        <i class="material-symbols-rounded opacity-5">assignment</i>
-                        <span class="nav-link-text ms-1">Sign Up</span>
+                        <span class="nav-link-text ms-1">Đăng Xuất</span>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="sidenav-footer position-absolute w-100 bottom-0 ">
-            <div class="mx-3">
-                <a class="btn btn-outline-dark mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
-                <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-            </div>
-        </div>
     </aside>
+
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
@@ -129,17 +87,12 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group input-group-outline">
-                            <label class="form-label">Type here...</label>
+                            <label class="form-label">tìm kiếm...</label>
                             <input type="text" class="form-control">
                         </div>
                     </div>
                     <ul class="navbar-nav d-flex align-items-center  justify-content-end">
-                        <li class="nav-item d-flex align-items-center">
-                            <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
-                        </li>
-                        <li class="mt-1">
-                            <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-                        </li>
+                       
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                                 <div class="sidenav-toggler-inner">

@@ -10,7 +10,7 @@ namespace BeeMatchingAPP.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UngTuyenId { get; set; }
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string? HinhAnhCV { get; set; }
 
         // Khóa ngoại kiểu int trỏ tới CongViec

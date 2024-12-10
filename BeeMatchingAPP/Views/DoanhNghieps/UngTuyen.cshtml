@@ -12,9 +12,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="/assetlogin/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="/assetlogin/assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/img/icon/favicon.png">
     <title>
-        Material Dashboard 3 by Creative Tim
+        Danh sách ứng tuyển
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
@@ -34,8 +34,8 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-                <img src="/assetlogin/assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
-                <span class="ms-1 text-sm text-dark">Creative Tim</span>
+                <img src="~/assets/img/logo/beematching-logo.jpg" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+                <span class="ms-1 text-sm text-dark">Bee Matching</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0 mb-2">
@@ -44,7 +44,7 @@
                 <li class="nav-item">
                     <a asp-action="Index" class="nav-link active bg-gradient-dark text-white">
                         <i class="material-symbols-rounded opacity-5">dashboard</i>
-                        <span class="nav-link-text ms-1">Home</span>
+                        <span class="nav-link-text ms-1">Danh Sách Ứng Tuyển</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -62,48 +62,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/billing.html">
-                        <i class="material-symbols-rounded opacity-5">receipt_long</i>
-                        <span class="nav-link-text ms-1">Billing</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/virtual-reality.html">
-                        <i class="material-symbols-rounded opacity-5">view_in_ar</i>
-                        <span class="nav-link-text ms-1">Virtual Reality</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href=/assetlogin/pages/rtl.html">
-                        <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
-                        <span class="nav-link-text ms-1">RTL</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/notifications.html">
-                        <i class="material-symbols-rounded opacity-5">notifications</i>
-                        <span class="nav-link-text ms-1">Notifications</span>
-                    </a>
-                </li>
-                <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/profile.html">
+                    <a class="nav-link text-dark" href="/">
                         <i class="material-symbols-rounded opacity-5">person</i>
-                        <span class="nav-link-text ms-1">Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-in.html">
-                        <i class="material-symbols-rounded opacity-5">login</i>
-                        <span class="nav-link-text ms-1">Sign In</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/assetlogin/pages/sign-up.html">
-                        <i class="material-symbols-rounded opacity-5">assignment</i>
-                        <span class="nav-link-text ms-1">Sign Up</span>
+                        <span class="nav-link-text ms-1">Đăng Xuất</span>
                     </a>
                 </li>
             </ul>
@@ -133,12 +94,7 @@
                         </div>
                     </div>
                     <ul class="navbar-nav d-flex align-items-center  justify-content-end">
-                        <li class="nav-item d-flex align-items-center">
-                            <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
-                        </li>
-                        <li class="mt-1">
-                            <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-                        </li>
+                       
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                                 <div class="sidenav-toggler-inner">
@@ -251,6 +207,7 @@
                                     <thead>
 
                                         <tr>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hình ảnh</th>
                                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ứng Tuyển ID</th>
                                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Công Việc ID </th>
                                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Đề xuất từ người tìm việc</th>
@@ -266,6 +223,11 @@
 
                                         <tbody>
                                             <tr>
+                                                <td>
+                                               
+                                                    <img style="width:30px;height:30px" src="~/Upload/UngTuyen/@item.HinhAnhCV" alt="Alternate Text" />
+
+                                                </td>
                                                 <td>
                                                     <div class="d-flex px-2 py-1">
                                                        
@@ -293,9 +255,9 @@
                                                     <span class="badge badge-sm bg-gradient-success">@item.TrangThai</span>
                                                 </td>
                                                 <td class="align-middle">
-                                                    <a asp-action="DanhGia" asp-route-id="@item.UngTuyenId" class="nav-link text-dark">
-                                                        <span class="nav-link-text ms-1 badge badge-sm bg-gradient-success">Đánh giá |</span>
-                                                    </a>
+                                                    <button>
+                                                        <a asp-controller="Home" asp-route-id="@item.UngTuyenId" asp-action="TrangDanhGia">Ứng Tuyển </a>
+                                                    </button>
                                                   
                                                 </td>
                                             </tr>

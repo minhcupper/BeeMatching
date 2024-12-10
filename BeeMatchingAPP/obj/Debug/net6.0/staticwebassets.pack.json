@@ -241,6 +241,14 @@
       "PackagePath": "staticwebassets\\Doc\\syntax-highlighter\\styles\\shThemeRDark.css"
     },
     {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Images\\banner-main.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner-main.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Images\\logobee.jpg",
+      "PackagePath": "staticwebassets\\Images\\logobee.jpg"
+    },
+    {
       "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Images\\minh.jpg",
       "PackagePath": "staticwebassets\\Images\\minh.jpg"
     },
@@ -249,8 +257,28 @@
       "PackagePath": "staticwebassets\\Images\\z5702735226686_eceea247807f1678a22372edc08ef54a.jpg"
     },
     {
-      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\UserUpload\\images\\nv0.jpg",
-      "PackagePath": "staticwebassets\\UserUpload\\images\\nv0.jpg"
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Upload\\UngTuyen\\1214ed86-4325-4cbd-90ff-5102b43cbfba.jpg",
+      "PackagePath": "staticwebassets\\Upload\\UngTuyen\\1214ed86-4325-4cbd-90ff-5102b43cbfba.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Upload\\UngTuyen\\2310bc2c-e050-4651-bc71-e12733faa001.png",
+      "PackagePath": "staticwebassets\\Upload\\UngTuyen\\2310bc2c-e050-4651-bc71-e12733faa001.png"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Upload\\UngTuyen\\7a3c3da7-9e80-4d03-929b-532832aa79eb.png",
+      "PackagePath": "staticwebassets\\Upload\\UngTuyen\\7a3c3da7-9e80-4d03-929b-532832aa79eb.png"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Upload\\UngTuyen\\964b1863-883b-4a5b-a79c-12d64319aa14.jpg",
+      "PackagePath": "staticwebassets\\Upload\\UngTuyen\\964b1863-883b-4a5b-a79c-12d64319aa14.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Upload\\UngTuyen\\cd076c93-6ad3-4f9e-8eb4-823908027572.jpg",
+      "PackagePath": "staticwebassets\\Upload\\UngTuyen\\cd076c93-6ad3-4f9e-8eb4-823908027572.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\Upload\\UngTuyen\\ee072ae0-941a-4fff-a459-7039bba8ec98.png",
+      "PackagePath": "staticwebassets\\Upload\\UngTuyen\\ee072ae0-941a-4fff-a459-7039bba8ec98.png"
     },
     {
       "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assetlogin\\assets\\css\\material-dashboard.css",
@@ -1921,6 +1949,14 @@
       "PackagePath": "staticwebassets\\assets\\img\\hero\\h1_hero.jpg"
     },
     {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\icon\\bee.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\bee.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\icon\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\favicon.png"
+    },
+    {
       "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\icon\\form.png",
       "PackagePath": "staticwebassets\\assets\\img\\icon\\form.png"
     },
@@ -2119,6 +2155,30 @@
     {
       "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\1.png",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\1.png"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\anh1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\anh1.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\anh2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\anh2.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\cr7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\cr7.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\goat.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\goat.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\messi.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\messi.jpg"
+    },
+    {
+      "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\quocanh.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\quocanh.jpg"
     },
     {
       "Id": "D:\\học tập\\DATN\\API_He_thong\\BeeMatchingAPP\\wwwroot\\assets\\img\\testmonial\\testimonial-founder.png",

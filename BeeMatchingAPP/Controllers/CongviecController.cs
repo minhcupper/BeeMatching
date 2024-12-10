@@ -7,6 +7,8 @@ using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
+using API_He_thong.Controllers;
+using helper;
 
 
 namespace BeeMatchingAPP.Controllers
@@ -70,8 +72,18 @@ namespace BeeMatchingAPP.Controllers
             ViewData["job"] = job;
             return View(); // Pass jobs with province, district, and ward names to the view
         }
+        public ActionResult Logout()
+        {
+            
+            HttpContext.Session.Clear(); 
+
+            
+            return RedirectToAction("Index", "Home");
+        }
+
         public async Task<ActionResult> Details(int id)
         {
+         
             CongViec reservation = new CongViec();
             var response = await _httpClient.GetAsync($"https://localhost:7287/api/CongViec/GetById/{id}");
             if (response.IsSuccessStatusCode)

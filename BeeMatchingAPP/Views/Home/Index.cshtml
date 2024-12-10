@@ -9,11 +9,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Job board HTML-5 Template </title>
+    <title>BeeMatching - Kết Nối Giá Trị </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon/favicon.png">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
+                    <img src="assets/img/logo/beematching-logo.jpg" alt="logo">
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                         <div class="col-lg-3 col-md-2">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href=""><img src="assets/img/logo/beematching-logo.jpg" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -61,26 +61,25 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a asp-controller="CongViec" asp-action="CongViec">Find a Jobs </a></li>
-                                            <li><a asp-action="TrangThongTinNguoiTimViec">About</a></li>
+                                            <li><a href="">Trang Chủ</a></li>
+                                            <li><a asp-controller="CongViec" asp-action="CongViec">Công Việc</a></li>
+                                            <li><a asp-action="TrangThongTinNguoiTimViec">Giới Thiệu</a></li>
                                             <li>
-                                                <a href="#">Page</a>
+                                                <a href="#">Liên Kết</a>
                                                 <ul class="submenu">
-                                                    <li><a href="">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="job_details.html">job Details</a></li>
+                                                    <li><a href="#">Giới Thiệu</a></li>
+                                                    <li><a href="#">FanPage</a></li>
+                                                    <li><a href="#">Tin tức</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="#">Liên hệ</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a  asp-action="Register" class="btn head-btn1">Register</a>
-                                    <a  asp-action="Login" class="btn head-btn2">Login</a>
+                                    <a  asp-action="Register" class="btn head-btn1">Đăng ký</a>
+                                    <a  asp-action="Login" class="btn head-btn2">Đăng nhập</a>
                                 </div>
                             </div>
                         </div>
@@ -100,16 +99,16 @@
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
-                <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
+                <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/banner-1.jpg">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-9 col-md-10">
                                 <div class="hero__caption">
-                                    <h1>Find the most exciting startup jobs</h1>
+                                    <h1>Hàng trăm công việc đang chào đón bạn</h1>
                                 </div>
                             </div>
                         </div>
-                        <!-- Search Box -->
+                      @*   <!-- Search Box -->
                         <div class="row">
                             <div class="col-xl-8">
                                 <!-- form -->
@@ -132,14 +131,14 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> *@
                     </div>
                 </div>
             </div>
         </div>
         <!-- slider Area End-->
         <!-- Our Services Start -->
-        <div class="our-services section-pad-t30">
+      @*   <div class="our-services section-pad-t30">
             <div class="container">
                 <!-- Section Tittle -->
                 <div class="row">
@@ -265,53 +264,46 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> *@
         <!-- Online CV Area End-->
         <!-- Featured_job_start -->
+        
         <section class="featured-job-area feature-padding">
             <div class="container">
                 <!-- Section Tittle -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <span>Recent Job</span>
-                            <h2>Featured Jobs</h2>
+                            <h2>Công Việc</h2>
+                            <h3>Các Doanh Nghiệp Đang Tuyển Dụng</h3>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
-                        <!-- single-job-content -->
-                        @foreach(var item in Model){
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.html"><img src="./assets/img/icon/job-list1.png" alt=""></a>
-                                </div>
-                                <div class="job-tittle">
-                                        <a asp-action="Details" asp-route-id="@item.CongViecId">
-                                            <h6 class="text-uppercase m-0">@item.TieuDe</h6>
-                                        </a>
-                                    <ul>
-                                            <li>@item.NgayDang.ToString("dd/MM/yyyy")</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>@item.DistrictName, @item.WardName,@item.ProvinceName</li>
+                        @foreach (var item in Model)
+                        {
+                            <div class="single-job-items mb-30">
+                                <div class="job-items">
+                                    <div class="company-img">
+                                        <a asp-action="Details" asp-route-id="@item.CongViecId"><img style="width:100px;height:85px" src="assets/img/icon/bee.jpg" alt="logo"></a>
+                                    </div>
+                                    <div class="job-tittle">
+                                        <a asp-action="Details" asp-route-id="@item.CongViecId"><h4>@item.TieuDe</h4></a>
+                                        <ul>
                                             <li>@item.ViTri</li>
-                                            <li>@item.LuongHangThang.ToString("C0")</li>
-                                            <li>@item.SoLuong</li>
-                                            <li>@item.MoTa</li>   
-                                    </ul>
+                                            <li><i class="fas fa-map-marker-alt"></i>@item.ProvinceName</li>
+                                            <li>@item.LuongHangThang</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="items-link f-right">
+                                    <a asp-action="Details" asp-route-id="@item.CongViecId">@item.DangCongViec</a>
+
+                                    <span><strong>Hạn Nộp:</strong> @item.HanNopHoSo.ToString("dd/MM/yyyy")</span>
                                 </div>
                             </div>
-                            <div class="items-link f-right">
-                                    <a asp-action="Details" asp-route-id="@item.CongViecId">
-                                        <h6 class="text-uppercase m-0">@item.DangCongViec</h6>
-                                    </a>
-                                    <span>  <li>Diedline @item.HanNopHoSo.ToString("dd/MM/yyyy")</li></span>
-                            </div>
-                        </div>
-                      
                         }
-                        </div>
                     </div>
                 </div>
             </div>
@@ -324,8 +316,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle white-text text-center">
-                            <span>Apply process</span>
-                            <h2> How it works</h2>
+                            <span>Hồ Sơ</span>
+                            <h2> Cách Nộp Hồ Sơ</h2>
                         </div>
                     </div>
                 </div>
@@ -337,8 +329,8 @@
                                 <span class="flaticon-search"></span>
                             </div>
                             <div class="process-cap">
-                                <h5>1. Search a job</h5>
-                                <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                                <h5>1. Tìm kiếm công việc</h5>
+                                <p>Tìm kiếm một công việc phù hợp với bạn.</p>
                             </div>
                         </div>
                     </div>
@@ -348,8 +340,8 @@
                                 <span class="flaticon-curriculum-vitae"></span>
                             </div>
                             <div class="process-cap">
-                                <h5>2. Apply for job</h5>
-                                <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                                <h5>2. Nộp hồ sơ(CV)</h5>
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -359,8 +351,8 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="process-cap">
-                                <h5>3. Get your job</h5>
-                                <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                                <h5>3. Nhận công việc</h5>
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -382,13 +374,13 @@
                                     <!-- founder -->
                                     <div class="testimonial-founder  ">
                                         <div class="founder-img mb-30">
-                                            <img src="assets/img/testmonial/testimonial-founder.png" alt="">
-                                            <span>Margaret Lawson</span>
-                                            <p>Creative Director</p>
+                                            <img style="width:130px;height:132px" src="assets/img/testmonial/goat.jpg" alt="">
+                                            <span>Cristiano Ronaldo</span>
+                                            <p>GOAT</p>
                                         </div>
                                     </div>
                                     <div class="testimonial-top-cap">
-                                        <p>“I am at an age where I just want to be fit and healthy our bodies are our responsibility! So start caring for your body and it will care for you. Eat clean it will care for you and workout hard.”</p>
+                                        <p>“Giao diện dễ sử dụng và thân thiện: Bee Matching có giao diện trực quan, dễ sử dụng, giúp người tìm việc và nhà tuyển dụng dễ dàng tìm kiếm thông tin. Các chức năng được bố trí hợp lý, người dùng có thể nhanh chóng đăng ký, tìm kiếm công việc hoặc ứng viên mà không gặp khó khăn.”</p>
                                     </div>
                                 </div>
                             </div>
@@ -399,13 +391,13 @@
                                     <!-- founder -->
                                     <div class="testimonial-founder  ">
                                         <div class="founder-img mb-30">
-                                            <img src="assets/img/testmonial/testimonial-founder.png" alt="">
+                                            <img style="width:130px;height:132px" src="assets/img/testmonial/anh2.jpg" alt="">
                                             <span>Margaret Lawson</span>
                                             <p>Creative Director</p>
                                         </div>
                                     </div>
                                     <div class="testimonial-top-cap">
-                                        <p>“I am at an age where I just want to be fit and healthy our bodies are our responsibility! So start caring for your body and it will care for you. Eat clean it will care for you and workout hard.”</p>
+                                        <p>“Đa dạng cơ hội việc làm: Bee Matching cung cấp một lượng lớn các cơ hội việc làm đa dạng, từ các công việc toàn thời gian, bán thời gian đến các vị trí freelance. Các ngành nghề và lĩnh vực cũng rất phong phú, tạo cơ hội cho nhiều đối tượng người tìm việc.”</p>
                                     </div>
                                 </div>
                             </div>
@@ -416,13 +408,13 @@
                                     <!-- founder -->
                                     <div class="testimonial-founder  ">
                                         <div class="founder-img mb-30">
-                                            <img src="assets/img/testmonial/testimonial-founder.png" alt="">
-                                            <span>Margaret Lawson</span>
+                                            <img style="width:130px;height:132px" src="assets/img/testmonial/messi.jpg" alt="">
+                                            <span>Lionel Messi</span>
                                             <p>Creative Director</p>
                                         </div>
                                     </div>
                                     <div class="testimonial-top-cap">
-                                        <p>“I am at an age where I just want to be fit and healthy our bodies are our responsibility! So start caring for your body and it will care for you. Eat clean it will care for you and workout hard.”</p>
+                                        <p>“Hệ thống kết nối hiệu quả: Website sử dụng công nghệ thông minh để kết nối người tìm việc và nhà tuyển dụng một cách nhanh chóng và chính xác. Các thuật toán phù hợp giúp đưa ra những gợi ý công việc phù hợp với kỹ năng và sở thích của người dùng, giúp tiết kiệm thời gian và nâng cao cơ hội tìm việc thành công.”</p>
                                     </div>
                                 </div>
                             </div>

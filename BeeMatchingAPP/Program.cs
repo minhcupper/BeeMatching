@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
         
         builder.Services.AddHttpClient();
 
+
         // Configure Antiforgery
         builder.Services.AddAntiforgery(options =>
         {
@@ -19,7 +20,7 @@ var builder = WebApplication.CreateBuilder(args);
             options.Cookie.HttpOnly = true; // Enhance security
             options.Cookie.IsEssential = true; // Required for GDPR compliance
         });
-
+builder.Services.AddControllersWithViews();
         var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

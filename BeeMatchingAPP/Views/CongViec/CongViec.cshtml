@@ -3,14 +3,16 @@
 @{
     ViewData["Title"] = "CongViec";
     List<CongViec> congvieclist = ViewData["job"] as List<CongViec>;
+
 }
+
 
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Job board HTML-5 Template </title>
+    <title>BeeMatching - Tìm việc </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -24,13 +26,13 @@
     <link rel="stylesheet" href="~/assets/css/slicknav.css">
     <link rel="stylesheet" href="~/assets/css/animate.min.css">
     <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/assets/css/fontawesome-all.min.css">   
     <link rel="stylesheet" href="~/assets/css/themify-icons.css">
     <link rel="stylesheet" href="~/assets/css/slick.css">
     <link rel="stylesheet" href="~/assets/css/nice-select.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
     <!-- Link to your locally hosted CSS -->
-    <!-- Đảm bảo jQuery được tải trước -->
+    <!-- Đảm bảo jQuery được tải trước --> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Ion.RangeSlider Plugin JavaScript -->
@@ -71,27 +73,30 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="job_listing.html">Tìm Việc</a></li>
+                                            <li><a href="">Trang Chủ</a></li>
+                                            <li><a href="#">Công Việc</a></li>
                                             <li></li>
                                             <li>
-                                                <a href="#">Thông Tin Cá Nhân </a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Giới thiệu<a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a asp-controller="Home" asp-action="TrangThongTinNguoiTimViec">Thong Tin Cá Nhân</a></li>
-                                                </ul>
+                                                <a asp-controller="Home" asp-action="TrangThongTinNguoiTimViec">Thông Tin Cá Nhân </a>
+                                               
                                             </li>
-                                            <li><a href="contact.html">Liên hệ</a></li>
+                                            <li><a href="#">Liên hệ</a></li>
                                         </ul>
                                     </nav>
                                 </div>
-                                 <!-- Header-btn -->
+                                <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="#" class="btn head-btn1">Đăng xu</a>
-                                    <a href="#" class="btn head-btn2">Login</a>
-                                </div> 
+                                    <a href="@Url.Action("Index", "Home")" class="btn head-btn1" onclick="return confirmLogout();">Đăng xuất</a>
+
+                                    <script type="text/javascript">
+                                        function confirmLogout() {
+                                            // Hiển thị hộp thoại xác nhận
+                                            return confirm('Bạn có chắc chắn muốn đăng xuất không?');
+                                        }
+                                    </script>
+
+                                    <a href="#" class="btn head-btn2">Xin chào</a>
+                                </div>
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -113,7 +118,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Get your job</h2>
+                                <h2>Tìm kiếm công việc của bạn ngay bây giờ!</h2>
                             </div>
                         </div>
                     </div>
@@ -156,7 +161,7 @@
                                         <option value="">Category 1</option>
                                         <option value="">Category 2</option>
                                         <option value="">Category 3</option>
-                                        <option value="">Category 4</option>                                       
+                                        <option value="">Category 4</option>
                                     </select>
                                     <button class="btn head-btn1" style="margin-top: 10px; width:219px" type="submit">select</button>
                                 </div>
@@ -326,7 +331,7 @@
                                                 <img style="width:200px;height:180px" src="~/Images/minh.jpg" alt="@item.CongViecId" class="img-fluid rounded-4" />
                                             </div>
                                             <div class="job-tittle">
-                                                <a asp-action="Details"  asp-route-id="@item.CongViecId">
+                                                <a asp-action="Details" asp-route-id="@item.CongViecId">
                                                     <h6 class="text-uppercase m-0">@item.TieuDe</h6>
                                                 </a>
                                                 <br>

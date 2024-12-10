@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\DoanhNghiepUpload\**" />
+    <Content Remove="wwwroot\DoanhNghiepUpload\**" />
+    <EmbeddedResource Remove="wwwroot\DoanhNghiepUpload\**" />
+    <None Remove="wwwroot\DoanhNghiepUpload\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.35" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.35" />
@@ -21,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\DoanhNghiepUpload\" />
     <Folder Include="Views\CongViec\" />
   </ItemGroup>
 

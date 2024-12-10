@@ -129,10 +129,10 @@ namespace API_He_thong.Models
             {
                 modelBuilder.Entity<DanhGia>()
                     .HasOne(dg => dg.UngTuyen)
-                    .WithMany(ut => ut.DanhGias)
-                    .HasForeignKey(dg => dg.UngTuyenId)
+                    .WithOne(ut => ut.DanhGia)
                     .OnDelete(DeleteBehavior.Cascade);
-            }
+           
+        }
 
             private void ConfigureThongBao(ModelBuilder modelBuilder)
             {

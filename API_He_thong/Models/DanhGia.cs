@@ -31,6 +31,7 @@ namespace API_He_thong.Models
         // Ngày đánh giá
         public DateTime NgayDanhGia { get; set; } = DateTime.Now;
         public int DoanhNghiepId { get; set; }
+      
     }
 
 }

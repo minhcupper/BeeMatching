@@ -15,6 +15,8 @@ using Microsoft.EntityFrameworkCore;
 using helper;
 using Microsoft.VisualBasic;
 using Microsoft.Win32;
+using System.Security.Cryptography;
+using API_He_thong.DATA;
 namespace BeeMatchingAPP.Controllers
 {
     //tuan day
@@ -78,8 +80,26 @@ namespace BeeMatchingAPP.Controllers
             ViewData["HoSodn"] = data;
             return View(data);
         }
+        [HttpGet]
+        public async Task<ActionResult> TrangDanhGia(int id)
+        {
+            var response = await _httpClient.GetAsync($"https://localhost:7287/api/UngTuyen/GetById/{id}");
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Không thể lấy UngTuyen từ API.");
+            }
+            var apiResponse = await response.Content.ReadAsStringAsync();
+            var ungTuyen = JsonConvert.DeserializeObject<UngTuyen>(apiResponse);
+            var data = DuLieuTrangDanhGia;
+            ViewData["danhgia"] = data;
+            // Truyền dữ liệu vào view thông qua ViewData
+            ViewData["id"] = ungTuyen;
 
+            // Trả về view với dữ liệu ứng tuyển
+            return View();
+        }
         // Phương thức hiển thị thông tin ứng tuyển
+        [HttpGet]
         public async Task<ActionResult> TrangThongTinUngTuyen(int id)
         {
             // Truy xuất dữ liệu từ session
@@ -91,35 +111,92 @@ namespace BeeMatchingAPP.Controllers
             }
             var apiResponse = await response.Content.ReadAsStringAsync();
             var congviec = JsonConvert.DeserializeObject<CongViec>(apiResponse);
-            ViewData["id"] = congviec;
+            data.CongViecId = congviec.CongViecId;
+            // ViewData["id"] = congviec;
             // Truyền dữ liệu vào view thông qua ViewData
             ViewData["ungtuyen"] = data;
 
             // Trả về view với dữ liệu ứng tuyển
             return View(data);
         }
-        public async Task<ActionResult>TrangThongTindanhgia(int id)
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> TrangThongTinUngTuyen(UngTuyen ut, IFormFile hinh_anh)
         {
-            // Truy xuất dữ liệu từ session
-            var data = DuLieuTrangUngTuyen;
-            var response = await _httpClient.GetAsync($"https://localhost:7287/api/UngTuyen/GetById/{id}");
-            if (!response.IsSuccessStatusCode)
+            // Kiểm tra nếu hinh_anh không phải null
+            if (hinh_anh == null || hinh_anh.Length == 0)
             {
-                throw new Exception("Không thể lấy công việc từ API.");
+                ModelState.AddModelError("hinh_anh", "Vui lòng chọn hình ảnh.");
+                return View(ut);
             }
-            var apiResponse = await response.Content.ReadAsStringAsync();
-            var ungtuyen = JsonConvert.DeserializeObject<UngTuyen>(apiResponse);
-            ViewData["id"] = ungtuyen;
-            // Truyền dữ liệu vào view thông qua ViewData
-            ViewData["ungtuyen"] = data;
 
-            // Trả về view với dữ liệu ứng tuyển
-            return View(data);
+            // Kiểm tra phần mở rộng của tệp
+            string fileExtension = Path.GetExtension(hinh_anh.FileName).ToLower();
+            string[] allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+
+            if (!allowedExtensions.Contains(fileExtension))
+            {
+                ModelState.AddModelError(string.Empty, "Chỉ chấp nhận tệp hình ảnh (.jpg, .jpeg, .png, .gif).");
+                return View(ut);
+            }
+
+            // Kiểm tra MIME type
+            var allowedMimeTypes = new[] { "image/jpeg", "image/png", "image/gif" };
+            if (!allowedMimeTypes.Contains(hinh_anh.ContentType))
+            {
+                ModelState.AddModelError(string.Empty, "Loại tệp không được hỗ trợ.");
+                return View(ut);
+            }
+
+            // Kiểm tra dung lượng tệp (giới hạn 5MB)
+            if (hinh_anh.Length > 5 * 1024 * 1024) // 5MB
+            {
+                ModelState.AddModelError(string.Empty, "Dung lượng tệp không được vượt quá 5MB.");
+                return View(ut);
+            }
+
+            // Tạo tên tệp (dùng Guid nếu UngTuyenId chưa có)
+            string fileName = ut.UngTuyenId > 0 ?
+                "nv" + ut.UngTuyenId.ToString() + fileExtension :
+                Guid.NewGuid().ToString() + fileExtension;
+
+            // Đường dẫn đến thư mục lưu tệp
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "Upload", "UngTuyen", fileName);
+
+            // Kiểm tra và tạo thư mục nếu chưa tồn tại
+            var directory = Path.GetDirectoryName(filePath);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            // Lưu tệp vào thư mục
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await hinh_anh.CopyToAsync(stream);
+            }
+
+            // Cập nhật tên tệp vào trường hinh_anh trong model
+            ut.HinhAnhCV = fileName;
+
+            // Tiến hành lưu dữ liệu vào cơ sở dữ liệu, hoặc thực hiện các bước tiếp theo
+            var content = new StringContent(JsonConvert.SerializeObject(ut), Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync("https://localhost:7287/api/UngTuyen/Create", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("CongViec", "CongViec"); // Chuyển hướng khi thành công
+            }
+
+            // Nếu có lỗi với API
+            var responseContent = await response.Content.ReadAsStringAsync();
+            ModelState.AddModelError(string.Empty, $"Lỗi từ API: {responseContent}");
+            return View(); // Trả về view với thông báo lỗi
         }
         private async Task ThemVaoTrangThongTinDoanhNghiep(int id)
         {
-
-            // Khai báo đối tượng người tìm việc
+           // Khai báo đối tượng người tìm việc
             DoanhNghiep userInfo = null;
 
             // Gọi API để lấy danh sách người tìm việc
@@ -147,7 +224,6 @@ namespace BeeMatchingAPP.Controllers
                     TenCongTy = "",
                     email = "",
                     DistrictId = "",
-
                     WardId = "",
                     ProvinceId = "",
                     MoTa = "",
@@ -182,11 +258,38 @@ namespace BeeMatchingAPP.Controllers
 
                 //Lưu thông tin người dùng vào Session
                 HttpContext.Session.Set("ThongTindoanhnghiep", newItem);
+
+                var ut = DuLieuTrangUngTuyen;
+               
+                var newItem1 = new DanhGia
+                {
+                    DiemDanhGia = 0,
+                    NoiDungDanhGia = "",
+                    UngTuyenId = ut.UngTuyenId,
+                     DoanhNghiepId=userInfo.DoanhNghiepId,
+                    NgayDanhGia = DateTime.Now,
+                    
+                };
+
+                // Lưu thông tin ứng tuyển vào session
+                HttpContext.Session.Set("danhgia", newItem1);
             }
          
         }
         private async Task ThemVaoTrangThongTinNguoiTimViec(int id)
         {
+            NguoiDung nd = null;
+            var responsend = await _httpClient.GetAsync($"https://localhost:7287/api/User/GetById/{id}");
+            if (responsend.IsSuccessStatusCode)
+            {
+                var apiResponse = await responsend.Content.ReadAsStringAsync();
+                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
+                var allUsers = JsonConvert.DeserializeObject<List<NguoiDung>>(apiResponse);
+
+                // Tìm kiếm người dùng theo ID
+                nd = allUsers.Find(p => p.nguoi_dung_id == id);
+            }
+
 
             // Khai báo đối tượng người tìm việc
             NguoiTimViec userInfo = null;
@@ -271,7 +374,7 @@ namespace BeeMatchingAPP.Controllers
                     NgayUngTuyen = DateTime.Now,
                     DeXuat = "",
                     TrangThai = "Đang xem xét",
-                    ChapNhanCongViec = true
+                    ChapNhanCongViec = false
                 };
 
                 // Lưu thông tin ứng tuyển vào session
@@ -344,15 +447,19 @@ namespace BeeMatchingAPP.Controllers
                 var responseBody = await response.Content.ReadAsStringAsync();
                 var userInfo = JsonConvert.DeserializeObject<NguoiDung>(responseBody);
 
-                if (userInfo != null && userInfo.TrangThai== "Đang hoạt động")
+                if (userInfo != null)
                 {
-                    
+
+                    if (userInfo.TrangThai == "Đang hoạt động ")
+                    {
                         switch (userInfo.Roles)
                         {
-                        case "Người xin việc":
-                            await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
-                            return RedirectToAction("CongViec", "CongViec");
-                        case "ADMIN":
+
+                            case "Người xin việc":
+                                await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
+                                return RedirectToAction("CongViec", "CongViec");
+
+                            case "ADMIN":
                                 return RedirectToAction("Index", "Admin");
                             case "Doanh Nghiệp":
                                 await ThemVaoTrangThongTinDoanhNghiep(userInfo.nguoi_dung_id);
@@ -361,7 +468,8 @@ namespace BeeMatchingAPP.Controllers
                             default:
                                 ModelState.AddModelError(string.Empty, "Vai trò người dùng không hợp lệ.");
                                 return null;
-                        
+
+                        }
                     }
 
                 }
