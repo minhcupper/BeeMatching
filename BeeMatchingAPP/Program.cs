@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-using Azure.AI.OpenAI; // Dùng nếu bạn cần kết nối với OpenAI từ Azure
-
+﻿
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container

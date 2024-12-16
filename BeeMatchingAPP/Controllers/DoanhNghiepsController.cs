@@ -23,18 +23,10 @@ namespace BeeMatchingAPP.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(int id)
         {
-            
-            // Kiểm tra id hợp lệ
-            if (id <= 0)
-            {
-                // Chuyển hướng đến trang lỗi nếu ID không hợp lệ
-                return RedirectToAction("Error", "Home", new { message = "ID không hợp lệ." });
-            }
 
             List<CongViec> listcongviec = new List<CongViec>();
 
-            try
-            {
+            
                 // Gọi API để lấy danh sách công việc
                 var congviec = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
 
@@ -63,24 +55,8 @@ namespace BeeMatchingAPP.Controllers
                 listcongviec = alllistcongviec.Where(p => p.DoanhNghiepId == id).ToList();
 
                 // Nếu không có công việc cho doanh nghiệp này
-                if (listcongviec == null || !listcongviec.Any())
-                {
-                    ViewData["congviecMessage"] = "Không có công việc cho công ty này.";
-                    return RedirectToAction("Error", "Home", new { message = "Không có công việc cho công ty này." });
-                }
-                else
-                {
-                    ViewData["congviecMessage"] = null; // Clear thông báo nếu có công việc
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi khi có sự cố trong quá trình gọi API hoặc giải mã dữ liệu
-                _logger.LogError(ex, "Lỗi xảy ra khi lấy danh sách công việc.");
-                ViewData["congviecMessage"] = "Đã xảy ra lỗi khi lấy danh sách công việc.";
-                return View(new List<CongViec>());
-            }
-
+                ViewData["congviec"] = listcongviec;
+            
             // Trả về view với danh sách công việc
             return View(listcongviec);
         }

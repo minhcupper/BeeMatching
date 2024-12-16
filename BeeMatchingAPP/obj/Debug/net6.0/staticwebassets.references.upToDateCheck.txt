@@ -56,3 +56,9 @@ D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.j
 D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
 D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
 D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
