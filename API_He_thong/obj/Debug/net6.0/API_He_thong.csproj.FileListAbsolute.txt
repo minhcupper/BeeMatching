@@ -617,3 +617,4 @@ D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\refint\API_He_thong.dll
 D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.pdb
 D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.genruntimeconfig.cache
 D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\ref\API_He_thong.dll
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt

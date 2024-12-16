@@ -2005,6 +2005,11 @@
             "type": "string",
             "nullable": true
           },
+          "ngay_tao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "nguoiTimViec": {
             "$ref": "#/components/schemas/NguoiTimViec"
           },

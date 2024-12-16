@@ -34,6 +34,7 @@ namespace BeeMatchingAPP.Models
         public string? Otp { get; set; }
 
         public string? TrangThai { get; set; } = "Đang hoạt động ";
+        public DateTime? ngay_tao { get; set; } = DateTime.Now;
 
         // Navigation properties
         // Navigation properties for relationships with job seekers and businesses
