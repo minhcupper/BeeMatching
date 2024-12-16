@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng Ký</title>
+    <title>login form</title>
     <!-- Bootstrap 4 CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Fontawesome CSS CDN -->
@@ -60,7 +60,7 @@
 
         media (max-width: 720px) {
             .wrapper
-
+        
         {
             margin: 2px;
         }
@@ -69,6 +69,7 @@
     </style>
 </head>
 <body class="bg-info">
+   
     <div class="container">
 
         <!-- Registration Form Start -->
@@ -97,29 +98,36 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="far fa-user fa-lg fa-fw"></i></span>
                                 </div>
-                                <input asp-for="ten_dang_nhap" class=" form-control rounded-0" placeholder="Tên đăng nhập" required />
+                                <input asp-for="ten_dang_nhap" id="username1" class=" form-control rounded-0" placeholder="Tên đăng nhập" required />
                                 <span asp-validation-for="ten_dang_nhap" class="text-danger"></span>
                             </div>
                             <div class="input-group input-group-lg form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
                                 </div>
-                                <input asp-for="Email" class="form-control rounded-0" minlength="5" placeholder="Email" required />
+                                <input asp-for="Email" id="email" class="form-control rounded-0" placeholder="Email" required />
                                 <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             <div class="input-group input-group-lg form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
                                 </div>
-                                <input asp-for="mat_khau" class="form-control rounded-0" minlength="5" placeholder="Mật khẩu" required />
+                                <input asp-for="mat_khau" id="password1" class="form-control rounded-0" minlength="5" placeholder="Mật khẩu" required />
                                 <span asp-validation-for="mat_khau" class="text-danger"></span>
                             </div>
                             <div class="input-group input-group-lg form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
                                 </div>
-                                <input asp-for="ConfirmPassword" type="password" class="form-control rounded-0" minlength="5" placeholder="Xác nhận mật khẩu" required />
+                                <input asp-for="ConfirmPassword" id="confirmpass1" class="form-control rounded-0" minlength="5" placeholder="Xác nhận mật khẩu" required />
                                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
+                                </div>
+                                <input asp-for="Otp" class="form-control rounded-0" placeholder="Nhập mã OTP" required />
+                                <span asp-validation-for="Otp" class="text-danger"></span>
                             </div>
                             <div style="margin-top: 10px" class="input-group input-group-lg form-group">
                                 <div>
@@ -140,6 +148,14 @@
                             <div class="form-group">
                                 <input type="submit" value="Đăng Ký" class="btn btn-primary btn-lg btn-block myBtn" />
                             </div>
+                        </form>
+                        <form asp-action="SendOtp" onsubmit="saveInputValues()" method="post">
+                            <input type="hidden" id="username" name="username" value="" />
+                            <input type="hidden" id="gmail" name="gmail" value="" />
+                            <input type="hidden" id="password" name="password" value="" />
+                            <input type="hidden" id="confirmpassword" name="confirmpassword" value="" />
+                            <button type="submit">Gửi mã OTP</button>
+                            <span>@ViewData["Otp"]</span>
                         </form>
                     </div>
                 </div>
@@ -209,57 +225,50 @@
     }
 }
 
-@* <h4>Register</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ten_dang_nhap" class="control-label"></label>
-                <input asp-for="ten_dang_nhap" class="form-control" />
-                <span asp-validation-for="ten_dang_nhap" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="mat_khau" class="control-label"></label>
-                <input asp-for="mat_khau" class="form-control" />
-                <span asp-validation-for="mat_khau" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="ConfirmPassword">Xác nhận mật khẩu</label>
-                <input asp-for="ConfirmPassword" type="password" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Roles" class="control-label"></label>
-                <input asp-for="Roles" class="form-control" />
-                <span asp-validation-for="Roles" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="TrangThai" type="hidden" value="Đang hoạt động " class="form-control" />
-                <span asp-validation-for="TrangThai" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<script>
+    // Lưu giá trị các ô input trước khi submit
+    function saveInputValues() {
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            sessionStorage.setItem(input.name, input.value); // Lưu giá trị theo tên
+        });
+    }
+    // Phục hồi giá trị các ô input sau khi load lại trang
+    function restoreInputValues() {
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            const savedValue = sessionStorage.getItem(input.name);
+            if (savedValue) {
+                input.value = savedValue; // Gán lại giá trị đã lưu
+            }
+        });
+    }
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div> *@
+    // Gọi khôi phục giá trị khi trang load
+    window.onload = restoreInputValues;
+</script>
 
-<div style="margin-top: 10px" class="input-group input-group-lg form-group">
-    <div>
-        <!-- "Người xin việc" được chọn mặc định -->
-        <input style="margin-left: 65px" type="radio" name="Roles" value="Người xin việc" checked />
-        <label style="margin-right: 100px" for="Roles">Người xin việc</label>
-    </div>
-    <div>
-        <!-- "Doanh nghiệp" không được chọn mặc định -->
-        <input type="radio" name="Roles" value="Doanh Nghiệp" />
-        <label for="Roles">Doanh nghiệp</label>
-    </div>
-    <span asp-validation-for="Roles" class="text-danger"></span>
-</div> 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const usernameInputForm1 = document.getElementById('username1');
+        const usernameInputForm2 = document.getElementById('username');
+        const emailInputForm1 = document.getElementById('email');
+        const emailInputForm2 = document.getElementById('gmail');
+        const passwordInputForm1 = document.getElementById('password1');
+        const passwordInputForm2 = document.getElementById('password');
+        const confirmpassInputForm1 = document.getElementById('confirmpass1');
+        const confirmpassInputForm2 = document.getElementById('confirmpassword');
+
+
+        // Đồng bộ giá trị ban đầu nếu đã có giá trị có sẵn
+        emailInputForm1.addEventListener("input", function () {
+
+            usernameInputForm2.value = usernameInputForm1.value;
+            emailInputForm2.value = emailInputForm1.value;
+            passwordInputForm2.value = passwordInputForm1.value;
+            confirmpassInputForm2.value = confirmpassInputForm1.value;
+
+        });
+
+    });
+</script>

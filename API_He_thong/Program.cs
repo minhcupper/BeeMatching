@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using API_He_thong.Repositories;
 using Microsoft.AspNetCore.Identity;
+using System.Net.Http;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -29,6 +30,14 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
+HttpClientHandler handler = new HttpClientHandler();
+handler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+
+HttpClient client = new HttpClient(handler);
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 // Register Identity services
 builder.Services.AddSingleton<IPasswordHasher<NguoiDung>, PasswordHasher<NguoiDung>>();
 
@@ -56,10 +65,17 @@ builder.Services.AddScoped<Ikinhnghiemcongviec, KinhNghiemCongViecService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 
+builder.Host.ConfigureHostConfiguration(config =>
+{
+    config.AddInMemoryCollection(new[]
+    {
+        new KeyValuePair<string, string>("ASPNETCORE_ENVIRONMENT", "Development")
+    });
+});
 
 
 var app = builder.Build();
-
+Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

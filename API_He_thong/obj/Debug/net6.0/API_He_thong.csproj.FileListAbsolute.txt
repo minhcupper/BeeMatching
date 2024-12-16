@@ -430,24 +430,13 @@ D:\doan\BeeMatching9\API_He_thong\obj\Debug\net6.0\refint\API_He_thong.dll
 D:\doan\BeeMatching9\API_He_thong\obj\Debug\net6.0\API_He_thong.pdb
 D:\doan\BeeMatching9\API_He_thong\obj\Debug\net6.0\API_He_thong.genruntimeconfig.cache
 D:\doan\BeeMatching9\API_He_thong\obj\Debug\net6.0\ref\API_He_thong.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\appsettings.Development.json
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\appsettings.json
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.exe
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.deps.json
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.runtimeconfig.json
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.pdb
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Humanizer.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -456,30 +445,58 @@ D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Identit
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.OpenApi.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\ChatGPT.Net.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\appsettings.Development.json
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\appsettings.json
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Humanizer.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.TeamFoundation.Common.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.VisualStudio.Services.Common.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.VisualStudio.Services.WebApi.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Octokit.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\OpenAI.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\OpenAI.ChatGpt.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.ClientModel.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Data.SqlClient.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Memory.Data.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Runtime.Caching.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Text.Json.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.csproj.AssemblyReference.cache
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.GeneratedMSBuildEditorConfig.editorconfig
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.AssemblyInfoInputs.cache
@@ -500,5 +517,103 @@ D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_t.721D7E9D
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\refint\API_He_thong.dll
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.pdb
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.deps.json
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.runtimeconfig.json
+D:\học tập\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.pdb
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.genruntimeconfig.cache
 D:\học tập\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\ref\API_He_thong.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\appsettings.Development.json
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\appsettings.json
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.staticwebassets.endpoints.json
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.exe
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.deps.json
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.runtimeconfig.json
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\API_He_thong.pdb
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\ChatGPT.Net.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Humanizer.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.TeamFoundation.Common.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.VisualStudio.Services.Common.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.VisualStudio.Services.WebApi.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Octokit.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\OpenAI.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\OpenAI.ChatGpt.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.ClientModel.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Text.Json.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Study\DATN\API_He_thong\API_He_thong\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.csproj.AssemblyReference.cache
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.AssemblyInfoInputs.cache
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.AssemblyInfo.cs
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.csproj.CoreCompileInputs.cache
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.MvcApplicationPartsAssemblyInfo.cs
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.MvcApplicationPartsAssemblyInfo.cache
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.sourcelink.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\scopedcss\bundle\API_He_thong.styles.css
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.development.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets\msbuild.API_He_thong.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets\msbuild.API_He_thong.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets\msbuild.build.API_He_thong.props
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.API_He_thong.props
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.API_He_thong.props
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_t.721D7E9D.Up2Date
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.dll
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\refint\API_He_thong.dll
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.pdb
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\API_He_thong.genruntimeconfig.cache
+D:\Study\DATN\API_He_thong\API_He_thong\obj\Debug\net6.0\ref\API_He_thong.dll

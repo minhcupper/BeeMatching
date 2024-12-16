@@ -1,57 +1,168 @@
-﻿@model BeeMatchingAPP.Models.DanhGia
+﻿<style>
+    /* Đặt lại kiểu dáng cho trang để trang trí đẹp hơn */
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Arial', sans-serif;
+        margin-top: 50px;
+    }
+
+    /* Tiêu đề trang */
+    h1 {
+        color: #007bff;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* Tiêu đề phụ */
+    h4 {
+        color: #555;
+        text-align: center;
+    }
+
+    /* Thanh phân cách */
+    hr {
+        border: 1px solid #ddd;
+        width: 50%;
+        margin: 20px auto;
+    }
+
+    /* Cấu trúc các cột */
+    .row {
+        margin-bottom: 30px;
+    }
+
+    /* Tạo kiểu cho form */
+    .form-group label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Cải thiện các input */
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    /* Tạo kiểu cho các thông báo lỗi */
+    .text-danger {
+        color: #e74a3b;
+    }
+
+    /* Nút submit */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    /* Liên kết "Back to List" */
+    a {
+        color: #007bff;
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    /* Cải thiện bố cục cho form */
+    .col-md-6 {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    /* Nền của phần form */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+</style>
+@model BeeMatchingAPP.Models.DanhGia
 
 @{
     ViewData["Title"] = "TrangDanhGia";
-    DanhGia ut = ViewData["danhgia"] as DanhGia;
-    UngTuyen dg = ViewData["id"] as UngTuyen;
+    var ut = ViewData["danhgia"] as DanhGia ?? new BeeMatchingAPP.Models.DanhGia();
+    var dg = ViewData["id"] as UngTuyen ?? new BeeMatchingAPP.Models.UngTuyen();
 }
 
-<h1>TrangDanhGia</h1>
-
-<h4>DanhGia</h4>
+<h1>Phản hồi</h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+  
+    <div class="col-md-6">
+
         <form asp-action="TrangDanhGia">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+
+            <!-- UngTuyenId -->
             <div class="form-group">
-                <label asp-for="UngTuyenId" class="control-label"></label>
-                <input asp-for="UngTuyenId" class="form-control" value="@dg.UngTuyenId" />
+                <label asp-for="UngTuyenId" class="control-label">Ứng tuyển id</label>
+                <input asp-for="UngTuyenId" class="form-control" value="@dg.UngTuyenId" readonly />
                 <span asp-validation-for="UngTuyenId" class="text-danger"></span>
             </div>
+
+            <!-- DoanhNghiepId -->
             <div class="form-group">
-                <label asp-for="DoanhNghiepId" class="control-label"></label>
-                <input asp-for="DoanhNghiepId" class="form-control" value="@ut.DoanhNghiepId" />
+                <label asp-for="DoanhNghiepId" class="control-label">Doanh nghiệp id</label>
+                <input asp-for="DoanhNghiepId" class="form-control" value="@ut.DoanhNghiepId" readonly />
                 <span asp-validation-for="DoanhNghiepId" class="text-danger"></span>
             </div>
+
+            <!-- NoiDungDanhGia -->
             <div class="form-group">
-                <label asp-for="NoiDungDanhGia" class="control-label"></label>
+                <label asp-for="NoiDungDanhGia" class="control-label">Nội dung đánh giá</label>
                 <input asp-for="NoiDungDanhGia" class="form-control" />
                 <span asp-validation-for="NoiDungDanhGia" class="text-danger"></span>
             </div>
+
+            <!-- DiemDanhGia -->
             <div class="form-group">
-                <label asp-for="DiemDanhGia" class="control-label"></label>
+                <label asp-for="DiemDanhGia" class="control-label">điểm đánh giá</label>
                 <input asp-for="DiemDanhGia" class="form-control" />
                 <span asp-validation-for="DiemDanhGia" class="text-danger"></span>
             </div>
+
+            <!-- NgayDanhGia -->
             <div class="form-group">
-                <label asp-for="NgayDanhGia" class="control-label"></label>
-                <input asp-for="NgayDanhGia" class="form-control" />
+                <label asp-for="NgayDanhGia" class="control-label">Ngày đánh giá</label>
+                <input asp-for="NgayDanhGia" class="form-control" type="date" />
                 <span asp-validation-for="NgayDanhGia" class="text-danger"></span>
             </div>
-           
+
+            <!-- Submit Button -->
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+
+        <!-- Back to List -->
+        <div>
+            <a asp-action="">quay lại</a>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

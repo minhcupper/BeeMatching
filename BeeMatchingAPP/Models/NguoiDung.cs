@@ -30,6 +30,9 @@ namespace BeeMatchingAPP.Models
         [Required(ErrorMessage = "Roles không được để trống.")]
         public string? Roles { get; set; }
 
+        [Required(ErrorMessage = "Otp không được để trống.")]
+        public string? Otp { get; set; }
+
         public string? TrangThai { get; set; } = "Đang hoạt động ";
 
         // Navigation properties

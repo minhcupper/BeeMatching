@@ -1,49 +1,63 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using Azure.AI.OpenAI; // Dùng nếu bạn cần kết nối với OpenAI từ Azure
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-         builder.Services.AddControllersWithViews();
-        
-        builder.Services.AddHttpClient();
-
-
-        // Configure Antiforgery
-        builder.Services.AddAntiforgery(options =>
-        {
-            options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Ensure secure cookies
-        });
-
-        // Configure Session
-        builder.Services.AddDistributedMemoryCache(); // Use in-memory cache for session storage
-        builder.Services.AddSession(options =>
-        {
-            options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
-            options.Cookie.HttpOnly = true; // Enhance security
-            options.Cookie.IsEssential = true; // Required for GDPR compliance
-        });
+// Add services to the container
 builder.Services.AddControllersWithViews();
-        var app = builder.Build();
-// Configure the HTTP request pipeline.
+
+// Cấu hình HttpClient
+builder.Services.AddHttpClient();
+
+// Cấu hình Antiforgery (bảo vệ CSRF)
+builder.Services.AddAntiforgery(options =>
+{
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Đảm bảo cookie luôn được bảo mật
+});
+
+// Cấu hình Session
+builder.Services.AddDistributedMemoryCache(); // Dùng bộ nhớ trong để lưu trữ session
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thiết lập thời gian hết hạn session
+    options.Cookie.HttpOnly = true; // Chỉ cho phép truy cập cookie qua HTTP
+    options.Cookie.IsEssential = true; // Cần thiết cho yêu cầu GDPR
+});
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole();  // Ghi log vào Console
+    logging.AddDebug();    // Ghi log vào Debug
+});
+builder.Host.ConfigureHostConfiguration(config =>
+{
+    config.AddInMemoryCollection(new[]
+    {
+        new KeyValuePair<string, string>("ASPNETCORE_ENVIRONMENT", "Development")
+    });
+});
+
+
+var app = builder.Build();
+Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
+// Cấu hình HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseHsts(); // Kích hoạt HSTS (HTTP Strict Transport Security)
 }
 
-app.UseHttpsRedirection(); // Redirect HTTP to HTTPS
-        app.UseStaticFiles(); // Serve static files
+app.UseHttpsRedirection(); // Chuyển hướng HTTP về HTTPS
+app.UseStaticFiles(); // Phục vụ các tệp tĩnh
 
-        app.UseRouting(); // Enable routing
-        app.UseSession(); // Enable session middleware
-        app.UseAuthorization(); // Enable authorization
+app.UseRouting(); // Kích hoạt định tuyến
+app.UseSession(); // Kích hoạt middleware session
+app.UseAuthorization(); // Kích hoạt xác thực
 
-        // Map controller routes
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-        });
-
-        app.Run();
-    
+// Cấu hình route mặc định cho controller
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseDeveloperExceptionPage();
+app.Run(); // Chạy ứng dụng

@@ -9,10 +9,13 @@ using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
 using API_He_thong.Controllers;
 using helper;
+using Microsoft.AspNetCore.Authorization;
+using System.Globalization;
 
 
 namespace BeeMatchingAPP.Controllers
 {
+  
     public class CongviecController : Controller
     {
         private readonly ILogger<CongviecController> _logger;
@@ -224,51 +227,84 @@ namespace BeeMatchingAPP.Controllers
             }
             return doanhnghiep;
         }
-      
+
+        private string RemoveDiacritics(string text)
+        {
+            // Chuẩn hóa chuỗi đầu vào để loại bỏ dấu
+            var normalizedString = text.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+
+            // Duyệt qua từng ký tự trong chuỗi đã chuẩn hóa
+            foreach (var c in normalizedString)
+            {
+                // Lấy loại ký tự của ký tự hiện tại
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                // Nếu ký tự không phải là dấu, thêm vào chuỗi kết quả
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            // Trả về chuỗi đã loại bỏ dấu, chuẩn hóa lại
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
         [HttpGet]
         public async Task<ActionResult> TimKiemTheoTen(string search)
         {
             List<CongViec> job = new List<CongViec>();
             List<CongViec> hassearch = new List<CongViec>();
             var response = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
+
             if (response.IsSuccessStatusCode)
             {
                 var apiResponse = await response.Content.ReadAsStringAsync();
                 job = JsonConvert.DeserializeObject<List<CongViec>>(apiResponse);
             }
+
+            // Loại bỏ dấu từ chuỗi tìm kiếm
+            string searchWithoutDiacritics = RemoveDiacritics(search).ToLower();
+
             foreach (CongViec congviec in job)
             {
-                if (congviec.TieuDe.ToLower().Contains(search.ToLower()))
+                // Loại bỏ dấu từ tiêu đề công việc
+                string titleWithoutDiacritics = RemoveDiacritics(congviec.TieuDe).ToLower();
+
+                if (titleWithoutDiacritics.Contains(searchWithoutDiacritics))
                 {
                     hassearch.Add(congviec);
                 }
             }
+            ViewBag.JobCount = $"{hassearch.Count} công việc";
+
             ViewData["job"] = hassearch;
             return View("CongViec");
-
         }
 
         [HttpPost]
         public async Task<ActionResult> CheckBoxDangCongViec(string dangCongViec)
         {
             List<CongViec> jobList = new List<CongViec>();
+            List<CongViec> hassearch = new List<CongViec>();
             List<CongViec> jobListHasChecked = new List<CongViec>();
             var response = await _httpClient.GetAsync("https://localhost:7287/api/CongViec/GetAll");
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 var apiResponse = await response.Content.ReadAsStringAsync();
                 jobList = JsonConvert.DeserializeObject<List<CongViec>>(apiResponse);
             }
-            foreach(var item in jobList)
+            foreach (var item in jobList)
             {
-                if(item.DangCongViec.ToLower() == dangCongViec.ToLower())
+                if (item.DangCongViec.ToLower() == dangCongViec.ToLower())
                 {
                     jobListHasChecked.Add(item);
+                    hassearch.Add(item);
                 }
             }
+            ViewBag.JobCount = $"{hassearch.Count} công việc";
             ViewData["job"] = jobListHasChecked;
             return View("CongViec");
         }
-
     }
 }

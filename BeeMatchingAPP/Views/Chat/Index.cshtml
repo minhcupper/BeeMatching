@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Ask a Question";
+
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" asp-action="AskQuestion">
+    <div>
+        <label for="question">Enter your question:</label>
+        <input type="text" id="question" name="question" required />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewData["ms"] != null)
+{
+    <div>
+        <h2>Response:</h2>
+        <p>@ViewData["ms"]</p>
+    </div>
+}
+@* <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('message');
+    if (message) {
+    @ViewData["ms"]=message;
+    }
+</script> *@

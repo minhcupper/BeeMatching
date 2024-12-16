@@ -1,0 +1,2462 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API_He_thong",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Chat/UseChatGpt": {
+      "post": {
+        "tags": [
+          "Chat"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Company/GetAll": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Company/GetById/{id}": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Company/Create": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoanhNghiep"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoanhNghiep"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoanhNghiep"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Company/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "Company"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Company/Edit/{id}": {
+      "put": {
+        "tags": [
+          "Company"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoanhNghiep"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoanhNghiep"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoanhNghiep"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CongViec/GetAll": {
+      "get": {
+        "tags": [
+          "CongViec"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CongViec/GetById/{id}": {
+      "get": {
+        "tags": [
+          "CongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CongViec/Create": {
+      "post": {
+        "tags": [
+          "CongViec"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CongViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CongViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CongViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CongViec/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "CongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CongViec/Edit/{id}": {
+      "put": {
+        "tags": [
+          "CongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CongViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CongViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CongViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DanhGia/GetAll": {
+      "get": {
+        "tags": [
+          "DanhGia"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DanhGia/GetById/{id}": {
+      "get": {
+        "tags": [
+          "DanhGia"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DanhGia/Create": {
+      "post": {
+        "tags": [
+          "DanhGia"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DanhGia"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DanhGia"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DanhGia"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DanhGia/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "DanhGia"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/DanhGia/Edit/{id}": {
+      "put": {
+        "tags": [
+          "DanhGia"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DanhGia"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DanhGia"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DanhGia"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemCongViec/GetAll": {
+      "get": {
+        "tags": [
+          "KinhNghiemCongViec"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemCongViec/GetById/{id}": {
+      "get": {
+        "tags": [
+          "KinhNghiemCongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemCongViec/Create": {
+      "post": {
+        "tags": [
+          "KinhNghiemCongViec"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhNghiemCongViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhNghiemCongViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhNghiemCongViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemCongViec/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "KinhNghiemCongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemCongViec/Edit/{id}": {
+      "put": {
+        "tags": [
+          "KinhNghiemCongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhNghiemCongViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhNghiemCongViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhNghiemCongViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemNguoiXinViec/GetAll": {
+      "get": {
+        "tags": [
+          "KinhNghiemNguoiXinViec"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemNguoiXinViec/GetById/{id}": {
+      "get": {
+        "tags": [
+          "KinhNghiemNguoiXinViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemNguoiXinViec/Create": {
+      "post": {
+        "tags": [
+          "KinhNghiemNguoiXinViec"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhnghiemNguoiTimViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhnghiemNguoiTimViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhnghiemNguoiTimViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemNguoiXinViec/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "KinhNghiemNguoiXinViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/KinhNghiemNguoiXinViec/Edit/{id}": {
+      "put": {
+        "tags": [
+          "KinhNghiemNguoiXinViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhnghiemNguoiTimViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhnghiemNguoiTimViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KinhnghiemNguoiTimViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/NguoiTimViec/GetAll": {
+      "get": {
+        "tags": [
+          "NguoiTimViec"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/NguoiTimViec/GetById/{id}": {
+      "get": {
+        "tags": [
+          "NguoiTimViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/NguoiTimViec/Create": {
+      "post": {
+        "tags": [
+          "NguoiTimViec"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiTimViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiTimViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiTimViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/NguoiTimViec/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "NguoiTimViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/NguoiTimViec/Edit/{id}": {
+      "put": {
+        "tags": [
+          "NguoiTimViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiTimViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiTimViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiTimViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Places/GetAllDictricts": {
+      "get": {
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Places/GetAllWards": {
+      "get": {
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Places/GetAllprovinces": {
+      "get": {
+        "tags": [
+          "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Skill/GetAll": {
+      "get": {
+        "tags": [
+          "Skill"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Skill/GetById/{id}": {
+      "get": {
+        "tags": [
+          "Skill"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Skill/Create": {
+      "post": {
+        "tags": [
+          "Skill"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangNguoiXinViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangNguoiXinViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangNguoiXinViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Skill/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "Skill"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Skill/Edit/{id}": {
+      "put": {
+        "tags": [
+          "Skill"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangNguoiXinViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangNguoiXinViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangNguoiXinViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SkillCongViec/GetAll": {
+      "get": {
+        "tags": [
+          "SkillCongViec"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SkillCongViec/GetById/{id}": {
+      "get": {
+        "tags": [
+          "SkillCongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SkillCongViec/Create": {
+      "post": {
+        "tags": [
+          "SkillCongViec"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangCongViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangCongViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangCongViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SkillCongViec/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "SkillCongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SkillCongViec/Edit/{id}": {
+      "put": {
+        "tags": [
+          "SkillCongViec"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangCongViec"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangCongViec"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/KyNangCongViec"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ThongBao/GetAll": {
+      "get": {
+        "tags": [
+          "ThongBao"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ThongBao/GetById/{id}": {
+      "get": {
+        "tags": [
+          "ThongBao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ThongBao/Create": {
+      "post": {
+        "tags": [
+          "ThongBao"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThongBao"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThongBao"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThongBao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ThongBao/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "ThongBao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ThongBao/Edit/{id}": {
+      "put": {
+        "tags": [
+          "ThongBao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThongBao"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThongBao"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThongBao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/UngTuyen/GetAll": {
+      "get": {
+        "tags": [
+          "UngTuyen"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/UngTuyen/GetById/{id}": {
+      "get": {
+        "tags": [
+          "UngTuyen"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/UngTuyen/Create": {
+      "post": {
+        "tags": [
+          "UngTuyen"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UngTuyen"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UngTuyen"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UngTuyen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/UngTuyen/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "UngTuyen"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/UngTuyen/Edit/{id}": {
+      "put": {
+        "tags": [
+          "UngTuyen"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UngTuyen"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UngTuyen"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UngTuyen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/User/GetAll": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/User/GetById/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/User/Create": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/User/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/User/Edit/{id}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDung"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CongViec": {
+        "required": [
+          "doanhNghiepId",
+          "soLuong",
+          "tieuDe"
+        ],
+        "type": "object",
+        "properties": {
+          "congViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doanhNghiepId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "doanhNghiep": {
+            "$ref": "#/components/schemas/DoanhNghiep"
+          },
+          "tieuDe": {
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moTa": {
+            "type": "string",
+            "nullable": true
+          },
+          "luongHangThang": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "viTri": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "dangCongViec": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "trangThai": {
+            "maxLength": 50,
+            "type": "string",
+            "default": "Đang tuyển dụng",
+            "nullable": true
+          },
+          "soLuong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ngayDang": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hanNopHoSo": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "ungTuyens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UngTuyen"
+            },
+            "nullable": true
+          },
+          "districtId": {
+            "type": "string",
+            "nullable": true
+          },
+          "wardId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "districts": {
+            "$ref": "#/components/schemas/districts"
+          },
+          "wards": {
+            "$ref": "#/components/schemas/wards"
+          },
+          "provinces": {
+            "$ref": "#/components/schemas/provinces"
+          },
+          "kyNangCongViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KyNangCongViec"
+            },
+            "nullable": true
+          },
+          "kinhNghiemCongViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KinhNghiemCongViec"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DanhGia": {
+        "required": [
+          "noiDungDanhGia",
+          "ungTuyenId"
+        ],
+        "type": "object",
+        "properties": {
+          "danhGiaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ungTuyenId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ungTuyen": {
+            "$ref": "#/components/schemas/UngTuyen"
+          },
+          "noiDungDanhGia": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "diemDanhGia": {
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "ngayDanhGia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "doanhNghiepId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DanhMucKyNang": {
+        "required": [
+          "tenDanhMuc"
+        ],
+        "type": "object",
+        "properties": {
+          "danhMucKyNangId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenDanhMuc": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moTa": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "kyNangNguoiXinViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KyNangNguoiXinViec"
+            },
+            "nullable": true
+          },
+          "kyNangCongViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KyNangCongViec"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DoanhNghiep": {
+        "required": [
+          "email",
+          "nguoiDungId",
+          "tenCongTy",
+          "trangThai"
+        ],
+        "type": "object",
+        "properties": {
+          "doanhNghiepId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hinhAnh": {
+            "type": "string",
+            "nullable": true
+          },
+          "nguoiDungId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nguoiDung": {
+            "$ref": "#/components/schemas/NguoiDung"
+          },
+          "tenCongTy": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moTa": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "diaChi": {
+            "maxLength": 200,
+            "type": "string",
+            "nullable": true
+          },
+          "congViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CongViec"
+            },
+            "nullable": true
+          },
+          "districtId": {
+            "type": "string",
+            "nullable": true
+          },
+          "wardId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "districts": {
+            "$ref": "#/components/schemas/districts"
+          },
+          "wards": {
+            "$ref": "#/components/schemas/wards"
+          },
+          "provinces": {
+            "$ref": "#/components/schemas/provinces"
+          },
+          "trangThai": {
+            "maxLength": 20,
+            "minLength": 1,
+            "type": "string",
+            "default": "Đang hoạt động"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KinhNghiemCongViec": {
+        "required": [
+          "congViecId",
+          "soNamKinhNghiem",
+          "tenKinhNghiem"
+        ],
+        "type": "object",
+        "properties": {
+          "kinhNghiemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "congViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenKinhNghiem": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moTa": {
+            "maxLength": 500,
+            "type": "string",
+            "nullable": true
+          },
+          "soNamKinhNghiem": {
+            "maximum": 50,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "congViec": {
+            "$ref": "#/components/schemas/CongViec"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KinhnghiemNguoiTimViec": {
+        "required": [
+          "ngayBatDau",
+          "nguoiTimViecId",
+          "tenKinhNghiem"
+        ],
+        "type": "object",
+        "properties": {
+          "kinhNghiemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nguoiTimViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenKinhNghiem": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moTa": {
+            "type": "string",
+            "nullable": true
+          },
+          "nguoiTimViec": {
+            "$ref": "#/components/schemas/NguoiTimViec"
+          },
+          "ngayBatDau": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ngayKetThuc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "congTy": {
+            "maxLength": 150,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "KyNangCongViec": {
+        "required": [
+          "danhMucKyNangId",
+          "tenKyNang"
+        ],
+        "type": "object",
+        "properties": {
+          "kyNangId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "congViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenKyNang": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moTa": {
+            "type": "string",
+            "nullable": true
+          },
+          "congViec": {
+            "$ref": "#/components/schemas/CongViec"
+          },
+          "danhMucKyNangId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "danhMucKyNang": {
+            "$ref": "#/components/schemas/DanhMucKyNang"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KyNangNguoiXinViec": {
+        "required": [
+          "danhMucKyNangId",
+          "nguoiTimViecId",
+          "tenKyNang"
+        ],
+        "type": "object",
+        "properties": {
+          "kyNangId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenKyNang": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moTa": {
+            "type": "string",
+            "nullable": true
+          },
+          "nguoiTimViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nguoiTimViec": {
+            "$ref": "#/components/schemas/NguoiTimViec"
+          },
+          "danhMucKyNangId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "danhMucKyNang": {
+            "$ref": "#/components/schemas/DanhMucKyNang"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NguoiDung": {
+        "required": [
+          "email",
+          "mat_khau"
+        ],
+        "type": "object",
+        "properties": {
+          "nguoi_dung_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ten_dang_nhap": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "mat_khau": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "roles": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "trangThai": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "nguoiTimViec": {
+            "$ref": "#/components/schemas/NguoiTimViec"
+          },
+          "doanhNghiep": {
+            "$ref": "#/components/schemas/DoanhNghiep"
+          },
+          "thongBaos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ThongBao"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NguoiTimViec": {
+        "required": [
+          "email",
+          "moTa",
+          "ngonNgu",
+          "nguoiDungId"
+        ],
+        "type": "object",
+        "properties": {
+          "nguoiTimViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hinhAnh": {
+            "type": "string",
+            "nullable": true
+          },
+          "nguoiDungId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nguoiDung": {
+            "$ref": "#/components/schemas/NguoiDung"
+          },
+          "kyNangNguoiXinViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KyNangNguoiXinViec"
+            },
+            "nullable": true
+          },
+          "kinhnghiemNguoiTimViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KinhnghiemNguoiTimViec"
+            },
+            "nullable": true
+          },
+          "moTa": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "ngonNgu": {
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "kinhNghiem": {
+            "maxLength": 300,
+            "type": "string",
+            "nullable": true
+          },
+          "ho_ten": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "ngay_sinh": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gioi_tinh": {
+            "maxLength": 10,
+            "type": "string",
+            "nullable": true
+          },
+          "so_dien_thoai": {
+            "maxLength": 15,
+            "type": "string",
+            "nullable": true
+          },
+          "dia_chi_nha": {
+            "maxLength": 30,
+            "type": "string",
+            "nullable": true
+          },
+          "districtId": {
+            "type": "string",
+            "nullable": true
+          },
+          "wardId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "districts": {
+            "$ref": "#/components/schemas/districts"
+          },
+          "wards": {
+            "$ref": "#/components/schemas/wards"
+          },
+          "provinces": {
+            "$ref": "#/components/schemas/provinces"
+          },
+          "trang_thai": {
+            "maxLength": 15,
+            "type": "string",
+            "nullable": true
+          },
+          "ngay_tao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "hoatDongNgoaiKhoa": {
+            "maxLength": 300,
+            "type": "string",
+            "nullable": true
+          },
+          "ungTuyens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UngTuyen"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ThongBao": {
+        "required": [
+          "nguoiDungId",
+          "noiDung",
+          "tieuDe"
+        ],
+        "type": "object",
+        "properties": {
+          "thongBaoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nguoiDungId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nguoiDung": {
+            "$ref": "#/components/schemas/NguoiDung"
+          },
+          "tieuDe": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "noiDung": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "trangThai": {
+            "maxLength": 15,
+            "type": "string",
+            "nullable": true
+          },
+          "ngayGui": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UngTuyen": {
+        "required": [
+          "congViecId",
+          "nguoiTimViecId"
+        ],
+        "type": "object",
+        "properties": {
+          "ungTuyenId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hinhAnhCV": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "congViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "congViec": {
+            "$ref": "#/components/schemas/CongViec"
+          },
+          "nguoiTimViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nguoiTimViec": {
+            "$ref": "#/components/schemas/NguoiTimViec"
+          },
+          "ngayUngTuyen": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deXuat": {
+            "maxLength": 500,
+            "type": "string",
+            "nullable": true
+          },
+          "trangThai": {
+            "maxLength": 20,
+            "type": "string",
+            "default": "Đang xem xét",
+            "nullable": true
+          },
+          "chapNhanCongViec": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "danhGia": {
+            "$ref": "#/components/schemas/DanhGia"
+          }
+        },
+        "additionalProperties": false
+      },
+      "districts": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name_en": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "full_name": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "full_name_en": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "code_name": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "province_code": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "administrative_unit_Id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nguoiTimViec": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NguoiTimViec"
+            },
+            "nullable": true
+          },
+          "congViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CongViec"
+            },
+            "nullable": true
+          },
+          "doanhNghieps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DoanhNghiep"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "provinces": {
+        "required": [
+          "full_name",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name_en": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "full_name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "full_name_en": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "code_name": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "administrative_unit_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "administrative_region_Id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nguoiTimViec": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NguoiTimViec"
+            },
+            "nullable": true
+          },
+          "congViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CongViec"
+            },
+            "nullable": true
+          },
+          "doanhNghieps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DoanhNghiep"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "wards": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name_en": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "full_name": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "full_name_en": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "code_name": {
+            "maxLength": 255,
+            "type": "string",
+            "nullable": true
+          },
+          "district_code": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "administrative_unit_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nguoiTimViec": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NguoiTimViec"
+            },
+            "nullable": true
+          },
+          "congViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CongViec"
+            },
+            "nullable": true
+          },
+          "doanhNghieps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DoanhNghiep"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

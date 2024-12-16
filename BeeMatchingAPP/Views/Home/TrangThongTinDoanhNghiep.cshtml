@@ -5,41 +5,34 @@
     DoanhNghiep ntv = ViewData["HoSodn"] as DoanhNghiep;
 }
 
-
-
-
-
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Job board HTML-5 Template </title>
+    <title>Thông Tin Doanh Nghiệp</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon/favicon.png">
 
     <!-- CSS here -->
-
     <link rel="stylesheet" href="~/assets/css/hoso.css">
     <style>
         .field-disabled {
-            background-color: #f0f0f0; /* Màu nền cho trường disabled */
-            color: #666; /* Màu chữ cho trường disabled */
+            background-color: #f0f0f0;
+            color: #666;
         }
 
         .field-edit {
-            background-color: #fff7e6; /* Màu nền cho trường đang chỉnh sửa */
-            color: #000; /* Màu chữ cho trường đang chỉnh sửa */
+            background-color: #fff7e6;
+            color: #000;
         }
     </style>
 </head>
 
 <body>
-
     <main>
-
         <div class="wrapper">
             <div class="profile">
                 <div class="content">
@@ -55,148 +48,113 @@
                                 <input type="file" class="btn" />
                             </div>
                         </fieldset>
+
+                        <!-- Tên công ty -->
                         <fieldset>
                             <div class="grid-35">
-                                <label for="fname">Họ và tên</label>
+                                <label for="fname">Tên công ty</label>
                             </div>
                             <div class="grid-65">
-                                <input type="text" value="@ntv.TenCongTy" id="fname" tabindex="1" class="field-disabled" disabled />
+                                <input type="text" value="@ntv?.TenCongTy ?? " Không có thông tin"" id="fname" tabindex="1" class="field-disabled" disabled />
                             </div>
                         </fieldset>
+
+                        <!-- Mô tả -->
                         <fieldset>
                             <div class="grid-35">
-                                <label for="email">Mô tả</label>
+                                <label for="description">Mô tả</label>
                             </div>
                             <div class="grid-65">
-                                <input type="phonenumber" value="@ntv.MoTa" id="phonenumber" tabindex="6" class="field-disabled" disabled />
+                                <textarea id="description" cols="30" rows="3" tabindex="3" class="field-disabled" disabled>@ntv?.MoTa ?? "Không có mô tả"</textarea>
                             </div>
                         </fieldset>
+
                         <!-- Email -->
                         <fieldset>
                             <div class="grid-35">
                                 <label for="email">Email</label>
                             </div>
                             <div class="grid-65">
-                                <input type="email" value="@ntv.email" id="email" tabindex="6" class="field-disabled" disabled />
+                                <input type="email" value="@ntv?.email ?? " Không có email"" id="email" tabindex="6" class="field-disabled" disabled />
                             </div>
                         </fieldset>
-                        <fieldset>
-                            <div class="grid-35">
-                                <label for="lname">Ngày tạo</label>
-                            </div>
-                            <div class="grid-65">
-                                <input disabled value="@ntv.TrangThai" id="lname" tabindex="2" class="field-disabled" disabled />
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="grid-35">
-                                <label for="lname">Ngày sinh</label>
-                            </div>
-                            <div class="grid-65">
-                                <input value="@ntv.DiaChi" id="lname" type="date" tabindex="2" class="field-disabled" disabled />
-                            </div>
-                        </fieldset>
-                        <!-- Description about User -->
-                        <fieldset>
-                            <div class="grid-35">
-                                <label for="description">Mô tả</label>
-                            </div>
-                            <div class="grid-65">
-                                <textarea name="" cols="30" rows="auto" tabindex="3" class="field-disabled" disabled>@ntv.MoTa</textarea>
-                            </div>
-                        </fieldset>
-                        <!-- Location -->
-                        <fieldset>
-                            <div class="grid-35">
-                                <label for="location">Nơi ở / Xã</label>
-                            </div>
-                            <div class="grid-65">
-                                <input type="text" value="@ntv.WardId" id="location" tabindex="4" class="field-disabled" disabled />
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <div class="grid-35">
-                                <label for="location">Nơi ở / Huyện</label>
-                            </div>
-                            <div class="grid-65">
-                                <input type="text" value="@ntv.DistrictId" id="location" tabindex="4" class="field-disabled" disabled />
-                            </div>
-                        </fieldset><fieldset>
-                            <div class="grid-35">
-                                <label for="location">Nơi ở / Tỉnh</label>
-                            </div>
-                            <div class="grid-65">
-                                <input type="text" value="@ntv.ProvinceId" id="location" tabindex="4" class="field-disabled" disabled />
-                            </div>
-                        </fieldset>
-                        <!-- Country -->
-                        
 
-
-                        <!-- Looking for Work -->
-           
-                        <!-- School -->
+                        <!-- Ngày tạo -->
                         <fieldset>
-                            <input type="" class="Btn edit" value="Sửa" onclick="editProfile()" />
+                            <div class="grid-35">
+                                <label for="creation-date">Ngày tạo</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv?.TrangThai ?? " Không có thông tin"" id="creation-date" tabindex="2" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+
+                        <!-- Địa chỉ -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="location">Địa chỉ</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv?.DiaChi ?? " Không có địa chỉ"" id="location" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+
+                        <!-- Vị trí địa lý -->
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="ward">Xã</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv?.WardId ?? " Không có thông tin"" id="ward" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="district">Huyện</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv?.DistrictId ?? " Không có thông tin"" id="district" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="grid-35">
+                                <label for="province">Tỉnh</label>
+                            </div>
+                            <div class="grid-65">
+                                <input type="text" value="@ntv?.ProvinceId ?? " Không có thông tin"" id="province" tabindex="4" class="field-disabled" disabled />
+                            </div>
+                        </fieldset>
+
+                        <!-- Buttons -->
+                        <fieldset>
+                            <input type="button" class="Btn edit" value="Sửa" onclick="editProfile()" />
                             <input type="submit" class="Btn" value="Lưu" />
                         </fieldset>
-
                     </form>
                 </div>
             </div>
         </div>
 
-
         <script>
             function editProfile() {
-                // Lấy tất cả các trường input trong form
-                const inputs = document.querySelectorAll('input[type="text"],input[type="phonenumber"],input[type="date"], input[type="email"], textarea');
+                const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
                 inputs.forEach(input => {
-                    input.disabled = false; // Bỏ disable cho tất cả các trường
-                    input.classList.remove('field-disabled'); // Xóa lớp disabled
-                    input.classList.add('field-edit'); // Thêm lớp edit
+                    input.disabled = false;
+                    input.classList.remove('field-disabled');
+                    input.classList.add('field-edit');
                 });
             }
         </script>
-
     </main>
 
-
     <!-- JS here -->
-    <!-- All JS Custom Plugins Link Here here -->
     <script src="~/assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
     <script src="~/assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="~/assets/js/popper.min.js"></script>
     <script src="~/assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="~/assets/js/jquery.slicknav.min.js"></script>
-
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="~/assets/js/owl.carousel.min.js"></script>
-    <script src="~/assets/js/slick.min.js"></script>
-    <script src="~/assets/js/price_rangs.js"></script>
-
-    <!-- One Page, Animated-HeadLin -->
-    <script src="~/assets/js/wow.min.js"></script>
-    <script src="~/assets/js/animated.headline.js"></script>
-    <script src="~/assets/js/jquery.magnific-popup.js"></script>
-
-    <!-- Scrollup, nice-select, sticky -->
-    <script src="~/assets/js/jquery.scrollUp.min.js"></script>
-    <script src="~/assets/js/jquery.nice-select.min.js"></script>
-    <script src="~/assets/js/jquery.sticky.js"></script>
-
-    <!-- contact js -->
-    <script src="~/assets/js/contact.js"></script>
-    <script src="~/assets/js/jquery.form.js"></script>
-    <script src="~/assets/js/jquery.validate.min.js"></script>
-    <script src="~/assets/js/mail-script.js"></script>
-    <script src="~/assets/js/jquery.ajaxchimp.min.js"></script>
-
-    <!-- Jquery Plugins, main Jquery -->
     <script src="~/assets/js/plugins.js"></script>
     <script src="~/assets/js/main.js"></script>
-
 </body>
 </html>

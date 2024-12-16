@@ -17,6 +17,8 @@ using Microsoft.VisualBasic;
 using Microsoft.Win32;
 using System.Security.Cryptography;
 using API_He_thong.DATA;
+using System.Net.Mail;
+using System.Net;
 namespace BeeMatchingAPP.Controllers
 {
     //tuan day
@@ -68,10 +70,25 @@ namespace BeeMatchingAPP.Controllers
         // Phương thức xử lý trang thông tin cá nhân cho người tìm việc
         public async Task<ActionResult> TrangThongTinNguoiTimViec()
         {
-            // Truy xuất dữ liệu cá nhân (được giả định là từ mô hình hoặc session)
+            // Lấy thông tin cá nhân từ session hoặc mô hình
             var data = TrangThongTinCaNhan;
+            if (data == null || string.IsNullOrWhiteSpace(data.email))
+            {
+                // Điều hướng đến trang thêm thông tin nếu chưa có email
+                return RedirectToAction("TrangaddThongtin", "Home");
+            }
+
             ViewData["HoSo"] = data;
             return View(data);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> TrangaddThongtin()
+        {
+            // Lấy dữ liệu hoặc khởi tạo dữ liệu mặc định
+            var data = TrangThongTinCaNhan ;
+            ViewData["HoSo"] = data;
+            return View();
         }
         public async Task<ActionResult> TrangThongTinDoanhNghiep()
         {
@@ -232,6 +249,7 @@ namespace BeeMatchingAPP.Controllers
 
                 //Lưu thông tin người dùng vào Session
                 HttpContext.Session.Set("ThongTindoanhnghiep", newItem);
+
             }
 
             // Truy xuất thông tin người dùng từ Session
@@ -249,7 +267,6 @@ namespace BeeMatchingAPP.Controllers
                     TenCongTy = userInfo.TenCongTy,
                     email = userInfo.email,
                     DistrictId = userInfo.DistrictId,
-
                     WardId = userInfo.WardId,
                     ProvinceId = userInfo.ProvinceId,
                     MoTa = userInfo.MoTa,
@@ -263,10 +280,10 @@ namespace BeeMatchingAPP.Controllers
                
                 var newItem1 = new DanhGia
                 {
+                    DoanhNghiepId = userInfo.DoanhNghiepId,
                     DiemDanhGia = 0,
                     NoiDungDanhGia = "",
                     UngTuyenId = ut.UngTuyenId,
-                     DoanhNghiepId=userInfo.DoanhNghiepId,
                     NgayDanhGia = DateTime.Now,
                     
                 };
@@ -278,19 +295,7 @@ namespace BeeMatchingAPP.Controllers
         }
         private async Task ThemVaoTrangThongTinNguoiTimViec(int id)
         {
-            NguoiDung nd = null;
-            var responsend = await _httpClient.GetAsync($"https://localhost:7287/api/User/GetById/{id}");
-            if (responsend.IsSuccessStatusCode)
-            {
-                var apiResponse = await responsend.Content.ReadAsStringAsync();
-                Console.WriteLine("API Response: " + apiResponse);  // Log để kiểm tra API trả về gì
-                var allUsers = JsonConvert.DeserializeObject<List<NguoiDung>>(apiResponse);
-
-                // Tìm kiếm người dùng theo ID
-                nd = allUsers.Find(p => p.nguoi_dung_id == id);
-            }
-
-
+            
             // Khai báo đối tượng người tìm việc
             NguoiTimViec userInfo = null;
 
@@ -389,24 +394,21 @@ namespace BeeMatchingAPP.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(NguoiDung model)
         {
+            string otp = HttpContext.Session.GetString("otp");
             if (ModelState.IsValid)
             {
-                var response = await _httpClient.PostAsJsonAsync("https://localhost:7287/api/User/Create", model);
-               var user = new NguoiDung
-                 {
-                     ten_dang_nhap = model.ten_dang_nhap,
-                     Email=model.Email,
-                     mat_khau = model.mat_khau,
-                     Roles = model.Roles,
-                     TrangThai=model.TrangThai,
-                 };
-
-                if (response.IsSuccessStatusCode)
+                if (model.Otp == otp)
                 {
+                    var response = await _httpClient.PostAsJsonAsync("https://localhost:7287/api/User/Create", model);
 
-                    return RedirectToAction("Login");
+                    if (response.IsSuccessStatusCode)
+                    {
 
+                        return RedirectToAction("Login");
+
+                    }
                 }
+
                 else
                 {
                     ModelState.AddModelError(string.Empty, "dang ki that bại");
@@ -418,6 +420,159 @@ namespace BeeMatchingAPP.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SendOtp(string gmail)
+        {
+            int num;
+            Random random = new Random();
+            num = random.Next(1000, 5000);
+            string toStringNum = num.ToString();
+            HttpContext.Session.SetString("otp", toStringNum);
+
+            string from, to, pass, email;
+
+            from = "tuanden090304@gmail.com";
+            pass = "ltux uibp hauy rcrb";
+            to = gmail;
+
+            MailMessage mm = new MailMessage();
+            mm.To.Add(to);
+            mm.From = new MailAddress(from);
+            mm.Subject = "Mã OTP";
+            mm.Body = toStringNum;
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Credentials = new NetworkCredential(from, pass);
+
+            try
+            {
+                smtp.Send(mm);
+                string alert = "Đã gửi OTP qua gmail!!";
+                ViewData["Otp"] = alert.ToString();
+                return RedirectToAction("Register", new { message = "Đã gửi OTP thành công!" });
+            }
+            catch (Exception ex)
+            {
+                string alert = "Gui otp that bai!!";
+                ViewData["Otp"] = alert.ToString();
+                return RedirectToAction("Register", new { message = "Đã gửi OTP thất bại!" });
+
+            }
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendOtpForgetPassword(string gmail)
+        {
+            int num;
+            Random random = new Random();
+            num = random.Next(1000, 5000);
+            string toStringNum = num.ToString();
+            HttpContext.Session.SetString("otp", toStringNum);
+
+            string from, to, pass, email;
+
+            from = "tuanden090304@gmail.com";
+            pass = "ltux uibp hauy rcrb";
+            to = gmail;
+
+            MailMessage mm = new MailMessage();
+            mm.To.Add(to);
+            mm.From = new MailAddress(from);
+            mm.Subject = "Mã OTP";
+            mm.Body = toStringNum;
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Credentials = new NetworkCredential(from, pass);
+
+            try
+            {
+                smtp.Send(mm);
+                string alert = "Đã gửi OTP qua gmail!!";
+                //ViewData["Otp"] = alert.ToString();
+                return RedirectToAction("ForgetPassword", new { message = "Đã gửi OTP thành công!" });
+            }
+            catch (Exception ex)
+            {
+                string alert = "Gui otp that bai!!";
+                //ViewData["Otp"] = alert.ToString();
+                return RedirectToAction("ForgetPassword", new { message = "Đã gửi OTP thất bại!" });
+
+            }
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendPasswordToGmail(string gmail, string otp)
+        {
+            string OtpSession = HttpContext.Session.GetString("otp");
+
+            if (otp == OtpSession)
+            {
+                NguoiDung userInfo;
+                List<NguoiDung> listUsers = new List<NguoiDung>();
+                var response = await _httpClient.GetAsync("https://localhost:7287/api/User/GetAll");
+                if (response.IsSuccessStatusCode)
+                {
+                    var apiResponse = await response.Content.ReadAsStringAsync();
+                    listUsers = JsonConvert.DeserializeObject<List<NguoiDung>>(apiResponse);
+                }
+                userInfo = listUsers.Find(p => p.Email == gmail);
+
+
+
+                string from, to, pass, email;
+
+                from = "tuanden090304@gmail.com";
+                pass = "ltux uibp hauy rcrb";
+                to = gmail;
+
+                MailMessage mm = new MailMessage();
+                mm.To.Add(to);
+                mm.From = new MailAddress(from);
+                mm.Subject = "Mật khẩu đã quên của bạn!!";
+                mm.Body = userInfo.mat_khau.ToString();
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Credentials = new NetworkCredential(from, pass);
+
+                try
+                {
+                    smtp.Send(mm);
+                    string alert = "Đã gửi mật khẩu qua gmail của bạn!!";
+                    //ViewData["Otp"] = alert.ToString();
+                    return RedirectToAction("Login", new { message = alert });
+                }
+                catch (Exception ex)
+                {
+                    string alert = "Gửi mật khẩu qua gmail thất bại!!";
+                    //ViewData["Otp"] = alert.ToString();
+                    return RedirectToAction("ForgetPassword", new { message = alert });
+
+                }
+            }
+            else
+            {
+                string alert = "Bạn đã nhập sai OTP";
+                return RedirectToAction("ForgetPassword", new { message = alert });
+            }
+
+        }
+        // GET: Login
         // GET: Login
         [HttpGet]
         public async Task<ActionResult> Login()
@@ -430,12 +585,12 @@ namespace BeeMatchingAPP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(NguoiDung user)
         {
-         /*  // Kiểm tra nếu người dùng chưa nhập thông tin
-            if (user == null || string.IsNullOrEmpty(user.ten_dang_nhap) || string.IsNullOrEmpty(user.Email))
-            {
-                ModelState.AddModelError(string.Empty, "Email và mật khẩu không được để trống.");
-                return View(user);
-            }*/
+            /* // Kiểm tra nếu người dùng chưa nhập thông tin
+             if (user == null || string.IsNullOrEmpty(user.ten_dang_nhap) || string.IsNullOrEmpty(user.Email))
+             {
+                 ModelState.AddModelError(string.Empty, "Email và mật khẩu không được để trống.");
+                 return View(user);
+             }*/
 
             // Gửi yêu cầu xác thực người dùng
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
@@ -449,33 +604,45 @@ namespace BeeMatchingAPP.Controllers
 
                 if (userInfo != null)
                 {
+                    Console.WriteLine($"User Info: {JsonConvert.SerializeObject(userInfo)}");
 
                     if (userInfo.TrangThai == "Đang hoạt động ")
                     {
                         switch (userInfo.Roles)
                         {
-
                             case "Người xin việc":
+                                Console.WriteLine($"NguoiDung ID: {userInfo.nguoi_dung_id}");
                                 await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
                                 return RedirectToAction("CongViec", "CongViec");
 
                             case "ADMIN":
                                 return RedirectToAction("Index", "Admin");
+
                             case "Doanh Nghiệp":
+                                Console.WriteLine($"Doanh Nghiep ID: {userInfo.nguoi_dung_id}");
                                 await ThemVaoTrangThongTinDoanhNghiep(userInfo.nguoi_dung_id);
+
+                                if (thongtindoanhnghiep == null || thongtindoanhnghiep?.DoanhNghiepId == null)
+                                {
+                                    Console.WriteLine("ThongTinDoanhNghiep is null or DoanhNghiepId is null.");
+                                    ModelState.AddModelError(string.Empty, "Không tìm thấy thông tin doanh nghiệp.");
+                                    return View(user);
+                                }
+                               // return RedirectToAction("CongViec", "CongViec");
                                 return RedirectToAction("Index", "DoanhNghieps", new { id = thongtindoanhnghiep.DoanhNghiepId });
 
                             default:
                                 ModelState.AddModelError(string.Empty, "Vai trò người dùng không hợp lệ.");
-                                return null;
-
+                                return View(user);
                         }
                     }
-
+                }
+                else
+                {
+                    Console.WriteLine("User Info is null");
                 }
             }
-                return View(user);
-            
+            return View(user); // Trả về view với thông báo lỗi
         }
         public async Task<ActionResult> Index()
         {

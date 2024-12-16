@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "TrangThongTinNguoiTimViec";
-    NguoiTimViec ntv = ViewData["HoSo"] as NguoiTimViec;
+    NguoiTimViec? ntv = ViewData["HoSo"] as NguoiTimViec;
 }
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -32,7 +32,7 @@
 </head>
 
 <body>
-
+   
     <main>
 
         <div class="wrapper">
@@ -55,7 +55,7 @@
                                 <label for="fname">Họ và tên</label>
                             </div>
                             <div class="grid-65">
-                                <input type="text" value="@ntv.ho_ten" id="fname" tabindex="1" class="field-disabled" disabled />
+                                <input type="text" value="@ntv?.ho_ten" id="fname" tabindex="1" class="field-disabled" disabled />
                             </div>
                         </fieldset>
                         <fieldset>
@@ -63,7 +63,7 @@
                                 <label for="email">Số điện thoại</label>
                             </div>
                             <div class="grid-65">
-                                <input type="phonenumber" value="@ntv.so_dien_thoai" id="phonenumber" tabindex="6" class="field-disabled" disabled />
+                                <input type="phonenumber" value="@ntv?.so_dien_thoai" id="phonenumber" tabindex="6" class="field-disabled" disabled />
                             </div>
                         </fieldset>
                         <!-- Email -->
@@ -72,7 +72,7 @@
                                 <label for="email">Email</label>
                             </div>
                             <div class="grid-65">
-                                <input type="email" value="@ntv.email" id="email" tabindex="6" class="field-disabled" disabled />
+                                <input type="email" value="@ntv?.email" id="email" tabindex="6" class="field-disabled" disabled />
                             </div>
                         </fieldset>
                         <fieldset>
@@ -80,7 +80,7 @@
                                 <label for="lname">Ngày tạo</label>
                             </div>
                             <div class="grid-65">
-                                <input disabled value="@ntv.ngay_tao" id="lname" tabindex="2" class="field-disabled" disabled />
+                                <input disabled value="@ntv?.ngay_tao" id="lname" tabindex="2" class="field-disabled" disabled />
                             </div>
                         </fieldset>
                         <fieldset>
@@ -88,7 +88,7 @@
                                 <label for="lname">Ngày sinh</label>
                             </div>
                             <div class="grid-65">
-                                <input value="@ntv.ngay_sinh" id="lname" type="date" tabindex="2" class="field-disabled" disabled />
+                                <input value="@ntv?.ngay_sinh" id="lname" type="date" tabindex="2" class="field-disabled" disabled />
                             </div>
                         </fieldset>
                         <!-- Description about User -->
@@ -97,7 +97,7 @@
                                 <label for="description">Mô tả</label>
                             </div>
                             <div class="grid-65">
-                                <textarea name="" cols="30" rows="auto" tabindex="3" class="field-disabled" disabled>@ntv.MoTa</textarea>
+                                <textarea name="" cols="30" rows="auto" tabindex="3" class="field-disabled" disabled>@ntv?.MoTa</textarea>
                             </div>
                         </fieldset>
                         <!-- Location -->
@@ -106,7 +106,7 @@
                                 <label for="location">Nơi ở / Xã</label>
                             </div>
                             <div class="grid-65">
-                                <input type="text" value="@ntv.WardId" id="location" tabindex="4" class="field-disabled" disabled />
+                                <input type="text" value="@ntv?.WardId" id="location" tabindex="4" class="field-disabled" disabled />
                             </div>
                         </fieldset>
                         <fieldset>
@@ -114,14 +114,14 @@
                                 <label for="location">Nơi ở / Huyện</label>
                             </div>
                             <div class="grid-65">
-                                <input type="text" value="@ntv.DistrictId" id="location" tabindex="4" class="field-disabled" disabled />
+                                <input type="text" value="@ntv?.DistrictId" id="location" tabindex="4" class="field-disabled" disabled />
                             </div>
                         </fieldset><fieldset>
                             <div class="grid-35">
                                 <label for="location">Nơi ở / Tỉnh</label>
                             </div>
                             <div class="grid-65">
-                                <input type="text" value="@ntv.ProvinceId" id="location" tabindex="4" class="field-disabled" disabled />
+                                <input type="text" value="@ntv?.ProvinceId" id="location" tabindex="4" class="field-disabled" disabled />
                             </div>
                         </fieldset>
                         <!-- Country -->
@@ -130,7 +130,7 @@
                                 <label for="activities">Hoạt động ngoại khóa</label>
                             </div>
                             <div class="grid-65">
-                                <textarea id="activities" tabindex="3" class="field-disabled" disabled rows="auto" cols="30">@ntv.HoatDongNgoaiKhoa</textarea>
+                                <textarea id="activities" tabindex="3" class="field-disabled" disabled rows="auto" cols="30">@ntv?.HoatDongNgoaiKhoa</textarea>
                             </div>
                         </fieldset>
 
@@ -141,7 +141,7 @@
                                 <label for="qualification">Năm kinh nghiệm</label>
                             </div>
                             <div class="grid-65">
-                                <input type="text" value="@ntv.KinhNghiem" id="location" tabindex="4" class="field-disabled" disabled />
+                                <input type="text" value="@ntv?.KinhNghiem" id="location" tabindex="4" class="field-disabled" disabled />
                             </div>
                             @*  <div class="grid-65">
                             <select name="qualification" id="qualification" tabindex="8">
@@ -169,7 +169,7 @@
                                 <option value="high_school">Tiếng việt - Tiếng Hàn</option>
                                 <option value="high_school">Tiếng việt - Tiếng Nhật</option>
                                 </select> *@
-                                <input type="text" value="@ntv.NgonNgu" id="location" tabindex="4" class="field-disabled" disabled />
+                                <input type="text" value="@ntv?.NgonNgu" id="location" tabindex="4" class="field-disabled" disabled />
 
                             </div>
                         </fieldset>

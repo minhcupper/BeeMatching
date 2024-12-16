@@ -1585,6 +1585,16 @@ D:\doan\BeeMatching9\BeeMatchingAPP\obj\Debug\net6.0\refint\BeeMatchingAPP.dll
 D:\doan\BeeMatching9\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.pdb
 D:\doan\BeeMatching9\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.genruntimeconfig.cache
 D:\doan\BeeMatching9\BeeMatchingAPP\obj\Debug\net6.0\ref\BeeMatchingAPP.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.csproj.AssemblyReference.cache
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.GeneratedMSBuildEditorConfig.editorconfig
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.AssemblyInfoInputs.cache
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.AssemblyInfo.cs
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.csproj.CoreCompileInputs.cache
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.MvcApplicationPartsAssemblyInfo.cs
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.MvcApplicationPartsAssemblyInfo.cache
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.RazorAssemblyInfo.cache
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.RazorAssemblyInfo.cs
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.sourcelink.json
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.deps.json
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.runtimeconfig.json
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.exe
@@ -1596,9 +1606,15 @@ D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.runtimeconfig.json
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.pdb
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.AI.OpenAI.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.Core.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.Identity.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ChatGPT.Net.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Humanizer.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\MessagePack.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -1630,6 +1646,7 @@ D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Exten
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -1638,6 +1655,9 @@ D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Ident
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.OpenApi.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.TeamFoundation.Common.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Services.Common.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Services.WebApi.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
@@ -1657,24 +1677,32 @@ D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Packaging
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.ProjectModel.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Protocol.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Versioning.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Octokit.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\OpenAI.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\OpenAI.ChatGpt.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.ClientModel.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.Convention.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.Hosting.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.Runtime.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.TypedParts.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Data.SqlClient.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Drawing.Common.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Formats.Asn1.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Memory.Data.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Runtime.Caching.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Text.Json.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\af\Humanizer.resources.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ar\Humanizer.resources.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\az\Humanizer.resources.dll
@@ -1820,25 +1848,20 @@ D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-ar
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.dll
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.pdb
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.csproj.AssemblyReference.cache
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.GeneratedMSBuildEditorConfig.editorconfig
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.AssemblyInfoInputs.cache
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.AssemblyInfo.cs
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.csproj.CoreCompileInputs.cache
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.MvcApplicationPartsAssemblyInfo.cs
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.MvcApplicationPartsAssemblyInfo.cache
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.RazorAssemblyInfo.cache
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.RazorAssemblyInfo.cs
-D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.sourcelink.json
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets.build.json
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets.development.json
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets\msbuild.BeeMatchingAPP.Microsoft.AspNetCore.StaticWebAssets.props
@@ -1855,3 +1878,301 @@ D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\refint\BeeMatch
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.pdb
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.genruntimeconfig.cache
 D:\học tập\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\ref\BeeMatchingAPP.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.deps.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.runtimeconfig.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.staticwebassets.endpoints.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.exe
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\appsettings.Development.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\appsettings.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.staticwebassets.runtime.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.staticwebassets.endpoints.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.exe
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.deps.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.runtimeconfig.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\BeeMatchingAPP.pdb
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.AI.OpenAI.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.Core.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.Identity.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ChatGPT.Net.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Humanizer.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\MessagePack.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.Features.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.TeamFoundation.Common.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Services.Common.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Services.WebApi.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Common.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Configuration.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Frameworks.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.LibraryModel.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Packaging.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.ProjectModel.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Protocol.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\NuGet.Versioning.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Octokit.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\OpenAI.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\OpenAI.ChatGpt.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.ClientModel.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.AttributedModel.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.Convention.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.Hosting.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.Runtime.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Composition.TypedParts.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Text.Json.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\af\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ar\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\az\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\bg\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\bn-BD\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\da\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\el\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fa\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fi-FI\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr-BE\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\he\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\hr\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\hu\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\hy\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\id\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\is\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko-KR\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ku\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\lv\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ms-MY\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\mt\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\nb\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\nb-NO\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\nl\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ro\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\sk\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\sl\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\sr\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\sr-Latn\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\sv\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\th-TH\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\uk\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\vi\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-CN\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\bin\Debug\net6.0\API_He_thong.pdb
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.csproj.AssemblyReference.cache
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.AssemblyInfoInputs.cache
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.AssemblyInfo.cs
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.csproj.CoreCompileInputs.cache
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.MvcApplicationPartsAssemblyInfo.cs
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.MvcApplicationPartsAssemblyInfo.cache
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.RazorAssemblyInfo.cache
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.RazorAssemblyInfo.cs
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.sourcelink.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\scopedcss\bundle\BeeMatchingAPP.styles.css
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\scopedcss\projectbundle\BeeMatchingAPP.bundle.scp.css
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets.build.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets.development.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets\msbuild.BeeMatchingAPP.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets\msbuild.BeeMatchingAPP.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets\msbuild.build.BeeMatchingAPP.props
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BeeMatchingAPP.props
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BeeMatchingAPP.props
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatch.FDFE094E.Up2Date
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\refint\BeeMatchingAPP.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.pdb
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\BeeMatchingAPP.genruntimeconfig.cache
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\ref\BeeMatchingAPP.dll
+D:\Study\DATN\API_He_thong\BeeMatchingAPP\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
