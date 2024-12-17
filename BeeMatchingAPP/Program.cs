@@ -6,7 +6,7 @@ builder.Services.AddControllersWithViews();
 
 // Cấu hình HttpClient
 builder.Services.AddHttpClient();
-
+builder.Services.AddHttpContextAccessor();
 // Cấu hình Antiforgery (bảo vệ CSRF)
 builder.Services.AddAntiforgery(options =>
 {

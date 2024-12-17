@@ -581,54 +581,36 @@ namespace BeeMatchingAPP.Controllers
         }
 
         // POST: Login
-        [HttpPost]
+       [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(NguoiDung user)
         {
-            /* // Kiểm tra nếu người dùng chưa nhập thông tin
-             if (user == null || string.IsNullOrEmpty(user.ten_dang_nhap) || string.IsNullOrEmpty(user.Email))
-             {
-                 ModelState.AddModelError(string.Empty, "Email và mật khẩu không được để trống.");
-                 return View(user);
-             }*/
-
-            // Gửi yêu cầu xác thực người dùng
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync("https://localhost:7287/api/Login", content);
 
             if (response.IsSuccessStatusCode)
             {
-                // Lấy thông tin người dùng từ phản hồi API
                 var responseBody = await response.Content.ReadAsStringAsync();
                 var userInfo = JsonConvert.DeserializeObject<NguoiDung>(responseBody);
 
                 if (userInfo != null)
                 {
-                    Console.WriteLine($"User Info: {JsonConvert.SerializeObject(userInfo)}");
-
-                    if (userInfo.TrangThai == "Đang hoạt động ")
+                    if (userInfo.TrangThai == "Đang hoạt động")
                     {
+                        HttpContext.Session.SetString("UserEmail", userInfo.Email);
+                        HttpContext.Session.SetString("UserRole", userInfo.Roles);
+
                         switch (userInfo.Roles)
                         {
                             case "Người xin việc":
-                                Console.WriteLine($"NguoiDung ID: {userInfo.nguoi_dung_id}");
                                 await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
-                                return RedirectToAction("CongViec", "CongViec");
+                                return RedirectToAction("Index", "Home");
 
                             case "ADMIN":
                                 return RedirectToAction("Index", "Admin");
 
                             case "Doanh Nghiệp":
-                                Console.WriteLine($"Doanh Nghiep ID: {userInfo.nguoi_dung_id}");
                                 await ThemVaoTrangThongTinDoanhNghiep(userInfo.nguoi_dung_id);
-
-                                if (thongtindoanhnghiep == null || thongtindoanhnghiep?.DoanhNghiepId == null)
-                                {
-                                    Console.WriteLine("ThongTinDoanhNghiep is null or DoanhNghiepId is null.");
-                                    ModelState.AddModelError(string.Empty, "Không tìm thấy thông tin doanh nghiệp.");
-                                    return View(user);
-                                }
-                               // return RedirectToAction("CongViec", "CongViec");
                                 return RedirectToAction("Index", "DoanhNghieps", new { id = thongtindoanhnghiep.DoanhNghiepId });
 
                             default:
@@ -636,13 +618,30 @@ namespace BeeMatchingAPP.Controllers
                                 return View(user);
                         }
                     }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Tài khoản của bạn không hoạt động.");
+                        return View(user);
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("User Info is null");
+                    ModelState.AddModelError(string.Empty, "Không tìm thấy người dùng.");
+                    return View(user);
                 }
             }
-            return View(user); // Trả về view với thông báo lỗi
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.");
+                return View(user);
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
         public async Task<ActionResult> Index()
         {
@@ -786,6 +785,18 @@ namespace BeeMatchingAPP.Controllers
             ViewData["reservation"] = reservation;
           
             return View(reservation);
+        }
+        public async Task<ActionResult> beematching()
+        {
+            return View("beematching");
+        }
+        public async Task<ActionResult> beenews()
+        {
+            return View("beenews");
+        }
+        public async Task<ActionResult> Lienhe()
+        {
+            return View("Lienhe");
         }
         public async Task<KyNangCongViec> CallkynangCongViec(int id)
         {

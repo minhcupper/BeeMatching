@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Tin Tức";
+}
+
+<section class="hero">
+    <h2>Tin Tức Mới Nhất</h2>
+    <p>Cập nhật thông tin nóng hổi về thị trường lao động và tuyển dụng.</p>
+</section>
+
+<section class="content" id="latest-news">
+    <h2>Bài Viết Nổi Bật</h2>
+    <div class="row">
+        <div class="col-4">
+            <article class="news">
+                <h3>Xu Hướng Tuyển Dụng Năm 2024</h3>
+                <p>Khám phá những xu hướng tuyển dụng nổi bật giúp ứng viên và nhà tuyển dụng nắm bắt cơ hội trong thời kỳ mới.</p>
+                <a href="#" class="read-more">Đọc thêm...</a>
+            </article>
+        </div>
+        <div class="col-4">
+            <article class="news">
+                <h3>Kỹ Năng Mềm Quan Trọng Trong Công Việc</h3>
+                <p>Kỹ năng mềm đóng vai trò quan trọng trong việc nâng cao hiệu suất làm việc và xây dựng mối quan hệ chuyên nghiệp.</p>
+                <a href="#" class="read-more">Đọc thêm...</a>
+            </article>
+        </div>
+        <div class="col-4">
+            <article class="news">
+                <h3>Lợi Ích Của Việc Làm Từ Xa</h3>
+                <p>Làm việc từ xa không chỉ mang lại sự linh hoạt mà còn giúp tiết kiệm thời gian và chi phí đi lại.</p>
+                <a href="#" class="read-more">Đọc thêm...</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Định dạng chung */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #fff8e1; /* Nền vàng nhạt */
+    }
+
+    .hero {
+        background: #fff3cd; /* Vàng đậm */
+        color: #333;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #5a5a5a;
+        }
+
+    /* Phần content */
+    .content {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff3cd; /* Vàng nhạt */
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .content h2 {
+            color: #ff9800; /* Vàng cam */
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+
+
+    .col-4 {
+        flex: 0 0 31%;
+        box-sizing: border-box;
+    }
+
+    /* Tin tức */
+    .news {
+        padding: 15px;
+        background: #ffe082; /* Vàng sáng */
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Giữ các phần nội dung cách đều */
+    }
+
+        .news h3 {
+            font-size: 1.5em;
+            color: #ff6f00; /* Cam đậm */
+            margin-bottom: 10px;
+        }
+
+        .news p {
+            color: #555;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Đẩy nút đọc thêm xuống đáy */
+        }
+
+        .news .read-more {
+            display: inline-block;
+            color: #ff6f00; /* Cam đậm */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .news .read-more:hover {
+                text-decoration: underline;
+            }
+</style>

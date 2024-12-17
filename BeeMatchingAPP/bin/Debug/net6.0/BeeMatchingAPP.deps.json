@@ -2930,10 +2930,7 @@
           "System.IdentityModel.Tokens.Jwt": "6.35.1"
         },
         "runtime": {
-          "API_He_thong.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "API_He_thong.dll": {}
         }
       }
     }

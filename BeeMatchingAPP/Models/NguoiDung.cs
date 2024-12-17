@@ -33,7 +33,7 @@ namespace BeeMatchingAPP.Models
         [Required(ErrorMessage = "Otp không được để trống.")]
         public string? Otp { get; set; }
 
-        public string? TrangThai { get; set; } = "Đang hoạt động ";
+        public string? TrangThai { get; set; } = "Đang hoạt động";
         public DateTime? ngay_tao { get; set; } = DateTime.Now;
 
         // Navigation properties

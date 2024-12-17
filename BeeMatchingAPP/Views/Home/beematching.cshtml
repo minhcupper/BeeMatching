@@ -1,0 +1,134 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "BeeMatching";
+}
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #fff8e1;
+    }
+
+    .hero {
+        background: #ffe082;
+        color: #333;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #5a5a5a;
+        }
+
+
+    .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff3cd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .content h2 {
+            color: #ff9800;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+
+    .services {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .service {
+        flex: 1;
+        min-width: 250px;
+        padding: 20px;
+        background: #ffe082;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+        .service h3 {
+            font-size: 1.5em;
+            color: #ff6f00;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #555;
+        }
+
+
+    #contact p {
+        margin-bottom: 10px;
+        font-size: 1em;
+        color: #333;
+    }
+
+    #contact a {
+        color: #ff6f00;
+        text-decoration: none;
+    }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+</style>
+<section class="hero">
+    <h2>Trung Tâm Môi Giới Việc Làm Hàng Đầu</h2>
+    <p>Giúp ứng viên và nhà tuyển dụng tìm thấy sự kết nối hoàn hảo.</p>
+</section>
+
+<section class="content" id="about">
+    <h2>Về Chúng Tôi</h2>
+    <p>BeeMatching là trung tâm môi giới việc làm chuyên nghiệp, luôn đặt chất lượng dịch vụ và sự hài lòng của khách hàng lên hàng đầu. Chúng tôi tự hào là cầu nối giữa nhà tuyển dụng uy tín và ứng viên tiềm năng, giúp họ đạt được mục tiêu nghề nghiệp và tuyển dụng.</p>
+    <p>Với đội ngũ chuyên gia dày dạn kinh nghiệm, BeeMatching cam kết mang đến giải pháp tối ưu nhất cho các nhu cầu tìm kiếm việc làm và nhân sự.</p>
+</section>
+
+<section class="content" id="services">
+    <h2>Dịch Vụ Của Chúng Tôi</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Tìm Kiếm Việc Làm</h3>
+            <p>Hỗ trợ ứng viên tìm kiếm công việc phù hợp với kỹ năng và kinh nghiệm.</p>
+        </div>
+        <div class="service">
+            <h3>Tuyển Dụng Nhân Sự</h3>
+            <p>Cung cấp giải pháp tuyển dụng toàn diện cho doanh nghiệp.</p>
+        </div>
+        <div class="service">
+            <h3>Tư Vấn Nghề Nghiệp</h3>
+            <p>Định hướng và hỗ trợ ứng viên trong việc phát triển sự nghiệp.</p>
+        </div>
+    </div>
+</section>
+
+<section class="content" id="contact">
+    <h2>Liên Hệ</h2>
+    <p>Địa chỉ: 123 Đường Sự Nghiệp, Quận 1, Thành phố Hồ Chí Minh</p>
+    <p>Email: <a href="mailto:contact@beematching.com">contact@beematching.com</a></p>
+    <p>Hotline: 0909 123 456</p>
+</section>
+
+

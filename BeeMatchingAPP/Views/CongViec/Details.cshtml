@@ -1,174 +1,140 @@
 ﻿@model BeeMatchingAPP.Models.CongViec
 
 @{
-    CongViec? congViec = ViewData["reservation"] as CongViec;
-    List<KyNangCongViec>? kyNang = ViewData["kynang"] as List<KyNangCongViec>;
-    DoanhNghiep? doanhNghiep = ViewData["doanhnghiep"] as DoanhNghiep;
-    List<KinhNghiemCongViec>? kinhNghiem = ViewData["kinhnghiem"] as List<KinhNghiemCongViec>;
+    ViewBag.Title = "BeeMatching - Chi Tiết Công Việc";
+    CongViec congViec = ViewData["reservation"] as CongViec;
+    List<KyNangCongViec> kyNang = ViewData["kynang"] as List<KyNangCongViec>;
+    DoanhNghiep doanhNghiep = ViewData["doanhnghiep"] as DoanhNghiep;
+    List<KinhNghiemCongViec> kinhNghiem = ViewData["kinhnghiem"] as List<KinhNghiemCongViec>;
+    Layout = "/Views/Shared/_Layout.cshtml";
+
 }
 
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Details</title>
-    <!-- Include your CSS files here -->
-</head>
-<body>
-    <!-- Header and navigation -->
-    <header>
-        <div class="header-area">
-            <div class="headder-top header-sticky">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 col-md-2">
-                            <div class="logo">
-                                <a href="index.html"><img src="/assets/img/logo/logo.png" alt="Logo"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9">
-                            <div class="menu-wrapper">
-                                <div class="main-menu">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="job_listing.html">Find a Jobs</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
+<!-- Hero Area Start-->
+<div class="slider-area ">
+    <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>UI/UX Designer</h2>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</div>
+<!-- Hero Area End -->
+<!-- job post company Start -->
 
-    <!-- Main content: Job details -->
-    <main>
-        <div class="job-post-company pt-120 pb-120">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-xl-7 col-lg-8">
-                        <!-- Job detail section -->
-                        <div class="single-job-items mb-50">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="#"><img src="assets/img/icon/job-list1.png" alt="Company"></a>
-                                </div>
-                                <div class="job-tittle">
-                                    <a href="#">
-                                        <h4>@congViec.TieuDe</h4>
-                                    </a>
-                                    <ul>
-                                        <li><i class="fas fa-map-marker-alt"></i>@congViec.DistrictName, @congViec.WardName, @congViec.ProvinceName</li>
-                                        <li>@congViec.LuongHangThang.ToString("C0")</li>
-                                    </ul>
-                                </div>
-                            </div>
+
+<div class="job-post-company pt-120 pb-120">
+    <div class="container">
+        <div class="row justify-content-between">
+            <!-- Left Content -->
+            <div class="col-xl-7 col-lg-8">
+                <!-- job single -->
+                <div class="single-job-items mb-50">
+                    <div class="job-items">
+                        <div class="company-img company-img-details">
+                            <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
                         </div>
-
-                        <!-- Skills and Experience -->
-                        <div class="job-post-details">
-                            <div class="post-details1 mb-50">
-                                <div class="small-section-tittle">
-                                    @foreach (var item in kyNang)
-                                    {
-                                        <h4>@item.TenKyNang</h4>
-                                        <p>@item.MoTa</p>
-                                    }
-                                </div>
-                            </div>
-
-                            <div class="post-details2 mb-50">
-                                <div class="small-section-tittle">
-                                    <h4>Required Knowledge, Skills, and Abilities</h4>
-                                </div>
-                                <ul>
-                                    <li>System Software Development</li>
-                                    <li>Mobile Application in iOS/Android</li>
-                                    <li>Research and code libraries, APIs</li>
-                                    <li>Strong knowledge on software development life cycle</li>
-                                    <li>Strong problem-solving and debugging skills</li>
-                                </ul>
-                            </div>
-
-                            <div class="post-details2 mb-50">
-                                <div class="small-section-tittle">
-                                    @foreach (var item in kinhNghiem)
-                                    {
-                                        <h4>@item?.MoTa</h4>
-                                        <p>@item?.TenKinhNghiem</p>
-                                        <p>@item?.SoNamKinhNghiem</p>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right sidebar with company details -->
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="post-details3 mb-50">
-                            <div class="small-section-tittle">
-                                <h4>Job Overview</h4>
-                            </div>
+                        <div class="job-tittle">
+                            <a href="#">
+                                <h4>@congViec.TieuDe</h4>
+                            </a>
                             <ul>
-                                <li>Posted date: <span>@congViec.NgayDang.ToString("dd/MM/yyyy")</span></li>
-                                <li>Location: <span>@congViec.ProvinceName</span></li>
-                                <li>Vacancy: <span>@congViec.SoLuong</span></li>
-                                <li>Job nature: <span>@congViec.DangCongViec</span></li>
-                                <li>Salary: <span>@congViec.LuongHangThang.ToString("C0")</span></li>
-                                <li>Application deadline: <span>@congViec.HanNopHoSo.ToString("dd/MM/yyyy")</span></li>
-                            </ul>
-                            <div class="apply-btn2">
-                                <button>
-                                    <a asp-controller="Home" asp-route-id="@congViec.CongViecId" asp-action="TrangThongTinUngTuyen">Apply Now</a>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="post-details4 mb-50">
-                            <div class="small-section-tittle">
-                                <h4>@doanhNghiep?.TenCongTy</h4>
-                            </div>
-                            <img style="width:200px;height:180px" src="~/Images/minh.jpg.png" alt="@doanhNghiep?.DoanhNghiepId" class="img-fluid rounded-4" />
-                            <span>Colorlib</span>
-                            <p>@doanhNghiep?.MoTa</p>
-                            <ul>
-                                <li>Name: <span>@doanhNghiep?.TenCongTy</span></li>
-                                <li>Location: <span>@doanhNghiep?.DiaChi</span></li>
-                                <li>Web: <span>colorlib.com</span></li>
-                                <li>Email: <span>@doanhNghiep?.HinhAnh</span></li>
+                                <li><i class="fas fa-map-marker-alt"></i>@congViec.DistrictName, @congViec.WardName, @congViec.ProvinceName</li>
+                                <li>@congViec.LuongHangThang.ToString("C0") </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </main>
+                <!-- job single End -->
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-area">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <!-- Footer content -->
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-tittle">
-                            <h4>About Us</h4>
-                            <p>Sample description text here.</p>
+                <div class="job-post-details">
+                    <div class="post-details1 mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            @foreach (var item in kyNang)
+                            {
+                                <h4>@item.TenKyNang</h4>
+                                <p>@item.MoTa</p>
+                            }
+
+
                         </div>
+
                     </div>
+                    <div class="post-details2  mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            <h4>Required Knowledge, Skills, and Abilities</h4>
+                        </div>
+                        <ul>
+                            <li>System Software Development</li>
+                            <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
+                            <li>Research and code , libraries, APIs and frameworks</li>
+                            <li>Strong knowledge on software development life cycle</li>
+                            <li>Strong problem solving and debugging skills</li>
+                        </ul>
+                    </div>
+                    <div class="post-details2  mb-50">
+                        <!-- Small Section Tittle -->
+                        <div class="small-section-tittle">
+                            @foreach (var item in kinhNghiem)
+                            {
+                                <h4>@item.MoTa</h4>
+                                <p>@item.TenKinhNghiem</p>
+                                <p>@item.SoNamKinhNghiem</p>
+                            }
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Right Content -->
+            <div class="col-xl-4 col-lg-4">
+                <div class="post-details3  mb-50">
+                    <!-- Small Section Tittle -->
+                    <div class="small-section-tittle">
+                        <h4>Job Overview</h4>
+                    </div>
+                    <ul>
+                        <li>Posted date : <span>@congViec.NgayDang.ToString("dd/MM/yyyy")</span></li>
+                        <li>Location : <span>@congViec.ProvinceName</span></li>
+                        <li>Vacancy : <span>@congViec.SoLuong</span></li>
+                        <li>Job nature : <span>@congViec.DangCongViec</span></li>
+                        <li>Salary :  <span> @congViec.LuongHangThang.ToString("C0") </span></li>
+                        <li>Application date : <span>@congViec.HanNopHoSo.ToString("dd/MM/yyyy")</span></li>
+                    </ul>
+                    <div class="apply-btn2">
+                        <button>
+                            <a asp-controller="Home" asp-route-id="@congViec.CongViecId" asp-action="TrangThongTinUngTuyen">Ứng Tuyển </a>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="post-details4  mb-50">
+                    <!-- Small Section Tittle -->
+                    <div class="small-section-tittle">
+                        <h4>@doanhNghiep.TenCongTy</h4>
+                    </div>
+                    <img style="width:200px;height:180px" src="~/Images/minh.jpg.png" alt="@doanhNghiep.DoanhNghiepId" class="img-fluid rounded-4" />
+                    <span>Colorlib</span>
+                    <p>@doanhNghiep.MoTa</p>
+                    <ul>
+                        <li>Name: <span>@doanhNghiep.TenCongTy </span></li>
+                        <li>Location: <span>@doanhNghiep.DiaChi </span></li>
+                        <li>Web : <span> colorlib.com</span></li>
+                        <li>Email: <span>@doanhNghiep.HinhAnh</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="~/assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Other JavaScript links -->
-</body>
-</html>
+    </div>
+</div>
+<!-- job post company End -->

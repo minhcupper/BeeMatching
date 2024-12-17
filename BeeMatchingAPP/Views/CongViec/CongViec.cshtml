@@ -2,12 +2,12 @@
 
 @{
     ViewBag.Title = "BeeMatching - Công Việc";
-    List<CongViec> congvieclist = ViewData["job"] as List<CongViec> ?? new List<CongViec>();
+    List<CongViec> congvieclist = ViewData["job"] as List<CongViec>;
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
+}
 <style>
-  
+    /* General Reset */
     body {
         margin: 0;
         font-family: 'Arial', sans-serif;
@@ -153,12 +153,17 @@
         border-radius: 8px;
         overflow: hidden;
         margin-bottom: 20px;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
 
         .single-job-items:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
     .company-img img {
@@ -168,41 +173,62 @@
         border-bottom: 1px solid #ddd;
     }
 
-    .job-tittle h6 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin: 10px 0;
+    .job-tittle {
+        padding: 15px;
+        flex-grow: 1;
     }
 
-    .job-tittle ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-        .job-tittle ul li {
-            font-size: 0.9rem;
-            margin-bottom: 5px;
+        .job-tittle h6 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 10px 0;
+            color: #333;
         }
 
-    .items-link a {
-        color: black;
-        font-size: 0.9rem;
-        text-decoration: none;
+        .job-tittle ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+            .job-tittle ul li {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+                color: #666;
+            }
+
+    .items-link {
+        padding: 15px;
+        text-align: right;
+        background-color: #f7f7f7;
     }
 
-    .items-link span {
-        display: block;
-        font-size: 0.8rem;
-        margin-top: 5px;
-        color: #f0f0f0;
-    }
+        .items-link a {
+            color: #007bff;
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .items-link a:hover {
+                text-decoration: underline;
+            }
+
+        .items-link span {
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            color: #aaa;
+        }
 
 </style>
-<main>
+
+
+
+
 
 <!-- Hero Area Start-->
-<div class="slider-area">
+<div class="slider-area ">
     <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="~/assets/img/hero/about.jpg">
         <div class="container">
             <div class="row">
@@ -216,6 +242,7 @@
     </div>
 </div>
 
+                    </div>
 <!-- Right content -->
 <div class="col-xl-12 col-lg-9 col-md-8">
     <!-- Featured_job_start -->
@@ -254,7 +281,7 @@
                             </div>
                         </form>
                         <p><strong>Kết quả tìm được: </strong>@ViewBag.JobCount</p>
-                        <!-- Select job items End-->
+                        <!--  Select job items End-->
                     </div>
                 </div>
                 @foreach (var item in congvieclist)
@@ -263,49 +290,69 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a asp-action="Details" asp-route-id="@item?.CongViecId"><img style="width:200px;height:180px" src="~/Images/logobee.jpg" alt="@item?.CongViecId" class="img-fluid rounded-4" /></a>
+                                    <a asp-action="Details" asp-route-id="@item.CongViecId"><img style="width:200px;height:180px" src="../assets/img/icon/bee.jpg" alt="@item.CongViecId" class="img-fluid rounded-4" /></a>
                                 </div> <br />
                                 <div class="job-tittle">
-                                    <a asp-action="Details" asp-route-id="@item?.CongViecId">
-                                        <h6 style="font-weight:bold; font-size:22px" class="text-uppercase m-0">@item?.TieuDe</h6>
+                                    <a asp-action="Details" asp-route-id="@item.CongViecId">
+                                        <h6 style="font-weight:bold; font-size:22px" class="text-uppercase m-0">@item.TieuDe</h6>
                                     </a>
                                     <br>
                                     <ul>
-                                        <li><strong>Mô tả: @item?.MoTa</strong> </li>
-                                        <li>Vị trí: @item?.ViTri</li>
+                                        <li><strong>Mô tả: @item.MoTa</strong> </li>
+                                        @*
+                                    <li>Hạn nộp hồ sơ: @item.HanNopHoSo.ToString("dd/MM/yyyy")</li>
+                                    <li>Lương hàng tháng: @item.LuongHangThang</li>
+                                    <li>Trạng thái: @item.TrangThai</li>
+                                    <li>Ngày đăng: @item.NgayDang.ToString("dd/MM/yyyy")</li> *@
+                                        <li>Vị trí: @item.ViTri</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a asp-action="Details" asp-route-id="@item?.CongViecId">@item?.DangCongViec</a>
+                                <a asp-action="Details" asp-route-id="@item.CongViecId">@item.DangCongViec</a>
                             </div>
                         </div>
                     </div>
                 }
             </div>
             <!-- Count of Job list End -->
+            <!-- single-job-content -->
+            <!-- single-job-content -->
+
         </div>
     </section>
     <!-- Featured_job_end -->
 </div>
 
-<!-- Pagination Start -->
+<!-- Job List Area End -->
+<!--Pagination Start  -->
 <div class="pagination-area pb-115 text-center">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
                 <div class="single-wrap d-flex justify-content-center">
-                    <ul class="pagination justify-content-start">
-                        @for (var i = 1; i <= ViewBag.TotalPages; i++)
-                        {
-                            <li class="page-item @((i == ViewBag.CurrentPage) ? "active" : "")">
-                                <a class="page-link" href="?page=@i">@i</a>
-                            </li>
-                        }
-                    </ul>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-start">
+                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                            <li class="page-item"><a class="page-link" href="#">02</a></li>
+                            <li class="page-item"><a class="page-link" href="#">03</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</main>
+<script>
+    function selectOnlyThis(checkbox) {
+        // Duyệt tất cả các checkbox có cùng name="workType"
+        document.querySelectorAll('input[name="dangCongViec"]').forEach(cb => {
+            // Nếu không phải checkbox hiện tại, bỏ chọn
+            cb.checked = false;
+        });
+        // Đảm bảo checkbox được chọn
+        checkbox.checked = true;
+    }
+</script>
+<!--Pagination End  -->

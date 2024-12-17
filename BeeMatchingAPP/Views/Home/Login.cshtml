@@ -75,7 +75,7 @@
     </style>
 </head>
 <body class="bg-info">
-   
+
     <div class="container">
         <!-- Login Form Start -->
         <div class="row justify-content-center wrapper" id="login-box">
@@ -102,8 +102,17 @@
                                 <input asp-for="mat_khau" class="form-control" />
                                 <span asp-validation-for="mat_khau" class="text-danger"></span>
                             </div>
+                            <div class="form-group clearfix">
+                                <div class="custom-control custom-checkbox float-left">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck" name="rem" />
+                                    <label class="custom-control-label" for="customCheck">Ghi nhớ tài khoản</label>
+                                </div>
+                                <div class="forgot float-right">
+                                    <a href="#" id="forgot-link">Quên mật khẩu?</a>
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <input type="submit" value="Login" class="btn btn-primary" />
+                                <input type="submit" value="Đăng Nhập" class="btn btn-primary" />
                             </div>
                         </form>
                     </div>
@@ -119,77 +128,51 @@
             </div>
         </div>
         <!-- Login Form End -->
-        @* <!-- Registration Form Start -->
-        <div class="row justify-content-center wrapper" id="register-box" style="display: none;">
-            <div class="col-lg-10 my-auto myShadow">
-                <div class="row">
-                    <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
-                        <h1 class="text-center font-weight-bold text-white">Xin Chào!</h1>
-                        <hr class="my-4 bg-light myHr" />
-                        <p class="text-center font-weight-bolder text-light lead">Vui lòng điền vào thông tin cá nhân của bạn.</p>
-                        <button class="btn btn-outline-light btn-lg font-weight-bolder mt-4 align-self-center myLinkBtn" id="login-link">Đăng Nhập</button>
-                    </div>
-                    <div class="col-lg-7 bg-white p-4">
-                        <h1 class="text-center font-weight-bold text-primary">Tạo Tài Khoản</h1>
-                        <hr class="my-3" />
-                        <form action="#" method="post" class="px-3" id="register-form">
-                            <div class="input-group input-group-lg form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text rounded-0"><i class="far fa-user fa-lg fa-fw"></i></span>
-                                </div>
-                                <input type="text" id="name" name="name" class="form-control rounded-0" placeholder="Họ và Tên" required />
-                            </div>
-                            <div class="input-group input-group-lg form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
-                                </div>
-                                <input type="email" id="remail" name="email" class="form-control rounded-0" placeholder="Email" required />
-                            </div>
-                            <div class="input-group input-group-lg form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
-                                </div>
-                                <input type="password" id="rpassword" name="password" class="form-control rounded-0" minlength="5" placeholder="Mật khẩu" required />
-                            </div>
-                            <div class="input-group input-group-lg form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
-                                </div>
-                                <input type="password" id="cpassword" name="cpassword" class="form-control rounded-0" minlength="5" placeholder="Xác nhận mật khẩu" required />
-                            </div>
-                            <div class="form-group">
-                                <div id="passError" class="text-danger font-weight-bolder"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" id="register-btn" value="Đăng Ký" class="btn btn-primary btn-lg btn-block myBtn" />
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Registration Form End --> *@
         <!-- Forgot Password Form Start -->
         <div class="row justify-content-center wrapper" id="forgot-box" style="display: none;">
             <div class="col-lg-10 my-auto myShadow">
                 <div class="row">
+                    <!-- Form Section -->
                     <div class="col-lg-7 bg-white p-4">
                         <h1 class="text-center font-weight-bold text-primary">Quên mật khẩu?</h1>
                         <hr class="my-3" />
                         <p class="lead text-center text-secondary">Để đặt lại mật khẩu, hãy nhập địa chỉ email đã đăng ký và chúng tôi sẽ gửi cho bạn hướng dẫn đặt lại mật khẩu qua email của bạn!</p>
-                        <form action="#" method="post" class="px-3" id="forgot-form">
+
+                        <!-- Form 1: Gửi OTP -->
+                        <form id="form-1" asp-action="SendOtpForgetPassword" method="post" onsubmit="saveInputValues()" class="px-3">
                             <div id="forgotAlert"></div>
                             <div class="input-group input-group-lg form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg"></i></span>
                                 </div>
-                                <input type="email" id="femail" name="email" class="form-control rounded-0" placeholder="Email" required />
+                                <input type="email" id="email" name="gmail" class="form-control rounded-0" placeholder="Email" required />
                             </div>
                             <div class="form-group">
-                                <input type="submit" id="forgot-btn" value="Thay Đổi Mật Khẩu" class="btn btn-primary btn-lg btn-block myBtn" />
+                                <input type="submit" id="forgot-btn" value="Gửi OTP" class="btn btn-primary btn-lg btn-block myBtn" />
                             </div>
                         </form>
+
+                        <!-- Form 2: Nhập OTP -->
+                        <div id="form-2" class="card shadow-sm mt-4" style="display: none;">
+                            <div class="card-header text-center bg-success text-white">
+                                <h5>Nhập mã OTP</h5>
+                            </div>
+                            <div class="card-body">
+                                <form asp-action="SendPasswordToGmail" method="post">
+                                    <div class="mb-3">
+                                        <label for="otp" class="form-label">Mã OTP</label>
+                                        <input type="hidden" id="email2" name="gmail" class="form-control" required />
+                                        <input type="text" id="otp" name="otp" class="form-control" placeholder="Nhập OTP" required />
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-success">Xác minh</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Info Section -->
                     <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
                         <h1 class="text-center font-weight-bold text-white">Thay Đổi Mật Khẩu!</h1>
                         <hr class="my-4 bg-light myHr" />
@@ -199,6 +182,7 @@
             </div>
         </div>
         <!-- Forgot Password Form End -->
+
     </div>
     <!-- jQuery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -222,7 +206,54 @@
             });
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            const emailInputForm1 = document.getElementById('email');
+            const emailInputForm2 = document.getElementById('email2');
+
+            // Đồng bộ giá trị ban đầu nếu đã có giá trị có sẵn
+            emailInputForm1.addEventListener("input", function () {
+
+                emailInputForm2.value = emailInputForm1.value;
+
+            });
+
+        });
+
+
+
+        // Lưu giá trị các ô input trước khi submit
+        function saveInputValues() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                sessionStorage.setItem(input.name, input.value); // Lưu giá trị theo tên
+            });
+        }
+
+        // Phục hồi giá trị các ô input sau khi load lại trang
+        function restoreInputValues() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                const savedValue = sessionStorage.getItem(input.name);
+                if (savedValue) {
+                    input.value = savedValue; // Gán lại giá trị đã lưu
+                }
+            });
+        }
+
+        // Gọi khôi phục giá trị khi trang load
+        window.onload = restoreInputValues;
+
+
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        if (message) {
+            alert(message);
+        }
+
     </script>
+
 </body>
 </html>
 
