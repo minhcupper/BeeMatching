@@ -19,6 +19,7 @@ using System.Security.Cryptography;
 using API_He_thong.DATA;
 using System.Net.Mail;
 using System.Net;
+using BeeMatchingAPP.Models.Authentication;
 namespace BeeMatchingAPP.Controllers
 {
     //tuan day
@@ -117,6 +118,7 @@ namespace BeeMatchingAPP.Controllers
         }
         // Phương thức hiển thị thông tin ứng tuyển
         [HttpGet]
+        [Authentication]
         public async Task<ActionResult> TrangThongTinUngTuyen(int id)
         {
             // Truy xuất dữ liệu từ session
@@ -604,7 +606,7 @@ namespace BeeMatchingAPP.Controllers
                         {
                             case "Người xin việc":
                                 await ThemVaoTrangThongTinNguoiTimViec(userInfo.nguoi_dung_id);
-                                return RedirectToAction("Index", "Home");
+                                return RedirectToAction("Congviec", "Congviec");
 
                             case "ADMIN":
                                 return RedirectToAction("Index", "Admin");

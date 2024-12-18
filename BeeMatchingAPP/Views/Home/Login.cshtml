@@ -9,6 +9,7 @@
     ViewData["Title"] = "Login";
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -218,27 +219,7 @@
             });
 
         });
-
-
-
-        // Lưu giá trị các ô input trước khi submit
-        function saveInputValues() {
-            const inputs = document.querySelectorAll('input');
-            inputs.forEach(input => {
-                sessionStorage.setItem(input.name, input.value); // Lưu giá trị theo tên
-            });
-        }
-
-        // Phục hồi giá trị các ô input sau khi load lại trang
-        function restoreInputValues() {
-            const inputs = document.querySelectorAll('input');
-            inputs.forEach(input => {
-                const savedValue = sessionStorage.getItem(input.name);
-                if (savedValue) {
-                    input.value = savedValue; // Gán lại giá trị đã lưu
-                }
-            });
-        }
+       
 
         // Gọi khôi phục giá trị khi trang load
         window.onload = restoreInputValues;
