@@ -206,7 +206,8 @@
                 $("#forgot-box").hide();
             });
         });
-
+    </script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const emailInputForm1 = document.getElementById('email');
             const emailInputForm2 = document.getElementById('email2');
@@ -219,22 +220,31 @@
             });
 
         });
+    </script>
+
+    <script>
+        // Lưu giá trị các ô input trước khi submit
+        function saveInputValues() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                sessionStorage.setItem(input.name, input.value); // Lưu giá trị theo tên
+            });
+        }
+
        
 
         // Gọi khôi phục giá trị khi trang load
         window.onload = restoreInputValues;
+    </script>
 
 
-
-
+    <script>
         const urlParams = new URLSearchParams(window.location.search);
         const message = urlParams.get('message');
         if (message) {
             alert(message);
         }
-
     </script>
-
 </body>
 </html>
 
