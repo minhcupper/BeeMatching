@@ -22,24 +22,49 @@ namespace API_He_thong.Models
             public DbSet<districts> districts { get; set; } // Adjusted class name to be singular
             public DbSet<wards> wards { get; set; }         // Adjusted class name to be singular
             public DbSet<provinces> provinces { get; set; } // Adjusted class name to be singular
+      //  public DbSet<BangCap> BangCaps { get; set; }
+        public DbSet<BangCapCongViec> BangCapCongViecs { get; set; }
 
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
                 // Foreign key relationships
                 ConfigureNguoiTimViec(modelBuilder);
                 ConfigureDoanhNghiep(modelBuilder);
                 ConfigureKyNangNguoiXinViec(modelBuilder);
-                ConfigureCongViec(modelBuilder);
+            ConfigureKinhnghiem(modelBuilder);
+            ConfigureCongViec(modelBuilder);
                 ConfigureUngTuyen(modelBuilder);
-                ConfigureDanhGia(modelBuilder);
+                //ConfigureDanhGia(modelBuilder);
                 ConfigureThongBao(modelBuilder);
                 ConfigureKyNangCongViec(modelBuilder);
+            ConfigureBangCapCongViec(modelBuilder);
+       //     ConfigureBangCap(modelBuilder);
             modelBuilder.Entity<CongViec>()
         .Property(c => c.LuongHangThang)
         .HasPrecision(18, 4); // Adjust precision and scale based on your data needs
-        }
 
-            private void ConfigureNguoiTimViec(ModelBuilder modelBuilder)
+
+        }
+        private void ConfigureBangCapCongViec(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<BangCapCongViec>()
+          .HasOne(b => b.CongViec)
+          .WithMany(c => c.BangCapCongViecs)
+          .HasForeignKey(b => b.CongViecId)
+          .OnDelete(DeleteBehavior.Cascade);  // Thiết lập hành động khi xóa
+        }
+    /*    private void ConfigureBangCap(ModelBuilder modelBuilder)
+        {
+
+            // Cấu hình quan hệ 1-1 giữa NguoiTimViec và BangCap
+            modelBuilder.Entity<NguoiTimViec>()
+             .HasMany(n => n.BangCaps)  // Một người tìm việc có nhiều bằng cấp
+             .WithOne(b => b.NguoiTimViec)  // Một bằng cấp thuộc về một người tìm việc
+             .HasForeignKey(b => b.NguoiTimViecId)  // Khóa ngoại liên kết đến NguoiTimViec
+             .OnDelete(DeleteBehavior.Cascade);
+        }*/
+
+        private void ConfigureNguoiTimViec(ModelBuilder modelBuilder)
             {
                 modelBuilder.Entity<NguoiTimViec>()
                     .HasOne(ntv => ntv.NguoiDung)
@@ -71,22 +96,7 @@ namespace API_He_thong.Models
                     .HasForeignKey(kn => kn.DanhMucKyNangId)
                     .OnDelete(DeleteBehavior.NoAction);
             }
-        private void ConfigureKinhnghiemNguoiXinViec(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<KinhnghiemNguoiTimViec>()
-                .HasOne(kn => kn.NguoiTimViec)
-                .WithMany(ntv => ntv.KinhnghiemNguoiTimViecs)
-                .HasForeignKey(kn => kn.NguoiTimViecId)
-                .OnDelete(DeleteBehavior.Restrict);
-        }
-        private void ConfigureKinhnghiemcongviec(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<KinhNghiemCongViec>()
-                .HasOne(kn => kn.CongViec)
-                .WithMany(ntv => ntv.KinhNghiemCongViecs)
-                .HasForeignKey(kn => kn.CongViecId)
-                .OnDelete(DeleteBehavior.Restrict);
-        }
+      
         private void ConfigureKyNangCongViec(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<KyNangCongViec>()
@@ -125,24 +135,31 @@ namespace API_He_thong.Models
                     .OnDelete(DeleteBehavior.Cascade);
             }
 
-            private void ConfigureDanhGia(ModelBuilder modelBuilder)
-            {
-                modelBuilder.Entity<DanhGia>()
-                    .HasOne(dg => dg.UngTuyen)
-                    .WithOne(ut => ut.DanhGia)
-                    .OnDelete(DeleteBehavior.Cascade);
-           
+        /* private void ConfigureDanhGia(ModelBuilder modelBuilder)
+           {
+               modelBuilder.Entity<DanhGia>()
+                   .HasMany(dg => dg.DanhGias)
+                   .WithOne(ut => ut.DanhGias)
+                   .OnDelete(DeleteBehavior.Cascade);
+       }*/
+
+        private void ConfigureThongBao(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ThongBao>()
+                .HasOne(tb => tb.NguoiDung)
+                .WithMany(nd => nd.ThongBaos)
+                .HasForeignKey(tb => tb.NguoiDungId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
+        private void ConfigureKinhnghiem(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<KinhnghiemNguoiTimViec>()
+                .HasOne(kn => kn.NguoiTimViec)
+                .WithMany(ntv => ntv.KinhnghiemNguoiTimViecs)
+                .HasForeignKey(kn => kn.NguoiTimViecId)
+                .OnDelete(DeleteBehavior.Cascade); // Thay đổi từ Restrict sang Cascade
         }
 
-            private void ConfigureThongBao(ModelBuilder modelBuilder)
-            {
-                modelBuilder.Entity<ThongBao>()
-                    .HasOne(tb => tb.NguoiDung)
-                    .WithMany(nd => nd.ThongBaos)
-                    .HasForeignKey(tb => tb.NguoiDungId)
-                    .OnDelete(DeleteBehavior.Cascade);
-            }
-
-           
-        }
+    }
+    
     }

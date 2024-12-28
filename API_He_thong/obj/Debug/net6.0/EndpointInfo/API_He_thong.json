@@ -5,6 +5,41 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/BangCap/GetAll": {
+      "get": {
+        "tags": [
+          "BangCap"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/BangCap/GetById/{id}": {
+      "get": {
+        "tags": [
+          "BangCap"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Chat/UseChatGpt": {
       "post": {
         "tags": [
@@ -422,6 +457,28 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/District/GetByProvince/{provinceId}": {
+      "get": {
+        "tags": [
+          "District"
+        ],
+        "parameters": [
+          {
+            "name": "provinceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -881,6 +938,18 @@
       "get": {
         "tags": [
           "Places"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Province/GetAll": {
+      "get": {
+        "tags": [
+          "Province"
         ],
         "responses": {
           "200": {
@@ -1543,10 +1612,53 @@
           }
         }
       }
+    },
+    "/api/Ward/GetByDistrict/{districtId}": {
+      "get": {
+        "tags": [
+          "Ward"
+        ],
+        "parameters": [
+          {
+            "name": "districtId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "BangCapCongViec": {
+        "type": "object",
+        "properties": {
+          "bangCapId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenBangCap": {
+            "type": "string",
+            "nullable": true
+          },
+          "congViecId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "congViec": {
+            "$ref": "#/components/schemas/CongViec"
+          }
+        },
+        "additionalProperties": false
+      },
       "CongViec": {
         "required": [
           "doanhNghiepId",
@@ -1613,6 +1725,13 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/UngTuyen"
+            },
+            "nullable": true
+          },
+          "bangCapCongViecs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BangCapCongViec"
             },
             "nullable": true
           },

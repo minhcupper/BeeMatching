@@ -49,6 +49,7 @@ namespace API_He_thong.Models
 
         // Navigation property cho các ứng tuyển
         public virtual ICollection<UngTuyen>? UngTuyens { get; set; } = new List<UngTuyen>();
+        public ICollection<BangCapCongViec>? BangCapCongViecs { get; set; } = new List<BangCapCongViec>();
 
         // Navigation properties cho các địa điểm
         // Navigation properties for address relationships

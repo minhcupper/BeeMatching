@@ -7,6 +7,7 @@ using System.Text;
 using API_He_thong.Repositories;
 using Microsoft.AspNetCore.Identity;
 using System.Net.Http;
+using BeeMatchingAPP.DATA;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -64,7 +65,10 @@ builder.Services.AddScoped<IKinhNghiemNguoiXinViec, KinhNghiemNguoiXinViecServic
 builder.Services.AddScoped<Ikinhnghiemcongviec, KinhNghiemCongViecService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<ILoginRepository, LoginRepository>();
-
+builder.Services.AddScoped<IWardService, WardService>();
+builder.Services.AddScoped<IProvinceService, ProvinceService>();
+builder.Services.AddScoped<IDistrictService, DistrictService>();
+builder.Services.AddScoped<Ibangcapcongviec, BangCapCongViecSerVice>();
 builder.Host.ConfigureHostConfiguration(config =>
 {
     config.AddInMemoryCollection(new[]

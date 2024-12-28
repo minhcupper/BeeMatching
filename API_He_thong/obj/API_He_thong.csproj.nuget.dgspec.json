@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\doan\\BeeMatchingfinal\\API_He_thong\\API_He_thong.csproj": {}
+    "D:\\Study\\DATN\\API_He_thong\\API_He_thong\\API_He_thong.csproj": {}
   },
   "projects": {
-    "D:\\doan\\BeeMatchingfinal\\API_He_thong\\API_He_thong.csproj": {
+    "D:\\Study\\DATN\\API_He_thong\\API_He_thong\\API_He_thong.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\doan\\BeeMatchingfinal\\API_He_thong\\API_He_thong.csproj",
+        "projectUniqueName": "D:\\Study\\DATN\\API_He_thong\\API_He_thong\\API_He_thong.csproj",
         "projectName": "API_He_thong",
-        "projectPath": "D:\\doan\\BeeMatchingfinal\\API_He_thong\\API_He_thong.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\doan\\BeeMatchingfinal\\API_He_thong\\obj\\",
+        "projectPath": "D:\\Study\\DATN\\API_He_thong\\API_He_thong\\API_He_thong.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\DATN\\API_He_thong\\API_He_thong\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -103,24 +108,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -129,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "API_He_thong.Controllers.BangCapController",
+    "Method": "GetAllCompanys",
+    "RelativePath": "api/BangCap/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_He_thong.Controllers.BangCapController",
+    "Method": "GetCompanyById",
+    "RelativePath": "api/BangCap/GetById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_He_thong.Controllers.ChatController",
     "Method": "UseChatGpt",
     "RelativePath": "api/Chat/UseChatGpt",
@@ -247,6 +273,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_He_thong.Controllers.DistrictController",
+    "Method": "GetByProvince",
+    "RelativePath": "api/District/GetByProvince/{provinceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "provinceId",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -529,6 +571,16 @@
     "ContainingType": "API_He_thong.Controllers.PlacesController",
     "Method": "GetAllWards",
     "RelativePath": "api/Places/GetAllWards",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_He_thong.Controllers.ProvinceController",
+    "Method": "GetAll",
+    "RelativePath": "api/Province/GetAll",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -925,6 +977,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_He_thong.Controllers.WardController",
+    "Method": "GetByDistrict",
+    "RelativePath": "api/Ward/GetByDistrict/{districtId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "districtId",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
